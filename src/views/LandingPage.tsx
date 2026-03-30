@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 
+
 export function LandingPage () {
     return ( <div className="max-w-7xl mx-auto px-4 py-8 md:py-12 space-y-16 md:space-y-24">
         {/* Hero Section */}
@@ -10,7 +11,7 @@ export function LandingPage () {
                 className="space-y-6 md:space-y-8"
             >
                 <div className="inline-block bg-brutal-yellow brutal-border-sm px-4 py-1 font-mono font-bold text-xs md:text-sm">
-                    LEAVE THE ROAD, TAKE THE TRAILS
+                    LEAVE THE ROAD, TAKE THE TRAILS // PYTHAGORAS
                 </div>
                 <h1 className="text-6xl md:text-8xl lg:text-9xl leading-[0.85] text-brutal-black">
                     BUILDING <br />

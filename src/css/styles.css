@@ -39,8 +39,8 @@
         @apply font-extrabold uppercase tracking-tighter;
     }
 
-    button, a, [role="button"] {
-        @apply cursor-pointer;
+    *, *::before, *::after {
+        cursor: none !important;
     }
 }
 
