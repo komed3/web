@@ -17,16 +17,20 @@ export interface SocialLinksProps {
 
 export function SocialLinks ( { className, iconSize = 20 }: SocialLinksProps ) {
     return ( <div className={ cn( 'flex flex-wrap gap-2 md:gap-4', className ) }>
-        { SOCIAL_LINKS.map( ( link ) => ( <a
-            key={link.name}
-            href={link.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={cn(
-                "p-2 brutal-border-sm transition-transform hover:-translate-y-1",
-                link.color
-            )}
-            title={link.name}
-        ><link.icon size={iconSize} className={iconSize > 20 ? "md:w-6 md:h-6" : ""} /></a> ) ) }
+        { SOCIAL_LINKS.map( ( link ) => (
+            <a
+                key={link.name}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={ cn(
+                    'p-2 brutal-border-sm transition-transform hover:-translate-y-1',
+                    link.color
+                ) }
+                title={link.name}
+            >
+                <link.icon size={iconSize} className={ iconSize > 20 ? "md:w-6 md:h-6" : "" } />
+            </a>
+        ) ) }
     </div> );
 }
