@@ -1,6 +1,8 @@
 import { motion } from 'motion/react';
 
 import { AsciiLogo } from '../components/AsciiLogo';
+import { ProjectGrid } from '../components/ProjectGrid';
+import { Skillset } from '../components/Skillset';
 
 
 export function LandingPage () {
@@ -43,5 +45,11 @@ export function LandingPage () {
                 </div>
             </motion.div>
         </section>
+
+        {/* Skillset */}
+        <Skillset />
+
+        {/* Projects Grid */}
+        <ProjectGrid />
     </div> );
 }
