@@ -30,14 +30,14 @@ function loadBlacklist () : Set< string > {
         const list = JSON.parse( readFileSync( file, 'utf-8' ) );
         return new Set( list.map( ( s: string ) => s.toLowerCase() ) );
     } catch {
-        console.warn( `Invalid 'blacklist.json' – ignored` );
+        console.warn( `⚠ Invalid 'blacklist.json' – ignored` );
         return new Set();
     }
 }
 
 async function fetchGraphQL ( query: string, variables?: Record< string, unknown > ) {
     const token = process.env.TOKEN;
-    if ( ! token ) throw new Error( `TOKEN missing` );
+    if ( ! token ) throw new Error( `⚠ TOKEN missing` );
 
     const res = await fetch( GRAPHQL_URL, {
         method: 'POST',
@@ -48,7 +48,7 @@ async function fetchGraphQL ( query: string, variables?: Record< string, unknown
         body: JSON.stringify( { query, variables } )
     } );
 
-    if ( ! res.ok ) throw new Error( `GitHub API: ${res.status}` );
+    if ( ! res.ok ) throw new Error( `⚠ GitHub API: ${res.status}` );
 
     const data = await res.json();
     if ( data.errors ) throw new Error( data.errors.map( ( e: any ) => e.message ).join( ', ' ) );
@@ -129,7 +129,7 @@ function getSkills ( repos: Repo[] ) : string[] {
 
         console.log( `✓ Done` );
     } catch ( err ) {
-        console.error( `Failed:`, err );
+        console.error( `⚠ Failed:`, err );
         process.exit( 1 );
     }
 } )();
