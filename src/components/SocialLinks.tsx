@@ -1,12 +1,12 @@
 import { Package, Coffee, Archive } from 'lucide-react';
 import { cn } from '../lib/utils';
-import { siGithub, siX } from 'simple-icons';
+import { SiGithub, SiX } from '@icons-pack/react-simple-icons';
 
 
 export const SOCIAL_LINKS = [
-    { name: 'GitHub', icon: siGithub.svg, url: 'https://github.com/komed3', color: 'bg-brutal-blue text-brutal-white' },
+    { name: 'GitHub', icon: SiGithub, url: 'https://github.com/komed3', color: 'bg-brutal-blue text-brutal-white' },
     { name: 'npmjs', icon: Package, url: 'https://npmjs.com/~komed3', color: 'bg-brutal-pink text-brutal-white' },
-    { name: 'X / Twitter', icon: siX.svg, url: 'https://x.com/komed3dev', color: 'bg-brutal-green text-brutal-black' },
+    { name: 'X / Twitter', icon: SiX, url: 'https://x.com/komed3dev', color: 'bg-brutal-green text-brutal-black' },
     { name: 'Ko-fi', icon: Coffee, url: 'https://ko-fi.com/komed3', color: 'bg-brutal-orange text-brutal-black' },
     { name: 'APT Repo', icon: Archive, url: 'https://deb.komed3.de', color: 'bg-brutal-yellow text-brutal-black' }
 ];
