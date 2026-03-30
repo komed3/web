@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { existsSync, mkdirSync, readFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -114,3 +114,22 @@ function getSkills ( repos: Repo[] ) : string[] {
 
     return Object.entries( langs ).sort( ( [ , a ], [ , b ] ) => b - a ).map( ( [ name ] ) => name );
 }
+
+( async () => {
+    try {
+        const blacklist = loadBlacklist();
+        const repos = await getRepos( blacklist );
+        const skills = getSkills( repos );
+
+        writeFileSync( join( dataDir, 'repos.json' ), JSON.stringify( repos, null, 2 ) );
+        writeFileSync( join( dataDir, 'skills.json' ), JSON.stringify( skills, null, 2 ) );
+
+        const readmes = Object.fromEntries( repos.map( r => [ r.name, r.readme ] ) );
+        writeFileSync( join( dataDir, 'readmes.json' ), JSON.stringify( readmes, null, 2 ) );
+
+        console.log( `✓ Done` );
+    } catch ( err ) {
+        console.error( `Failed:`, err );
+        process.exit( 1 );
+    }
+} )();
