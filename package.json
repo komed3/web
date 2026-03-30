@@ -9,7 +9,7 @@
   },
   "type": "module",
   "scripts": {
-    "build": "tsc scripts/fetch-data.mts && vite build",
+    "build": "tsx scripts/fetch-data.mts && vite build",
     "verify": "tsx scripts/verify-static.mts",
     "lint": "tsc --noEmit"
   },
