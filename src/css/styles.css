@@ -2,9 +2,9 @@
 
 
 @font-face {
-    font-family: 'Syne';
+    font-family: 'Geist';
     font-size: 100 900;
-    src: url( ../assets/Syne.woff2 ) format( 'woff2' );
+    src: url( ../assets/Geist.woff2 ) format( 'woff2' );
 }
 
 @font-face {
@@ -14,7 +14,7 @@
 }
 
 @theme {
-    --font-sans: 'Syne', ui-sans-serif, system-ui, sans-serif;
+    --font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
     --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
     --color-brutal-yellow: #f0e130;
