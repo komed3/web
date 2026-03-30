@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync } from 'node:fs';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'url';
 
@@ -15,16 +16,16 @@ const dataDir = join( __dirname, '..', 'src', 'data' );
     }
 
     try {
-        const repos = JSON.parse( readFileSync( join( dataDir, 'repos.json' ), 'utf-8' ) );
+        const repos = JSON.parse( await readFile( join( dataDir, 'repos.json' ), 'utf-8' ) );
         const indexPath = join( distDir, 'index.html' );
-        let html = readFileSync( indexPath, 'utf-8' );
+        let html = await readFile( indexPath, 'utf-8' );
 
         const pagesDir = join( distDir, 'project' );
-        if ( ! existsSync( pagesDir ) ) mkdirSync( pagesDir, { recursive: true } );
+        if ( ! existsSync( pagesDir ) ) await mkdir( pagesDir, { recursive: true } );
 
         for ( const repo of repos ) {
             const mod = html.replace( '</head>', `<script>window.__PRERENDER_DATA__={project:'${repo.name}'};</script>\n</head>` );
-            writeFileSync( join( pagesDir, `${repo.name}.html` ), mod );
+            await writeFile( join( pagesDir, `${repo.name}.html` ), mod );
         }
 
         console.log( `✓ Pre-rendered ${repos.length} project pages` );
