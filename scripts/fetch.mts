@@ -55,3 +55,10 @@ async function fetchGraphQL ( query: string, variables?: Record< string, unknown
 
     return data.data;
 }
+
+function getSkills ( repos: Repo[] ) : string[] {
+    const langs: Record< string, number > = {};
+    for ( const r of repos ) if ( r.language ) langs[ r.language ] = ( langs[ r.language ] || 0 ) + 1;
+
+    return Object.entries( langs ).sort( ( [ , a ], [ , b ] ) => b - a ).map( ( [ name ] ) => name );
+}
