@@ -6,6 +6,8 @@ import { Navbar } from './components/Navbar';
 import { Background } from './effects/Background';
 import { Cursor } from './effects/Cursor';
 import { ScrollToTop } from './lib/scrollToTop';
+import { LandingPage } from './views/LandingPage';
+import { ProjectPage } from './views/ProjectPage';
 
 
 export default function App () : JSX.Element {
