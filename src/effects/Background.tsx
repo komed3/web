@@ -1,3 +1,7 @@
+import { motion, useSpring } from 'motion/react';
+import { useEffect, useState } from 'react';
+
+
 export function BackgroundElements () {
     const [ , setMousePos ] = useState ( { x: 0, y: 0 } );
     const springConfig = { damping: 25, stiffness: 400 };
