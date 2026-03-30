@@ -31,6 +31,8 @@ const distDir = join( __dirname, '..', 'dist' );
             `✓ Assets: ${ files.filter( f => f.endsWith( '.js' ) ).length } JS + ` +
             `${ files.filter( f => f.endsWith( '.css' ) ).length } CSS`
         );
+
+        if ( ! files.length ) ok = false;
     }
 
     if ( existsSync( join( distDir, 'project' ) ) ) {
@@ -38,6 +40,8 @@ const distDir = join( __dirname, '..', 'dist' );
         console.log(
             `✓ Project pages: ${ files.filter( f => f.endsWith( '.html' ) ).length } HTML files`
         );
+
+        if ( ! files.length ) ok = false;
     }
 
     if ( ok ) console.log( `✓ Ready for deployment!` );
