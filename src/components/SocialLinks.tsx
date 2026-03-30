@@ -8,3 +8,9 @@ export const SOCIAL_LINKS = [
     { name: 'Ko-fi', icon: Coffee, url: 'https://ko-fi.com/komed3', color: 'bg-brutal-orange text-brutal-black' },
     { name: 'APT Repo', icon: Archive, url: 'https://deb.komed3.de', color: 'bg-brutal-yellow text-brutal-black' }
 ];
+
+export interface SocialLinksProps {
+    className?: string;
+    iconSize?: number;
+}
+
