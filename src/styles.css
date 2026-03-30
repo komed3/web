@@ -1,0 +1,27 @@
+@import 'tailwindcss';
+
+
+@font-face {
+    font-family: 'Syne';
+    font-size: 100 900;
+    src: url( ./assets/Syne.woff2 ) format( 'woff2' );
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-size: 100 900;
+    src: url( ./assets/JetBrainsMono.woff2 ) format( 'woff2' );
+}
+
+@theme {
+    --font-sans: 'Syne', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+    --color-brutal-yellow: #f0e130;
+    --color-brutal-blue: #306af0;
+    --color-brutal-pink: #f030ba;
+    --color-brutal-green: #30f06a;
+    --color-brutal-orange: #f08a30;
+    --color-brutal-black: #000;
+    --color-brutal-white: #fff;
+}
