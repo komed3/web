@@ -124,9 +124,6 @@ function getSkills ( repos: Repo[] ) : string[] {
         writeFileSync( join( dataDir, 'repos.json' ), JSON.stringify( repos, null, 2 ) );
         writeFileSync( join( dataDir, 'skills.json' ), JSON.stringify( skills, null, 2 ) );
 
-        const readmes = Object.fromEntries( repos.map( r => [ r.name, r.readme ] ) );
-        writeFileSync( join( dataDir, 'readmes.json' ), JSON.stringify( readmes, null, 2 ) );
-
         console.log( `✓ Done` );
     } catch ( err ) {
         console.error( `⚠ Failed:`, err );

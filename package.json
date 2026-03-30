@@ -9,12 +9,13 @@
   },
   "type": "module",
   "scripts": {
-    "build": "tsx scripts/fetch-data.mts && vite build",
-    "verify": "tsx scripts/verify-static.mts",
+    "build": "tsx scripts/fetch.mts && vite build",
+    "verify": "tsx scripts/verify.mts",
     "lint": "tsc --noEmit"
   },
   "devDependencies": {
     "@types/node": "^25.5.0",
+    "tsx": "^4.21.0",
     "typescript": "^6.0.2"
   }
 }
