@@ -1,6 +1,7 @@
 import skills from '../data/skills.json';
 import { Button } from './ui/Button';
 
+
 export function Skills () {
     return ( <section id="skills" className="w-full bg-white p-6 md:p-12 flex flex-col gap-12 border-t-4 border-black scroll-mt-20">
         <div className="flex flex-col gap-4">
