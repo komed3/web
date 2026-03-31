@@ -2,11 +2,15 @@
   "projects": [ {
     "id": "cmpstr",
     "github": "komed3/cmpstr",
-    "type": "NPM Package"
+    "type": "Library"
   }, {
     "id": "translatehub",
     "github": "komed3/TranslateHub",
-    "type": "NPM Package"
+    "type": "Tool"
+  }, {
+    "id": "airportmap",
+    "github": "airportmap",
+    "type": "Database"
   }, {
     "id": "apt-repo",
     "title": "Debian Repository",

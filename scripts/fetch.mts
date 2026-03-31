@@ -6,7 +6,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 
-export interface Config {
+interface Config {
     projects: Array< {
         id: string;
         title?: string;
@@ -25,6 +25,11 @@ export interface Config {
     } >;
     skills: string[];
 }
+
+interface Org {}
+
+interface Repo {}
+
 
 const cwd = dirname( fileURLToPath( import.meta.url ) );
 const dataDir = join( cwd, '..', 'src', 'data' );
@@ -63,6 +68,27 @@ async function fetchGraphQL ( query: string, variables?: Record< string, unknown
     return data.data;
 }
 
+async function fetchOrgs ( repos: string[] ) : Record< string, Org > {
+    //
+}
+
+async function fetchRepos ( repos: string[] ) : Record< string, Repo > {
+    //
+}
+
 ( async () => {
     const config = await readConfig();
+
+    const orgs = [], repos = [];
+    for ( const { github } of config.projects ) {
+        if ( ! github ) continue;
+
+        if ( github.includes( '/' ) ) repos.push( github );
+        else orgs.push( github );
+    }
+
+    const orgData = await fetchOrgs( orgs );
+    const repoData = await fetchRepos( repos );
+
+    //
 } )();
