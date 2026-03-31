@@ -1,7 +1,7 @@
-import { Package, Coffee, Archive } from 'lucide-react';
-import { cn } from '../lib/utils';
 import { SiGithub, SiX } from '@icons-pack/react-simple-icons';
+import { Package, Coffee, Archive } from 'lucide-react';
 
+import { cn } from '../lib/utils';
 
 export const SOCIAL_LINKS = [
     { name: 'GitHub', icon: SiGithub, url: 'https://github.com/komed3', color: 'bg-brutal-blue text-brutal-white' },
