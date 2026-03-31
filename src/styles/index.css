@@ -1,0 +1,52 @@
+@import 'tailwindcss';
+
+
+@font-face {
+    font-family: 'Geist';
+    font-size: 100 900;
+    src: url( ../assets/Geist.woff2 ) format( 'woff2' );
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-size: 100 900;
+    src: url( ../assets/JetBrainsMono.woff2 ) format( 'woff2' );
+}
+
+@theme {
+    --font-display: 'Geist', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --color-brutal-yellow: #fbbf24;
+    --color-brutal-green: #22c55e;
+    --color-brutal-blue: #2563eb;
+    --color-brutal-pink: #db2777;
+    --color-brutal-orange: #ea580c;
+}
+
+@layer base {
+    * {
+        @apply cursor-none;
+        border-radius: 0 !important;
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Hide custom cursor on touch devices */
+    @media ( hover: none ) and ( pointer: coarse ) {
+        * {
+            @apply cursor-auto;
+        }
+    }
+
+    html, body {
+        @apply bg-white text-black font-mono overflow-x-hidden w-full max-w-full m-0 p-0;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        scroll-behavior: smooth;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-display font-black uppercase tracking-tighter;
+    }
+}
