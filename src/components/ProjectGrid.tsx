@@ -1,7 +1,32 @@
 import { Search } from 'lucide-react';
+import { useMemo, useState } from 'react';
+
+import projects from '../data/projects.json';
 
 
 export function ProjectGrid () {
+    const [ filter, setFilter ] = useState( 'All' );
+    const [ search, setSearch ] = useState( '' );
+    const [ visibleCount, setVisibleCount ] = useState( 6 );
+
+    const categories = useMemo( () => {
+        const cats = new Set( projects.map( p => p.type ) );
+        return [ 'All', ...Array.from( cats ) ];
+    }, [] );
+
+    const filteredProjects = useMemo( () => {
+        return projects.filter( p => {
+            const matchesFilter = filter === 'All' || p.type === filter;
+            const matchesSearch =
+                p.title.toLowerCase().includes( search.toLowerCase() ) ||
+                p.tags.some( t => t.toLowerCase().includes( search.toLowerCase() ) );
+
+            return matchesFilter && matchesSearch;
+        } );
+    }, [ filter, search ] );
+
+    const visibleProjects = filteredProjects.slice( 0, visibleCount );
+
     return ( <section id="projects" className="w-full min-h-screen bg-white p-6 md:p-12 flex flex-col gap-12 border-t-4 border-black scroll-mt-20">
         <div className="flex flex-col md:flex-row justify-between items-start gap-8">
             <div className="space-y-4 w-full md:w-auto">
