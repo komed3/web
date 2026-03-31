@@ -13,9 +13,9 @@ export function Header () {
     const menuItems = [
         { name: 'GitHub', icon: <SiGithub size={20} />, url: 'https://github.com/komed3' },
         { name: 'Periodic Table', icon: <Atom size={20} />, url: 'https://pse-info.de' },
-        { name: 'AirportMap', icon: <Plane size={20} />, url: 'https://airportmap.de' },
-        { name: 'Realtime Billionaires', icon: <CircleDollarSign size={20} />, url: 'https://realtimebillionaires.de' },
         { name: 'NPM Packages', icon: <Package size={20} />, url: 'https://npmjs.com/~komed3' },
+        { name: 'Realtime Billionaires', icon: <CircleDollarSign size={20} />, url: 'https://realtimebillionaires.de' },
+        { name: 'AirportMap', icon: <Plane size={20} />, url: 'https://airportmap.de' },
         { name: 'APT Repo', icon: <Database size={20} />, url: 'https://deb.komed3.de' }
     ];
 
@@ -72,13 +72,13 @@ export function Header () {
                         } }>
                     </div>
 
-                    <div className="relative z-10">
+                    <div className="relative z-10 space-y-2 lg:space-y-8">
                         <h2 className="text-2xl sm:text-4xl lg:text-8xl font-display font-black leading-none">
                             EXPLORE<br />
                             <span className="text-brutal-pink">THE CORE.</span>
                         </h2>
 
-                        <nav className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 lg:gap-4 mt-4">
+                        <nav className="grid grid-cols-1 sm:grid-cols-2 gap-2 lg:gap-5 mt-4">
                             { menuItems.map( ( item ) => (
                                 <Button
                                     key={item.name}
@@ -105,7 +105,7 @@ export function Header () {
                 <div className="w-full lg:w-1/3 p-4 sm:p-8 lg:p-12 flex flex-col justify-between bg-brutal-yellow gap-4 lg:gap-12 text-black">
                     <div className="space-y-2 lg:space-y-8">
                         <h3 className="text-lg lg:text-3xl font-display font-black">SOCIALS</h3>
-                        <div className="flex flex-col gap-1.5 lg:gap-4">
+                        <div className="flex flex-col gap-2 lg:gap-5">
                             { socialItems.map( ( item ) => (
                                 <Button
                                     key={item.name}
