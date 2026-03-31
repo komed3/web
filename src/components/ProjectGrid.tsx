@@ -1,7 +1,11 @@
-import { Search } from 'lucide-react';
+import { SiGithub } from '@icons-pack/react-simple-icons';
+import { ExternalLink, Search, Star } from 'lucide-react';
+import { AnimatePresence, motion } from 'motion/react';
 import { useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import projects from '../data/projects.json';
+import { Badge } from './ui/Badge';
 import { Button } from './ui/Button';
 
 
@@ -53,14 +57,67 @@ export function ProjectGrid () {
                     className="w-full brutal-border p-4 pl-12 font-bold focus:bg-brutal-yellow outline-none transition-colors"
                 />
             </div>
-
-            {/** Load More */}
-            { visibleCount < filteredProjects.length && ( <div className="flex justify-center mt-12">
-                <Button
-                    onClick={ () => setVisibleCount( prev => prev + 6 ) }
-                    bg="bg-brutal-pink" hoverDark className="text-xl"
-                >LOAD MORE PROJECTS</Button>
-            </div> ) }
         </div>
+
+        {/** Project Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <AnimatePresence mode="popLayout">
+                { visibleProjects.map( ( project, index ) => {
+                    const isLightBg = project.color === 'brutal-yellow' || project.color === 'brutal-orange';
+                    return ( <motion.div
+                        layout
+                        key={project.id}
+                        initial={ { opacity: 0, scale: 0.9 } }
+                        animate={ { opacity: 1, scale: 1 } }
+                        exit={ { opacity: 0, scale: 0.9 } }
+                        transition={ { duration: 0.4, delay: index * 0.05 } }
+                        className={ `brutal-card brutal-shadow-sm hover:brutal-shadow flex flex-col gap-4 group relative h-full ${ isLightBg ? 'text-black' : 'text-white' }` }
+                        style={ { backgroundColor: `var( --color-${project.color} )` } }
+                    >
+                        <Link to={ `/project/${project.id}` } className="absolute inset-0 z-10" />
+
+                        <div className="flex justify-between items-start relative z-20 pointer-events-none">
+                            <Badge variant={ isLightBg ? 'dark' : 'light' } size="xs">{project.type}</Badge>
+                            { project.meta.stars && ( <Badge variant={ isLightBg ? 'dark' : 'light' } size="xs">
+                                <Star size={14} fill="currentColor" /> {project.meta.stars}
+                            </Badge> ) }
+                        </div>
+
+                        <h3 className="text-2xl md:text-3xl font-display font-black leading-tight group-hover:underline relative z-20 pointer-events-none">
+                            {project.title}
+                        </h3>
+
+                        <p className={ `text-sm md:text-base font-medium relative z-20 pointer-events-none ${ isLightBg ? 'text-black/80' : 'text-white/90' }` }>
+                            {project.description}
+                        </p>
+
+                        <div className="flex flex-wrap gap-2 mt-2 relative z-20 pointer-events-none">
+                            { project.tags.map( tag => ( <Badge key={tag} variant={ isLightBg ? 'light' : 'dark' } size="xs">{tag}</Badge> ) ) }
+                        </div>
+
+                        <div className={ `flex gap-4 mt-auto pt-4 border-t-2 relative z-30 ${ isLightBg ? 'border-black/20' : 'border-white/20' }` }>
+                            { project.link && (
+                                <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 font-black text-sm hover:translate-x-1 transition-transform">
+                                    LIVE <ExternalLink size={14} />
+                                </a>
+                            ) }
+                            { project.github && (
+                                <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 font-black text-sm hover:translate-x-1 transition-transform">
+                                    CODE <SiGithub size={14} />
+                                </a>
+                            ) }
+                        </div>
+                    </motion.div> );
+                } ) }
+            </AnimatePresence>
+        </div>
+
+        {/** Load More */}
+        { visibleCount < filteredProjects.length && ( <div className="flex justify-center mt-12">
+            <Button
+                onClick={ () => setVisibleCount( prev => prev + 6 ) }
+                bg="bg-brutal-pink" hoverDark className="text-xl"
+            >LOAD MORE PROJECTS</Button>
+        </div> ) }
     </section> );
 }
