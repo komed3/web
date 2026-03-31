@@ -37,8 +37,8 @@ async function readConfig () : Promise< Config > {
     try {
         const config = JSON.parse( await readFile( file, 'utf-8' ) );
         return config as Config;
-    } catch ( err ) {
-        throw new Error( `⚠ Error while reading config:`, err as unknown as Error );
+    } catch ( e ) {
+        throw new Error( `⚠ Error while reading config:`, e as unknown as Error );
     }
 }
 
