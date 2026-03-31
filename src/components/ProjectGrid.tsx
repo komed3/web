@@ -1,14 +1,23 @@
 import { useState } from 'react';
 
 import { cn } from '../lib/utils';
-import { getSkills } from '../services/github';
+import { getRepos, getSkills } from '../services/github';
 import { SectionHeading } from './SectionHeading';
 
 export function ProjectGrid () {
+    const repos = getRepos();
     const languages = getSkills();
 
     const [ filter, setFilter ] = useState< string | null >( null );
     const [ visibleCount, setVisibleCount ] = useState( 6 );
+
+    const filteredRepos = filter
+        ? repos.filter( repo => repo.language === filter )
+        : repos;
+
+    const visibleRepos = filteredRepos.slice( 0, visibleCount );
+    const hasMore = visibleCount < filteredRepos.length;
+    const handleLoadMore = () => setVisibleCount( prev => prev + 6 );
 
     return ( <> <section className="space-y-6 md:space-y-8">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
