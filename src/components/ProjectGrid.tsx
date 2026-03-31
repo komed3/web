@@ -42,6 +42,7 @@ export function ProjectGrid () {
                 </div>
             </div>
 
+            {/** Search Projects */}
             <div className="relative w-full md:w-96">
                 <Search className="absolute left-4 top-1/2 -translate-y-1/2" size={20} />
                 <input
@@ -52,6 +53,14 @@ export function ProjectGrid () {
                     className="w-full brutal-border p-4 pl-12 font-bold focus:bg-brutal-yellow outline-none transition-colors"
                 />
             </div>
+
+            {/** Load More */}
+            { visibleCount < filteredProjects.length && ( <div className="flex justify-center mt-12">
+                <Button
+                    onClick={ () => setVisibleCount( prev => prev + 6 ) }
+                    bg="bg-brutal-pink" hoverDark className="text-xl"
+                >LOAD MORE PROJECTS</Button>
+            </div> ) }
         </div>
     </section> );
 }
