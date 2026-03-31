@@ -46,7 +46,7 @@ interface Repo {
     content?: string;
     meta: {
         stars: number;
-        license: string;
+        license?: string;
         langs: string[];
         year: number;
     };
@@ -101,9 +101,47 @@ async function fetchOrgs ( orgs: string[] ) : Promise< Record< string, Org > > {
 async function fetchRepos ( repos: Array< [ string, string ] > ) : Promise< Record< string, Repo > > {
     if ( ! repos.length ) return {};
 
-    console.log( `Fetching repos ...` );
+    console.log( `Fetching repos (${repos.length}) ...` );
+    const result: Record< string, Repo > = {};
 
-    const query = ``;
+    for ( let i = 0; i < repos.length; i += 20 ) {
+        const batch = repos.slice( i, i + 20 );
+
+        const data = await fetchGraphQL( `query {
+            ${ batch.map( ( [ owner, name ], j ) => `
+                repo${j}: repository( owner: "${owner}", name: "${name}" ) {
+                    name, description, url, stargazerCount, licenseInfo { spdxId },
+                    createdAt, primaryLanguage { name },
+                    repositoryTopics( first: 10 ) { nodes { topic { name } } },
+                    object( expression: "HEAD:README.md" ) { ... on Blob { text } }
+                }
+            ` ).join( '\n' ) }
+        }` );
+
+        batch.forEach( ( [ owner, name ], j ) => {
+            const r = data[ `repo${j}` ];
+            if ( ! r ) return;
+
+            const langs = r.primaryLanguage?.name ? [ r.primaryLanguage.name ] : [];
+
+            result[ `${owner}/${name}` ] = {
+                title: r.name,
+                description: r.description || '',
+                tags: r.repositoryTopics?.nodes?.map( ( t: any ) => t.topic.name ) || [],
+                link: r.url,
+                content: r.object?.text || '',
+                meta: {
+                    stars: r.stargazerCount,
+                    license: r.licenseInfo?.spdxId,
+                    langs,
+                    year: new Date( r.createdAt ).getFullYear()
+                }
+            };
+        } );
+    }
+
+    console.log( `✓ ${ Object.keys( result ).length } repos fetched` );
+    return result;
 }
 
 ( async () => {
