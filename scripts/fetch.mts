@@ -93,9 +93,68 @@ async function fetchGraphQL ( query: string, variables?: Record< string, unknown
 async function fetchOrgs ( orgs: string[] ) : Promise< Record< string, Org > > {
     if ( ! orgs.length ) return {};
 
-    console.log( `Fetching orgs ...` );
+    console.log( `Fetching orgs (${orgs.length}) ...` );
 
-    const query = ``;
+    const result: Record< string, Org > = {};
+    const state = orgs.map( org => ( {
+        org, after: null as string | null, done: false, stars: 0,
+        langs: {} as Record< string, number >, meta: null as any
+    } ) );
+
+    while ( state.some( s => ! s.done ) ) {
+        const data = await fetchGraphQL( `query {
+            ${ state.map( ( s, i ) => {
+                if ( s.done ) return '';
+                return `org${i}: organization( login: "${s.org}" ) {
+                    name, description, url,
+                    repositories( first: 100, after: ${ s.after ? `"${s.after}"` : null }, isFork: false ) {
+                        nodes { stargazerCount, primaryLanguage { name } },
+                        pageInfo { hasNextPage, endCursor }
+                    }
+                }`;
+            } ).join( '\n' ) }
+        }` );
+
+        state.forEach( ( s, i ) => {
+            if ( s.done ) return;
+
+            const o = data[ `org${i}` ];
+            if ( ! o ) { s.done = true; return }
+
+            if ( ! s.meta ) s.meta = {
+                title: o.name || s.org,
+                description: o.description || '',
+                link: o.url
+            };
+
+            for ( const r of o.repositories.nodes ) {
+                s.stars += r.stargazerCount;
+
+                const lang = r.primaryLanguage?.name;
+                if ( lang ) s.langs[ lang ] = ( s.langs[ lang ] || 0 ) + 1;
+            }
+
+            if ( o.repositories.pageInfo.hasNextPage ) {
+                s.after = o.repositories.pageInfo.endCursor;
+            } else {
+                s.done = true;
+
+                result[ s.org ] = {
+                    title: s.meta.title,
+                    description: s.meta.description,
+                    tags: Object.keys( s.langs ),
+                    link: s.meta.link,
+                    meta: {
+                        stars: s.stars,
+                        langs: Object.keys(s.langs)
+                    }
+                };
+            }
+        } );
+    }
+
+    console.log( `✓ ${ Object.keys( result ).length } orgs fetched` );
+    return result;
 }
 
 async function fetchRepos ( repos: Array< [ string, string ] > ) : Promise< Record< string, Repo > > {
