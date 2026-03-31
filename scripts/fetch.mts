@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { existsSync, mkdirSync } from 'node:fs';
-import { readFile } from 'node:fs/promises';
+import { readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -53,10 +53,45 @@ interface Repo {
     };
 }
 
+interface Project {
+    id: string;
+    title: string;
+    type: string;
+    description?: string;
+    tags?: string[];
+    link?: string;
+    github?: string;
+    content?: string;
+    color: string;
+    meta: {
+        stars?: number;
+        license?: string;
+        langs?: string[];
+        year?: number;
+        repos?: number;
+    };
+}
+
+type Projects = Project[];
+
+type Skills = Array< {
+    skill: string;
+    color: string;
+} >;
+
+
+enum COLORS {
+    YELLOW = 'brutal-yellow',
+    GREEN = 'brutal-green',
+    BLUE = 'brutal-blue',
+    PINK = 'brutal-pink',
+    ORANGE = 'brutal-orange'
+}
+
 
 const cwd = dirname( fileURLToPath( import.meta.url ) );
-const dataDir = join( cwd, '..', 'src', 'data' );
-if ( ! existsSync( dataDir ) ) mkdirSync( dataDir, { recursive: true } );
+const dir = join( cwd, '..', 'src', 'data' );
+if ( ! existsSync( dir ) ) mkdirSync( dir, { recursive: true } );
 
 async function readConfig () : Promise< Config > {
     const file = join( cwd, 'config.json' );
@@ -220,5 +255,5 @@ async function fetchRepos ( repos: Array< [ string, string ] > ) : Promise< Reco
     const orgData = await fetchOrgs( orgs );
     const repoData = await fetchRepos( repos );
 
-    //
+    await writeFile( join( dir, 'skills.json' ), '' );
 } )();
