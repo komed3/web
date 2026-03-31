@@ -82,16 +82,17 @@ type Skills = Array< {
 } >;
 
 
-const COLOR = () => [
-    'brutal-yellow', 'brutal-green', 'brutal-blue',
-    'brutal-pink', 'brutal-orange'
-][
-    Math.floor( Math.random() * 5 )
-];
-
 const cwd = dirname( fileURLToPath( import.meta.url ) );
 const dir = join( cwd, '..', 'src', 'data' );
 if ( ! existsSync( dir ) ) mkdirSync( dir, { recursive: true } );
+
+function colorFromString ( str: string ) : string {
+    const colors = [ 'brutal-yellow', 'brutal-green', 'brutal-blue', 'brutal-pink', 'brutal-orange' ];
+    let hash = 0;
+
+    for ( let i = 0; i < str.length; i++ ) hash = ( hash * 31 + str.charCodeAt( i ) ) | 0;
+    return colors[ Math.abs( hash ) % colors.length ];
+}
 
 async function readConfig () : Promise< Config > {
     const file = join( cwd, 'config.json' );
@@ -101,7 +102,7 @@ async function readConfig () : Promise< Config > {
         const config = JSON.parse( await readFile( file, 'utf-8' ) );
         return config as Config;
     } catch ( e ) {
-        throw new Error( `⚠ Error while reading config:`, e as unknown as Error );
+        throw new Error( `⚠ Error while reading config: ${ ( e as Error ).message }` );
     }
 }
 
@@ -121,7 +122,7 @@ async function fetchGraphQL ( query: string, variables?: Record< string, unknown
     if ( ! res.ok ) throw new Error( `⚠ GitHub API: ${res.status}` );
 
     const data = await res.json();
-    if ( data.errors ) throw new Error( data.errors.map( ( e: any ) => e.message ).join( ', ' ) );
+    if ( data.errors ) throw new Error( data.errors.map( ( e: Error ) => e.message ).join( ', ' ) );
 
     return data.data;
 }
@@ -257,10 +258,12 @@ async function fetchRepos ( repos: Array< [ string, string ] > ) : Promise< Reco
     const projects: Projects = [], skills: Skills = [];
 
     for ( const project of config.projects ) projects.push( merger.merge< Project >(
-        { color: COLOR() } as any, data[ project.github! ], project
+        { color: colorFromString( project.id ) } as any,
+        project.github ? data[ project.github ] : undefined,
+        project
     ) );
 
-    for ( const skill of config.skills ) skills.push( { skill, color: COLOR() } );
+    for ( const skill of config.skills ) skills.push( { skill, color: colorFromString( skill ) } );
 
     await writeFile( join( dir, 'projects.json' ), JSON.stringify( projects, null, 2 ), 'utf-8' );
     await writeFile( join( dir, 'skills.json' ), JSON.stringify( skills, null, 2 ), 'utf-8' );
