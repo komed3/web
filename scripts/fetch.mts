@@ -5,6 +5,8 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { Merger } from '@komed3/deepmerge';
+
 
 interface Config {
     projects: Array< {
@@ -80,14 +82,12 @@ type Skills = Array< {
 } >;
 
 
-enum COLORS {
-    YELLOW = 'brutal-yellow',
-    GREEN = 'brutal-green',
-    BLUE = 'brutal-blue',
-    PINK = 'brutal-pink',
-    ORANGE = 'brutal-orange'
-}
-
+const COLOR = () => [
+    'brutal-yellow', 'brutal-green', 'brutal-blue',
+    'brutal-pink', 'brutal-orange'
+][
+    Math.floor( Math.random() * 5 )
+];
 
 const cwd = dirname( fileURLToPath( import.meta.url ) );
 const dir = join( cwd, '..', 'src', 'data' );
@@ -243,6 +243,7 @@ async function fetchRepos ( repos: Array< [ string, string ] > ) : Promise< Reco
 
 ( async () => {
     const config = await readConfig();
+    const merger = new Merger();
 
     const orgs: string[] = [], repos: Array< [ string, string ] > = [];
     for ( const { github } of config.projects ) {
@@ -252,8 +253,15 @@ async function fetchRepos ( repos: Array< [ string, string ] > ) : Promise< Reco
         else orgs.push( github );
     }
 
-    const orgData = await fetchOrgs( orgs );
-    const repoData = await fetchRepos( repos );
+    const data = { ...await fetchOrgs( orgs ), ...await fetchRepos( repos ) };
+    const projects: Projects = [], skills: Skills = [];
 
-    await writeFile( join( dir, 'skills.json' ), '' );
+    for ( const project of config.projects ) projects.push( merger.merge< Project >(
+        { color: COLOR() } as any, data[ project.github! ], project
+    ) );
+
+    for ( const skill of config.skills ) skills.push( { skill, color: COLOR() } );
+
+    await writeFile( join( dir, 'projects.json' ), JSON.stringify( projects, null, 2 ), 'utf-8' );
+    await writeFile( join( dir, 'skills.json' ), JSON.stringify( skills, null, 2 ), 'utf-8' );
 } )();
