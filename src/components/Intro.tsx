@@ -1,5 +1,5 @@
 import { SiGithub, SiX } from '@icons-pack/react-simple-icons';
-import { Coffee } from 'lucide-react';
+import { ArrowDown, Coffee, Terminal } from 'lucide-react';
 import { motion } from 'motion/react';
 
 import { Button } from './ui/Button';
@@ -75,6 +75,44 @@ export function Intro () {
                     className="text-white flex items-center gap-2 text-sm md:text-base"
                 ><Coffee size={20} /> KO-FI</Button>
             </motion.div>
+        </div>
+
+        {/* Right Side: Bio & Stats */}
+        <div className="relative z-10 w-full lg:w-[40%] bg-brutal-green p-6 sm:p-10 lg:p-12 flex flex-col justify-between gap-8 lg:gap-12 text-white">
+            <motion.div
+                initial={ { x: 100, opacity: 0 } }
+                animate={ { x: 0, opacity: 1 } }
+                transition={ { duration: 0.8, delay: 0.4 } }
+                className="space-y-6 lg:space-y-8"
+            >
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-display font-black leading-none">
+                    <Terminal size={80} /> WHO AM I
+                </h2>
+                <p className="text-base sm:text-lg lg:text-xl xl:text-2xl font-bold leading-tight text-black/90">
+                    A freelance software developer specializing in high-performance systems and modern web architectures,
+                    committed to open source projects and overall enthusiast of electronics since 2010.
+                </p>
+                <div className="space-y-3 lg:space-y-4">
+                    <div className="flex justify-between border-b-2 lg:border-b-4 border-black pb-2 text-sm lg:text-base">
+                        <span className="font-black">EXPERIENCE</span>
+                        <span className="font-black">15+ YEARS</span>
+                    </div>
+                    <div className="flex justify-between border-b-2 lg:border-b-4 border-black pb-2 text-sm lg:text-base">
+                        <span className="font-black">FOCUS</span>
+                        <span className="font-black">OPEN SOURCE</span>
+                    </div>
+                    <div className="flex justify-between border-b-2 lg:border-b-4 border-black pb-2 text-sm lg:text-base">
+                        <span className="font-black">LOCATION</span>
+                        <span className="font-black">GERMANY</span>
+                    </div>
+                </div>
+            </motion.div>
+
+            <Button
+                onClick={ () => document.getElementById( 'projects' )?.scrollIntoView( { behavior: 'smooth' } ) }
+                bg="bg-white"
+                className="self-start text-black flex items-center gap-3 lg:gap-4 py-3 lg:py-6 px-6 lg:px-12 text-lg lg:text-xl xl:text-2xl font-black"
+            >VIEW WORK <ArrowDown size={20} className="lg:w-8 lg:h-8" /></Button>
         </div>
     </section> );
 }
