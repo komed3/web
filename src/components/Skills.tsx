@@ -1,3 +1,5 @@
+import skills from '../data/skills.json';
+
 export function Skills () {
     return ( <section id="skills" className="w-full bg-white p-6 md:p-12 flex flex-col gap-12 border-t-4 border-black scroll-mt-20">
         <div className="flex flex-col gap-4">
@@ -7,6 +9,19 @@ export function Skills () {
             </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4"></div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            { skills.map( ( skill ) => {
+                const isLightBg = skill.color === 'brutal-yellow' || skill.color === 'brutal-orange';
+                return ( <div 
+                    key={skill.skill}
+                    className={ `brutal-border p-4 md:p-6 brutal-shadow-sm flex items-center justify-center text-center h-full min-h-[80px] ${ isLightBg ? 'text-black' : 'text-white' }` }
+                    style={ { backgroundColor: `var( --color-${skill.color} )` } }
+                >
+                    <span className="text-lg md:text-xl font-display font-black uppercase whitespace-nowrap">
+                        {skill.skill}
+                    </span>
+                </div> );
+            } ) }
+        </div>
     </section> );
 }
