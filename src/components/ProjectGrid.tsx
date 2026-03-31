@@ -1,9 +1,14 @@
+import { useState } from 'react';
+
 import { cn } from '../lib/utils';
 import { getSkills } from '../services/github';
 import { SectionHeading } from './SectionHeading';
 
 export function ProjectGrid () {
     const languages = getSkills();
+
+    const [ filter, setFilter ] = useState< string | null >( null );
+    const [ visibleCount, setVisibleCount ] = useState( 6 );
 
     return ( <> <section className="space-y-6 md:space-y-8">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
