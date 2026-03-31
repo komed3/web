@@ -64,5 +64,5 @@ async function fetchGraphQL ( query: string, variables?: Record< string, unknown
 }
 
 ( async () => {
-    //
+    const config = await readConfig();
 } )();
