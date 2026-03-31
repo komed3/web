@@ -1,11 +1,13 @@
 import { ReactNode } from 'react';
 
+
 interface BadgeProps {
     children: ReactNode;
     className?: string;
     variant?: 'light' | 'dark';
     size?: 'xs' | 'sm' | 'md';
 }
+
 
 const SIZES = {
     xs: 'text-[10px] px-1.5 py-0.5',
@@ -20,7 +22,7 @@ const VARIANTS = {
 
 export default function Badge ( { children, className = '', variant = 'light', size = 'xs' }: BadgeProps ) {
     let classes = 'font-black uppercase inline-flex items-center gap-1.5 whitespace-nowrap';
-    classes += ` ${ SIZES[ size ] } ${ VARIANTS[ variant ] } ${ className }`;
+    classes += ` ${ SIZES[ size ] } ${ VARIANTS[ variant ] } ${className}`;
 
     return ( <span className={classes}>{children}</span> );
 }
