@@ -1,0 +1,20 @@
+{
+  "projects": [ {
+    "id": "cmpstr",
+    "github": "komed3/cmpstr"
+  }, {
+    "id": "apt-repo",
+    "title": "Debian Repository",
+    "type": "Infrastructure",
+    "description": "APT package repository for selected Debian/Ubuntu packages maintained by komed3.",
+    "tags": [ "Linux", "Bash", "Debian" ],
+    "link": "https://deb.komed3.de"
+  } ],
+  "skills": [
+    "TypeScript / JavaScript",
+    "PHP",
+    "Web Design",
+    "Node.js",
+    "Linux"
+  ]
+}
