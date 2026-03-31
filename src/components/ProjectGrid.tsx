@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { cn } from '../lib/utils';
 import { getRepos, getSkills } from '../services/github';
 import { SectionHeading } from './SectionHeading';
+import { RepoCard } from './RepoCard';
 
 export function ProjectGrid () {
     const repos = getRepos();
