@@ -54,23 +54,23 @@ export function ProjectGrid () {
                     </button>
                 ) ) }
             </div>
-
-            {/* Repository Grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                { visibleRepos.map( ( repo, i ) => (
-                    <RepoCard key={repo.name} repo={repo} index={i} />
-                ) ) }
-            </div>
-
-            {/* Load More */}
-            { hasMore && ( <div className="flex justify-center pt-12">
-                <button
-                    onClick={handleLoadMore}
-                    className="brutal-btn bg-brutal-blue text-brutal-white text-lg px-12 py-4 hover:bg-brutal-pink transition-colors"
-                >
-                    LOAD_MORE_PROJECTS
-                </button>
-            </div> ) }
         </div>
+
+        {/* Repository Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            { visibleRepos.map( ( repo, i ) => (
+                <RepoCard key={repo.name} repo={repo} index={i} />
+            ) ) }
+        </div>
+
+        {/* Load More */}
+        { hasMore && ( <div className="flex justify-center pt-12">
+            <button
+                onClick={handleLoadMore}
+                className="brutal-btn bg-brutal-blue text-brutal-white text-lg px-12 py-4 hover:bg-brutal-pink transition-colors"
+            >
+                LOAD_MORE_PROJECTS
+            </button>
+        </div> ) }
     </section> </> );
 }
