@@ -20,15 +20,37 @@ interface Config {
         meta?: {
             stars?: number;
             license?: string;
+            langs?: string[];
             year?: number;
         };
     } >;
     skills: string[];
 }
 
-interface Org {}
+interface Org {
+    title: string;
+    description: string;
+    tags: string[];
+    link: string;
+    meta: {
+        stars: number;
+        langs: string[];
+    };
+}
 
-interface Repo {}
+interface Repo {
+    title: string;
+    description: string;
+    tags: string[];
+    link: string;
+    content?: string;
+    meta: {
+        stars: number;
+        license: string;
+        langs: string[];
+        year: number;
+    };
+}
 
 
 const cwd = dirname( fileURLToPath( import.meta.url ) );
@@ -68,22 +90,30 @@ async function fetchGraphQL ( query: string, variables?: Record< string, unknown
     return data.data;
 }
 
-async function fetchOrgs ( repos: string[] ) : Record< string, Org > {
-    //
+async function fetchOrgs ( orgs: string[] ) : Promise< Record< string, Org > > {
+    if ( ! orgs.length ) return {};
+
+    console.log( `Fetching orgs ...` );
+
+    const query = ``;
 }
 
-async function fetchRepos ( repos: string[] ) : Record< string, Repo > {
-    //
+async function fetchRepos ( repos: Array< [ string, string ] > ) : Promise< Record< string, Repo > > {
+    if ( ! repos.length ) return {};
+
+    console.log( `Fetching repos ...` );
+
+    const query = ``;
 }
 
 ( async () => {
     const config = await readConfig();
 
-    const orgs = [], repos = [];
+    const orgs: string[] = [], repos: Array< [ string, string ] > = [];
     for ( const { github } of config.projects ) {
         if ( ! github ) continue;
 
-        if ( github.includes( '/' ) ) repos.push( github );
+        if ( github.includes( '/' ) ) repos.push( github.split( '/' ) as [ string, string ] );
         else orgs.push( github );
     }
 
