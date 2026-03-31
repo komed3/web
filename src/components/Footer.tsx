@@ -1,7 +1,7 @@
 export function Footer () {
     return ( <footer className="w-full bg-white border-t-4 border-black p-6 md:p-12 flex flex-col md:flex-row justify-between items-center gap-8 z-50">
         <div className="text-2xl font-display font-black">
-            KOMED3<span className="text-brutal-blue">#</span>DEV
+            KOMED3<span className="text-brutal-blue">::</span>DEV
         </div>
 
         <div className="flex flex-wrap justify-center gap-8 font-black uppercase text-sm">
