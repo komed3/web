@@ -86,12 +86,9 @@ const cwd = dirname( fileURLToPath( import.meta.url ) );
 const dir = join( cwd, '..', 'src', 'data' );
 if ( ! existsSync( dir ) ) mkdirSync( dir, { recursive: true } );
 
-function colorFromString ( str: string ) : string {
+function getColor ( i: number ) : string {
     const colors = [ 'brutal-yellow', 'brutal-green', 'brutal-blue', 'brutal-pink', 'brutal-orange' ];
-    let hash = 0;
-
-    for ( let i = 0; i < str.length; i++ ) hash = ( hash * 31 + str.charCodeAt( i ) ) | 0;
-    return colors[ Math.abs( hash ) % colors.length ];
+    return colors[ i % colors.length ];
 }
 
 async function readConfig () : Promise< Config > {
@@ -256,14 +253,16 @@ async function fetchRepos ( repos: Array< [ string, string ] > ) : Promise< Reco
 
     const data = { ...await fetchOrgs( orgs ), ...await fetchRepos( repos ) };
     const projects: Projects = [], skills: Skills = [];
+    let i = 0;
 
     for ( const project of config.projects ) projects.push( merger.merge< Project >(
-        { color: colorFromString( project.id ) } as any,
+        { color: getColor( i++ ), meta: {} } as any,
         project.github ? data[ project.github ] : undefined,
         project
     ) );
 
-    for ( const skill of config.skills ) skills.push( { skill, color: colorFromString( skill ) } );
+    i = 0;
+    for ( const skill of config.skills ) skills.push( { skill, color: getColor( i++ ) } );
 
     await writeFile( join( dir, 'projects.json' ), JSON.stringify( projects, null, 2 ), 'utf-8' );
     await writeFile( join( dir, 'skills.json' ), JSON.stringify( skills, null, 2 ), 'utf-8' );
