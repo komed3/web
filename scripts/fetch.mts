@@ -86,10 +86,29 @@ const cwd = dirname( fileURLToPath( import.meta.url ) );
 const dir = join( cwd, '..', 'src', 'data' );
 if ( ! existsSync( dir ) ) mkdirSync( dir, { recursive: true } );
 
-function getColor ( i: number ) : string {
-    const colors = [ 'brutal-yellow', 'brutal-green', 'brutal-blue', 'brutal-pink', 'brutal-orange' ];
-    return colors[ i % colors.length ];
+// ---- COLORS ----
+
+const COLORS = [ 'brutal-yellow', 'brutal-green', 'brutal-blue', 'brutal-pink', 'brutal-orange' ];
+
+function createColorAssigner () {
+    const usage = new Map< string, number >();
+    COLORS.forEach( c => usage.set( c, 0 ) );
+
+    return ( key: string ) : string => {
+        let hash = 0;
+        for ( let i = 0; i < key.length; i++ ) hash = ( hash * 31 + key.charCodeAt( i ) ) | 0;
+
+        const sorted = [ ...COLORS ].sort( ( a, b ) => ( usage.get( a )! - usage.get( b )! ) );
+        const color = sorted[ Math.abs( hash ) % sorted.length ];
+
+        usage.set( color, usage.get( color )! + 1 );
+        return color;
+    };
 }
+
+const getColor = createColorAssigner();
+
+// ---- CONFIG ----
 
 async function readConfig () : Promise< Config > {
     const file = join( cwd, 'config.json' );
@@ -102,6 +121,8 @@ async function readConfig () : Promise< Config > {
         throw new Error( `⚠ Error while reading config: ${ ( e as Error ).message }` );
     }
 }
+
+// ---- GITHUB API ----
 
 async function fetchGraphQL ( query: string, variables?: Record< string, unknown > ) {
     const token = process.env.TOKEN;
@@ -239,6 +260,8 @@ async function fetchRepos ( repos: Array< [ string, string ] > ) : Promise< Reco
     return result;
 }
 
+// ---- RUNNER ----
+
 ( async () => {
     const config = await readConfig();
     const merger = new Merger();
@@ -253,16 +276,14 @@ async function fetchRepos ( repos: Array< [ string, string ] > ) : Promise< Reco
 
     const data = { ...await fetchOrgs( orgs ), ...await fetchRepos( repos ) };
     const projects: Projects = [], skills: Skills = [];
-    let i = 0;
 
     for ( const project of config.projects ) projects.push( merger.merge< Project >(
-        { color: getColor( i++ ), meta: {} } as any,
+        { color: getColor( project.id ), meta: {} } as any,
         project.github ? data[ project.github ] : undefined,
         project
     ) );
 
-    i = 0;
-    for ( const skill of config.skills ) skills.push( { skill, color: getColor( i++ ) } );
+    for ( const skill of config.skills ) skills.push( { skill, color: getColor( skill ) } );
 
     await writeFile( join( dir, 'projects.json' ), JSON.stringify( projects, null, 2 ), 'utf-8' );
     await writeFile( join( dir, 'skills.json' ), JSON.stringify( skills, null, 2 ), 'utf-8' );
