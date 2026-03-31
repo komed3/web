@@ -2,6 +2,7 @@ import { Search } from 'lucide-react';
 import { useMemo, useState } from 'react';
 
 import projects from '../data/projects.json';
+import { Button } from './ui/Button';
 
 
 export function ProjectGrid () {
@@ -31,7 +32,14 @@ export function ProjectGrid () {
         <div className="flex flex-col md:flex-row justify-between items-start gap-8">
             <div className="space-y-4 w-full md:w-auto">
                 <h2 className="text-5xl md:text-7xl font-display font-black">PROJECTS</h2>
-                <div className="flex flex-wrap gap-2"></div>
+                <div className="flex flex-wrap gap-2">
+                    {categories.map(cat => ( <Button
+                        key={cat}
+                        onClick={ () => setFilter( cat ) }
+                        bg={ filter === cat ? 'bg-brutal-blue text-white' : 'bg-white' }
+                        className="py-1 px-4 text-sm"
+                    >{cat}</Button> ) ) }
+                </div>
             </div>
 
             <div className="relative w-full md:w-96">
@@ -39,6 +47,8 @@ export function ProjectGrid () {
                 <input
                     type="text"
                     placeholder="SEARCH PROJECTS OR SKILLS ..."
+                    value={search}
+                    onChange={ ( e ) => setSearch( e.target.value ) }
                     className="w-full brutal-border p-4 pl-12 font-bold focus:bg-brutal-yellow outline-none transition-colors"
                 />
             </div>
