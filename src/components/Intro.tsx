@@ -111,7 +111,7 @@ export function Intro () {
             <Button
                 onClick={ () => document.getElementById( 'projects' )?.scrollIntoView( { behavior: 'smooth' } ) }
                 bg="bg-white"
-                className="self-start text-black flex items-center gap-3 lg:gap-4 py-3 lg:py-6 px-6 lg:px-12 text-lg lg:text-xl xl:text-2xl font-black"
+                className="self-start text-black flex items-center gap-3 lg:gap-4 py-3 lg:py-5 px-5 lg:px-8 text-lg lg:text-xl xl:text-2xl font-black"
             >VIEW WORK <ArrowDown size={20} className="lg:w-8 lg:h-8" /></Button>
         </div>
     </section> );

@@ -49,11 +49,13 @@ export function Cursor () {
         >
 
             {/** Crosshair */}
-            <div className="absolute h-full w-[1px] bg-gray-400 opacity-30" style={ {
-                left: 0, top: 0, transform: `translateX(${mousePos.x}px)`
+            <div className="absolute h-full opacity-20" style={ {
+                left: -1, top: 0, transform: `translateX(${mousePos.x}px)`,
+                borderLeft: '2px dotted black'
             } } />
-            <div className="absolute w-full h-[1px] bg-gray-400 opacity-30" style={ {
-                left: 0, top: 0, transform: `translateY(${mousePos.y}px)`
+            <div className="absolute w-full opacity-20" style={ {
+                left: 0, top: -1, transform: `translateY(${mousePos.y}px)`,
+                borderTop: '2px dotted black'
             } } />
 
             {/** Cursor */}
