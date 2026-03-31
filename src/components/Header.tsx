@@ -49,15 +49,16 @@ export function Header () {
                 animate={ { x: 0 } }
                 exit={ { x: '100%' } }
                 transition={ { type: 'spring', damping: 25, stiffness: 200 } }
-                className="fixed inset-0 z-[90] bg-brutal-blue brutal-border border-r-0 flex flex-col lg:flex-row overflow-y-auto lg:overflow-hidden"
+                className="fixed inset-0 top-20 z-[90] bg-brutal-blue brutal-border border-r-0 flex flex-col lg:flex-row overflow-y-auto lg:overflow-hidden"
                 style={ {
                     backgroundImage: `
                         linear-gradient( rgba( 255 255 255 / 0.05 ) 1px, transparent 1px ),
                         linear-gradient( 90deg, rgba( 255 255 255 / 0.05 ) 1px, transparent 1px )
                     `,
                     backgroundSize: '60px 60px'
-                } }
-            >
+                } } >
+
+                {/** Left Column (Links) */}
                 <div className="relative flex-1 p-4 sm:p-8 lg:p-12 flex flex-col justify-center gap-4 lg:gap-8 bg-white brutal-border border-y-0 border-l-0 overflow-hidden">
 
                     {/* Technical Grid Overlay */}
@@ -71,14 +72,13 @@ export function Header () {
                         } }>
                     </div>
 
-                    {/** Left Column (Links) */}
                     <div className="relative z-10">
                         <h2 className="text-2xl sm:text-4xl lg:text-8xl font-display font-black leading-none">
                             EXPLORE<br />
                             <span className="text-brutal-pink">THE CORE.</span>
                         </h2>
 
-                        <nav className="grid grid-cols-1 sm:grid-cols-2 gap-2 lg:gap-4 mt-4 lg:gap-8">
+                        <nav className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 lg:gap-4 mt-4">
                             { menuItems.map( ( item ) => (
                                 <Button
                                     key={item.name}
