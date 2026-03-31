@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 
-import { AsciiLogo } from '../components/AsciiLogo';
+import { MatrixRain } from '../components/MatrixRain';
 import { ProjectGrid } from '../components/ProjectGrid';
 import { Skillset } from '../components/Skillset';
 
@@ -34,8 +34,8 @@ export function LandingPage () {
                 animate={ { scale: 1, opacity: 1 } }
                 className="relative hidden lg:block"
             >
-                <div className="aspect-square bg-brutal-pink brutal-border flex items-center justify-center p-4 rotate-3">
-                    <AsciiLogo />
+                <div className="aspect-square bg-brutal-pink brutal-border overflow-hidden rotate-3 p-2">
+                    <MatrixRain />
                 </div>
                 <div className="absolute -top-4 -left-4 bg-brutal-green brutal-border-sm p-4 -rotate-6 font-mono font-bold">
                     0xDEADBEEF
