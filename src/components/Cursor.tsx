@@ -82,7 +82,11 @@ export default function Cursor () {
 
             {/** Coordinates */}
             <div className="absolute flex flex-col gap-0 mix-blend-difference" style={ {
-                left: 0, top: 0, transform: `translate3d(${ mousePos.x + ( isHovering ? 48 : 32 ) }px, ${ mousePos.y - ( isHovering ? 48 : 32) }px, 0)`
+                left: 0, top: 0, transform: `translate3d(${
+                    mousePos.x + ( isHovering ? 48 : 32 )
+                }px, ${
+                    mousePos.y - ( isHovering ? 48 : 32)
+                }px, 0)`
             } } >
                 <span className="text-[10px] font-mono font-bold text-black leading-none">X:{ Math.round( mousePos.x ) }</span>
                 <span className="text-[10px] font-mono font-bold text-black leading-none">Y:{ Math.round( mousePos.y ) }</span>
