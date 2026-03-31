@@ -1,7 +1,7 @@
 {
   "name": "@komed3/web",
   "private": true,
-  "version": "3.0.0",
+  "version": "3.1.0",
   "author": {
     "name": "Paul Köhler (komed3)",
     "url": "https://komed3.de",
@@ -12,31 +12,12 @@
     "lint": "tsc --noEmit",
     "build:fetch": "tsx scripts/fetch.mts",
     "build:vite": "vite build",
-    "build": "npm run build:fetch && npm run build:vite",
-    "verify": "tsx scripts/verify.mts"
+    "build": "npm run build:fetch && npm run build:vite"
   },
+  "dependencies": {},
   "devDependencies": {
     "@types/node": "^25.5.0",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
-    "@types/react-syntax-highlighter": "^15.5.13",
-    "tailwindcss": "^4.2.2",
     "tsx": "^4.21.0",
     "typescript": "^6.0.2"
-  },
-  "dependencies": {
-    "@icons-pack/react-simple-icons": "^13.13.0",
-    "@tailwindcss/vite": "^4.2.2",
-    "@vitejs/plugin-react": "^6.0.1",
-    "clsx": "^2.1.1",
-    "lucide-react": "^1.7.0",
-    "motion": "^12.38.0",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
-    "react-markdown": "^10.1.0",
-    "react-router-dom": "^7.13.2",
-    "react-syntax-highlighter": "^16.1.1",
-    "remark-gfm": "^4.0.1",
-    "tailwind-merge": "^3.5.0"
   }
 }
