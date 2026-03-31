@@ -20,7 +20,7 @@ const VARIANTS = {
     dark: 'bg-black text-white border-2 border-black'
 };
 
-export default function Badge ( { children, className = '', variant = 'light', size = 'xs' }: BadgeProps ) {
+export function Badge ( { children, className = '', variant = 'light', size = 'xs' }: BadgeProps ) {
     let classes = 'font-black uppercase inline-flex items-center gap-1.5 whitespace-nowrap';
     classes += ` ${ SIZES[ size ] } ${ VARIANTS[ variant ] } ${className}`;
 

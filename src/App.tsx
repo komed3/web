@@ -2,6 +2,7 @@ import { AnimatePresence } from 'motion/react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import { Footer } from './components/Footer';
+import { Header } from './components/Header';
 import { Cursor } from './effects/Cursor';
 import { ScrollToTop } from './effects/ScrollTop';
 
@@ -12,6 +13,7 @@ export default function App () {
             <Cursor />
             <ScrollToTop />
 
+            <Header />
             <Footer />
         </div>
     </Router> );

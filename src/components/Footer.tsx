@@ -12,7 +12,7 @@ export function Footer () {
 
         <div className="text-xs font-bold opacity-50 text-center md:text-right">
             DESIGNED AND DEVELOPED BY<br />
-            © 2026 KOMED3
+            (C) 2026 KOMED3
         </div>
     </footer> );
 }

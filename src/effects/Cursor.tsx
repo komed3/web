@@ -57,7 +57,7 @@ export function Cursor () {
             } } />
 
             {/** Cursor */}
-            <div className="absolute w-12 h-12 flex items-center justify-center mix-blend-difference" style={ {
+            <div className="absolute w-12 h-12 flex items-center justify-center" style={ {
                 left: 0, top: 0, transform: `translate3d(${mousePos.x}px, ${mousePos.y}px, 0) translate(-50%, -50%)`
             } } >
                 <motion.div className="absolute inset-0" animate={ {
@@ -81,7 +81,7 @@ export function Cursor () {
             </div>
 
             {/** Coordinates */}
-            <div className="absolute flex flex-col gap-0 mix-blend-difference" style={ {
+            <div className="absolute flex flex-col gap-0" style={ {
                 left: 0, top: 0, transform: `translate3d(${
                     mousePos.x + ( isHovering ? 48 : 32 )
                 }px, ${

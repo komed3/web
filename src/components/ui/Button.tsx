@@ -15,7 +15,7 @@ interface ButtonProps extends HTMLMotionProps< 'button' > {
 }
 
 
-export default function Button ( { children, className = '', bg = 'bg-white', hoverDark = false, as: Component = 'button', ...props }: ButtonProps ) {
+export function Button ( { children, className = '', bg = 'bg-white', hoverDark = false, as: Component = 'button', ...props }: ButtonProps ) {
     const baseClass = `brutal-btn ${bg} ${ hoverDark ? 'hover-dark' : '' } ${className}`;
 
     const MotionComponent = useMemo( () => {
