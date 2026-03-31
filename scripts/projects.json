@@ -1,7 +1,12 @@
 {
   "projects": [ {
     "id": "cmpstr",
-    "github": "komed3/cmpstr"
+    "github": "komed3/cmpstr",
+    "type": "NPM Package"
+  }, {
+    "id": "translatehub",
+    "github": "komed3/TranslateHub",
+    "type": "NPM Package"
   }, {
     "id": "apt-repo",
     "title": "Debian Repository",
