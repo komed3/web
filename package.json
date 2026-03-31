@@ -16,11 +16,14 @@
   },
   "devDependencies": {
     "@komed3/deepmerge": "^1.0.0",
+    "@tailwindcss/vite": "^4.2.2",
     "@types/node": "^25.5.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
     "tsx": "^4.21.0",
-    "typescript": "^6.0.2"
+    "typescript": "^6.0.2",
+    "vite": "^8.0.3"
   },
   "dependencies": {
     "@icons-pack/react-simple-icons": "^13.13.0",
