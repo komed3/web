@@ -34,9 +34,7 @@
 
     /* Hide custom cursor on touch devices */
     @media ( hover: none ) and ( pointer: coarse ) {
-        * {
-            @apply cursor-auto;
-        }
+        * { @apply cursor-auto; }
     }
 
     html, body {
@@ -49,4 +47,44 @@
     h1, h2, h3, h4, h5, h6 {
         @apply font-display font-black uppercase tracking-tighter;
     }
+
+    .hover-dark:hover {
+        @apply text-white;
+    }
+}
+
+@utility brutal-border {
+    border-width: 3px;
+    border-color: black;
+
+    @media ( min-width: 768px ) {
+        border-width: 4px;
+    }
+}
+
+@utility brutal-shadow {
+    box-shadow: 4px 4px 0px 0px rgba( 0 0 0 / 1 );
+    @media ( min-width: 768px ) {
+        box-shadow: 8px 8px 0px 0px rgba( 0 0 0 / 1 );
+    }
+}
+
+@utility brutal-shadow-sm {
+    box-shadow: 2px 2px 0px 0px rgba( 0 0 0 / 1 );
+    @media ( min-width: 768px ) {
+        box-shadow: 4px 4px 0px 0px rgba( 0 0 0 / 1 );
+    }
+}
+
+@utility brutal-btn {
+    @apply brutal-border brutal-shadow-sm px-6 py-3 font-bold uppercase whitespace-nowrap transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px];
+}
+
+@utility brutal-card {
+    @apply brutal-border bg-white p-4 md:p-6 transition-all;
+}
+
+@utility text-contrast {
+    @apply text-white;
+    text-shadow: 1px 1px 0px rgba( 0 0 0 / 0.2 );
 }
