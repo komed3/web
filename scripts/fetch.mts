@@ -35,6 +35,7 @@ interface Org {
     meta: {
         stars: number;
         langs: string[];
+        repos: number;
     };
 }
 
@@ -97,7 +98,7 @@ async function fetchOrgs ( orgs: string[] ) : Promise< Record< string, Org > > {
 
     const result: Record< string, Org > = {};
     const state = orgs.map( org => ( {
-        org, after: null as string | null, done: false, stars: 0,
+        org, after: null as string | null, done: false, repos: 0, stars: 0,
         langs: {} as Record< string, number >, meta: null as any
     } ) );
 
@@ -128,6 +129,7 @@ async function fetchOrgs ( orgs: string[] ) : Promise< Record< string, Org > > {
             };
 
             for ( const r of o.repositories.nodes ) {
+                s.repos++;
                 s.stars += r.stargazerCount;
 
                 const lang = r.primaryLanguage?.name;
@@ -146,7 +148,8 @@ async function fetchOrgs ( orgs: string[] ) : Promise< Record< string, Org > > {
                     link: s.meta.link,
                     meta: {
                         stars: s.stars,
-                        langs: Object.keys(s.langs)
+                        langs: Object.keys( s.langs ),
+                        repos: s.repos
                     }
                 };
             }
