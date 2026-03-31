@@ -9,6 +9,7 @@
   },
   "type": "module",
   "scripts": {
+    "dev": "vite --port=3000 --host=0.0.0.0",
     "lint": "tsc --noEmit",
     "fetch": "tsx scripts/fetch.mts",
     "vite": "vite build",
