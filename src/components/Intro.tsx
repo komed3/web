@@ -1,4 +1,8 @@
+import { SiGithub, SiX } from '@icons-pack/react-simple-icons';
+import { Coffee } from 'lucide-react';
 import { motion } from 'motion/react';
+
+import { Button } from './ui/Button';
 
 
 export function Intro () {
@@ -17,6 +21,7 @@ export function Intro () {
                 backgroundPosition: '0 0, 0 0, 20px 20px'
             } } />
 
+            {/** Intro */}
             <div className="relative z-10 space-y-2">
                 <motion.div
                     initial={ { x: -100, opacity: 0 } }
@@ -37,6 +42,39 @@ export function Intro () {
                     SOURCE<span className="text-brutal-pink">.</span>
                 </motion.h1>
             </div>
+
+            {/** Social Links */}
+            <motion.div
+                initial={ { opacity: 0 } }
+                animate={ { opacity: 1 } }
+                transition={ { duration: 1, delay: 0.6 } }
+                className="relative z-10 mt-8 lg:mt-12 flex flex-wrap gap-3 md:gap-4"
+            >
+                <Button
+                    as="a"
+                    href="https://github.com/komed3"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    bg="bg-brutal-yellow"
+                    className="flex items-center gap-2 text-sm md:text-base"
+                ><SiGithub size={20} /> GITHUB</Button>
+                <Button
+                    as="a"
+                    href="https://x.com/komed3dev"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    bg="bg-brutal-blue"
+                    className="text-white flex items-center gap-2 text-sm md:text-base"
+                ><SiX size={20} /> TWITTER</Button>
+                <Button
+                    as="a"
+                    href="https://ko-fi.com/komed3"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    bg="bg-brutal-pink"
+                    className="text-white flex items-center gap-2 text-sm md:text-base"
+                ><Coffee size={20} /> KO-FI</Button>
+            </motion.div>
         </div>
     </section> );
 }
