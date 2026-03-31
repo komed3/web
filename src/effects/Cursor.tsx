@@ -73,7 +73,7 @@ export function Cursor () {
                     <div className="absolute bottom-0 right-0 w-4 h-[3px] bg-black" />
                     <div className="absolute bottom-0 right-0 w-[3px] h-4 bg-black" />
                 </motion.div>
-                <motion.div className="w-2 h-2 rounded-full bg-black" animate={ {
+                <motion.div className="w-2 h-2 rounded-full bg-brutal-pink" animate={ {
                     scale: isHovering ? 3 : 1,
                 } } />
                 <div className="absolute w-full h-[1.5px] bg-black" />
