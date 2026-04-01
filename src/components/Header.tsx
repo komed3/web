@@ -1,7 +1,7 @@
 import { SiGithub, SiX } from '@icons-pack/react-simple-icons';
 import { Atom, CircleDollarSign, Coffee, Database, Mail, Menu, Package, Plane, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Button } from './ui/Button';
@@ -24,6 +24,18 @@ export function Header () {
         { name: 'Twitter / X', icon: <SiX size={20} />, url: 'https://x.com/komed3dev' },
         { name: 'Contact', icon: <Mail size={20} />, url: 'mailto:webmaster@komed3.de' }
     ];
+
+    // Prevent scrolling when menu is open
+    useEffect( () => {
+        if ( isOpen ) {
+            document.documentElement.style.overflow = 'hidden';
+        } else {
+            document.documentElement.style.overflow = '';
+        }
+        return () => {
+            document.documentElement.style.overflow = '';
+        };
+    }, [ isOpen ] );
 
     return ( <>
         {/** Header */}
@@ -49,7 +61,7 @@ export function Header () {
                 animate={ { x: 0 } }
                 exit={ { x: '100%' } }
                 transition={ { type: 'spring', damping: 25, stiffness: 200 } }
-                className="fixed inset-0 top-20 z-[90] bg-brutal-blue brutal-border border-r-0 flex flex-col lg:flex-row overflow-y-auto lg:overflow-hidden"
+                className="fixed top-20 right-0 bottom-0 left-0 z-[90] brutal-border border-y-0 border-r-0 flex flex-col lg:flex-row overflow-y-auto lg:overflow-hidden"
                 style={ {
                     backgroundImage: `
                         linear-gradient( rgba( 255 255 255 / 0.05 ) 1px, transparent 1px ),
