@@ -6,9 +6,9 @@ import { Button } from './ui/Button';
 
 
 export function Intro () {
-    return ( <section className="relative min-h-screen w-full flex flex-col lg:flex-row overflow-hidden">
+    return ( <section className="relative min-h-screen w-full flex flex-col lg:flex-row overflow-hidden max-w-full">
         {/* Left Side: Big Typography */}
-        <div className="relative z-10 flex-1 flex flex-col justify-center p-6 sm:p-10 lg:p-12 bg-white brutal-border border-y-0 border-l-0 overflow-hidden">
+        <div className="relative z-10 flex-1 min-w-0 flex flex-col justify-center p-6 sm:p-10 lg:p-12 bg-white brutal-border border-y-0 border-l-0 overflow-hidden max-w-full">
 
             {/* Technical Grid Overlay */}
             <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.06]" style={ {
@@ -78,12 +78,12 @@ export function Intro () {
         </div>
 
         {/* Right Side: Bio & Stats */}
-        <div className="relative z-10 w-full lg:w-[40%] bg-brutal-green p-6 sm:p-10 lg:p-12 flex flex-col justify-between gap-8 lg:gap-12 text-white">
+        <div className="relative z-10 w-full lg:w-[40%] bg-brutal-green p-6 sm:p-10 lg:p-12 flex flex-col justify-between gap-8 lg:gap-12 text-white overflow-hidden max-w-full">
             <motion.div
                 initial={ { x: 100, opacity: 0 } }
                 animate={ { x: 0, opacity: 1 } }
                 transition={ { duration: 0.8, delay: 0.4 } }
-                className="space-y-6 lg:space-y-8"
+                className="space-y-6 lg:space-y-8 min-w-0"
             >
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-display font-black leading-none">
                     <Terminal size={80} /> WHO AM I
