@@ -1,7 +1,9 @@
-import { ArrowLeft } from 'lucide-react';
+import { SiGithub } from '@icons-pack/react-simple-icons';
+import { ArrowLeft, ExternalLink, Star } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Link, useParams } from 'react-router-dom';
 
+import { Badge } from '../components/ui/Badge';
 import { Button } from '../components/ui/Button';
 import projects from '../data/projects.json';
 
@@ -32,6 +34,41 @@ export function ProjectPage () {
                 as={Link} to="/" bg="bg-white"
                 className="hover:bg-brutal-blue hover:text-white inline-flex items-center gap-2 mb-8"
             ><ArrowLeft size={20} /> BACK</Button>
+
+            {/** Info Card */}
+            <div
+                className={ `brutal-border p-6 md:p-12 brutal-shadow flex flex-col gap-8 ${ isLightBg ? 'text-black' : 'text-white' }` }
+                style={ { backgroundColor: `var( --color-${project.color} )` } }
+            >
+                <div className="flex flex-col md:flex-row justify-between items-start gap-6">
+                    <div className="space-y-4">
+                        <div className="flex flex-wrap gap-2">
+                            <Badge variant={ isLightBg ? 'dark' : 'light' } size="sm">{project.type}</Badge>
+                            { project.meta.stars && ( <Badge variant={ isLightBg ? 'light' : 'dark' } size="sm">
+                                <Star size={14} fill="currentColor" /> {project.meta.stars} STARS
+                            </Badge> ) }
+                        </div>
+                        <h1 className="text-4xl sm:text-6xl md:text-8xl font-display font-black leading-none uppercase">
+                            {project.title}
+                        </h1>
+                    </div>
+
+                    <div className="flex gap-4">
+                        { project.github && ( <Button
+                            as="a" href={project.github} target="_blank" rel="noopener noreferrer"
+                            bg="bg-white" className="p-3 text-black"
+                        ><SiGithub size={24} /></Button> ) }
+                        { project.link && ( <Button
+                            as="a" href={project.link} target="_blank" rel="noopener noreferrer"
+                            bg="bg-white" className="p-3 text-black"
+                        ><ExternalLink size={24} /></Button> ) }
+                    </div>
+                </div>
+
+                <div className="flex flex-wrap gap-2 max-w-[640px]">
+                    { project.tags.map( tag => ( <Badge key={tag} variant={ isLightBg ? 'light' : 'dark' } size="sm">{tag}</Badge> ) ) }
+                </div>
+            </div>
         </div>
     </motion.div> );
 }
