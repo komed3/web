@@ -7,7 +7,9 @@ import { Button } from './ui/Button';
 export function Skills () {
     return ( <section id="skills" className="space-y-12 w-full bg-white p-6 md:p-12 lg:p-20 border-t-4 border-black scroll-mt-20">
         <div className="space-y-4 w-full md:w-auto">
-            <h2 className="text-5xl md:text-7xl font-display font-black">SKILLSET</h2>
+            <h2 className="text-5xl md:text-7xl font-display font-black">
+                SKILLSET<span className="text-brutal-pink">.</span>
+            </h2>
             <p className="text-xl md:text-2xl font-bold max-w-3xl leading-relaxed">
                 A technical ecosystem engineered for <span className="underline decoration-brutal-pink decoration-8">performance</span>, 
                 resilience, and modern architectural standards.
@@ -24,10 +26,8 @@ export function Skills () {
                         <IconComponent size={32} strokeWidth={3} />
                     </div>
                     <div className="flex flex-col gap-1">
-                        <span className="text-xs font-mono font-bold opacity-40 uppercase tracking-widest">Tech Stack</span>
-                        <span className="text-sm md:text-xl font-display font-black uppercase tracking-tight leading-none">
-                            {skill.skill}
-                        </span>
+                        <span className="text-xs font-mono font-bold opacity-40 uppercase tracking-widest">{skill.stack}</span>
+                        <span className="text-sm md:text-xl font-display font-black uppercase tracking-tight leading-none">{skill.skill}</span>
                     </div>
 
                     {/* Decorative Corner */}
