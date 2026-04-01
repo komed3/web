@@ -9,6 +9,7 @@ import { Button } from './ui/Button';
 
 export function Header () {
     const [ isOpen, setIsOpen ] = useState( false );
+    const [ isAnimating, setIsAnimating ] = useState( false );
 
     const menuItems = [
         { name: 'GitHub', icon: <SiGithub size={20} />, url: 'https://github.com/komed3' },
@@ -55,9 +56,12 @@ export function Header () {
                 initial={ { x: '100%' } }
                 animate={ { x: 0 } }
                 exit={ { x: '100%' } }
+                onAnimationStart={ () => setIsAnimating( true ) }
+                onAnimationComplete={ () => setIsAnimating( false ) }
                 transition={ { type: 'spring', damping: 25, stiffness: 200 } }
-                className="fixed top-20 right-0 bottom-0 left-0 z-[90] brutal-border border-y-0 border-r-0 flex flex-col lg:flex-row overflow-y-auto lg:overflow-hidden"
+                className={ `fixed top-[73px] md:top-[81px] right-0 bottom-0 left-0 z-[90] flex flex-col lg:flex-row overflow-y-auto lg:overflow-hidden bg-white ${ ( isAnimating || isOpen ) ? 'brutal-border border-y-0 border-r-0' : '' }` }
                 style={ {
+                    borderLeftWidth: isAnimating ? '4px' : '0px',
                     backgroundImage: `
                         linear-gradient( rgba( 255 255 255 / 0.05 ) 1px, transparent 1px ),
                         linear-gradient( 90deg, rgba( 255 255 255 / 0.05 ) 1px, transparent 1px )
@@ -66,7 +70,7 @@ export function Header () {
                 } } >
 
                 {/** Left Column (Links) */}
-                <div className="relative flex-1 p-4 sm:p-8 lg:p-12 flex flex-col justify-center gap-4 lg:gap-8 bg-white brutal-border border-y-0 border-l-0 overflow-hidden">
+                <div className="relative flex-1 p-6 sm:p-8 lg:p-12 flex flex-col justify-center gap-4 lg:gap-8 bg-white brutal-border border-y-0 border-l-0 overflow-hidden min-h-fit">
 
                     {/* Technical Grid Overlay */}
                     <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.06]" style={ {
@@ -107,7 +111,7 @@ export function Header () {
                 </div>
 
                 {/** Right Column (Social) */}
-                <div className="w-full lg:w-1/3 p-4 sm:p-8 lg:p-12 flex flex-col justify-between bg-brutal-yellow gap-4 lg:gap-12 text-black">
+                <div className="w-full lg:w-1/3 p-6 sm:p-8 lg:p-12 flex flex-col justify-between bg-brutal-yellow gap-6 lg:gap-12 text-black min-h-fit">
                     <div className="space-y-2 lg:space-y-8">
                         <h3 className="text-lg lg:text-3xl font-display font-black">SOCIALS</h3>
                         <div className="flex flex-col gap-2 lg:gap-5">
