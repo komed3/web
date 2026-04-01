@@ -24,15 +24,18 @@ export function Cursor () {
             ) );
         };
 
+        const handleMouseDown = ( e: MouseEvent ) => { if ( e.button === 1 ) e.preventDefault() };
         const handleMouseLeave = () => setIsVisible( false );
         const handleMouseEnter = () => setIsVisible( true );
 
+        window.addEventListener( 'mousedown', handleMouseDown );
         window.addEventListener( 'mousemove', handleMouseMove );
         window.addEventListener( 'mouseover', handleMouseOver );
         document.addEventListener( 'mouseleave', handleMouseLeave );
         document.addEventListener( 'mouseenter', handleMouseEnter );
 
         return () => {
+            window.removeEventListener( 'mousedown', handleMouseDown );
             window.removeEventListener( 'mousemove', handleMouseMove );
             window.removeEventListener( 'mouseover', handleMouseOver );
             document.removeEventListener( 'mouseleave', handleMouseLeave );
