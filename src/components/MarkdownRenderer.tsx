@@ -35,7 +35,7 @@ export function MarkdownRenderer( { content, className = '' }: MarkdownRendererP
                 }
             } }
         >
-            {content}
+            {content || 'No content available.' }
         </ReactMarkdown>
     </div> );
 }

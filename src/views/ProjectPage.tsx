@@ -82,7 +82,7 @@ export function ProjectPage () {
                 </div>
 
                 <div className="space-y-8">
-                    <div className="brutal-border p-8 bg-brutal-yellow brutal-shadow-sm space-y-4">
+                    { Object.keys( project.meta ).length > 0 && ( <div className="brutal-border p-8 bg-brutal-yellow brutal-shadow-sm space-y-4">
                         <h3 className="text-2xl font-display font-black text-black">PROJECT INFO</h3>
                         <div className="space-y-2 font-bold text-black">
                             { project.meta.version && ( <p className="flex justify-between border-b-2 border-black/10 pb-2">
@@ -106,7 +106,7 @@ export function ProjectPage () {
                                 <span>{ project.meta.year }</span>
                             </p> ) }
                         </div>
-                    </div>
+                    </div> ) }
 
                     { project.github && ( <div className="brutal-border p-8 bg-brutal-blue brutal-shadow-sm space-y-4">
                         <h3 className="text-2xl font-display font-black text-white">CONTRIBUTE</h3>
