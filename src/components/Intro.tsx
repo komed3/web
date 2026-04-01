@@ -38,7 +38,7 @@ export function Intro () {
                     className="text-5xl sm:text-7xl lg:text-6xl xl:text-[8vw] leading-[0.8] font-display font-black tracking-tighter uppercase break-words"
                 >
                     BUILDING<br />
-                    <span className="text-brutal-blue">OPEN</span><br />
+                    <span className="text-brutal-blue">FREE & OPEN</span><br />
                     SOURCE<span className="text-brutal-pink">.</span>
                 </motion.h1>
             </div>
