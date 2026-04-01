@@ -3,12 +3,12 @@
     "id": "cmpstr",
     "title": "CmpStr",
     "github": "komed3/cmpstr",
-    "type": "Package"
+    "type": "Node.js"
   }, {
     "id": "airportmap",
     "title": "Airportmap",
     "github": "komed3/airportmap",
-    "type": "Database"
+    "type": "Web App"
   }, {
     "id": "rtbapi",
     "title": "Billionaires API",
@@ -20,6 +20,11 @@
     "github": "komed3/periodic-table",
     "type": "Education"
   }, {
+    "id": "devtypes",
+    "title": "DevTypes",
+    "github": "komed3/devtypes",
+    "type": "Node.js"
+  }, {
     "id": "translatehub",
     "title": "TranslateHub",
     "github": "komed3/TranslateHub",
@@ -28,12 +33,27 @@
     "id": "chemparse",
     "title": "ChemParse",
     "github": "komed3/chemparse",
-    "type": "Package"
+    "type": "Node.js"
   }, {
-    "id": "8bitalu",
+    "id": "deepmerge",
+    "title": "DeepMerge",
+    "github": "komed3/deepmerge",
+    "type": "Node.js"
+  }, {
+    "id": "rtb",
+    "title": "Billionaires Index",
+    "github": "komed3/rtb",
+    "type": "Web App"
+  }, {
+    "id": "8-bit-alu",
     "title": "8-Bit ALU",
     "github": "komed3/8-bit-alu",
     "type": "Electronics"
+  }, {
+    "id": "math-formula-parser",
+    "title": "Math Formula Parser",
+    "github": "komed3/math-formula-parser",
+    "type": "Node.js"
   }, {
     "id": "serverdesk",
     "title": "ServerDesk",
@@ -42,18 +62,87 @@
   }, {
     "id": "apt-repo",
     "title": "Debian Repository",
-    "type": "Infrastructure",
-    "github": "komed3/deb"
+    "github": "komed3/deb",
+    "type": "Infrastructure"
+  }, {
+    "id": "top-737-800",
+    "title": "Take-off Performance",
+    "github": "komed3/top-737-800",
+    "type": "Tool"
+  }, {
+    "id": "pkg-verify",
+    "title": "PKG Verify",
+    "github": "komed3/package-verify",
+    "type": "Node.js"
+  }, {
+    "id": "filecomp",
+    "title": "File Compare",
+    "github": "komed3/filecomp",
+    "type": "Linux"
+  }, {
+    "id": "img2txt",
+    "title": "Image2Text",
+    "github": "komed3/img2txt",
+    "type": "Web App"
   }, {
     "id": "esm",
     "title": "eBay Sales Manager",
     "github": "komed3/ebay-sales-manager",
-    "type": "Tool"
+    "type": "Management"
   }, {
     "id": "icons",
     "title": "SVG Icon Library",
-    "type": "Web App",
-    "github": "komed3/icon-library"
+    "github": "komed3/icon-library",
+    "type": "Web App"
+  }, {
+    "id": "scalax",
+    "title": "Scalax",
+    "github": "komed3/scalax",
+    "type": "Node.js"
+  }, {
+    "id": "stl-viewer",
+    "title": "STL Viewer",
+    "github": "komed3/stl-viewer",
+    "type": "Web App"
+  }, {
+    "id": "milkyway",
+    "title": "Milkyway@home",
+    "type": "Science",
+    "description": "Some computing power for space exploration. It runs on an old laptop running Ubuntu Server with an Intel Pentium N3700 @ 1.60GHz and 4GB of RAM.",
+    "tags": [ "science", "boinc", "ubuntu" ],
+    "link": "https://milkyway.cs.rpi.edu/milkyway/show_user.php?userid=8028098"
+  }, {
+    "id": "cmpstr-cli",
+    "title": "CmpStr CLI",
+    "github": "komed3/cmpstr-cli",
+    "type": "Node.js"
+  }, {
+    "id": "nano-profiler",
+    "title": "Code Profiler",
+    "github": "komed3/nano-profiler",
+    "type": "Node.js"
+  }, {
+    "id": "tyrannix",
+    "title": "Tyrannix Chess Bot",
+    "type": "Chess",
+    "description": "Tyrannix is a Lichess bot running Stockfish under Ubuntu Server on an home server. CPU: AMD 5 4600G up to 4.2 GHz. Memory: 16 GB. Engine: Stockfish 17 BMI2.",
+    "tags": [ "chess", "bot", "lichess", "stockfish", "ubuntu" ],
+    "link": "https://lichess.org/@/Tyrannix"
+  }, {
+    "id": "fastdict",
+    "title": "FastDict",
+    "github": "komed3/fastdict",
+    "type": "Node.js"
+  }, {
+    "id": "keycodes",
+    "title": "Keycodes Tester",
+    "github": "komed3/keycodes",
+    "type": "Web App"
+  }, {
+    "id": "chartjs-plugin-area",
+    "title": "Chart.js Area Controller",
+    "github": "komed3/chartjs-plugin-area",
+    "type": "Node.js"
   } ],
   "skills": [ {
     "skill": "TypeScript",
