@@ -1,54 +1,59 @@
 {
   "projects": [ {
     "id": "cmpstr",
+    "title": "CmpStr",
     "github": "komed3/cmpstr",
     "type": "Package"
   }, {
+    "id": "airportmap",
+    "title": "Airportmap",
+    "github": "komed3/airportmap",
+    "type": "Database"
+  }, {
+    "id": "rtbapi",
+    "title": "Billionaires API",
+    "github": "komed3/rtb-api",
+    "type": "API"
+  }, {
+    "id": "pseinfo",
+    "title": "Periodic Table",
+    "github": "komed3/periodic-table",
+    "type": "Education"
+  }, {
     "id": "translatehub",
+    "title": "TranslateHub",
     "github": "komed3/TranslateHub",
     "type": "Tool"
   }, {
-    "id": "pseinfo",
-    "github": "pseinfo",
-    "type": "Education"
-  }, {
-    "id": "airportmap",
-    "github": "airportmap",
-    "type": "Database"
-  }, {
     "id": "chemparse",
+    "title": "ChemParse",
     "github": "komed3/chemparse",
     "type": "Package"
   }, {
     "id": "8bitalu",
+    "title": "8-Bit ALU",
     "github": "komed3/8-bit-alu",
     "type": "Electronics"
   }, {
     "id": "serverdesk",
+    "title": "ServerDesk",
     "github": "komed3/serverdesk",
     "type": "Linux"
   }, {
+    "id": "apt-repo",
+    "title": "Debian Repository",
+    "type": "Infrastructure",
+    "github": "komed3/deb"
+  }, {
     "id": "esm",
+    "title": "eBay Sales Manager",
     "github": "komed3/ebay-sales-manager",
     "type": "Tool"
   }, {
     "id": "icons",
     "title": "SVG Icon Library",
     "type": "Web App",
-    "description": "Free and open-source SVG icon database with 25k+ icons.",
-    "tags": [ "Icons" ],
-    "link": "https://icons.komed3.de"
-  }, {
-    "id": "rtbapi",
-    "github": "komed3/rtb-api",
-    "type": "API"
-  }, {
-    "id": "apt-repo",
-    "title": "Debian Repository",
-    "type": "Infrastructure",
-    "description": "APT package repository for selected Debian/Ubuntu packages maintained by komed3.",
-    "tags": [ "Linux", "Bash", "Debian" ],
-    "link": "https://deb.komed3.de"
+    "github": "komed3/icon-library"
   } ],
   "skills": [
     "TypeScript",
@@ -56,6 +61,10 @@
     "PHP",
     "Web Design",
     "Node.js",
-    "Linux"
+    "Linux",
+    "Electronics",
+    "Server",
+    "Shell / Root",
+    "WordPress"
   ]
 }
