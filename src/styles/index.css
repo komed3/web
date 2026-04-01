@@ -145,15 +145,28 @@
 }
 
 .markdown-body pre {
-    @apply my-6 overflow-x-auto brutal-border brutal-shadow-sm bg-black p-0;
+    @apply my-6 overflow-x-auto p-0;
 }
 
 .markdown-body pre > div {
-    @apply !p-6 !m-0 !bg-transparent;
+    @apply !p-6 !m-0;
 }
 
 .markdown-body pre code {
-    @apply !bg-transparent !p-0 !m-0;
+    @apply !p-0 !m-0;
+}
+
+.markdown-body pre::-webkit-scrollbar,
+.markdown-body pre > div::-webkit-scrollbar,
+.markdown-body pre code::-webkit-scrollbar {
+    display: none;
+}
+
+.markdown-body pre,
+.markdown-body pre > div,
+.markdown-body pre code {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .markdown-body table {

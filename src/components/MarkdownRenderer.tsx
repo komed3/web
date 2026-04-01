@@ -22,16 +22,9 @@ export function MarkdownRenderer( { content, className = '' }: MarkdownRendererP
                         language={ match[ 1 ] }
                         PreTag="div"
                         customStyle={ {
-                            background: 'transparent',
-                            padding: '0',
-                            margin: '0',
-                            border: 'none'
-                        } }
-                        codeTagProps={ {
-                            style: {
-                                background: 'transparent',
-                                padding: '0'
-                            }
+                            margin: 0,
+                            padding: 0,
+                            fontSize: 'inherit'
                         } }
                         { ...props }
                     >
