@@ -39,7 +39,7 @@ export function ProjectPage () {
             {/** Info Card */}
             <div
                 className={ `brutal-border p-6 md:p-12 brutal-shadow flex flex-col gap-8 ${ isLightBg ? 'text-black' : 'text-white' }` }
-                style={ { backgroundColor: `var( --color-${project.color} )` } }
+                style={ { backgroundColor: `var(--color-${project.color})` } }
             >
                 <div className="flex flex-col md:flex-row justify-between items-start gap-6">
                     <div className="space-y-4">

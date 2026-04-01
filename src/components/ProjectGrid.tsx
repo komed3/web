@@ -72,7 +72,7 @@ export function ProjectGrid () {
                         exit={ { opacity: 0, scale: 0.9 } }
                         transition={ { duration: 0.4, delay: index * 0.05 } }
                         className={ `brutal-card brutal-shadow-sm hover:brutal-shadow flex flex-col gap-4 group relative h-full ${ isLightBg ? 'text-black' : 'text-white' }` }
-                        style={ { backgroundColor: `var( --color-${project.color} )` } }
+                        style={ { backgroundColor: `var(--color-${project.color})` } }
                     >
                         <Link to={ `/project/${project.id}` } className="absolute inset-0 z-10" />
 

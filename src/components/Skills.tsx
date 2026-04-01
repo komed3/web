@@ -17,7 +17,7 @@ export function Skills () {
                 return ( <div
                     key={skill.skill}
                     className={ `brutal-border p-4 md:p-6 brutal-shadow-sm flex items-center justify-center text-center h-full min-h-[80px] ${ isLightBg ? 'text-black' : 'text-white' }` }
-                    style={ { backgroundColor: `var( --color-${skill.color} )` } }
+                    style={ { backgroundColor: `var(--color-${skill.color})` } }
                 >
                     <span className="text-lg md:text-xl font-display font-black uppercase whitespace-nowrap">
                         {skill.skill}
