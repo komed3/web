@@ -10,11 +10,18 @@ export default defineConfig ( () => {
         plugins: [ react(), tailwindcss() ],
         resolve: { alias: { '@': resolve( __dirname, '.' ) } },
         build: {
+            chunkSizeWarningLimit: 2000,
             cssCodeSplit: true,
             rollupOptions: { output: { manualChunks ( id ) {
-                if ( id.includes( 'node_modules' ) ) return 'vendor';
-            } } },
-            chunkSizeWarningLimit: 800
+                if ( id.includes( 'node_modules' ) ) {
+                    if ( id.includes( 'syntax-highlighter' ) ) return 'syntax';
+                    if ( id.includes( 'markdown' ) || id.includes( 'gfm' ) ) return 'md';
+                    if ( id.includes( 'motion' ) ) return 'motion';
+                    if ( id.includes( 'react' ) ) return 'react';
+                    if ( id.includes( 'lucide' ) || id.includes( 'simple-icons' ) ) return 'icons';
+                    return 'vendor';
+                }
+            } } }
         }
     };
 } );
