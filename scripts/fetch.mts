@@ -131,6 +131,17 @@ async function readConfig () : Promise< Config > {
     }
 }
 
+// ---- NORMALIZE ----
+
+function normalizeVersion ( input?: string | null ) : string | null {
+    if ( ! input ) return null;
+
+    let v = input.trim().replace( /^(?:v(?:er(?:s(?:ion)?)?)?)[\s.\-_]*/i, '' ).replace( /^[^\d]*/, '' );
+    const match = v.match( /\d+(?:\.\d+)*(?:[-._]?[a-z0-9]+)*/i );
+
+    return match ? match[ 0 ] : null;
+}
+
 // ---- GITHUB API ----
 
 async function fetchGraphQL ( query: string, variables?: Record< string, unknown > ) {
@@ -258,11 +269,9 @@ async function fetchRepos ( repos: Array< [ string, string ] > ) : Promise< Reco
                 link: r.homepageUrl,
                 content: r.object?.text || '',
                 meta: {
-                    stars: r.stargazerCount,
-                    license: r.licenseInfo?.spdxId,
-                    langs,
+                    stars: r.stargazerCount, license: r.licenseInfo?.spdxId, langs,
                     year: new Date( r.createdAt ).getFullYear(),
-                    version: r.latestRelease?.tagName || r.refs?.nodes?.[ 0 ]?.name
+                    version: normalizeVersion( r.latestRelease?.tagName || r.refs?.nodes?.[ 0 ]?.name )
                 }
             };
         } );
