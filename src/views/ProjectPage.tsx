@@ -5,6 +5,7 @@ import { Link, useParams } from 'react-router-dom';
 
 import { Badge } from '../components/ui/Badge';
 import { Button } from '../components/ui/Button';
+import { MarkdownRenderer } from '../components/MarkdownRenderer';
 import projects from '../data/projects.json';
 
 
@@ -27,7 +28,7 @@ export function ProjectPage () {
         exit={ { opacity: 0 } }
         className="min-h-screen bg-white pt-24 pb-12 px-6 md:px-12"
     >
-        <div className="max-w-5xl mx-auto space-y-12">
+        <div className="max-w-7xl mx-auto space-y-12">
 
             {/** Back To Home */}
             <Button
@@ -55,7 +56,7 @@ export function ProjectPage () {
 
                     <div className="flex gap-4">
                         { project.github && ( <Button
-                            as="a" href={project.github} target="_blank" rel="noopener noreferrer"
+                            as="a" href={ `https://github.com/${project.github}` } target="_blank" rel="noopener noreferrer"
                             bg="bg-white" className="p-3 text-black"
                         ><SiGithub size={24} /></Button> ) }
                         { project.link && ( <Button
@@ -67,6 +68,32 @@ export function ProjectPage () {
 
                 <div className="flex flex-wrap gap-2 max-w-[640px]">
                     { project.tags.map( tag => ( <Badge key={tag} variant={ isLightBg ? 'light' : 'dark' } size="sm">{tag}</Badge> ) ) }
+                </div>
+            </div>
+
+            {/** Project Content */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <div className="lg:col-span-2 space-y-8">
+                    <div className="brutal-border p-8 md:p-12 bg-white brutal-shadow-sm">
+                        <MarkdownRenderer content={ project.content || '' } />
+                    </div>
+                </div>
+
+                <div className="space-y-8">
+                    <div className="brutal-border p-8 bg-brutal-yellow brutal-shadow-sm space-y-4">
+                        <h3 className="text-2xl font-display font-black text-black">PROJECT INFO</h3>
+                    </div>
+
+                    { project.github && ( <div className="brutal-border p-8 bg-brutal-blue brutal-shadow-sm space-y-4">
+                        <h3 className="text-2xl font-display font-black text-white">CONTRIBUTE</h3>
+                        <p className="font-bold text-white">
+                            Interested in this project? Check out the GitHub repository and feel free to open a PR.
+                        </p>
+                        <Button
+                            as="a" href={ `https://github.com/${project.github}` } target="_blank" rel="noopener noreferrer"
+                            bg="bg-white" className="hover:bg-brutal-pink w-full text-center inline-block text-black"
+                        >VIEW REPO</Button>
+                    </div> ) }
                 </div>
             </div>
         </div>
