@@ -96,16 +96,14 @@ export function ProjectGrid () {
                         </div>
 
                         <div className={ `flex gap-4 mt-auto pt-4 border-t-2 relative z-30 ${ isLightBg ? 'border-black/20' : 'border-white/20' }` }>
-                            { project.link && (
-                                <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 font-black text-sm hover:translate-x-1 transition-transform">
-                                    LIVE <ExternalLink size={14} />
-                                </a>
-                            ) }
-                            { project.github && (
-                                <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 font-black text-sm hover:translate-x-1 transition-transform">
-                                    CODE <SiGithub size={14} />
-                                </a>
-                            ) }
+                            { project.link && ( <a
+                                className="flex items-center gap-1 font-black text-sm hover:translate-x-1 transition-transform"
+                                href={project.link} target="_blank" rel="noopener noreferrer"
+                            >LIVE <ExternalLink size={14} /></a> ) }
+                            { project.github && ( <a
+                                className="flex items-center gap-1 font-black text-sm hover:translate-x-1 transition-transform"
+                                href={ `https://github.com/${project.github}` } target="_blank" rel="noopener noreferrer"
+                            >CODE <SiGithub size={14} /></a> ) }
                         </div>
                     </motion.div> );
                 } ) }
