@@ -91,7 +91,7 @@ export function ProjectPage () {
                                 <span>REPOS:</span>
                                 <span>{ project.meta.repos }</span>
                             </p> ) }
-                            { project.meta.langs.length && ( <p className="flex justify-between border-b-2 border-black/10 pb-2">
+                            { project.meta.langs.length > 0 && ( <p className="flex justify-between border-b-2 border-black/10 pb-2">
                                 <span>LANGUAGE:</span>
                                 <span>{ project.meta.langs[ 0 ] }</span>
                             </p> ) }
