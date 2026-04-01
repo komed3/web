@@ -82,6 +82,24 @@ export function ProjectPage () {
                 <div className="space-y-8">
                     <div className="brutal-border p-8 bg-brutal-yellow brutal-shadow-sm space-y-4">
                         <h3 className="text-2xl font-display font-black text-black">PROJECT INFO</h3>
+                        <div className="space-y-2 font-bold text-black">
+                            { project.meta.license && ( <p className="flex justify-between border-b-2 border-black/10 pb-2">
+                                <span>LICENSE:</span>
+                                <span>{ project.meta.license }</span>
+                            </p> ) }
+                            { project.meta.repos && ( <p className="flex justify-between border-b-2 border-black/10 pb-2">
+                                <span>REPOS:</span>
+                                <span>{ project.meta.repos }</span>
+                            </p> ) }
+                            { project.meta.langs.length && ( <p className="flex justify-between border-b-2 border-black/10 pb-2">
+                                <span>LANGUAGE:</span>
+                                <span>{ project.meta.langs[ 0 ] }</span>
+                            </p> ) }
+                            { project.meta.year && ( <p className="flex justify-between border-b-2 border-black/10 pb-2">
+                                <span>YEAR:</span>
+                                <span>{ project.meta.year }</span>
+                            </p> ) }
+                        </div>
                     </div>
 
                     { project.github && ( <div className="brutal-border p-8 bg-brutal-blue brutal-shadow-sm space-y-4">
@@ -92,7 +110,7 @@ export function ProjectPage () {
                         <Button
                             as="a" href={ `https://github.com/${project.github}` } target="_blank" rel="noopener noreferrer"
                             bg="bg-white" className="hover:bg-brutal-pink w-full text-center inline-block text-black"
-                        >VIEW REPO</Button>
+                        >VIEW PROJECT</Button>
                     </div> ) }
                 </div>
             </div>
