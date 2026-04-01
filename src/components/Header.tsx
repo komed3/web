@@ -84,7 +84,7 @@ export function Header () {
                     <div className="relative z-10 space-y-2 lg:space-y-8">
                         <h2 className="text-2xl sm:text-4xl lg:text-8xl font-display font-black leading-none">
                             EXPLORE<br />
-                            <span className="text-brutal-pink">THE CORE.</span>
+                            <span className="text-brutal-pink pr-1">THE CORE</span>.
                         </h2>
 
                         <nav className="grid grid-cols-1 sm:grid-cols-2 gap-2 lg:gap-5 mt-4">
