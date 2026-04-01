@@ -25,16 +25,11 @@ export function Header () {
         { name: 'Contact', icon: <Mail size={20} />, url: 'mailto:webmaster@komed3.de' }
     ];
 
-    // Prevent scrolling when menu is open
     useEffect( () => {
-        if ( isOpen ) {
-            document.documentElement.style.overflow = 'hidden';
-        } else {
-            document.documentElement.style.overflow = '';
-        }
-        return () => {
-            document.documentElement.style.overflow = '';
-        };
+        if ( isOpen ) document.documentElement.style.overflow = 'hidden';
+        else document.documentElement.style.overflow = '';
+
+        return () => { document.documentElement.style.overflow = '' };
     }, [ isOpen ] );
 
     return ( <>
