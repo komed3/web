@@ -2,15 +2,46 @@
   "projects": [ {
     "id": "cmpstr",
     "github": "komed3/cmpstr",
-    "type": "Library"
+    "type": "Package"
   }, {
     "id": "translatehub",
     "github": "komed3/TranslateHub",
     "type": "Tool"
   }, {
+    "id": "pseinfo",
+    "github": "pseinfo",
+    "type": "Education"
+  }, {
     "id": "airportmap",
     "github": "airportmap",
     "type": "Database"
+  }, {
+    "id": "chemparse",
+    "github": "komed3/chemparse",
+    "type": "Package"
+  }, {
+    "id": "8bitalu",
+    "github": "komed3/8-bit-alu",
+    "type": "Electronics"
+  }, {
+    "id": "serverdesk",
+    "github": "komed3/serverdesk",
+    "type": "Linux"
+  }, {
+    "id": "esm",
+    "github": "komed3/ebay-sales-manager",
+    "type": "Tool"
+  }, {
+    "id": "icons",
+    "title": "SVG Icon Library",
+    "type": "Web App",
+    "description": "Free and open-source SVG icon database with 25k+ icons.",
+    "tags": [ "Icons" ],
+    "link": "https://icons.komed3.de"
+  }, {
+    "id": "rtbapi",
+    "github": "komed3/rtb-api",
+    "type": "API"
   }, {
     "id": "apt-repo",
     "title": "Debian Repository",
