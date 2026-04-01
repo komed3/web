@@ -35,7 +35,9 @@ export function ProjectGrid () {
     return ( <section id="projects" className="w-full min-h-screen bg-white p-6 md:p-12 flex flex-col gap-12 border-t-4 border-black scroll-mt-20">
         <div className="flex flex-col md:flex-row justify-between items-start gap-8">
             <div className="space-y-4 w-full md:w-auto">
-                <h2 className="text-5xl md:text-7xl font-display font-black">PROJECTS</h2>
+                <h2 className="text-5xl md:text-7xl font-display font-black">
+                    PROJECTS<span className="text-brutal-pink">.</span>
+                </h2>
                 <div className="flex flex-wrap gap-2">
                     {categories.map(cat => ( <Button
                         key={cat}
