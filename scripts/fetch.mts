@@ -33,7 +33,7 @@ interface Org {
     title: string;
     description: string;
     tags: string[];
-    link: string;
+    link?: string;
     meta: {
         stars: number;
         langs: string[];
@@ -45,7 +45,7 @@ interface Repo {
     title: string;
     description: string;
     tags: string[];
-    link: string;
+    link?: string;
     content?: string;
     meta: {
         stars: number;
@@ -161,7 +161,7 @@ async function fetchOrgs ( orgs: string[] ) : Promise< Record< string, Org > > {
             ${ state.map( ( s, i ) => {
                 if ( s.done ) return '';
                 return `org${i}: organization( login: "${s.org}" ) {
-                    name, description, url,
+                    name, description, websiteUrl,
                     repositories( first: 100, after: ${ s.after ? `"${s.after}"` : null }, isFork: false ) {
                         nodes { stargazerCount, primaryLanguage { name } },
                         pageInfo { hasNextPage, endCursor }
@@ -178,8 +178,8 @@ async function fetchOrgs ( orgs: string[] ) : Promise< Record< string, Org > > {
 
             if ( ! s.meta ) s.meta = {
                 title: o.name || s.org,
-                description: o.description || '',
-                link: o.url
+                link: o.websiteUrl,
+                description: o.description || ''
             };
 
             for ( const r of o.repositories.nodes ) {
@@ -226,7 +226,7 @@ async function fetchRepos ( repos: Array< [ string, string ] > ) : Promise< Reco
         const data = await fetchGraphQL( `query {
             ${ batch.map( ( [ owner, name ], j ) => `
                 repo${j}: repository( owner: "${owner}", name: "${name}" ) {
-                    name, description, url, stargazerCount, licenseInfo { spdxId },
+                    name, description, homepageUrl, stargazerCount, licenseInfo { spdxId },
                     createdAt, primaryLanguage { name },
                     repositoryTopics( first: 10 ) { nodes { topic { name } } },
                     object( expression: "HEAD:README.md" ) { ... on Blob { text } }
@@ -244,7 +244,7 @@ async function fetchRepos ( repos: Array< [ string, string ] > ) : Promise< Reco
                 title: r.name,
                 description: r.description || '',
                 tags: r.repositoryTopics?.nodes?.map( ( t: any ) => t.topic.name ) || [],
-                link: r.url,
+                link: r.homepageUrl,
                 content: r.object?.text || '',
                 meta: {
                     stars: r.stargazerCount,
