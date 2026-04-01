@@ -55,16 +55,35 @@
     "type": "Web App",
     "github": "komed3/icon-library"
   } ],
-  "skills": [
-    "TypeScript",
-    "JavaScript",
-    "PHP",
-    "Web Design",
-    "Node.js",
-    "Linux",
-    "Electronics",
-    "Server",
-    "Shell / Root",
-    "WordPress"
-  ]
+  "skills": [ {
+    "skill": "TypeScript",
+    "icon": "Code2"
+  }, {
+    "skill": "JavaScript",
+    "icon": "FileCode"
+  }, {
+    "skill": "PHP",
+    "icon": "Globe"
+  }, {
+    "skill": "Web Design",
+    "icon": "Layout"
+  }, {
+    "skill": "Node.js",
+    "icon": "Package"
+  }, {
+    "skill": "Linux",
+    "icon": "Terminal"
+  }, {
+    "skill": "Electronics",
+    "icon": "Cpu"
+  }, {
+    "skill": "Server",
+    "icon": "Server"
+  }, {
+    "skill": "Shell / Root",
+    "icon": "Terminal"
+  }, {
+    "skill": "WordPress",
+    "icon": "Globe"
+  } ]
 }
