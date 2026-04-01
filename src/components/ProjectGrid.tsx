@@ -78,7 +78,7 @@ export function ProjectGrid () {
 
                         <div className="flex justify-between items-start relative z-20 pointer-events-none">
                             <Badge variant={ isLightBg ? 'dark' : 'light' } size="xs">{project.type}</Badge>
-                            { project.meta.stars > 0 && ( <Badge variant={ isLightBg ? 'dark' : 'light' } size="xs">
+                            { project.meta.stars && project.meta.stars > 0 && ( <Badge variant={ isLightBg ? 'dark' : 'light' } size="xs">
                                 <Star size={14} fill="currentColor" /> {project.meta.stars}
                             </Badge> ) }
                         </div>
@@ -92,7 +92,9 @@ export function ProjectGrid () {
                         </p>
 
                         <div className="flex flex-wrap gap-2 mt-2 relative z-20 pointer-events-none">
-                            { project.tags.map( tag => ( <Badge key={tag} variant={ isLightBg ? 'light' : 'dark' } size="xs">{tag}</Badge> ) ) }
+                            { ( project.tags ?? [] ).map( tag => (
+                                <Badge key={tag} variant={ isLightBg ? 'light' : 'dark' } size="xs">{tag}</Badge>
+                            ) ) }
                         </div>
 
                         <div className={ `flex gap-4 mt-auto pt-4 border-t-2 relative z-30 ${ isLightBg ? 'border-black/20' : 'border-white/20' }` }>

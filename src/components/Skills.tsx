@@ -13,7 +13,7 @@ export function Skills () {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             { skills.map( ( skill ) => {
-                const isLightBg = skill.color === 'brutal-yellow' || skill.color === 'brutal-orange';
+                const isLightBg = skill.color === 'brutal-yellow';
                 return ( <div
                     key={skill.skill}
                     className={ `brutal-border p-4 md:p-6 brutal-shadow-sm flex items-center justify-center text-center h-full min-h-[80px] ${ isLightBg ? 'text-black' : 'text-white' }` }
