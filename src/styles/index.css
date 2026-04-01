@@ -182,7 +182,7 @@
 }
 
 .markdown-body blockquote {
-    @apply border-l-8 border-brutal-pink pl-6 py-4 my-6 italic bg-brutal-pink/10 font-black text-lg md:text-xl;
+    @apply border-l-8 border-brutal-pink pt-6 pl-6 pr-6 pb-1 my-6 italic bg-brutal-pink/10 font-black text-lg md:text-xl;
 }
 
 .markdown-body hr {
