@@ -1,5 +1,5 @@
 import { SiGithub, SiX } from '@icons-pack/react-simple-icons';
-import { ArrowDown, Coffee, Terminal } from 'lucide-react';
+import { ArrowDown, Coffee } from 'lucide-react';
 import { motion } from 'motion/react';
 
 import { Button } from './ui/Button';
@@ -85,13 +85,13 @@ export function Intro () {
                 transition={ { duration: 0.8, delay: 0.4 } }
                 className="space-y-6 lg:space-y-8 min-w-0"
             >
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-display font-black leading-none">
-                    <Terminal size={80} /> WHO AM I
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-display font-black">
+                    LEAVE THE ROAD<span className="pl-1">,</span><br />
+                    <span className="text-brutal-yellow">TAKE THE TRAILS<span className="pl-1">.</span></span>
                 </h2>
                 <p className="text-base sm:text-lg lg:text-xl xl:text-2xl font-bold leading-tight text-black/90">
-                    A freelance software developer specializing in Node.js packages,
-                    data visualization, and modern web architectures. Committed to open
-                    source projects and overall enthusiast of electronics since 2010.
+                    I'm a freelance software developer focusing on Node.js packages, data visualization, and contemporary web development.
+                    I have a strong passion for open-source projects and have been intrigued by electronics since 2010.
                 </p>
                 <div className="space-y-3 lg:space-y-4">
                     <div className="flex justify-between border-b-2 lg:border-b-4 border-black pb-2 text-sm lg:text-base">
