@@ -26,7 +26,10 @@ interface Config {
             year?: number;
         };
     } >;
-    skills: string[];
+    skills: Array< string | {
+        skill: string;
+        icon?: string;
+    } >;
 }
 
 interface Org {
@@ -79,6 +82,7 @@ type Projects = Project[];
 type Skills = Array< {
     skill: string;
     color: string;
+    icon: string;
 } >;
 
 
@@ -283,7 +287,11 @@ async function fetchRepos ( repos: Array< [ string, string ] > ) : Promise< Reco
         project
     ) );
 
-    for ( const skill of config.skills ) skills.push( { skill, color: getColor( skill ) } );
+    for ( const s of config.skills ) {
+        const skill = typeof s === 'string' ? s : s.skill;
+        const icon = ( typeof s !== 'string' && s.icon ) ? s.icon : 'Code';
+        skills.push( { skill, icon, color: getColor( skill ) } );
+    }
 
     await writeFile( join( dir, 'projects.json' ), JSON.stringify( projects, null, 2 ), 'utf-8' );
     await writeFile( join( dir, 'skills.json' ), JSON.stringify( skills, null, 2 ), 'utf-8' );
