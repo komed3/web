@@ -85,6 +85,48 @@
     text-shadow: 1px 1px 0px rgba( 0 0 0 / 0.2 );
 }
 
+/* Brutal Color Utilities */
+
+@utility bg-brutal-yellow {
+    background-color: var( --color-brutal-yellow );
+}
+
+@utility bg-brutal-green {
+    background-color: var( --color-brutal-green );
+}
+
+@utility bg-brutal-blue {
+    background-color: var( --color-brutal-blue );
+}
+
+@utility bg-brutal-pink {
+    background-color: var( --color-brutal-pink );
+}
+
+@utility bg-brutal-orange {
+    background-color: var( --color-brutal-orange );
+}
+
+@utility text-brutal-yellow {
+    color: var( --color-brutal-yellow );
+}
+
+@utility text-brutal-green {
+    color: var( --color-brutal-green );
+}
+
+@utility text-brutal-blue {
+    color: var( --color-brutal-blue );
+}
+
+@utility text-brutal-pink {
+    color: var( --color-brutal-pink );
+}
+
+@utility text-brutal-orange {
+    color: var( --color-brutal-orange );
+}
+
 /** Button Hover Color */
 
 .hover-dark:hover {
