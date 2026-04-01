@@ -28,7 +28,7 @@ jobs:
       - name: Fetch GitHub Data
         run: npm run fetch
         env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          TOKEN: ${{ secrets.TOKEN }}
 
       - name: Build App
         run: npm run vite
