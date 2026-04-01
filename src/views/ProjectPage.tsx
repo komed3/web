@@ -1,5 +1,5 @@
 import { SiGithub } from '@icons-pack/react-simple-icons';
-import { ArrowLeft, ExternalLink, Star } from 'lucide-react';
+import { ArrowLeft, LinkIcon, Star } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Link, useParams } from 'react-router-dom';
 
@@ -61,7 +61,7 @@ export function ProjectPage () {
                         { project.link && ( <Button
                             as="a" href={project.link} target="_blank" rel="noopener noreferrer"
                             bg="bg-white" className="p-3 text-black"
-                        ><ExternalLink size={24} /></Button> ) }
+                        ><LinkIcon size={24} /></Button> ) }
                     </div>
                 </div>
 

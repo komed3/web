@@ -1,5 +1,5 @@
 import { SiGithub } from '@icons-pack/react-simple-icons';
-import { ExternalLink, Search, Star } from 'lucide-react';
+import { LinkIcon, Search, Star } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -99,7 +99,7 @@ export function ProjectGrid () {
                             { project.link && ( <a
                                 className="flex items-center gap-1 font-black text-sm hover:translate-x-1 transition-transform"
                                 href={project.link} target="_blank" rel="noopener noreferrer"
-                            >LIVE <ExternalLink size={14} /></a> ) }
+                            >LIVE <LinkIcon size={14} /></a> ) }
                             { project.github && ( <a
                                 className="flex items-center gap-1 font-black text-sm hover:translate-x-1 transition-transform"
                                 href={ `https://github.com/${project.github}` } target="_blank" rel="noopener noreferrer"
