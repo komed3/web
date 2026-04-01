@@ -12,7 +12,7 @@ import { Button } from './ui/Button';
 export function ProjectGrid () {
     const [ filter, setFilter ] = useState( 'All' );
     const [ search, setSearch ] = useState( '' );
-    const [ visibleCount, setVisibleCount ] = useState( 6 );
+    const [ visibleCount, setVisibleCount ] = useState( 9 );
 
     const categories = useMemo( () => {
         const cats = new Set( projects.map( p => p.type ) );
@@ -78,7 +78,7 @@ export function ProjectGrid () {
 
                         <div className="flex justify-between items-start relative z-20 pointer-events-none">
                             <Badge variant={ isLightBg ? 'dark' : 'light' } size="xs">{project.type}</Badge>
-                            { project.meta.stars && ( <Badge variant={ isLightBg ? 'dark' : 'light' } size="xs">
+                            { project.meta.stars > 0 && ( <Badge variant={ isLightBg ? 'dark' : 'light' } size="xs">
                                 <Star size={14} fill="currentColor" /> {project.meta.stars}
                             </Badge> ) }
                         </div>
@@ -114,7 +114,7 @@ export function ProjectGrid () {
         { visibleCount < filteredProjects.length && ( <div className="flex justify-center mt-12">
             <Button
                 onClick={ () => setVisibleCount( prev => prev + 6 ) }
-                bg="bg-brutal-pink" hoverDark className="text-xl"
+                bg="bg-brutal-pink" hoverDark className="text-xl text-white"
             >LOAD MORE PROJECTS</Button>
         </div> ) }
     </section> );
