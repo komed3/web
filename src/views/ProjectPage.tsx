@@ -20,7 +20,7 @@ export function ProjectPage () {
         <Link to="/" className="brutal-btn bg-brutal-yellow">BACK TO HOME</Link>
     </div> );
 
-    const isLightBg = project.color === 'brutal-yellow' || project.color === 'brutal-orange';
+    const isLightBg = project.color === 'brutal-yellow';
 
     return ( <motion.div
         initial={ { opacity: 0 } }

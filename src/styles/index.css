@@ -222,7 +222,7 @@
     @apply text-brutal-blue underline font-black hover:text-brutal-pink transition-colors;
 }
 
-.markdown-body img[src*="badge"], 
+.markdown-body img[src*="badge"],
 .markdown-body img[src*="shields.io"],
 .markdown-body img[alt*="badge"] {
     @apply inline-block mr-1 mb-3 align-middle;

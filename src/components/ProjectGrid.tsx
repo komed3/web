@@ -63,7 +63,7 @@ export function ProjectGrid () {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <AnimatePresence mode="popLayout">
                 { visibleProjects.map( ( project, index ) => {
-                    const isLightBg = project.color === 'brutal-yellow' || project.color === 'brutal-orange';
+                    const isLightBg = project.color === 'brutal-yellow';
                     return ( <motion.div
                         layout
                         key={project.id}
