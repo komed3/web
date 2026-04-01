@@ -57,33 +57,43 @@
   } ],
   "skills": [ {
     "skill": "TypeScript",
+    "stack": "Coding",
     "icon": "Code2"
   }, {
     "skill": "JavaScript",
+    "stack": "Coding",
     "icon": "FileCode"
   }, {
     "skill": "PHP",
+    "stack": "Coding",
     "icon": "Globe"
   }, {
     "skill": "Web Design",
+    "stack": "Design",
     "icon": "Layout"
   }, {
     "skill": "Node.js",
+    "stack": "Coding",
     "icon": "Package"
   }, {
     "skill": "Linux",
+    "stack": "Tech Stack",
     "icon": "Terminal"
   }, {
     "skill": "Electronics",
+    "stack": "Hardware",
     "icon": "Cpu"
   }, {
     "skill": "Server",
+    "stack": "Tech Stack",
     "icon": "Server"
   }, {
     "skill": "Shell / Root",
+    "stack": "Tech Stack",
     "icon": "Terminal"
   }, {
     "skill": "WordPress",
+    "stack": "Framework",
     "icon": "Globe"
   } ]
 }

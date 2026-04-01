@@ -28,6 +28,7 @@ interface Config {
     } >;
     skills: Array< string | {
         skill: string;
+        stack?: string;
         icon?: string;
     } >;
 }
@@ -81,6 +82,7 @@ type Projects = Project[];
 
 type Skills = Array< {
     skill: string;
+    stack: string;
     color: string;
     icon: string;
 } >;
@@ -289,8 +291,10 @@ async function fetchRepos ( repos: Array< [ string, string ] > ) : Promise< Reco
 
     for ( const s of config.skills ) {
         const skill = typeof s === 'string' ? s : s.skill;
+        const stack = ( typeof s !== 'string' && s.stack ) ? s.stack : 'Tech Stack';
         const icon = ( typeof s !== 'string' && s.icon ) ? s.icon : 'Code';
-        skills.push( { skill, icon, color: getColor( skill ) } );
+
+        skills.push( { skill, stack, icon, color: getColor( skill ) } );
     }
 
     await writeFile( join( dir, 'projects.json' ), JSON.stringify( projects, null, 2 ), 'utf-8' );
