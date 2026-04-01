@@ -32,7 +32,7 @@ export function ProjectGrid () {
 
     const visibleProjects = filteredProjects.slice( 0, visibleCount );
 
-    return ( <section id="projects" className="w-full min-h-screen bg-white p-6 md:p-12 flex flex-col gap-12 border-t-4 border-black scroll-mt-20">
+    return ( <section id="projects" className="w-full min-h-screen bg-white p-6 md:p-12 lg:p-20 flex flex-col gap-12 border-t-4 border-black scroll-mt-20">
         <div className="flex flex-col md:flex-row justify-between items-start gap-8">
             <div className="space-y-4 w-full md:w-auto">
                 <h2 className="text-5xl md:text-7xl font-display font-black">
@@ -63,7 +63,7 @@ export function ProjectGrid () {
 
         {/** Project Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <AnimatePresence mode="wait">
+            <AnimatePresence mode="sync">
                 { visibleProjects.map( ( project, index ) => {
                     const isLightBg = project.color === 'brutal-yellow';
                     return ( <motion.div
