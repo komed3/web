@@ -89,8 +89,9 @@ export function Intro () {
                     <Terminal size={80} /> WHO AM I
                 </h2>
                 <p className="text-base sm:text-lg lg:text-xl xl:text-2xl font-bold leading-tight text-black/90">
-                    A freelance software developer specializing in high-performance systems and modern web architectures,
-                    committed to open source projects and overall enthusiast of electronics since 2010.
+                    A freelance software developer specializing in Node.js packages,
+                    data visualization, and modern web architectures. Committed to open
+                    source projects and overall enthusiast of electronics since 2010.
                 </p>
                 <div className="space-y-3 lg:space-y-4">
                     <div className="flex justify-between border-b-2 lg:border-b-4 border-black pb-2 text-sm lg:text-base">
