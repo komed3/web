@@ -85,13 +85,17 @@ export function ProjectPage () {
                     <div className="brutal-border p-8 bg-brutal-yellow brutal-shadow-sm space-y-4">
                         <h3 className="text-2xl font-display font-black text-black">PROJECT INFO</h3>
                         <div className="space-y-2 font-bold text-black">
+                            { project.meta.version && ( <p className="flex justify-between border-b-2 border-black/10 pb-2">
+                                <span>VERSION:</span>
+                                <span>{ project.meta.version }</span>
+                            </p> ) }
                             { project.meta.license && ( <p className="flex justify-between border-b-2 border-black/10 pb-2">
                                 <span>LICENSE:</span>
                                 <span>{ project.meta.license }</span>
                             </p> ) }
-                            { project.meta.repos && ( <p className="flex justify-between border-b-2 border-black/10 pb-2">
+                            { ( project.meta as any ).repos && ( <p className="flex justify-between border-b-2 border-black/10 pb-2">
                                 <span>REPOS:</span>
-                                <span>{ project.meta.repos }</span>
+                                <span>{ ( project.meta as any ).repos }</span>
                             </p> ) }
                             { ( project.meta.langs ?? [] ).length > 0 && ( <p className="flex justify-between border-b-2 border-black/10 pb-2">
                                 <span>LANGUAGE:</span>

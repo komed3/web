@@ -24,6 +24,7 @@ interface Config {
             license?: string;
             langs?: string[];
             year?: number;
+            version?: string;
         };
     } >;
     skills: Array< string | {
@@ -56,6 +57,7 @@ interface Repo {
         license?: string;
         langs: string[];
         year: number;
+        version?: string;
     };
 }
 
@@ -74,6 +76,7 @@ interface Project {
         license?: string;
         langs?: string[];
         year?: number;
+        version?: string;
         repos?: number;
     };
 }
@@ -235,7 +238,9 @@ async function fetchRepos ( repos: Array< [ string, string ] > ) : Promise< Reco
                     name, description, homepageUrl, stargazerCount, licenseInfo { spdxId },
                     createdAt, primaryLanguage { name },
                     repositoryTopics( first: 10 ) { nodes { topic { name } } },
-                    object( expression: "HEAD:README.md" ) { ... on Blob { text } }
+                    object( expression: "HEAD:README.md" ) { ... on Blob { text } },
+                    latestRelease { tagName },
+                    refs( refPrefix: "refs/tags/", first: 1, orderBy: { field: TAG_COMMIT_DATE, direction: DESC } ) { nodes { name } }
                 }
             ` ).join( '\n' ) }
         }` );
@@ -256,7 +261,8 @@ async function fetchRepos ( repos: Array< [ string, string ] > ) : Promise< Reco
                     stars: r.stargazerCount,
                     license: r.licenseInfo?.spdxId,
                     langs,
-                    year: new Date( r.createdAt ).getFullYear()
+                    year: new Date( r.createdAt ).getFullYear(),
+                    version: r.latestRelease?.tagName || r.refs?.nodes?.[ 0 ]?.name
                 }
             };
         } );
