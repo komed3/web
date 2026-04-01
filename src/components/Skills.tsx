@@ -23,7 +23,7 @@ export function Skills () {
                 
                 return ( <div className={ `p-6 md:p-10 flex flex-col items-center justify-center text-center gap-6 bg-white aspect-square relative group` } key={skill.skill}>
                     <div className={ `p-4 brutal-border brutal-shadow-sm ${ isLightBg ? 'bg-brutal-yellow text-black' : 'bg-brutal-green text-white' }` }>
-                        <IconComponent size={32} strokeWidth={3} />
+                        <IconComponent size={32} />
                     </div>
                     <div className="flex flex-col gap-1">
                         <span className="text-xs font-mono font-bold opacity-40 uppercase tracking-widest">{skill.stack}</span>
