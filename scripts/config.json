@@ -143,6 +143,81 @@
     "title": "Chart.js Area Controller",
     "github": "komed3/chartjs-plugin-area",
     "type": "Node.js"
+  }, {
+    "id": "image-x-ray",
+    "title": "Image X-Ray",
+    "github": "komed3/image-x-ray",
+    "type": "PHP Library"
+  }, {
+    "id": "airportmap-database",
+    "title": "AirportMap Database",
+    "github": "komed3/airportmap-database",
+    "type": "Database"
+  }, {
+    "id": "frame",
+    "title": "Private Video Platfrom",
+    "github": "komed3/frame",
+    "type": "Web App"
+  }, {
+    "id": "color",
+    "title": "PHP Color Library",
+    "github": "komed3/color",
+    "type": "PHP Library"
+  }, {
+    "id": "mw-wordcounter",
+    "title": "MediaWiki WordCounter",
+    "github": "komed3/mw-WordCounter",
+    "type": "MediaWiki"
+  }, {
+    "id": "truck-financial-tracker",
+    "title": "SCS Financial Tracker",
+    "github": "komed3/truck-financial-tracker",
+    "type": "Web App"
+  }, {
+    "id": "gh-stats",
+    "title": "GitHub Dashboard",
+    "github": "komed3/gh-stats",
+    "type": "Web App"
+  }, {
+    "id": "relative-time",
+    "title": "Relative Time",
+    "github": "komed3/relative-time",
+    "type": "JavaScript Library"
+  }, {
+    "id": "svgworld",
+    "title": "SVG World",
+    "github": "komed3/svgworld",
+    "type": "Node.js"
+  }, {
+    "id": "chess-game-embed",
+    "title": "Chess Game Embedder",
+    "github": "komed3/chess-game-embed",
+    "type": "Web App"
+  }, {
+    "id": "wordpress-word-counter",
+    "title": "WordPress WordCounter",
+    "github": "komed3/wordpress-word-counter",
+    "type": "WordPress"
+  }, {
+    "id": "loc-counter",
+    "title": "LOC Counter",
+    "github": "komed3/loc-counter",
+    "type": "Tool"
+  }, {
+    "id": "moneylens",
+    "title": "MoneyLens",
+    "github": "komed3/moneylens",
+    "type": "Web App"
+  }, {
+    "id": "cli-almanac-builder",
+    "title": "CLI Almanac Builder",
+    "github": "komed3/cli-almanac-builder",
+    "type": "Tool"
+  }, {
+    "id": "mw-simple-bot",
+    "title": "MediaWiki Bot",
+    "github": "komed3/mw-simple-bot",
+    "type": "MediaWiki"
   } ],
   "skills": [ {
     "skill": "TypeScript",
