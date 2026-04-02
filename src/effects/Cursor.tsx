@@ -48,17 +48,17 @@ export function Cursor () {
             initial={ { opacity: 0 } }
             animate={ { opacity: 1 } }
             exit={ { opacity: 0 } }
-            className="fixed inset-0 pointer-events-none z-[9999] overflow-hidden hidden md:block"
+            className="fixed inset-0 pointer-events-none z-[9999] overflow-hidden hidden md:block mix-blend-difference"
         >
 
             {/** Crosshair */}
             <div className="absolute h-full opacity-20" style={ {
                 left: -1, top: 0, transform: `translateX(${mousePos.x}px)`,
-                borderLeft: '2px dotted black'
+                borderLeft: '2px dotted white'
             } } />
             <div className="absolute w-full opacity-20" style={ {
                 left: 0, top: -1, transform: `translateY(${mousePos.y}px)`,
-                borderTop: '2px dotted black'
+                borderTop: '2px dotted white'
             } } />
 
             {/** Cursor */}
@@ -69,20 +69,20 @@ export function Cursor () {
                     scale: isHovering ? 1.4 : 1,
                     rotate: isHovering ? 90 : 0
                 } } >
-                    <div className="absolute top-0 left-0 w-4 h-[3px] bg-black" />
-                    <div className="absolute top-0 left-0 w-[3px] h-4 bg-black" />
-                    <div className="absolute top-0 right-0 w-4 h-[3px] bg-black" />
-                    <div className="absolute top-0 right-0 w-[3px] h-4 bg-black" />
-                    <div className="absolute bottom-0 left-0 w-4 h-[3px] bg-black" />
-                    <div className="absolute bottom-0 left-0 w-[3px] h-4 bg-black" />
-                    <div className="absolute bottom-0 right-0 w-4 h-[3px] bg-black" />
-                    <div className="absolute bottom-0 right-0 w-[3px] h-4 bg-black" />
+                    <div className="absolute top-0 left-0 w-4 h-[3px] bg-white" />
+                    <div className="absolute top-0 left-0 w-[3px] h-4 bg-white" />
+                    <div className="absolute top-0 right-0 w-4 h-[3px] bg-white" />
+                    <div className="absolute top-0 right-0 w-[3px] h-4 bg-white" />
+                    <div className="absolute bottom-0 left-0 w-4 h-[3px] bg-white" />
+                    <div className="absolute bottom-0 left-0 w-[3px] h-4 bg-white" />
+                    <div className="absolute bottom-0 right-0 w-4 h-[3px] bg-white" />
+                    <div className="absolute bottom-0 right-0 w-[3px] h-4 bg-white" />
                 </motion.div>
                 <motion.div className="w-2 h-2 rounded-full bg-brutal-pink" animate={ {
                     scale: isHovering ? 3 : 1,
                 } } />
-                <div className="absolute w-full h-[1.5px] bg-black" />
-                <div className="absolute h-full w-[1.5px] bg-black" />
+                <div className="absolute w-full h-[1.5px] bg-white" />
+                <div className="absolute h-full w-[1.5px] bg-white" />
             </div>
 
             {/** Coordinates */}
@@ -93,8 +93,8 @@ export function Cursor () {
                     mousePos.y - ( isHovering ? 48 : 32)
                 }px, 0)`
             } } >
-                <span className="text-[10px] font-mono font-bold text-black leading-none">X:{ Math.round( mousePos.x ) }</span>
-                <span className="text-[10px] font-mono font-bold text-black leading-none">Y:{ Math.round( mousePos.y ) }</span>
+                <span className="text-[10px] font-mono text-white">X:{ Math.round( mousePos.x ) }</span>
+                <span className="text-[10px] font-mono text-white">Y:{ Math.round( mousePos.y ) }</span>
             </div>
         </motion.div> ) }
     </AnimatePresence> );
