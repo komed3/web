@@ -9,7 +9,7 @@ import { Button } from './ui/Button';
 export function Intro () {
     return ( <section className="relative min-h-screen w-full flex flex-col lg:flex-row overflow-hidden max-w-full">
         {/* Left Side: Big Typography */}
-        <div className="relative z-10 flex-1 min-w-0 flex flex-col justify-center p-6 sm:p-10 lg:p-12 bg-white brutal-border border-y-0 border-l-0 overflow-hidden max-w-full">
+        <div className="relative z-10 flex-1 min-w-0 flex flex-col justify-center p-6 sm:p-10 lg:p-12 bg-white lg:brutal-border border-y-0 border-l-0 overflow-hidden max-w-full">
             <Background />
 
             {/** Intro */}
