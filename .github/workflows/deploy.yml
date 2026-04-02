@@ -46,3 +46,4 @@ jobs:
           protocol: ftps
           local-dir: ./dist/
           server-dir: /
+          log-level: minimal
