@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'motion/react';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import { Background } from '../effects/Background';
 import { Button } from './ui/Button';
 
 
@@ -71,15 +72,7 @@ export function Header () {
 
                 {/** Left Column (Links) */}
                 <div className="relative flex-1 p-6 sm:p-8 lg:p-12 flex flex-col justify-center gap-4 lg:gap-8 bg-white brutal-border border-y-0 border-l-0 overflow-hidden min-h-fit">
-
-                    {/* Technical Grid Overlay */}
-                    <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.06]" style={ {
-                        backgroundImage: `
-                            linear-gradient( rgba( 0 0 0 / 1 ) 1px, transparent 1px ),
-                            linear-gradient( 90deg, rgba( 0 0 0 / 1 ) 1px, transparent 1px )
-                        `,
-                        backgroundSize: '40px 40px'
-                    } } />
+                    <Background />
 
                     <div className="relative z-10 space-y-2 lg:space-y-8">
                         <h2 className="text-2xl sm:text-4xl lg:text-8xl font-display font-black leading-none">

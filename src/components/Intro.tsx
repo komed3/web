@@ -2,6 +2,7 @@ import { SiGithub, SiX } from '@icons-pack/react-simple-icons';
 import { ArrowDown, Coffee } from 'lucide-react';
 import { motion } from 'motion/react';
 
+import { Background } from '../effects/Background';
 import { Button } from './ui/Button';
 
 
@@ -9,17 +10,7 @@ export function Intro () {
     return ( <section className="relative min-h-screen w-full flex flex-col lg:flex-row overflow-hidden max-w-full">
         {/* Left Side: Big Typography */}
         <div className="relative z-10 flex-1 min-w-0 flex flex-col justify-center p-6 sm:p-10 lg:p-12 bg-white brutal-border border-y-0 border-l-0 overflow-hidden max-w-full">
-
-            {/* Technical Grid Overlay */}
-            <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.06]" style={ {
-                backgroundImage: `
-                    linear-gradient( rgba( 0 0 0 / 1 ) 1px, transparent 1px ),
-                    linear-gradient( 90deg, rgba( 0 0 0 / 1 ) 1px, transparent 1px ),
-                    radial-gradient( rgba( 0 0 0 / 1 ) 1.5px, transparent 1.5px )
-                `,
-                backgroundSize: '40px 40px, 40px 40px, 40px 40px',
-                backgroundPosition: '0 0, 0 0, 20px 20px'
-            } } />
+            <Background />
 
             {/** Intro */}
             <div className="relative z-10 space-y-2">
