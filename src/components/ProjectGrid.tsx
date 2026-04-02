@@ -78,7 +78,7 @@ export function ProjectGrid () {
 
                         <div className="flex justify-between items-start relative z-20 pointer-events-none">
                             <Badge variant={ isLightBg ? 'dark' : 'light' } size="xs">{project.type}</Badge>
-                            { project.meta.stars > 0 && ( <Badge variant={ isLightBg ? 'dark' : 'light' } size="xs">
+                            { ( project.meta.stars ?? 0 ) > 0 && ( <Badge variant={ isLightBg ? 'dark' : 'light' } size="xs">
                                 <Star size={14} fill="currentColor" />
                                 <span className="font-black">{project.meta.stars}</span>
                             </Badge> ) }

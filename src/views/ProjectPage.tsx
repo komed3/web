@@ -45,7 +45,7 @@ export function ProjectPage () {
                     <div className="space-y-4">
                         <div className="flex flex-wrap gap-2">
                             <Badge variant={ isLightBg ? 'dark' : 'light' } size="sm">{project.type}</Badge>
-                            { project.meta.stars > 0 && ( <Badge variant={ isLightBg ? 'light' : 'dark' } size="sm">
+                            { ( project.meta.stars ?? 0 ) > 0 && ( <Badge variant={ isLightBg ? 'light' : 'dark' } size="sm">
                                 <Star size={14} fill="currentColor" /> {project.meta.stars} STARS
                             </Badge> ) }
                         </div>
@@ -99,7 +99,7 @@ export function ProjectPage () {
                             </p> ) }
                             { ( project.meta.langs ?? [] ).length > 0 && ( <p className="flex justify-between border-b-2 border-black/10 pb-2">
                                 <span>LANGUAGE:</span>
-                                <span>{ project.meta.langs[ 0 ] }</span>
+                                <span>{ project.meta.langs?.[ 0 ] }</span>
                             </p> ) }
                             { project.meta.year && ( <p className="flex justify-between border-b-2 border-black/10 pb-2">
                                 <span>YEAR:</span>
