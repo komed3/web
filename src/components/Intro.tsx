@@ -80,7 +80,7 @@ export function Intro () {
                     LEAVE THE ROAD<span className="pl-1">,</span><br />
                     <span className="text-brutal-yellow">TAKE THE TRAILS<span className="pl-1">.</span></span>
                 </h2>
-                <p className="text-base sm:text-lg lg:text-xl xl:text-2xl font-bold leading-tight text-black/90">
+                <p className="py-6 text-base sm:text-lg lg:text-xl xl:text-2xl font-bold leading-tight text-black/90">
                     I'm a freelance software developer focusing on Node.js packages, data visualization, and contemporary web development.
                     I have a strong passion for open-source projects and have been intrigued by electronics since 2010.
                 </p>
