@@ -3,7 +3,6 @@ import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-
 interface MarkdownRendererProps {
     content: string;
     className?: string;
@@ -32,6 +31,11 @@ export function MarkdownRenderer( { content, className = '' }: MarkdownRendererP
                     </SyntaxHighlighter> ) : ( <code className={className} { ...props }>
                         {children}
                     </code> );
+                },
+                table( { children } ) {
+                    return ( <div className="markdown-table-wrapper">
+                        <table>{children}</table>
+                    </div> );
                 }
             } }
         >

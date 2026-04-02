@@ -170,7 +170,17 @@
 }
 
 .markdown-body table {
-    @apply w-full border-collapse mb-8 border-4 border-black table-auto;
+    @apply w-full border-collapse border-4 border-black table-auto;
+}
+
+.markdown-table-wrapper {
+    @apply overflow-x-auto w-full mb-8;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.markdown-table-wrapper::-webkit-scrollbar {
+    display: none;
 }
 
 .markdown-body th {
