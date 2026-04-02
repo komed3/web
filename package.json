@@ -10,9 +10,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
-    "build:all": "npm run lint && npm run fetch && npm run build",
+    "build:all": "npm run lint && npm run fetch && npm run sitemap && npm run build",
     "lint": "tsc --noEmit",
     "fetch": "tsx scripts/fetch.mts",
+    "sitemap": "tsx scripts/sitemap.mts",
     "build": "vite build"
   },
   "devDependencies": {
