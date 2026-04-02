@@ -1,5 +1,5 @@
-import { SiGimp, SiGithub, SiInkscape, SiKrita, SiUbuntu } from '@icons-pack/react-simple-icons';
-import { Code2, Cpu, Gpu, HardDrive, Laptop, LaptopMinimal, Monitor, Server } from 'lucide-react';
+import { SiGithub, SiInkscape, SiUbuntu } from '@icons-pack/react-simple-icons';
+import { Code2, Cpu, Gpu, HardDrive, Laptop, LaptopMinimal, Monitor, Palette, Server } from 'lucide-react';
 
 
 export function Setup () {
@@ -21,7 +21,7 @@ export function Setup () {
                 <h3 className="text-xl md:text-2xl font-display font-black">HARDWARE RESOURCES</h3>
                 <div className="space-y-4">
                     {/* Main PC */}
-                    <div className="p-6 brutal-border brutal-shadow-sm bg-white flex gap-6 items-start">
+                    <div className="p-6 brutal-border bg-white flex gap-6 items-start">
                         <div className="p-3 bg-brutal-blue text-white brutal-border shrink-0">
                             <Monitor size={24} />
                         </div>
@@ -37,7 +37,7 @@ export function Setup () {
                     </div>
 
                     {/* Server */}
-                    <div className="p-6 brutal-border brutal-shadow-sm bg-white flex gap-6 items-start">
+                    <div className="p-6 brutal-border bg-white flex gap-6 items-start">
                         <div className="p-3 bg-brutal-green text-white brutal-border shrink-0">
                             <Server size={24} />
                         </div>
@@ -52,7 +52,7 @@ export function Setup () {
                     </div>
 
                     {/* Laptops */}
-                    <div className="p-6 brutal-border brutal-shadow-sm bg-white flex gap-6 items-start">
+                    <div className="p-6 brutal-border bg-white flex gap-6 items-start">
                         <div className="p-3 bg-brutal-pink text-white brutal-border shrink-0">
                             <Laptop size={24} />
                         </div>
@@ -63,6 +63,38 @@ export function Setup () {
                             </p>
                         </div>
                     </div>
+                </div>
+            </div>
+            
+            {/* Software Column */}
+            <div className="space-y-6">
+                <h3 className="text-xl md:text-2xl font-display font-black">SOFTWARE STACK</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="p-5 brutal-border bg-brutal-blue text-white flex items-center gap-4">
+                        <Code2 size={24} />
+                        <div className="font-black text-sm uppercase">VS Code</div>
+                    </div>
+                    <div className="p-5 brutal-border bg-brutal-pink text-white flex items-center gap-4">
+                        <SiInkscape size={24} />
+                        <div className="font-black text-sm uppercase">Inkscape</div>
+                    </div>
+                    <div className="p-5 brutal-border bg-brutal-yellow text-black flex items-center gap-4">
+                        <Palette size={24} />
+                        <div className="font-black text-sm uppercase">GIMP / Krita</div>
+                    </div>
+                    <div className="p-5 brutal-border bg-brutal-green text-white flex items-center gap-4">
+                        <SiGithub size={24} />
+                        <div className="font-black text-sm uppercase">GitHub</div>
+                    </div>
+                </div>
+
+                <div className="p-8 brutal-border bg-black text-white space-y-4">
+                    <h4 className="text-xl font-display font-black uppercase tracking-tight">PHILOSOPHY</h4>
+                    <p className="text-sm md:text-base font-bold opacity-80 leading-relaxed">
+                        I believe in the power of open collaboration. My stack is intentionally 
+                        built around open-source tools to ensure transparency, security, and 
+                        community-driven innovation. Open source isn't just a choice; it's a standard.
+                    </p>
                 </div>
             </div>
         </div>
