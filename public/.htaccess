@@ -1,3 +1,14 @@
+RewriteEngine On
+
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://komed3.de%{REQUEST_URI} [L,R=301]
+
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+RewriteRule ^ https://komed3.de/ [L,R=302]
+
 <IfModule mod_expires.c>
     ExpiresActive On
 
