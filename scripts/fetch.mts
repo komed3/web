@@ -142,6 +142,37 @@ function normalizeVersion ( input?: string | null ) : string | null {
     return match ? match[ 0 ] : null;
 }
 
+// ---- PATH FIXER ----
+
+function fixRelativePaths ( content: string, owner: string, name: string, branch: string ) : string {
+    const rawBase = `https://raw.githubusercontent.com/${ owner }/${ name }/${ branch }`;
+    const githubBase = `https://github.com/${ owner }/${ name }/blob/${ branch }`;
+
+    return content
+        // Fix Markdown links and images
+        .replace( /(!?\[.*?\]\()([^)]+)(\))/g, ( match, prefix, path, suffix ) => {
+            if ( /^(?:[a-z]+:\/\/|#|data:)/i.test( path ) ) return match;
+
+            let cleanPath = path.replace( /^\.\//, '' );
+            if ( cleanPath.startsWith( '/' ) ) cleanPath = cleanPath.substring( 1 );
+
+            const isImage = prefix.startsWith( '!' );
+            const baseUrl = isImage ? rawBase : githubBase;
+
+            return `${ prefix }${ baseUrl }/${ cleanPath }${ suffix }`;
+        } )
+        // Fix HTML tags (minimal support)
+        .replace( /(src|href)=["']((?!\w+:\/\/|#|data:)[^"']+)["']/g, ( _, attr, path ) => {
+            let cleanPath = path.replace( /^\.\//, '' );
+            if ( cleanPath.startsWith( '/' ) ) cleanPath = cleanPath.substring( 1 );
+
+            const isImage = attr === 'src';
+            const baseUrl = isImage ? rawBase : githubBase;
+
+            return `${ attr }="${ baseUrl }/${ cleanPath }"`;
+        } );
+}
+
 // ---- GITHUB API ----
 
 async function fetchGraphQL ( query: string, variables?: Record< string, unknown > ) {
@@ -247,10 +278,9 @@ async function fetchRepos ( repos: Array< [ string, string ] > ) : Promise< Reco
             ${ batch.map( ( [ owner, name ], j ) => `
                 repo${j}: repository( owner: "${owner}", name: "${name}" ) {
                     name, description, homepageUrl, stargazerCount, licenseInfo { spdxId },
-                    createdAt, primaryLanguage { name },
+                    createdAt, primaryLanguage { name }, latestRelease { tagName }, defaultBranchRef { name },
                     repositoryTopics( first: 10 ) { nodes { topic { name } } },
                     object( expression: "HEAD:README.md" ) { ... on Blob { text } },
-                    latestRelease { tagName },
                     refs( refPrefix: "refs/tags/", first: 1, orderBy: { field: TAG_COMMIT_DATE, direction: DESC } ) { nodes { name } }
                 }
             ` ).join( '\n' ) }
@@ -261,13 +291,15 @@ async function fetchRepos ( repos: Array< [ string, string ] > ) : Promise< Reco
             if ( ! r ) return;
 
             const langs = r.primaryLanguage?.name ? [ r.primaryLanguage.name ] : [];
+            const branch = r.defaultBranchRef?.name || 'main';
+            const content = r.object?.text || '';
 
             result[ `${owner}/${name}` ] = {
                 title: r.name,
                 description: r.description || '',
                 tags: r.repositoryTopics?.nodes?.map( ( t: any ) => t.topic.name ) || [],
                 link: r.homepageUrl,
-                content: r.object?.text || '',
+                content: fixRelativePaths( content, owner, name, branch ),
                 meta: {
                     stars: r.stargazerCount, license: r.licenseInfo?.spdxId, langs,
                     year: new Date( r.createdAt ).getFullYear(),
