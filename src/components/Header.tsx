@@ -38,7 +38,7 @@ export function Header () {
         {/** Header */}
         <header className="fixed top-0 left-0 w-full z-[100] bg-white brutal-border border-t-0 border-x-0 flex items-center justify-between px-4 md:px-6 py-4">
             <Link to="/" className="text-2xl md:text-3xl font-display font-black tracking-tighter">
-                KOMED3<span className="text-brutal-blue p-0.5">DEV</span>
+                KOMED3<span className="text-brutal-blue p-1">DEV</span>
             </Link>
 
             <Button
