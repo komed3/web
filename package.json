@@ -10,10 +10,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
+    "build:all": "npm run lint && npm run fetch && npm run build",
     "lint": "tsc --noEmit",
     "fetch": "tsx scripts/fetch.mts",
-    "vite": "vite build",
-    "build": "npm run fetch && npm run vite"
+    "build": "vite build"
   },
   "devDependencies": {
     "@komed3/deepmerge": "^1.0.0",

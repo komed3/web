@@ -31,4 +31,4 @@ jobs:
           TOKEN: ${{ secrets.TOKEN }}
 
       - name: Build App
-        run: npm run vite
+        run: npm run build
