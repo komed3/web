@@ -17,10 +17,14 @@ async function generateSitemap () {
         const projectsData = JSON.parse( await readFile( projectsFile, 'utf-8' ) );
         const projects = Array.isArray( projectsData ) ? projectsData : [];
 
-        const urls = [ { loc: `${DOMAIN}/`, lastmod: new Date().toISOString().split( 'T' )[0], changefreq: 'daily', priority: '1.0' } ];
+        const urls = [ {
+            loc: `${DOMAIN}/`, lastmod: new Date().toISOString().split( 'T' )[ 0 ],
+            changefreq: 'daily', priority: '1.0'
+        } ];
+
         for ( const project of projects ) urls.push( {
             loc: `${DOMAIN}/#/project/${project.id}`,
-            lastmod: new Date().toISOString().split( 'T' )[0],
+            lastmod: new Date().toISOString().split( 'T' )[ 0 ],
             changefreq: 'weekly', priority: '0.8'
         } );
 
