@@ -133,13 +133,13 @@ async function readConfig () : Promise< Config > {
 
 // ---- NORMALIZE ----
 
-function normalizeVersion ( input?: string | null ) : string | null {
-    if ( ! input ) return null;
+function normalizeVersion ( input?: string | undefined ) : string | undefined {
+    if ( ! input ) return undefined;
 
     let v = input.trim().replace( /^(?:v(?:er(?:s(?:ion)?)?)?)[\s.\-_]*/i, '' ).replace( /^[^\d]*/, '' );
     const match = v.match( /\d+(?:\.\d+)*(?:[-._]?[a-z0-9]+)*/i );
 
-    return match ? match[ 0 ] : null;
+    return match ? match[ 0 ] : undefined;
 }
 
 // ---- PATH FIXER ----

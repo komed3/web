@@ -8,6 +8,7 @@
     "types": [ "node" ],
     "allowJs": true,
     "experimentalDecorators": true,
+    "noUncheckedSideEffectImports": false,
     "useDefineForClassFields": false,
     "skipLibCheck": true,
     "isolatedModules": true,
