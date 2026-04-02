@@ -25,13 +25,13 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Lint
-        run: npm run lint
-
       - name: Fetch GitHub Data
         run: npm run fetch
         env:
           TOKEN: ${{ secrets.TOKEN }}
+
+      - name: Lint
+        run: npm run lint
 
       - name: Build App
         run: npm run build
