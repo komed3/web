@@ -11,8 +11,8 @@ export function Footer () {
         </div>
 
         <div className="text-xs font-bold opacity-50 text-center md:text-right">
-            DESIGNED AND DEVELOPED BY<br />
-            (C) 2026 KOMED3
+            DESIGNED AND DEVELOPED BY (C) 2026 KOMED3<br />
+            BUILD { process.env.VITE_BUILD_ID || '000000-0000' } ({ process.env.VITE_COMMIT_SHA || 'XXXXXXX' })
         </div>
     </footer> );
 }
