@@ -254,9 +254,9 @@
     "stack": "Tech Stack",
     "icon": "Server"
   }, {
-    "skill": "Shell / Root",
-    "stack": "Tech Stack",
-    "icon": "Terminal"
+    "skill": "SQL / NoSQL",
+    "stack": "Database",
+    "icon": "Database"
   }, {
     "skill": "WordPress",
     "stack": "Framework",
