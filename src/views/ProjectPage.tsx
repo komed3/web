@@ -7,6 +7,7 @@ import { Badge } from '../components/ui/Badge';
 import { Button } from '../components/ui/Button';
 import { MarkdownRenderer } from '../components/MarkdownRenderer';
 import projects from '../data/projects.json';
+import { useSEO } from '../effects/SEO';
 
 
 export function ProjectPage () {
@@ -20,6 +21,7 @@ export function ProjectPage () {
         <Link to="/" className="brutal-btn bg-brutal-yellow">BACK TO HOME</Link>
     </div> );
 
+    useSEO( { title: project.title, description: project.description || `Project ${project.title} by komed3` } );
     const isLightBg = project.color === 'brutal-yellow';
 
     return ( <motion.div
