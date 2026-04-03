@@ -74,7 +74,7 @@ export function Header () {
                 } } >
 
                 {/** Left Column (Links) */}
-                <div className="relative flex-1 p-6 sm:p-8 lg:p-12 flex flex-col justify-center gap-4 lg:gap-8 bg-white brutal-border border-y-0 border-l-0 overflow-hidden min-h-fit">
+                <div className="relative flex-1 p-6 sm:p-8 lg:p-12 flex flex-col justify-center gap-4 lg:gap-8 bg-white brutal-border border-x-0 border-y-0 lg:border-r-4 overflow-hidden min-h-fit">
                     <Background />
 
                     <div className="relative z-10 space-y-2 lg:space-y-8">
