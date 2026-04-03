@@ -91,6 +91,10 @@ export function ProjectPage () {
                                 <span>VERSION:</span>
                                 <span>{ project.meta.version }</span>
                             </p> ) }
+                            { project.status && ( <p className="flex justify-between border-b-2 border-black/10 pb-2">
+                                <span>STATUS:</span>
+                                <span>{ project.status }</span>
+                            </p> ) }
                             { project.meta.license && ( <p className="flex justify-between border-b-2 border-black/10 pb-2">
                                 <span>LICENSE:</span>
                                 <span>{ project.meta.license }</span>
