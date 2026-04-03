@@ -73,7 +73,9 @@
 }
 
 @utility brutal-btn {
-    @apply brutal-border brutal-shadow-sm px-6 py-3 font-bold uppercase whitespace-nowrap transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px];
+    @apply brutal-border brutal-shadow-sm px-6 py-3 font-bold uppercase whitespace-nowrap transition-all 
+           hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none 
+           active:translate-x-[4px] active:translate-y-[4px] active:shadow-none;
 }
 
 @utility brutal-card {
@@ -87,7 +89,7 @@
 
 /** Button Hover Color */
 
-.hover-dark:hover {
+.hover-dark:hover, .hover-dark:active {
     @apply text-white;
 }
 

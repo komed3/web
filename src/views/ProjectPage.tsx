@@ -35,7 +35,7 @@ export function ProjectPage () {
             {/** Back To Home */}
             <Button
                 as={Link} to="/" bg="bg-white"
-                className="hover:bg-brutal-blue hover:text-white inline-flex items-center gap-2 mb-8"
+                className="hover:bg-brutal-blue hover:text-white active:bg-brutal-blue active:text-white inline-flex items-center gap-2 mb-8"
             ><ArrowLeft size={20} /> BACK</Button>
 
             {/** Info Card */}
@@ -121,7 +121,7 @@ export function ProjectPage () {
                         </p>
                         <Button
                             as="a" href={ `https://github.com/${project.github}` } target="_blank" rel="noopener noreferrer" hoverDark
-                            bg="bg-white" className="hover:bg-brutal-pink w-full text-center inline-block text-black"
+                            bg="bg-white" className="hover:bg-brutal-pink active:bg-brutal-pink w-full text-center inline-block text-black"
                         >VIEW PROJECT</Button>
                     </div> ) }
                 </div>

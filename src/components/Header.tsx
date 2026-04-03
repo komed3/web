@@ -93,7 +93,7 @@ export function Header () {
                                     rel="noopener noreferrer"
                                     bg="bg-white"
                                     hoverDark
-                                    className="hover:bg-brutal-green flex items-center justify-between group py-2 lg:py-3 px-3 lg:px-4 text-black"
+                                    className="hover:bg-brutal-green active:bg-brutal-green flex items-center justify-between group py-2 lg:py-3 px-3 lg:px-4 text-black"
                                     onClick={ () => setIsOpen( false ) }
                                 >
                                     <span className="flex items-center gap-2 lg:gap-3 font-black text-[9px] sm:text-xs lg:text-sm xl:text-base">
@@ -120,7 +120,7 @@ export function Header () {
                                     rel="noopener noreferrer"
                                     bg="bg-white"
                                     hoverDark
-                                    className="hover:bg-brutal-pink flex items-center gap-2 lg:gap-3 py-1.5 lg:py-3 px-3 lg:px-4 text-black"
+                                    className="hover:bg-brutal-pink active:bg-brutal-pink flex items-center gap-2 lg:gap-3 py-1.5 lg:py-3 px-3 lg:px-4 text-black"
                                     onClick={ () => setIsOpen( false ) }
                                 >
                                     <span className="font-black text-[9px] sm:text-xs lg:text-sm xl:text-base flex items-center gap-2 lg:gap-3">
