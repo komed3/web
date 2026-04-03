@@ -95,7 +95,8 @@
     "id": "coincollect",
     "title": "CoinCollect",
     "github": "komed3/coincollect",
-    "type": "Web App"
+    "type": "Web App",
+    "status": "BETA"
   }, {
     "id": "esm",
     "title": "eBay Sales Manager",
