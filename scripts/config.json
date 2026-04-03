@@ -66,6 +66,11 @@
     "github": "komed3/serverdesk",
     "type": "Linux"
   }, {
+    "id": "img2txt",
+    "title": "Image2Text",
+    "github": "komed3/img2txt",
+    "type": "Web App"
+  }, {
     "id": "apt-repo",
     "title": "Debian Repository",
     "github": "komed3/deb",
@@ -87,9 +92,9 @@
     "github": "komed3/filecomp",
     "type": "Linux"
   }, {
-    "id": "img2txt",
-    "title": "Image2Text",
-    "github": "komed3/img2txt",
+    "id": "coincollect",
+    "title": "coinCollect",
+    "github": "komed3/coincollect",
     "type": "Web App"
   }, {
     "id": "esm",
