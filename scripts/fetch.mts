@@ -19,6 +19,7 @@ interface Config {
         github?: string;
         content?: string;
         color?: string;
+        status?: string;
         meta?: {
             stars?: number;
             license?: string;
@@ -71,6 +72,7 @@ interface Project {
     github?: string;
     content?: string;
     color: string;
+    status?: string;
     meta: {
         stars?: number;
         license?: string;

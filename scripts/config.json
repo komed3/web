@@ -3,22 +3,26 @@
     "id": "cmpstr",
     "title": "CmpStr",
     "github": "komed3/cmpstr",
-    "type": "Node.js"
+    "type": "Node.js",
+    "status": "FEATURED"
   }, {
     "id": "airportmap",
     "title": "Airportmap",
     "github": "komed3/airportmap",
-    "type": "Web App"
+    "type": "Web App",
+    "status": "FEATURED"
   }, {
     "id": "rtbapi",
     "title": "Billionaires API",
     "github": "komed3/rtb-api",
-    "type": "API"
+    "type": "API",
+    "status": "FEATURED"
   }, {
     "id": "pseinfo",
     "title": "Periodic Table",
     "github": "komed3/periodic-table",
-    "type": "Education"
+    "type": "Education",
+    "status": "FEATURED"
   }, {
     "id": "devtypes",
     "title": "DevTypes",
@@ -28,7 +32,8 @@
     "id": "translatehub",
     "title": "TranslateHub",
     "github": "komed3/TranslateHub",
-    "type": "Tool"
+    "type": "Tool",
+    "status": "BETA"
   }, {
     "id": "chemparse",
     "title": "ChemParse",
@@ -48,7 +53,8 @@
     "id": "8-bit-alu",
     "title": "8-Bit ALU",
     "github": "komed3/8-bit-alu",
-    "type": "Electronics"
+    "type": "Electronics",
+    "status": "FEATURED"
   }, {
     "id": "math-formula-parser",
     "title": "Math Formula Parser",
@@ -68,7 +74,8 @@
     "id": "top-737-800",
     "title": "Take-off Performance",
     "github": "komed3/top-737-800",
-    "type": "Tool"
+    "type": "Tool",
+    "status": "ARCHIVED"
   }, {
     "id": "pkg-verify",
     "title": "PKG Verify",
@@ -154,7 +161,8 @@
     "id": "airportmap-database",
     "title": "AirportMap Database",
     "github": "komed3/airportmap-database",
-    "type": "Database"
+    "type": "Database",
+    "status": "ARCHIVED"
   }, {
     "id": "frame",
     "title": "Private Video Platfrom",
@@ -189,7 +197,8 @@
     "id": "svgworld",
     "title": "SVG World",
     "github": "komed3/svgworld",
-    "type": "Node.js"
+    "type": "Node.js",
+    "status": "BETA"
   }, {
     "id": "chess-game-embed",
     "title": "Chess Game Embedder",
@@ -199,12 +208,14 @@
     "id": "wordpress-word-counter",
     "title": "WordPress WordCounter",
     "github": "komed3/wordpress-word-counter",
-    "type": "WordPress"
+    "type": "WordPress",
+    "status": "ARCHIVED"
   }, {
     "id": "loc-counter",
     "title": "LOC Counter",
     "github": "komed3/loc-counter",
-    "type": "Tool"
+    "type": "Tool",
+    "status": "ARCHIVED"
   }, {
     "id": "moneylens",
     "title": "MoneyLens",
@@ -214,12 +225,14 @@
     "id": "cli-almanac-builder",
     "title": "CLI Almanac Builder",
     "github": "komed3/cli-almanac-builder",
-    "type": "Tool"
+    "type": "Tool",
+    "status": "ARCHIVED"
   }, {
     "id": "mw-simple-bot",
     "title": "MediaWiki Bot",
     "github": "komed3/mw-simple-bot",
-    "type": "MediaWiki"
+    "type": "MediaWiki",
+    "status": "BETA"
   } ],
   "skills": [ {
     "skill": "TypeScript",
