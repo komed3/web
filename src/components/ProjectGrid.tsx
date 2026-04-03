@@ -39,7 +39,7 @@ export function ProjectGrid () {
                     PROJECTS<span className="text-brutal-pink pl-1">.</span>
                 </h2>
                 <div className="flex flex-wrap gap-2 max-w-5xl">
-                    {categories.map(cat => ( <Button
+                    { categories.map( cat => ( <Button
                         key={cat} onClick={ () => setFilter( cat ) } className="py-1 px-4 text-sm"
                         bg={ filter === cat ? 'bg-brutal-blue text-white' : 'bg-white' }
                     >{cat}</Button> ) ) }
