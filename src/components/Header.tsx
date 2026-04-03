@@ -2,7 +2,7 @@ import { SiGithub, SiX } from '@icons-pack/react-simple-icons';
 import { Atom, CircleDollarSign, Coffee, Database, Mail, Menu, Package, Plane, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import { Background } from '../effects/Background';
 import { Button } from './ui/Button';
@@ -11,6 +11,7 @@ import { Button } from './ui/Button';
 export function Header () {
     const [ isOpen, setIsOpen ] = useState( false );
     const [ isAnimating, setIsAnimating ] = useState( false );
+    const location = useLocation();
 
     const menuItems = [
         { name: 'GitHub', icon: <SiGithub size={20} />, url: 'https://github.com/komed3' },
@@ -33,6 +34,8 @@ export function Header () {
 
         return () => { document.documentElement.style.overflow = '' };
     }, [ isOpen ] );
+
+    useEffect( () => setIsOpen( false ), [ location ] );
 
     return ( <>
         {/** Header */}
