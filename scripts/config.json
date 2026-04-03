@@ -189,6 +189,12 @@
     "github": "komed3/gh-stats",
     "type": "Web App"
   }, {
+    "id": "linscale",
+    "title": "Linear Scale",
+    "github": "komed3/linscale",
+    "type": "Node.js",
+    "status": "ARCHIVED"
+  }, {
     "id": "relative-time",
     "title": "Relative Time",
     "github": "komed3/relative-time",
@@ -215,6 +221,12 @@
     "title": "LOC Counter",
     "github": "komed3/loc-counter",
     "type": "Tool",
+    "status": "ARCHIVED"
+  }, {
+    "id": "logarscale",
+    "title": "Logarithmic Scale",
+    "github": "komed3/logarscale",
+    "type": "Node.js",
     "status": "ARCHIVED"
   }, {
     "id": "moneylens",
