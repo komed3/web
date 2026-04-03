@@ -116,7 +116,7 @@ export function ProjectPage () {
                             Interested in this project? Check out the GitHub repository and feel free to open a PR.
                         </p>
                         <Button
-                            as="a" href={ `https://github.com/${project.github}` } target="_blank" rel="noopener noreferrer"
+                            as="a" href={ `https://github.com/${project.github}` } target="_blank" rel="noopener noreferrer" hoverDark
                             bg="bg-white" className="hover:bg-brutal-pink w-full text-center inline-block text-black"
                         >VIEW PROJECT</Button>
                     </div> ) }
