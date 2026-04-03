@@ -207,6 +207,14 @@
 .markdown-body img[src*="shields.io"],
 .markdown-body img[alt*="badge"] {
     @apply inline-block mr-1 mb-3 align-middle;
+    filter: grayscale( 100% ) contrast( 120% );
+    transition: filter 0.3s ease;
+}
+
+.markdown-body img[src*="badge"]:hover,
+.markdown-body img[src*="shields.io"]:hover,
+.markdown-body img[alt*="badge"]:hover {
+    filter: grayscale( 0% ) contrast( 100% );
 }
 
 .markdown-body a:has( img[src*="badge"] ),
