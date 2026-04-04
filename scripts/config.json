@@ -82,6 +82,11 @@
     "type": "Tool",
     "status": "ARCHIVED"
   }, {
+    "id": "jsdelivr-gh-stats",
+    "title": "jsDelivr GitHub Stats",
+    "github": "komed3/jsdelivr-gh-stats",
+    "type": "Web App"
+  }, {
     "id": "pkg-verify",
     "title": "PKG Verify",
     "github": "komed3/package-verify",
