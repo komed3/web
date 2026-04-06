@@ -279,7 +279,7 @@
     "stack": "Design",
     "icon": "Layout"
   }, {
-    "skill": "Node.js",
+    "skill": "NodeJS",
     "stack": "Coding",
     "icon": "Package"
   }, {
@@ -291,9 +291,9 @@
     "stack": "Hardware",
     "icon": "Cpu"
   }, {
-    "skill": "Server",
-    "stack": "Tech Stack",
-    "icon": "Server"
+    "skill": "React",
+    "stack": "Framework",
+    "icon": "Atom"
   }, {
     "skill": "SQL / NoSQL",
     "stack": "Database",
