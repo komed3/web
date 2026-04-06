@@ -18,11 +18,10 @@ export function Skills () {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 brutal-border brutal-shadow-sm bg-black gap-1">
             { skills.map( ( skill ) => {
-                const isLightBg = skill.color === 'brutal-yellow';
                 const IconComponent = ( Icons as any )[ skill.icon ] || Icons.Code2;
                 
-                return ( <div className={ `p-6 md:p-10 flex flex-col items-center justify-center text-center gap-6 bg-white aspect-square relative group` } key={skill.skill}>
-                    <div className={ `p-4 brutal-border brutal-shadow-sm ${ isLightBg ? 'bg-brutal-yellow text-black' : 'bg-brutal-green text-white' }` }>
+                return ( <div className="p-6 md:p-10 flex flex-col items-center justify-center text-center gap-6 bg-white aspect-square relative group" key={skill.skill}>
+                    <div className="p-4 brutal-border brutal-shadow-sm bg-brutal-green text-white">
                         <IconComponent size={32} />
                     </div>
                     <div className="flex flex-col gap-1">
