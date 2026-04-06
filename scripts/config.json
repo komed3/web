@@ -103,6 +103,11 @@
     "type": "Web App",
     "status": "BETA"
   }, {
+    "id": "showcase",
+    "title": "Responsive Website Showcase",
+    "github": "komed3/showcase",
+    "type": "Web App"
+  }, {
     "id": "esm",
     "title": "eBay Sales Manager",
     "github": "komed3/ebay-sales-manager",
