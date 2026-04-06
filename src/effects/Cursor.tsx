@@ -6,8 +6,45 @@ export function Cursor () {
     const [ mousePos, setMousePos ] = useState( { x: 0, y: 0 } );
     const [ isHovering, setIsHovering ] = useState( false );
     const [ isVisible, setIsVisible ] = useState( false );
+    const [ canUseCustomCursor, setCanUseCustomCursor ] = useState( false );
 
     useEffect( () => {
+        if ( typeof window === 'undefined' ) return;
+
+        const finePointer = window.matchMedia( '(pointer: fine)' );
+        const hoverPointer = window.matchMedia( '(hover: hover)' );
+
+        const updateCanUseCustomCursor = () => {
+            setCanUseCustomCursor( finePointer.matches && hoverPointer.matches );
+        };
+
+        updateCanUseCustomCursor();
+
+        if ( typeof finePointer.addEventListener === 'function' ) {
+            finePointer.addEventListener( 'change', updateCanUseCustomCursor );
+            hoverPointer.addEventListener( 'change', updateCanUseCustomCursor );
+        } else {
+            finePointer.addListener( updateCanUseCustomCursor );
+            hoverPointer.addListener( updateCanUseCustomCursor );
+        }
+
+        return () => {
+            if ( typeof finePointer.removeEventListener === 'function' ) {
+                finePointer.removeEventListener( 'change', updateCanUseCustomCursor );
+                hoverPointer.removeEventListener( 'change', updateCanUseCustomCursor );
+            } else {
+                finePointer.removeListener( updateCanUseCustomCursor );
+                hoverPointer.removeListener( updateCanUseCustomCursor );
+            }
+        };
+    }, [] );
+
+    useEffect( () => {
+        if ( ! canUseCustomCursor ) {
+            if ( isVisible ) setIsVisible( false );
+            return;
+        }
+
         const handleMouseMove = ( e: MouseEvent ) => {
             setMousePos( { x: e.clientX, y: e.clientY } );
             if ( ! isVisible ) setIsVisible( true );
@@ -41,14 +78,14 @@ export function Cursor () {
             document.removeEventListener( 'mouseleave', handleMouseLeave );
             document.removeEventListener( 'mouseenter', handleMouseEnter );
         };
-    }, [ isVisible ] );
+    }, [ canUseCustomCursor, isVisible ] );
 
     return ( <AnimatePresence>
-        { isVisible && ( <motion.div
+        { canUseCustomCursor && isVisible && ( <motion.div
             initial={ { opacity: 0 } }
             animate={ { opacity: 1 } }
             exit={ { opacity: 0 } }
-            className="fixed inset-0 pointer-events-none z-[9999] overflow-hidden hidden md:block mix-blend-difference"
+            className="fixed inset-0 pointer-events-none z-[9999] overflow-hidden mix-blend-difference"
         >
 
             {/** Crosshair */}
