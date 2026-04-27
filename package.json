@@ -32,7 +32,7 @@
     "@icons-pack/react-simple-icons": "^13.13.0",
     "lucide-react": "^1.11.0",
     "motion": "^12.38.0",
-    "react": "19.2.4",
+    "react": "19.2.5",
     "react-markdown": "^10.1.0",
     "react-router-dom": "7.14.2",
     "react-syntax-highlighter": "^16.1.1",
