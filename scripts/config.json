@@ -103,6 +103,11 @@
     "type": "Web App",
     "status": "BETA"
   }, {
+    "id": "dimension-calculator",
+    "title": "Dimension Calculator",
+    "github": "komed3/dimension-calculator",
+    "type": "Web App"
+  }, {
     "id": "showcase",
     "title": "Responsive Website Showcase",
     "github": "komed3/showcase",
