@@ -2,7 +2,7 @@ import { SiGithub } from '@icons-pack/react-simple-icons';
 import { LinkIcon, Search, Star } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import { useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
 import projects from '../data/projects.json';
 import { Badge } from './ui/Badge';

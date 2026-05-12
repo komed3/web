@@ -2,7 +2,7 @@ import { SiGithub, SiX } from '@icons-pack/react-simple-icons';
 import { Atom, CircleDollarSign, Coffee, Database, Mail, Menu, Package, Plane, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router';
 
 import { Background } from '../effects/Background';
 import { Button } from './ui/Button';

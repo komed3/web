@@ -1,7 +1,7 @@
 import { SiGithub } from '@icons-pack/react-simple-icons';
 import { ArrowLeft, LinkIcon, Star } from 'lucide-react';
 import { motion } from 'motion/react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router';
 
 import { Badge } from '../components/ui/Badge';
 import { Button } from '../components/ui/Button';
