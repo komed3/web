@@ -56,6 +56,12 @@
     "type": "Electronics",
     "status": "FEATURED"
   }, {
+    "id": "latex-editor",
+    "title": "LaTeX Formula Editor",
+    "github": "komed3/latex-editor",
+    "type": "Web App",
+    "status": "FEATURED"
+  }, {
     "id": "math-formula-parser",
     "title": "Math Formula Parser",
     "github": "komed3/math-formula-parser",
