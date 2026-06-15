@@ -29,26 +29,32 @@
     "github": "komed3/devtypes",
     "type": "Node.js"
   }, {
-    "id": "translatehub",
-    "title": "TranslateHub",
-    "github": "komed3/TranslateHub",
-    "type": "Tool",
-    "status": "BETA"
+    "id": "latex-editor",
+    "title": "LaTeX Formula Editor",
+    "github": "komed3/latex-editor",
+    "type": "Web App",
+    "status": "FEATURED"
   }, {
     "id": "chemparse",
     "title": "ChemParse",
     "github": "komed3/chemparse",
     "type": "Node.js"
   }, {
-    "id": "deepmerge",
-    "title": "DeepMerge",
-    "github": "komed3/deepmerge",
+    "id": "unitra",
+    "title": "Unitra Framework",
+    "github": "komed3/unitra",
     "type": "Node.js"
   }, {
     "id": "rtb",
     "title": "Billionaires Index",
     "github": "komed3/rtb",
-    "type": "Web App"
+    "type": "Web App",
+    "status": "FEATURED"
+  }, {
+    "id": "deepmerge",
+    "title": "DeepMerge",
+    "github": "komed3/deepmerge",
+    "type": "Node.js"
   }, {
     "id": "8-bit-alu",
     "title": "8-Bit ALU",
@@ -56,11 +62,11 @@
     "type": "Electronics",
     "status": "FEATURED"
   }, {
-    "id": "latex-editor",
-    "title": "LaTeX Formula Editor",
-    "github": "komed3/latex-editor",
-    "type": "Web App",
-    "status": "FEATURED"
+    "id": "translatehub",
+    "title": "TranslateHub",
+    "github": "komed3/TranslateHub",
+    "type": "Tool",
+    "status": "BETA"
   }, {
     "id": "math-formula-parser",
     "title": "Math Formula Parser",
