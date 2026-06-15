@@ -43,7 +43,8 @@
     "id": "unitra",
     "title": "Unitra Framework",
     "github": "komed3/unitra",
-    "type": "Node.js"
+    "type": "Node.js",
+    "status": "BETA"
   }, {
     "id": "rtb",
     "title": "Billionaires Index",
