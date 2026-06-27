@@ -95,6 +95,11 @@
     "type": "Tool",
     "status": "ARCHIVED"
   }, {
+    "id": "nxtcron",
+    "title": "nxtcron",
+    "github": "komed3/nxtcron",
+    "type": "Node.js"
+  }, {
     "id": "jsdelivr-gh-stats",
     "title": "jsDelivr GitHub Stats",
     "github": "komed3/jsdelivr-gh-stats",
