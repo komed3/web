@@ -28,7 +28,7 @@
     "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
-    "@komed3/deepmerge": "^1.0.0",
+    "@komed3/deepmerge": "^1.1.0",
     "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^26.1.1",
     "@types/react": "^19.2.17",
