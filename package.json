@@ -20,7 +20,7 @@
     "@icons-pack/react-simple-icons": "^13.13.0",
     "lucide-react": "^1.25.0",
     "motion": "^12.42.2",
-    "react": "^19.2.7",
+    "react": "^19.2.8",
     "react-dom": "^19.2.7",
     "react-markdown": "^10.1.0",
     "react-router": "^8.2.0",
