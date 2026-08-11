@@ -12,7 +12,7 @@ export default defineConfig ( () => {
 
     return {
         plugins: [ react(), tailwindcss() ],
-        resolve: { alias: { '@': resolve( __dirname, '.' ) } },
+        resolve: { alias: { '@': resolve( import.meta.dirname, '.' ) } },
         build: {
             chunkSizeWarningLimit: 2000,
             cssCodeSplit: true,
