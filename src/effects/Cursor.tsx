@@ -85,8 +85,8 @@ export function Cursor () {
 
           { /** Cursor */ }
           <div
-            className= 'absolute w-12 h-12 -translate-1/2'
-            style= { { transform: `translate3d(${ mousePos.x }px, ${ mousePos.y }px, 0)` } }
+            className= 'absolute w-12 h-12'
+            style= { { transform: `translate3d(${ mousePos.x }px, ${ mousePos.y }px, 0) translate(-50%, -50%)` } }
           >
             <motion.div
               className= 'absolute inset-0'
