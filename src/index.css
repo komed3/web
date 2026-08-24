@@ -5,3 +5,9 @@
 /** Theme */
 
 /** Base */
+
+@layer base {
+  html, body {
+    @apply text-black bg-white cursor-none;
+  }
+}
