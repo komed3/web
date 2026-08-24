@@ -22,4 +22,42 @@ export function Cursor () {
       hoverPointer.removeEventListener( 'change', update );
     };
   }, [] );
+
+  useEffect( () => {
+    if ( ! canUseCustomCursor ) {
+      setIsVisible( false );
+      return;
+    }
+
+    const handleMouseMove = ( { clientX: x, clientY: y }: MouseEvent ) => {
+      setMousePos( { x, y } );
+      setIsVisible( true );
+    };
+
+    const handleMouseOver = ( { target }: MouseEvent ) => {
+      const el = target as HTMLElement;
+      setIsHovering( !! ( el.matches( 'a, button, .interactive' ) || el.closest( 'a, button' ) ) );
+    };
+
+    const handleMouseDown = ( { button, preventDefault }: MouseEvent ) => {
+      if ( button === 1 ) preventDefault();
+    };
+
+    const handleMouseLeave = () => setIsVisible( false );
+    const handleMouseEnter = () => setIsVisible( true );
+
+    window.addEventListener( 'mousemove', handleMouseMove );
+    window.addEventListener( 'mouseover', handleMouseOver );
+    window.addEventListener( 'mousedown', handleMouseDown );
+    document.addEventListener( 'mouseleave', handleMouseLeave );
+    document.addEventListener( 'mouseenter', handleMouseEnter );
+
+    return () => {
+      window.removeEventListener( 'mousemove', handleMouseMove );
+      window.removeEventListener( 'mouseover', handleMouseOver );
+      window.removeEventListener( 'mousedown', handleMouseDown );
+      document.removeEventListener( 'mouseleave', handleMouseLeave );
+      document.removeEventListener( 'mouseenter', handleMouseEnter );
+    };
+  }, [ canUseCustomCursor ] );
 }
