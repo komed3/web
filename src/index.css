@@ -2,9 +2,24 @@
 
 /** Fonts */
 
+@font-face {
+  font-family: 'Geist';
+  src: url( ./assets/Geist.woff2 ) format( 'woff2' );
+  font-weight: 100 900;
+}
+
+@font-face {
+  font-family: 'Climate Crisis';
+  src: url( ./assets/ClimateCrisis.woff2 ) format( 'woff2' );
+  font-weight: 100 900;
+}
+
 /** Theme */
 
 @theme {
+  --font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Climate Crisis', sans-serif;
+
   --color-brutal-yellow: #fbbf24;
   --color-brutal-green: #22c55e;
   --color-brutal-blue: #2563eb;
@@ -16,7 +31,7 @@
 
 @layer base {
   html, body {
-    @apply text-black bg-white cursor-none;
+    @apply font-sans text-black bg-white cursor-none;
   }
 }
 
