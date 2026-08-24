@@ -31,7 +31,7 @@
 
 @layer base {
   html, body {
-    @apply font-sans text-black bg-white cursor-none scroll-smooth;
+    @apply font-sans text-black bg-white cursor-none scroll-smooth select-none;
   }
 }
 
