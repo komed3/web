@@ -97,8 +97,8 @@ export function Cursor () {
             >
               { [ 'top-0 left-0', 'top-0 right-0', 'bottom-0 left-0', 'bottom-0 right-0' ].map( pos => (
                 <div key= { pos }>
-                  <div className= { `absolute ${ pos } w-4 h-0.75 bg-white` } />
-                  <div className= { `absolute ${ pos } w-0.75 h-4 bg-white` } />
+                  <div className= { `absolute ${ pos } w-4 h-0.5 bg-white` } />
+                  <div className= { `absolute ${ pos } w-0.5 h-4 bg-white` } />
                 </div>
               ) ) }
             </motion.div>
@@ -107,6 +107,9 @@ export function Cursor () {
               className= 'centered w-2.5 h-2.5 bg-brutal-pink'
               animate= { { scale: isHovering ? 3 : 1 } }
             />
+
+            <div className= 'centered w-full h-0.5 bg-white' />
+            <div className= 'centered h-full w-0.5 bg-white' />
           </div>
         </motion.div>
       ) }
