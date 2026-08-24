@@ -111,6 +111,19 @@ export function Cursor () {
             <div className= 'centered w-full h-0.5 bg-white' />
             <div className= 'centered h-full w-0.5 bg-white' />
           </div>
+
+          { /** Coordinates */ }
+          <div
+            className= 'absolute flex flex-col gap-0.5 leading-none'
+            style= { { transform: `translate3d(${ mousePos.x + offset }px, ${ mousePos.y - offset }px, 0)` } }
+          >
+            <span className= 'text-[10px] font-mono text-white'>
+              X:{ Math.round( mousePos.x ) }
+            </span>
+            <span className= 'text-[10px] font-mono text-white'>
+              Y:{ Math.round( mousePos.y ) }
+            </span>
+          </div>
         </motion.div>
       ) }
     </AnimatePresence>
