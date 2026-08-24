@@ -36,8 +36,7 @@ export function Cursor () {
     };
 
     const handleMouseOver = ( { target }: MouseEvent ) => {
-      const el = target as HTMLElement;
-      setIsHovering( !! ( el.matches( 'a, button, .interactive' ) || el.closest( 'a, button' ) ) );
+      setIsHovering( !! ( target as HTMLElement ).closest( 'a, button, .interactive' ) );
     };
 
     const handleMouseDown = ( { button, preventDefault }: MouseEvent ) => {
