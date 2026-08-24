@@ -72,7 +72,17 @@ export function Cursor () {
           animate= { { opacity: 1 } }
           exit= { { opacity: 0 } }
           className= 'fixed inset-0 pointer-events-none z-9999 overflow-hidden mix-blend-difference'
-        ></motion.div>
+        >
+          { /** Crosshair */ }
+          <div
+            className= 'absolute h-full opacity-20 border-l-2 border-dotted border-white'
+            style= { { transform: `translateX(${ mousePos.x - 1 }px)` } }
+          />
+          <div
+            className= 'absolute w-full opacity-20 border-t-2 border-dotted border-white'
+            style={ { transform: `translateY(${ mousePos.y - 1 }px)` } }
+          />
+        </motion.div>
       ) }
     </AnimatePresence>
   );
