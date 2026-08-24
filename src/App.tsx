@@ -1,10 +1,10 @@
-import { Header } from './layout/Header';
+import { Cursor } from './effects/Cursor';
 
 
 export default function App () {
   return (
-    <div className= 'w-full min-h-screen'>
-      <Header />
-    </div>
+    <>
+      <Cursor />
+    </>
   );
 }
