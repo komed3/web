@@ -85,8 +85,8 @@ export function Cursor () {
 
           { /** Cursor */ }
           <div
-            className= 'absolute flex items-center justify-center w-12 h-12'
-            style= { { transform: `translate3d(${ mousePos.x }px, ${ mousePos.y }px, 0) translate(-50%, -50%)` } }
+            className= 'absolute w-12 h-12 -translate-1/2'
+            style= { { transform: `translate3d(${ mousePos.x }px, ${ mousePos.y }px, 0)` } }
           >
             <motion.div
               className= 'absolute inset-0'
@@ -104,7 +104,7 @@ export function Cursor () {
             </motion.div>
 
             <motion.div
-              className= 'w-2.5 h-2.5 bg-brutal-pink'
+              className= 'centered w-2.5 h-2.5 bg-brutal-pink'
               animate= { { scale: isHovering ? 3 : 1 } }
             />
           </div>

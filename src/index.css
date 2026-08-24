@@ -19,3 +19,9 @@
     @apply text-black bg-white cursor-none;
   }
 }
+
+/** Utilities */
+
+@utility centered {
+  @apply absolute top-1/2 left-1/2 -translate-1/2;
+}
