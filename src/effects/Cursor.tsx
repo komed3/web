@@ -1,3 +1,4 @@
+import { AnimatePresence, motion } from 'motion/react';
 import { useEffect, useState } from 'react';
 
 
@@ -60,4 +61,19 @@ export function Cursor () {
       document.removeEventListener( 'mouseenter', handleMouseEnter );
     };
   }, [ canUseCustomCursor ] );
+
+  const offset = isHovering ? 48 : 32;
+
+  return (
+    <AnimatePresence>
+      { canUseCustomCursor && isVisible && (
+        <motion.div
+          initial= { { opacity: 0 } }
+          animate= { { opacity: 1 } }
+          exit= { { opacity: 0 } }
+          className= 'fixed inset-0 pointer-events-none z-9999 overflow-hidden mix-blend-difference'
+        ></motion.div>
+      ) }
+    </AnimatePresence>
+  );
 }
