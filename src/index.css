@@ -9,8 +9,8 @@
 }
 
 @font-face {
-  font-family: 'Climate Crisis';
-  src: url( ./assets/ClimateCrisis.woff2 ) format( 'woff2' );
+  font-family: 'Unica One';
+  src: url( ./assets/UnicaOne.woff2 ) format( 'woff2' );
   font-weight: 100 900;
 }
 
@@ -18,7 +18,7 @@
 
 @theme {
   --font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
-  --font-display: 'Climate Crisis', sans-serif;
+  --font-display: 'Unica One', sans-serif;
 
   --color-brutal-yellow: #fbbf24;
   --color-brutal-green: #22c55e;
@@ -31,7 +31,7 @@
 
 @layer base {
   html, body {
-    @apply font-sans text-black bg-white cursor-none;
+    @apply font-sans text-black bg-white scroll-smooth;
   }
 }
 

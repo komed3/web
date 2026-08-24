@@ -6,9 +6,9 @@ export function Header () {
       <div className= ''>
         <Link
           to= '/'
-          className= 'font-display text-4xl'
+          className= 'font-display text-[30dvh]'
         >
-          komed3
+          komed3.
         </Link>
       </div>
     </header>
