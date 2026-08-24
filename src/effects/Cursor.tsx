@@ -102,6 +102,11 @@ export function Cursor () {
                 </div>
               ) ) }
             </motion.div>
+
+            <motion.div
+              className= 'w-2.5 h-2.5 bg-brutal-pink'
+              animate= { { scale: isHovering ? 3 : 1 } }
+            />
           </div>
         </motion.div>
       ) }
