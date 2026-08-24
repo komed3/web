@@ -1,10 +1,10 @@
-import { Cursor } from './effects/Cursor';
+import { Header } from './layout/Header';
 
 
 export default function App () {
   return (
     <>
-      <Cursor />
+      <Header />
     </>
   );
 }
