@@ -87,7 +87,15 @@ export function Cursor () {
           <div
             className= 'absolute flex items-center justify-center w-12 h-12'
             style= { { transform: `translate3d(${ mousePos.x }px, ${ mousePos.y }px, 0) translate(-50%, -50%)` } }
-          ></div>
+          >
+            <motion.div
+              className= 'absolute inset-0'
+              animate= { {
+                scale: isHovering ? 1.4 : 1,
+                rotate: isHovering ? 90 : 0
+              } }
+            ></motion.div>
+          </div>
         </motion.div>
       ) }
     </AnimatePresence>
