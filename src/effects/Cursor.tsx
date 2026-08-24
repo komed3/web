@@ -94,7 +94,14 @@ export function Cursor () {
                 scale: isHovering ? 1.4 : 1,
                 rotate: isHovering ? 90 : 0
               } }
-            ></motion.div>
+            >
+              { [ 'top-0 left-0', 'top-0 right-0', 'bottom-0 left-0', 'bottom-0 right-0' ].map( pos => (
+                <div key= { pos }>
+                  <div className= { `absolute ${ pos } w-4 h-0.75 bg-white` } />
+                  <div className= { `absolute ${ pos } w-0.75 h-4 bg-white` } />
+                </div>
+              ) ) }
+            </motion.div>
           </div>
         </motion.div>
       ) }
