@@ -1,4 +1,4 @@
-import { usePresence } from 'motion/react';
+import { motion, usePresence } from 'motion/react';
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router';
 
@@ -24,6 +24,26 @@ function MenuButton ( { open, onClick }: { open: boolean, onClick: () => void } 
     >
       <span className= 'font-mono text-[11px] font-500 tracking-[0.2em]'>
         { open ? 'CLOSE' : 'MENU' }
+      </span>
+
+      <span className= 'relative w-14 h-12'>
+        <motion.span
+          className= 'absolute left-0 w-14 h-px origin-center bg-current'
+          initial= { { top: '17px', rotate: 0, scaleX: 1 } }
+          animate= { active ? {
+            top: [ '17px', '24px', '24px' ],
+            rotate: [ 0, 0, 45 ],
+            scaleX: [ 1, 1, 0.9 ]
+          } : {
+            top: [ '24px', '24px', '17px' ],
+            rotate: [ 45, 0, 0 ],
+            scaleX: [ 0.9, 1, 1 ]
+          } }
+          transition= { {
+            duration: 0.7,
+            ease: [ 0.76, 0, 0.24, 1 ]
+          } }
+        />
       </span>
     </button>
   );
