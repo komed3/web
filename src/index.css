@@ -46,8 +46,8 @@
     text-rendering: optimizeLegibility;
   }
 
-  button, a, .interactive {
-    @apply cursor-pointer;
+  *, *::before, *::after {
+    @apply cursor-none;
   }
 }
 
