@@ -161,13 +161,11 @@ export function Header () {
                     <Link
                       to= { path }
                       onClick= { () => setMenuOpen( false ) }
-                      className= { [
-                        'group flex h-full min-h-0 items-center gap-7',
-                        'font-sans font-800 leading-[0.8] -tracking-widest',
-                        'transition-colors hover:text-brutal-yellow',
-                        i % 2 === 1 && 'ml-[10vw]',
-                        i === 3 && 'ml-[5vw]'
-                      ].filter( Boolean ).join( ' ' ) }
+                      className= {
+                        'group flex items-center gap-7 h-full min-h-0 font-sans font-800 ' +
+                        'leading-[0.8] -tracking-widest hover:text-brutal-yellow transition-colors ' +
+                        ( i % 2 === 1 && 'ml-[10vw] ' ) + ( i === 3 && 'ml-[5vw]' )
+                      }
                     ></Link>
                   </motion.div>
                 ) ) }
