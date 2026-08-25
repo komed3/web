@@ -28,4 +28,19 @@ export function Cursor () {
       hoverPointer.removeEventListener( 'change', update );
     };
   }, [] );
+
+  useEffect( () => {
+    if ( ! canUseCustomCursor ) {
+      setIsVisible( false );
+      return;
+    }
+
+    const handleMouseMove = ( { clientX, clientY, target }: MouseEvent ) => {
+      x.set( clientX );
+      y.set( clientY );
+
+      setIsVisible( true );
+      setIsInteractive( !! ( target as HTMLElement ).closest( 'a, button' ) );
+    };
+  }, [ canUseCustomCursor, x, y ] );
 }
