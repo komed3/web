@@ -83,6 +83,10 @@ export function Cursor () {
               'rounded-full mix-blend-difference pointer-events-none'
             }
             style= { { x: circleX, y: circleY } }
+            transition= { {
+              opacity: { duration: 0.15 },
+              scale: { type: 'spring', stiffness: 500, damping: 30 }
+            } }
           />
         </>
       ) }
