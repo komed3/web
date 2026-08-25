@@ -165,7 +165,13 @@ export function Header () {
                 </nav>
 
                 { /** Sidebar */ }
-                <aside className= 'hidden lg:flex lg:flex-col border-l border-white/30'></aside>
+                <aside className= 'hidden lg:flex lg:flex-col border-l border-white/30'>
+                  <div className= 'px-8 py-6 border-b border-white/30'>
+                    <span className= 'font-mono text-[11px] uppercase tracking-widest text-white/50'>
+                      Current stack
+                    </span>
+                  </div>
+                </aside>
               </div>
 
               { /** Footer */ }
