@@ -22,7 +22,7 @@ function MenuButton ( { open, onClick }: { open: boolean, onClick: () => void } 
       className= { 'flex items-center gap-4 h-12 ' + ( open && 'text-white' ) }
       aria-label= { open ? 'Close menu' : 'Open menu' }
     >
-      <span className= 'font-mono text-[10px] font-500 tracking-[0.2em]'>
+      <span className= 'font-mono text-[11px] font-500 tracking-[0.2em]'>
         { open ? 'CLOSE' : 'MENU' }
       </span>
     </button>
@@ -54,7 +54,11 @@ export function Header () {
             komed3
           </Link>
 
-          
+          { /** Menu Opener */ }
+          <MenuButton
+            open= { false }
+            onClick= { () => setMenuOpen( true ) }
+          />
         </div>
       </header>
     </>
