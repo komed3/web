@@ -82,8 +82,9 @@ function MenuButton ( { label, isOpen, onClick, presence }: MenuButtonProps ) {
 
 export function Header () {
   const [ menuOpen, setMenuOpen ] = useState( false );
-  const location = useLocation();
+  const [ menuKey, setMenuKey ] = useState( 0 );
 
+  const location = useLocation();
   useEffect( () => setMenuOpen( false ), [ location.pathname ] );
 
   useEffect( () => {
@@ -109,7 +110,10 @@ export function Header () {
           <MenuButton
             label= 'MENU'
             isOpen= { menuOpen }
-            onClick= { () => setMenuOpen( true ) }
+            onClick= { () => {
+              setMenuKey( key => key + 1 );
+              setMenuOpen( true );
+            } }
             presence= { false }
           />
         </div>
@@ -119,6 +123,7 @@ export function Header () {
       <AnimatePresence>
         { menuOpen && (
           <motion.div
+            key= { menuKey }
             className= 'fixed inset-0 z-99 h-dvh text-white bg-brutal-blue'
             initial= { { clipPath: 'circle(0% at 100% 0%)' } }
             transition= { { duration: 0.7, ease: [ 0.76, 0, 0.24, 1 ] } }
@@ -153,11 +158,15 @@ export function Header () {
                   <motion.div
                     key= { path }
                     className= 'flex-1 min-h-0'
-                    initial= { { x: i % 2 === 0 ? '-4vw' : '4vw', y: '3vh' } }
-                    animate= { { x: 0, y: 0 } }
+                    initial= { {
+                      opacity: 0,
+                      x: i % 2 === 0 ? '-4vw' : '4vw',
+                      y: '3vh'
+                    } }
+                    animate= { { opacity: 1, x: 0, y: 0 } }
                     transition= { {
-                      duration: 0.55,
-                      delay: 0.18 + i * 0.06,
+                      duration: 0.65,
+                      delay: 0.18 + i * 0.07,
                       ease: [ 0.16, 1, 0.3, 1 ]
                     } }
                   >
