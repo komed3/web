@@ -7,7 +7,7 @@ export function Header () {
 
   return (
     <>
-      <header className= 'fixed inset-x-0 top-0 z-90 bg-white border-b border-black'>
+      <header className= 'fixed inset-x-0 top-0 z-90 bg-white border-b border-black select-none'>
         <div className= 'grid h-20 grid-cols-[1fr_auto_1fr] items-stretch'>
 
           { /** Title */ }
@@ -19,6 +19,13 @@ export function Header () {
             >
               <span className= 'text-brutal-blue'>k</span>omed3
             </Link>
+          </div>
+
+          { /** Quote */ }
+          <div className= 'hidden md:flex items-center px-8'>
+            <span className= 'font-mono text-xs uppercase tracking-wide'>
+              Leave the road, take the trails.
+            </span>
           </div>
 
         </div>
