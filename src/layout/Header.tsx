@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { SiCplusplus, SiGithub, SiNpm, SiReact, SiTypescript } from 'react-icons/si';
 import { Link, NavLink } from 'react-router';
 
+import logo from '../assets/logo.svg';
+
 
 const NAV = [
   { index: '01', label: 'WORK', href: '/work' },
@@ -196,6 +198,16 @@ export function Header () {
                         </span>
                       </motion.div>
                     ) ) }
+                  </div>
+
+                  <div className= 'flex-1 flex flex-col justify-center gap-8 p-8'>
+                    <div className= 'h-24 w-24 rounded-full overflow-hidden'>
+                      <img src= { logo } loading= 'lazy' alt= 'komed3' />
+                    </div>
+
+                    <p className= 'max-w-xs font-sans text-xl font-500 leading-tight tracking-tight'>
+                      Software, interfaces and open-source experiments.
+                    </p>
                   </div>
                 </aside>
               </div>
