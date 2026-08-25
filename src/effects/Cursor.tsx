@@ -82,6 +82,7 @@ export function Cursor () {
               'fixed left-0 top-0 z-998 -translate-1/2 w-12 h-12 bg-white ' +
               'rounded-full mix-blend-difference pointer-events-none'
             }
+            style= { { x: circleX, y: circleY } }
           />
         </>
       ) }
