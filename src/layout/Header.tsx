@@ -115,8 +115,8 @@ export function Header () {
             animate= { { clipPath: 'circle(150% at 100% 0%)' } }
             exit= { { clipPath: 'circle(0% at 100% 0%)' } }
           >
-            { /** Menu Header */ }
             <div className= 'flex flex-col min-h-0 h-full'>
+              { /** Menu Header */ }
               <div className= 'shrink-0 flex justify-between items-center h-24 px-7 md:px-12 lg:px-16 border-b border-white'>
                 { /** Title */ }
                 <Link
@@ -134,6 +134,17 @@ export function Header () {
                   onClick= { () => setMenuOpen( false ) }
                   presence= { true }
                 />
+              </div>
+
+              { /** Menu Footer */ }
+              <div
+                className= {
+                  'shrink-0 flex justify-between px-7 md:px-12 lg:px-16 py-6 border-t ' +
+                  'border-white font-mono text-[11px] uppercase tracking-widest'
+                }
+              >
+                <span>Building open-source since 2010</span>
+                <span>Copyright { new Date().getFullYear() } by komed3</span>
               </div>
             </div>
           </motion.div>
