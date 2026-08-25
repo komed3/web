@@ -3,6 +3,14 @@ import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router';
 
 
+const NAV = [
+  [ '01', 'Work', '/work' ],
+  [ '02', 'Projects', '/projects' ],
+  [ '03', 'About', '/about' ],
+  [ '04', 'Skillset', '/skills' ]
+] as const;
+
+
 interface MenuButtonProps {
   label: string;
   isOpen: boolean;
@@ -137,7 +145,9 @@ export function Header () {
               </div>
 
               { /** Main Navigation */ }
-              <nav className= 'flex-1 flex flex-col justify-center min-h-0 px-[8vw] py-[3vh]'></nav>
+              <nav className= 'flex-1 flex flex-col justify-center min-h-0 px-[8vw] py-[3vh]'>
+
+              </nav>
 
               { /** Menu Footer */ }
               <div
