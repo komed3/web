@@ -2,7 +2,7 @@ import { ArrowUpRightIcon, MenuIcon, XIcon } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import { useState } from 'react';
 import { SiGithub } from 'react-icons/si';
-import { Link } from 'react-router';
+import { Link, NavLink } from 'react-router';
 
 
 const NAV = [
@@ -130,9 +130,6 @@ export function Header () {
                     <motion.div
                       key= { item.index }
                       onClick= { closeMenu }
-                      className= {
-                        ''
-                      }
                       initial= { { opacity: 0, x: -40 } }
                       animate= { { opacity: 1, x: 0 } }
                       transition= { {
@@ -140,7 +137,30 @@ export function Header () {
                         duration: 0.4,
                         ease: [ 0.22, 1, 0.36, 1 ]
                       } }
-                    ></motion.div>
+                    >
+                      <NavLink
+                        to= { item.href }
+                        className= { ( { isActive } ) =>
+                          'group grid grid-cols-[3rem_1fr_auto] items-center gap-4 min-h-32 md:min-h-40 px-6 ' +
+                          'md:px-8 hover:bg-brutal-blue border-b border-white/30 transition-colors ' +
+                          ( isActive && 'text-brutal-orange hover:text-white' )
+                        }
+                      >
+                        <span className= 'font-mono text-sm tracking-widest text-white/50'>
+                          { item.index }
+                        </span>
+
+                        <span className= 'text-[clamp(3.5rem,9vw,9rem)] font-800 leading-none tracking-tighter'>
+                          { item.label }
+                        </span>
+
+                        <ArrowUpRightIcon
+                          size= { 32 }
+                          strokeWidth= { 1.2 }
+                          className= 'ml-auto opacity-0 group-hover:opacity-100 transition-opacity'
+                        />
+                      </NavLink>
+                    </motion.div>
                   ) ) }
                 </nav>
               </div>
