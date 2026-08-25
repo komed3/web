@@ -119,8 +119,10 @@ export function Header () {
               </div>
 
               { /** Footer */ }
-              <div className= 'grid md:grid-cols-2 border-t border-white/30'>
-                ...
+              <div className= 'grid md:grid-cols-2 border-t font-mono text-[11px] uppercase tracking-widest text-white/50 border-white/30'>
+                <div className= 'p-6 border-b md:border-b-0 md:border-r border-white/30'>
+                  <span>komed3 / Building open-source since 2010</span>
+                </div>
               </div>
             </div>
           </motion.div>
