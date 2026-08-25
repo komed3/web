@@ -1,4 +1,4 @@
-import { AnimatePresence, useMotionValue, useSpring } from 'motion/react';
+import { AnimatePresence, motion, useMotionValue, useSpring } from 'motion/react';
 import { useEffect, useState } from 'react';
 
 
@@ -60,7 +60,19 @@ export function Cursor () {
   return (
     <AnimatePresence>
       { canUseCustomCursor && isVisible && (
-        <></>
+        <>
+          { /** Dot */ }
+          <motion.div
+            initial= { { opacity: 0 } }
+            animate= { { opacity: 1 } }
+            exit= { { opacity: 0 } }
+            className= {
+              'fixed left-0 top-0 z-999 -translate-1/2 w-1.5 h-1.5 bg-white ' +
+              'rounded-full mix-blend-difference pointer-events-none'
+            }
+            style={ { x, y } }
+          />
+        </>
       ) }
     </AnimatePresence>
   );
