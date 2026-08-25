@@ -179,7 +179,24 @@ export function Header () {
                     </span>
                   </div>
 
-                  //
+                  <div className= 'grid grid-cols-2'>
+                    { STACK.map( ( { icon: Icon, label }, i ) => (
+                      <motion.div
+                        key= { label }
+                        className= 'flex flex-col justify-between aspect-square p-6 border-b border-white/30'
+                        initial= { { opacity: 0 } }
+                        animate= { { opacity: 1 } }
+                        transition= { { delay: 0.25 + i * 0.06, duration: 0.3 } }
+                        style= { { borderRightWidth: +! ( i % 2 ) } }
+                      >
+                        <Icon size= { 32 } />
+
+                        <span className= 'font-mono text-[11px] uppercase tracking-widest'>
+                          { label }
+                        </span>
+                      </motion.div>
+                    ) ) }
+                  </div>
                 </aside>
               </div>
 
