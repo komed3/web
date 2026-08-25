@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router';
 
 
+function MenuButton ( { open, onClick }: { open: boolean, onClick: () => void } ) {}
+
+
 export function Header () {
   const [ menuOpen, setMenuOpen ] = useState( false );
   const location = useLocation();
@@ -25,6 +28,8 @@ export function Header () {
           >
             komed3
           </Link>
+
+          
         </div>
       </header>
     </>
