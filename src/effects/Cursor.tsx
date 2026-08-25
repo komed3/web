@@ -42,5 +42,18 @@ export function Cursor () {
       setIsVisible( true );
       setIsInteractive( !! ( target as HTMLElement ).closest( 'a, button' ) );
     };
+
+    const handleMouseLeave = () => setIsVisible( false );
+    const handleMouseEnter = () => setIsVisible( true );
+
+    window.addEventListener( 'mousemove', handleMouseMove );
+    document.addEventListener( 'mouseleave', handleMouseLeave );
+    document.addEventListener( 'mouseenter', handleMouseEnter );
+
+    return () => {
+      window.removeEventListener( 'mousemove', handleMouseMove );
+      document.removeEventListener( 'mouseleave', handleMouseLeave );
+      document.removeEventListener( 'mouseenter', handleMouseEnter );
+    };
   }, [ canUseCustomCursor, x, y ] );
 }
