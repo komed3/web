@@ -136,6 +136,9 @@ export function Header () {
                 />
               </div>
 
+              { /** Main Navigation */ }
+              <nav className= 'flex-1 flex flex-col justify-center min-h-0 px-[8vw] py-[3vh]'></nav>
+
               { /** Menu Footer */ }
               <div
                 className= {
