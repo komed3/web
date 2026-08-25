@@ -28,8 +28,8 @@ function MenuButton ( { open, onClick }: { open: boolean, onClick: () => void } 
 
       <span className= 'relative w-14 h-12'>
         <motion.span
-          className= 'absolute left-0 w-14 h-px origin-center bg-current'
           initial= { { top: '17px', rotate: 0, scaleX: 1 } }
+          transition= { { duration: 0.7, ease: [ 0.76, 0, 0.24, 1 ] } }
           animate= { active ? {
             top: [ '17px', '24px', '24px' ],
             rotate: [ 0, 0, 45 ],
@@ -39,10 +39,22 @@ function MenuButton ( { open, onClick }: { open: boolean, onClick: () => void } 
             rotate: [ 45, 0, 0 ],
             scaleX: [ 0.9, 1, 1 ]
           } }
-          transition= { {
-            duration: 0.7,
-            ease: [ 0.76, 0, 0.24, 1 ]
+          className= 'absolute left-0 w-14 h-px origin-center bg-current'
+        />
+
+        <motion.span
+          initial= { { top: '31px', rotate: 0, scaleX: 1 } }
+          transition= { { duration: 0.7, ease: [ 0.76, 0, 0.24, 1 ] } }
+          animate= { active ? {
+            top: [ '31px', '24px', '24px' ],
+            rotate: [ 0, 0, -45 ],
+            scaleX: [ 1, 1, 0.9 ]
+          } : {
+            top: [ '24px', '24px', '31px' ],
+            rotate: [ -45, 0, 0 ],
+            scaleX: [ 0.9, 1, 1 ]
           } }
+          className= 'absolute left-0 w-14 h-px origin-center bg-current'
         />
       </span>
     </button>
