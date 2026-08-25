@@ -3,59 +3,53 @@ import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router';
 
 
-function MenuButton ( { open, onClick }: { open: boolean, onClick: () => void } ) {
-  const [ isPresent, safeToRemove ] = usePresence();
+interface MenuButtonProps {
+  label: string;
+  isOpen: boolean;
+  onClick: () => void;
+  presence?: boolean;
+}
 
-  useEffect( () => {
-    if ( isPresent ) return;
 
-    const timer = window.setTimeout( safeToRemove, 700 );
-    return () => window.clearTimeout( timer );
-  }, [ isPresent, safeToRemove ] );
+function MenuButton ( { label, isOpen, onClick, presence }: MenuButtonProps ) {
+  const [ isPresent ] = usePresence();
+  const open = presence ? isPresent : isOpen;
 
-  const active = open && isPresent;
+  const lineAnimation = ( top: string, rotate: number ) => ( {
+    initial: false,
+    animate: open ? {
+      top: [ top, '24px', '24px' ],
+      rotate: [ 0, 0, rotate ],
+      scaleX: [ 1, 1, 0.9 ]
+    } : {
+      top: [ '24px', '24px', top ],
+      rotate: [ rotate, 0, 0 ],
+      scaleX: [ 0.9, 1, 1 ]
+    },
+    transition: {
+      duration: 0.7,
+      ease: [ 0.76, 0, 0.24, 1 ] as const
+    }
+  } );
 
   return (
     <button
       type= 'button'
       onClick= { onClick }
-      className= { 'flex items-center gap-4 h-12 ' + ( open && 'text-white' ) }
-      aria-label= { open ? 'Close menu' : 'Open menu' }
+      className= 'flex items-center gap-4 h-12'
+      aria-label= { label }
     >
-      <span className= 'font-mono text-[11px] font-500 tracking-[0.2em]'>
-        { open ? 'CLOSE' : 'MENU' }
+      <span className= 'font-mono text-[11px] font-500 tracking-[0.18em]'>
+        { label }
       </span>
 
       <span className= 'relative w-14 h-12'>
-        <motion.span
-          className= 'absolute left-0 w-14 h-px origin-center bg-current'
-          initial= { { top: '17px', rotate: 0, scaleX: 1 } }
-          transition= { { duration: 0.7, ease: [ 0.76, 0, 0.24, 1 ] } }
-          animate= { active ? {
-            top: [ '17px', '24px', '24px' ],
-            rotate: [ 0, 0, 45 ],
-            scaleX: [ 1, 1, 0.9 ]
-          } : {
-            top: [ '24px', '24px', '17px' ],
-            rotate: [ 45, 0, 0 ],
-            scaleX: [ 0.9, 1, 1 ]
-          } }
-        />
-
-        <motion.span
-          className= 'absolute left-0 w-14 h-px origin-center bg-current'
-          initial= { { top: '31px', rotate: 0, scaleX: 1 } }
-          transition= { { duration: 0.7, ease: [ 0.76, 0, 0.24, 1 ] } }
-          animate= { active ? {
-            top: [ '31px', '24px', '24px' ],
-            rotate: [ 0, 0, -45 ],
-            scaleX: [ 1, 1, 0.9 ]
-          } : {
-            top: [ '24px', '24px', '31px' ],
-            rotate: [ -45, 0, 0 ],
-            scaleX: [ 0.9, 1, 1 ]
-          } }
-        />
+        { [ lineAnimation( '17px', 45 ), lineAnimation( '31px', -45 ) ].map( ( animation, index ) => (
+          <motion.span
+            key= { index } { ...animation }
+            className= 'absolute left-0 w-14 h-px origin-center bg-current'
+          />
+        ) ) }
       </span>
     </button>
   );
@@ -88,8 +82,10 @@ export function Header () {
 
           { /** Menu Opener */ }
           <MenuButton
-            open= { false }
+            label= 'MENU'
+            isOpen= { menuOpen }
             onClick= { () => setMenuOpen( true ) }
+            presence= { false }
           />
         </div>
       </header>
@@ -118,8 +114,10 @@ export function Header () {
 
                 { /** Menu Closer */ }
                 <MenuButton
-                  open= { true }
+                  label= 'CLOSE'
+                  isOpen= { menuOpen }
                   onClick= { () => setMenuOpen( false ) }
+                  presence= { true }
                 />
               </div>
             </div>
