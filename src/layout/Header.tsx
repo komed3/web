@@ -1,4 +1,4 @@
-import { motion, usePresence } from 'motion/react';
+import { AnimatePresence, motion, usePresence } from 'motion/react';
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router';
 
@@ -28,6 +28,7 @@ function MenuButton ( { open, onClick }: { open: boolean, onClick: () => void } 
 
       <span className= 'relative w-14 h-12'>
         <motion.span
+          className= 'absolute left-0 w-14 h-px origin-center bg-current'
           initial= { { top: '17px', rotate: 0, scaleX: 1 } }
           transition= { { duration: 0.7, ease: [ 0.76, 0, 0.24, 1 ] } }
           animate= { active ? {
@@ -39,10 +40,10 @@ function MenuButton ( { open, onClick }: { open: boolean, onClick: () => void } 
             rotate: [ 45, 0, 0 ],
             scaleX: [ 0.9, 1, 1 ]
           } }
-          className= 'absolute left-0 w-14 h-px origin-center bg-current'
         />
 
         <motion.span
+          className= 'absolute left-0 w-14 h-px origin-center bg-current'
           initial= { { top: '31px', rotate: 0, scaleX: 1 } }
           transition= { { duration: 0.7, ease: [ 0.76, 0, 0.24, 1 ] } }
           animate= { active ? {
@@ -54,7 +55,6 @@ function MenuButton ( { open, onClick }: { open: boolean, onClick: () => void } 
             rotate: [ -45, 0, 0 ],
             scaleX: [ 0.9, 1, 1 ]
           } }
-          className= 'absolute left-0 w-14 h-px origin-center bg-current'
         />
       </span>
     </button>
@@ -93,6 +93,19 @@ export function Header () {
           />
         </div>
       </header>
+
+      { /** Menu */ }
+      <AnimatePresence>
+        { menuOpen && (
+          <motion.div
+            className= 'fixed inset-0 z-99 h-dvh text-white bg-brutal-blue'
+            initial= { { clipPath: 'circle(0% at 100% 0%)' } }
+            transition= { { duration: 0.7, ease: [ 0.76, 0, 0.24, 1 ] } }
+            animate= { { clipPath: 'circle(150% at 100% 0%)' } }
+            exit= { { clipPath: 'circle(0% at 100% 0%)' } }
+          ></motion.div>
+        ) }
+      </AnimatePresence>
     </>
   );
 }
