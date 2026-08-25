@@ -163,7 +163,7 @@ export function Header () {
                       to= { path }
                       onClick= { () => setMenuOpen( false ) }
                       className= {
-                        'group flex items-center gap-7 h-full min-h-0 font-sans font-800 ' +
+                        'group inline-flex items-center gap-7 h-full min-h-0 font-sans font-800 ' +
                         'leading-[0.8] -tracking-widest hover:text-brutal-yellow transition-colors ' +
                         ( i % 2 === 1 && 'ml-[10vw] ' ) + ( i === 3 && 'ml-[5vw]' )
                       }
