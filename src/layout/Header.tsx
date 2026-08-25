@@ -10,6 +10,7 @@ export function Header () {
 
   return (
     <>
+      { /** Header */ }
       <header className= 'fixed inset-x-0 top-0 z-90 bg-white border-b border-black select-none'>
         <div className= 'grid h-20 grid-cols-[1fr_auto] md:grid-cols-[auto_auto_auto] items-stretch'>
 
@@ -89,6 +90,19 @@ export function Header () {
           </div>
         </div>
       </header>
+
+      { /** Menu */ }
+      <AnimatePresence>
+        { menuOpen && (
+          <motion.div
+            className= 'fixed inset-0 z-80 text-white bg-black'
+            initial= { { clipPath: 'inset(0 0 100% 0)' } }
+            animate= { { clipPath: 'inset(0 0 0% 0)' } }
+            exit= { { clipPath: 'inset(0 0 100% 0)' } }
+            transition= { { duration: 0.45, ease: [ 0.76, 0, 0.24, 1 ] } }
+          ></motion.div>
+        ) }
+      </AnimatePresence>
     </>
   );
 }
