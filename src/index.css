@@ -10,9 +10,8 @@
 }
 
 @font-face {
-  src: url( ./assets/UnicaOne.woff2 ) format( 'woff2' );
-  font-family: 'Unica One';
-  font-weight: 100 900;
+  src: url( ./assets/Vertigo.woff2 ) format( 'woff2' );
+  font-family: 'Vertigo';
   font-display: swap;
 }
 
@@ -27,7 +26,7 @@
 
 @theme {
   --font-sans: 'Sora', ui-sans-serif, system-ui, sans-serif;
-  --font-display: 'Unica One', sans-serif;
+  --font-display: 'Vertigo', sans-serif;
   --font-mono: 'Lilex', ui-monospace, monospace;
 
   --color-brutal-yellow: #fbbf24;
