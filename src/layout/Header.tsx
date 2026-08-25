@@ -146,7 +146,19 @@ export function Header () {
 
               { /** Main Navigation */ }
               <nav className= 'flex-1 flex flex-col justify-center min-h-0 px-[8vw] py-[3vh]'>
-
+                { NAV.map( ( [ number, label, path ], i ) => (
+                  <motion.div
+                    key= { path }
+                    className= 'flex-1 min-h-0'
+                    initial= { { x: i % 2 === 0 ? '-4vw' : '4vw', y: '3vh' } }
+                    animate= { { x: 0, y: 0 } }
+                    transition= { {
+                      duration: 0.55,
+                      delay: 0.18 + i * 0.06,
+                      ease: [ 0.16, 1, 0.3, 1 ]
+                    } }
+                  ></motion.div>
+                ) ) }
               </nav>
 
               { /** Menu Footer */ }
