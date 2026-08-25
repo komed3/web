@@ -1,4 +1,5 @@
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRightIcon, MenuIcon, XIcon } from 'lucide-react';
+import { AnimatePresence, motion } from 'motion/react';
 import { useState } from 'react';
 import { SiGithub } from 'react-icons/si';
 import { Link } from 'react-router';
@@ -38,7 +39,7 @@ export function Header () {
               target= '_blank'
               rel= 'noreferrer'
               className= {
-                'hidden lg:flex items-center gap-3 px-8 hover:text-white hover:bg-black ' +
+                'hidden lg:flex items-center gap-3 px-8 hover:text-white hover:bg-brutal-blue ' +
                 'border-l border-black transition-colors'
               }
             >
@@ -48,8 +49,43 @@ export function Header () {
                 GitHub
               </span>
 
-              <ArrowUpRight size= { 20 } strokeWidth= { 1.8 } />
+              <ArrowUpRightIcon size= { 20 } strokeWidth= { 1.8 } />
             </a>
+
+            { /** Menu Opener */ }
+            <button
+              aria-label= { menuOpen ? 'Close menu' : 'Open menu' }
+              aria-expanded= { menuOpen }
+              onClick= { () => setMenuOpen( ! menuOpen ) }
+              className= {
+                'group flex justify-center items-center w-20 border-l border-black transition-colors ' +
+                ( menuOpen ? 'text-white bg-black' : 'hover:bg-brutal-yellow' )
+              }
+            >
+              <AnimatePresence mode= 'wait' initial= { false }>
+                { menuOpen ? (
+                  <motion.div
+                    key= 'close'
+                    initial= { { rotate: -90, opacity: 0 } }
+                    animate= { { rotate: 0, opacity: 1 } }
+                    exit= { { rotate: 90, opacity: 0 } }
+                    transition= { { duration: 0.18 } }
+                  >
+                    <XIcon size= { 32 } strokeWidth= { 1.2 } />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key= 'menu'
+                    initial= { { rotate: 90, opacity: 0 } }
+                    animate= { { rotate: 0, opacity: 1 } }
+                    exit= { { rotate: -90, opacity: 0 } }
+                    transition= { { duration: 0.18 } }
+                  >
+                    <MenuIcon size= { 32 } strokeWidth= { 1.2 } />
+                  </motion.div>
+                ) }
+              </AnimatePresence>
+            </button>
           </div>
         </div>
       </header>
