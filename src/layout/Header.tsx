@@ -101,7 +101,8 @@ export function Header () {
             to= '/'
             className= 'font-display text-2xl font-800 tracking-wider'
           >
-            komed3
+            <span className= 'text-brutal-blue'>k</span>
+            <span>omed3</span>
           </Link>
 
           { /** Menu Opener */ }
@@ -133,7 +134,8 @@ export function Header () {
                   onClick= { () => setMenuOpen( false ) }
                   className= 'font-display text-2xl font-800 tracking-wider'
                 >
-                  komed3
+                  <span className= 'text-brutal-yellow'>k</span>
+                  <span>omed3</span>
                 </Link>
 
                 { /** Menu Closer */ }
