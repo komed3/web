@@ -166,7 +166,11 @@ export function Header () {
                         'leading-[0.8] -tracking-widest hover:text-brutal-yellow transition-colors ' +
                         ( i % 2 === 1 && 'ml-[10vw] ' ) + ( i === 3 && 'ml-[5vw]' )
                       }
-                    ></Link>
+                    >
+                      <span className= 'shrink-0 font-mono text-[11px] tracking-normal'>
+                        { number }
+                      </span>
+                    </Link>
                   </motion.div>
                 ) ) }
               </nav>
