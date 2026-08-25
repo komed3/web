@@ -1,8 +1,20 @@
+import { usePresence } from 'motion/react';
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router';
 
 
-function MenuButton ( { open, onClick }: { open: boolean, onClick: () => void } ) {}
+function MenuButton ( { open, onClick }: { open: boolean, onClick: () => void } ) {
+  const [ isPresent, safeToRemove ] = usePresence();
+
+  useEffect( () => {
+    if ( isPresent ) return;
+
+    const timer = window.setTimeout( safeToRemove, 700 );
+    return () => window.clearTimeout( timer );
+  }, [ isPresent, safeToRemove ] );
+
+  const active = open && isPresent;
+}
 
 
 export function Header () {
