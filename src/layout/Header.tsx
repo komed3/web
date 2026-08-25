@@ -95,12 +95,25 @@ export function Header () {
       <AnimatePresence>
         { menuOpen && (
           <motion.div
-            className= 'fixed inset-0 z-80 text-white bg-black'
+            className= 'fixed inset-0 z-80 text-white bg-black select-none'
             initial= { { clipPath: 'inset(0 0 100% 0)' } }
             animate= { { clipPath: 'inset(0 0 0% 0)' } }
             exit= { { clipPath: 'inset(0 0 100% 0)' } }
             transition= { { duration: 0.45, ease: [ 0.76, 0, 0.24, 1 ] } }
-          ></motion.div>
+          >
+            <div className= 'grid grid-rows-[5rem_1fr_auto] h-full pt-20'>
+              { /** Top Row */ }
+              <div className= 'grid grid-cols-2 font-mono text-[11px] uppercase tracking-widest border-b border-white/30'>
+                <div className= 'flex items-center px-5 md:px-8 border-r border-white/30'>
+                  <span>Explore the core</span>
+                </div>
+
+                <div className= 'flex justify-end items-center px-5 md:px-8'>
+                  <span>Est. 2010</span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         ) }
       </AnimatePresence>
     </>
