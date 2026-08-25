@@ -1,6 +1,6 @@
 import { ArrowUpRightIcon, MenuIcon, XIcon } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { SiCplusplus, SiGithub, SiNpm, SiReact, SiTypescript } from 'react-icons/si';
 import { Link, NavLink } from 'react-router';
 
@@ -25,6 +25,11 @@ const STACK = [
 export function Header () {
   const [ menuOpen, setMenuOpen ] = useState( false );
   const closeMenu = () => setMenuOpen( false );
+
+  useEffect( () => {
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = '' };
+  }, [ menuOpen ] );
 
   return (
     <>
