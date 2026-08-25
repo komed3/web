@@ -13,18 +13,30 @@ interface MenuButtonProps {
 
 function MenuButton ( { label, isOpen, onClick, presence }: MenuButtonProps ) {
   const [ isPresent ] = usePresence();
+
+  const [ wasOpen, setWasOpen ] = useState( isOpen );
+  useEffect( () => { if ( isOpen ) setWasOpen( true ) }, [ isOpen ] );
+
   const open = presence ? isPresent : isOpen;
 
   const lineAnimation = ( top: string, rotate: number ) => ( {
-    initial: false,
+    initial: {
+      top,
+      rotate: 0,
+      scaleX: 1
+    },
     animate: open ? {
       top: [ top, '24px', '24px' ],
       rotate: [ 0, 0, rotate ],
       scaleX: [ 1, 1, 0.9 ]
-    } : {
+    } : wasOpen ? {
       top: [ '24px', '24px', top ],
       rotate: [ rotate, 0, 0 ],
       scaleX: [ 0.9, 1, 1 ]
+    } : {
+      top,
+      rotate: 0,
+      scaleX: 1
     },
     transition: {
       duration: 0.7,
@@ -44,7 +56,10 @@ function MenuButton ( { label, isOpen, onClick, presence }: MenuButtonProps ) {
       </span>
 
       <span className= 'relative w-14 h-12'>
-        { [ lineAnimation( '17px', 45 ), lineAnimation( '31px', -45 ) ].map( ( animation, index ) => (
+        { [
+          lineAnimation( '17px', 45 ),
+          lineAnimation( '31px', -45 )
+        ].map( ( animation, index ) => (
           <motion.span
             key= { index } { ...animation }
             className= 'absolute left-0 w-14 h-px origin-center bg-current'
