@@ -5,6 +5,14 @@ import { SiGithub } from 'react-icons/si';
 import { Link } from 'react-router';
 
 
+const NAV = [
+  { index: '01', label: 'WORK', href: '/#work' },
+  { index: '02', label: 'SKILLS', href: '/#skills' },
+  { index: '03', label: 'ABOUT', href: '/#about' },
+  { index: '04', label: 'STACK', href: '/#stack' }
+] as const;
+
+
 export function Header () {
   const [ menuOpen, setMenuOpen ] = useState( false )
 
