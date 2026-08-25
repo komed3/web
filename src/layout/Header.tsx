@@ -123,6 +123,10 @@ export function Header () {
                 <div className= 'p-6 border-b md:border-b-0 md:border-r border-white/30'>
                   <span>komed3 / Building open-source since 2010</span>
                 </div>
+
+                <div className= 'p-6 md:text-right'>
+                  <span>Copyright { new Date().getFullYear() } by komed3</span>
+                </div>
               </div>
             </div>
           </motion.div>
