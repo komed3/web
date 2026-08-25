@@ -103,7 +103,27 @@ export function Header () {
             transition= { { duration: 0.7, ease: [ 0.76, 0, 0.24, 1 ] } }
             animate= { { clipPath: 'circle(150% at 100% 0%)' } }
             exit= { { clipPath: 'circle(0% at 100% 0%)' } }
-          ></motion.div>
+          >
+            { /** Menu Header */ }
+            <div className= 'flex flex-col min-h-0 h-full'>
+              <div className= 'shrink-0 flex justify-between items-center h-24 px-7 md:px-12 lg:px-16 border-b border-white'>
+                { /** Title */ }
+                <Link
+                  to= '/'
+                  onClick= { () => setMenuOpen( false ) }
+                  className= 'font-display text-2xl font-800 tracking-wider'
+                >
+                  komed3
+                </Link>
+
+                { /** Menu Closer */ }
+                <MenuButton
+                  open= { true }
+                  onClick= { () => setMenuOpen( false ) }
+                />
+              </div>
+            </div>
+          </motion.div>
         ) }
       </AnimatePresence>
     </>
