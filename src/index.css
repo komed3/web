@@ -45,6 +45,10 @@
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
   }
+
+  button, a, .interactive {
+    @apply cursor-pointer;
+  }
 }
 
 /** Utilities */
