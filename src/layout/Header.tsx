@@ -6,15 +6,16 @@ import { Link } from 'react-router';
 
 
 const NAV = [
-  { index: '01', label: 'WORK', href: '/#work' },
-  { index: '02', label: 'SKILLS', href: '/#skills' },
-  { index: '03', label: 'ABOUT', href: '/#about' },
-  { index: '04', label: 'STACK', href: '/#stack' }
+  { index: '01', label: 'WORK', href: '/work' },
+  { index: '02', label: 'SKILLS', href: '/skills' },
+  { index: '03', label: 'ABOUT', href: '/about' },
+  { index: '04', label: 'STACK', href: '/stack' }
 ] as const;
 
 
 export function Header () {
-  const [ menuOpen, setMenuOpen ] = useState( false )
+  const [ menuOpen, setMenuOpen ] = useState( false );
+  const closeMenu = () => setMenuOpen( false );
 
   return (
     <>
@@ -123,7 +124,25 @@ export function Header () {
 
               { /** Contents */ }
               <div className= 'grid lg:grid-cols-[1fr_24rem] min-h-0'>
-                ...
+                { /** Nav */ }
+                <nav className= 'overflow-y-auto'>
+                  { NAV.map( ( item, i ) => (
+                    <motion.div
+                      key= { item.index }
+                      onClick= { closeMenu }
+                      className= {
+                        ''
+                      }
+                      initial= { { opacity: 0, x: -40 } }
+                      animate= { { opacity: 1, x: 0 } }
+                      transition= { {
+                        delay: 0.12 + i * 0.055,
+                        duration: 0.4,
+                        ease: [ 0.22, 1, 0.36, 1 ]
+                      } }
+                    ></motion.div>
+                  ) ) }
+                </nav>
               </div>
 
               { /** Footer */ }
