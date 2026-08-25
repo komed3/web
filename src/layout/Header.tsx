@@ -163,6 +163,9 @@ export function Header () {
                     </motion.div>
                   ) ) }
                 </nav>
+
+                { /** Sidebar */ }
+                <aside className= 'hidden lg:flex lg:flex-col border-l border-white/30'></aside>
               </div>
 
               { /** Footer */ }
