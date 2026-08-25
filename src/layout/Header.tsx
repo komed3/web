@@ -1,4 +1,6 @@
+import { ArrowUpRight } from 'lucide-react';
 import { useState } from 'react';
+import { SiGithub } from 'react-icons/si';
 import { Link } from 'react-router';
 
 
@@ -28,6 +30,27 @@ export function Header () {
             </span>
           </div>
 
+          { /** Links */ }
+          <div className= 'flex items-stretch justify-end'>
+            { /** GitHub */ }
+            <a
+              href= 'https://github.com/komed3'
+              target= '_blank'
+              rel= 'noreferrer'
+              className= {
+                'hidden lg:flex items-center gap-3 px-8 hover:text-white hover:bg-black ' +
+                'border-l border-black transition-colors'
+              }
+            >
+              <SiGithub size= { 24 } />
+
+              <span className= 'mr-4 font-mono text-xs uppercase tracking-wide'>
+                GitHub
+              </span>
+
+              <ArrowUpRight size= { 20 } strokeWidth= { 1.8 } />
+            </a>
+          </div>
         </div>
       </header>
     </>
