@@ -157,7 +157,19 @@ export function Header () {
                       delay: 0.18 + i * 0.06,
                       ease: [ 0.16, 1, 0.3, 1 ]
                     } }
-                  ></motion.div>
+                  >
+                    <Link
+                      to= { path }
+                      onClick= { () => setMenuOpen( false ) }
+                      className= { [
+                        'group flex h-full min-h-0 items-center gap-7',
+                        'font-sans font-800 leading-[0.8] -tracking-widest',
+                        'transition-colors hover:text-brutal-yellow',
+                        i % 2 === 1 && 'ml-[10vw]',
+                        i === 3 && 'ml-[5vw]'
+                      ].filter( Boolean ).join( ' ' ) }
+                    ></Link>
+                  </motion.div>
                 ) ) }
               </nav>
 
