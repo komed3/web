@@ -170,6 +170,10 @@ export function Header () {
                       <span className= 'shrink-0 font-mono text-[11px] tracking-normal'>
                         { number }
                       </span>
+
+                      <span className= 'whitespace-nowrap uppercase text-[clamp(3rem,9vw,10rem)]'>
+                        { label }
+                      </span>
                     </Link>
                   </motion.div>
                 ) ) }
