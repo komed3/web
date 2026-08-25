@@ -70,7 +70,7 @@ export function Cursor () {
               'fixed left-0 top-0 z-999 -translate-1/2 w-1.5 h-1.5 bg-white ' +
               'rounded-full mix-blend-difference pointer-events-none'
             }
-            style={ { x, y } }
+            style= { { x, y } }
           />
 
           { /** Circle */ }
