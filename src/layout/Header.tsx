@@ -1,3 +1,4 @@
+import { ArrowUpRight } from 'lucide-react';
 import { AnimatePresence, motion, usePresence } from 'motion/react';
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router';
@@ -174,6 +175,15 @@ export function Header () {
                       <span className= 'whitespace-nowrap uppercase text-[clamp(3rem,9vw,10rem)]'>
                         { label }
                       </span>
+
+                      <ArrowUpRight
+                        size= { 30 }
+                        strokeWidth= { 1.15 }
+                        className= {
+                          'shrink-0 ml-3 group-hover:translate-x-2 group-hover:-translate-y-2 ' +
+                          'transition-transform duration-300'
+                        }
+                      />
                     </Link>
                   </motion.div>
                 ) ) }
