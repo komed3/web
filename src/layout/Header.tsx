@@ -14,6 +14,19 @@ function MenuButton ( { open, onClick }: { open: boolean, onClick: () => void } 
   }, [ isPresent, safeToRemove ] );
 
   const active = open && isPresent;
+
+  return (
+    <button
+      type= 'button'
+      onClick= { onClick }
+      className= { 'flex items-center gap-4 h-12 ' + ( open && 'text-white' ) }
+      aria-label= { open ? 'Close menu' : 'Open menu' }
+    >
+      <span className= 'font-mono text-[10px] font-500 tracking-[0.2em]'>
+        { open ? 'CLOSE' : 'MENU' }
+      </span>
+    </button>
+  );
 }
 
 
