@@ -1,7 +1,7 @@
 import { ArrowUpRightIcon, MenuIcon, XIcon } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import { useState } from 'react';
-import { SiGithub } from 'react-icons/si';
+import { SiCplusplus, SiGithub, SiNpm, SiReact, SiTypescript } from 'react-icons/si';
 import { Link, NavLink } from 'react-router';
 
 
@@ -10,6 +10,13 @@ const NAV = [
   { index: '02', label: 'SKILLS', href: '/skills' },
   { index: '03', label: 'ABOUT', href: '/about' },
   { index: '04', label: 'STACK', href: '/stack' }
+] as const;
+
+const STACK = [
+  { icon: SiTypescript, label: 'TypeScript' },
+  { icon: SiReact, label: 'React' },
+  { icon: SiNpm, label: 'Node.js' },
+  { icon: SiCplusplus, label: 'C++' }
 ] as const;
 
 
@@ -171,6 +178,8 @@ export function Header () {
                       Current stack
                     </span>
                   </div>
+
+                  //
                 </aside>
               </div>
 
