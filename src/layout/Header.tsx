@@ -11,10 +11,10 @@ export function Header () {
   return (
     <>
       <header className= 'fixed inset-x-0 top-0 z-90 bg-white border-b border-black select-none'>
-        <div className= 'grid h-20 grid-cols-[1fr_auto_1fr] items-stretch'>
+        <div className= 'grid h-20 grid-cols-[1fr_auto] md:grid-cols-[auto_auto_auto] items-stretch'>
 
           { /** Title */ }
-          <div className= 'flex items-center px-5 border-r border-black'>
+          <div className= 'flex items-center px-5'>
             <Link
               to= '/'
               className= 'group flex items-center font-display text-4xl leading-none'
@@ -25,7 +25,7 @@ export function Header () {
           </div>
 
           { /** Quote */ }
-          <div className= 'hidden md:flex items-center px-8'>
+          <div className= 'hidden md:flex items-center px-8 border-l border-black'>
             <span className= 'font-mono text-xs uppercase tracking-wide'>
               Leave the road, take the trails.
             </span>
