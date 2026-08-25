@@ -102,7 +102,7 @@ export function Header () {
             transition= { { duration: 0.45, ease: [ 0.76, 0, 0.24, 1 ] } }
           >
             <div className= 'grid grid-rows-[5rem_1fr_auto] h-full pt-20'>
-              { /** Top Row */ }
+              { /** Header */ }
               <div className= 'grid grid-cols-2 font-mono text-[11px] uppercase tracking-widest border-b border-white/30'>
                 <div className= 'flex items-center px-5 md:px-8 border-r border-white/30'>
                   <span>Explore the core</span>
@@ -111,6 +111,16 @@ export function Header () {
                 <div className= 'flex justify-end items-center px-5 md:px-8'>
                   <span>Est. 2010</span>
                 </div>
+              </div>
+
+              { /** Contents */ }
+              <div className= 'grid lg:grid-cols-[1fr_24rem] min-h-0'>
+                ...
+              </div>
+
+              { /** Footer */ }
+              <div className= 'grid md:grid-cols-2 border-t border-white/30'>
+                ...
               </div>
             </div>
           </motion.div>
