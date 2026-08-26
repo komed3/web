@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router';
+import { Route, Routes, useLocation } from 'react-router';
 
 import { Header } from './layout/Header';
 import { Home } from './pages/Home';
@@ -12,8 +12,10 @@ const COLORS = {
 
 
 export default function App () {
+  const { pathname } = useLocation();
+
   return (
-    <div className= ''>
+    <div className= { ( ( COLORS as any )[ pathname ] ?? '' ) }>
       <Header />
 
       <main className= 'min-h-screen'>

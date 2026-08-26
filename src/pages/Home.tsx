@@ -2,9 +2,7 @@ export function Home () {
   return (
     <>
       { /** Intro */ }
-      <div className= ''>
-        //
-      </div>
+      <div className= 'w-full h-screen'></div>
     </>
   );
 }
