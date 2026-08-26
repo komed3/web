@@ -6,7 +6,7 @@ import { Logo } from '../components/Logo';
 const NAV = [ {
   label: 'Navigation',
   items: [
-    [ 'Home', '/' ],
+    [ 'About', '/' ],
     [ 'Tech Stack', '/stack' ],
     [ 'Projects', '/index' ]
   ]
