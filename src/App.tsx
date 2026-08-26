@@ -4,6 +4,13 @@ import { Header } from './layout/Header';
 import { Home } from './pages/Home';
 
 
+const COLORS = {
+  '/': 'text-black bg-white',
+  '/stack': 'text-white bg-brutal-blue',
+  '/index': 'text-white bg-black'
+} as const;
+
+
 export default function App () {
   return (
     <div className= ''>
