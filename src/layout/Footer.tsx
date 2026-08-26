@@ -3,11 +3,14 @@ import { Link } from 'react-router';
 import { Logo } from '../components/Logo';
 
 
-const NAV = [
-  [ 'Home', '/' ],
-  [ 'Tech Stack', '/stack' ],
-  [ 'Projects', '/index' ]
-] as const;
+const NAV = [ {
+  label: 'Navigation',
+  items: [
+    [ 'Home', '/' ],
+    [ 'Tech Stack', '/stack' ],
+    [ 'Projects', '/index' ]
+  ]
+} ] as const;
 
 
 const PACKAGES = [
