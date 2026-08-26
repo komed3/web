@@ -10,14 +10,14 @@ const NAV = [ {
     [ 'Tech Stack', '/stack' ],
     [ 'Projects', '/index' ]
   ]
+}, {
+  label: 'Packages',
+  items: [
+    [ 'Node.js', 'https://npmjs.com/~komed3', true ],
+    [ 'Linux', 'https://deb.komed3.de/', true ],
+    [ 'Python', 'https://pypi.org/user/komed3', true ]
+  ]
 } ] as const;
-
-
-const PACKAGES = [
-  [ 'Node.js', 'https://npmjs.com/~komed3' ],
-  [ 'Linux', 'https://deb.komed3.de/' ],
-  [ 'Python', 'https://pypi.org/user/komed3' ]
-] as const;
 
 
 const PROJECTS = [
