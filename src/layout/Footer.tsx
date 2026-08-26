@@ -90,7 +90,7 @@ export function Footer () {
         </div>
 
         { /** Copyright + Build Info */ }
-        <div className= 'flex flex-col justify-end items-end text-sm uppercase font-extralight tracking-widest'>
+        <div className= 'flex flex-col justify-end items-end text-sm uppercase font-extralight tracking-[0.4rem]'>
           <div>Designed and developed by komed3</div>
 
           <div className= 'text-[10px] opacity-75'>
