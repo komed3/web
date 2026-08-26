@@ -15,11 +15,14 @@ export function Home () {
           modern web technology.
         </p>
 
-        <div className= 'absolute right-24 bottom-24'>
+        <div className= 'absolute right-24 bottom-30'>
+          <div className= 'bottom-full centered-x w-px h-20 bg-black' />
+          <div className= 'top-full centered-x w-px h-6 bg-black' />
+
           <Mouse
+            className= 'rotate-180'
             size= { 120 }
             strokeWidth= { 0.25 }
-            className= 'rotate-180'
           />
         </div>
       </div>
