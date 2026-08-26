@@ -91,6 +91,20 @@ export function Footer () {
             <div className= 'mb-6 font-mono text-[11px] uppercase tracking-[0.18em]'>
               Projects
             </div>
+
+            <div className= 'flex flex-col gap-3 w-fit font-sans text-2xl font-700'>
+              { PROJECTS.map( ( [ label, href ] ) => (
+                <a
+                  key= { href }
+                  href= { href }
+                  target= '_blank'
+                  rel= 'noreferrer'
+                  className= 'hover:text-brutal-blue transition-colors'
+                >
+                  { label }
+                </a>
+              ) ) }
+            </div>
           </nav>
         </div>
       </div>
