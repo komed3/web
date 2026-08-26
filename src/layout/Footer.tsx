@@ -63,6 +63,11 @@ export function Footer () {
         ) ) }
       </nav>
 
+      { /** Navigation & Projects */ }
+      <div className= 'grid gap-12 md:grid-cols-2 px-7 md:px-12 lg:px-16 py-12 md:py-16 border-t border-black'>
+        //
+      </div>
+
       { /** Meta */ }
       <div
         className= {
