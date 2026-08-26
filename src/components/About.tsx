@@ -1,3 +1,6 @@
+import { ArrowUpRight } from 'lucide-react';
+
+
 export function About () {
   return (
     <div className= 'px-12 py-40'>
@@ -41,6 +44,32 @@ export function About () {
             Open source isn't just a choice. It's a standard.
           </p>
         </div>
+      </div>
+
+      { /** Contact */ }
+      <div className= 'flex justify-between items-end mt-40 pt-8 border-t border-(--main)'>
+        <div className= 'space-y-8'>
+          <div className= 'text-xs uppercase font-extralight tracking-[0.4rem]'>
+            Get in touch
+          </div>
+
+          <p className= 'max-w-xl text-2xl font-extralight leading-relaxed'>
+            Open for collaborations, freelance projects, and technical
+            consulting. If you have something worth building, feel free to
+            reach out.
+          </p>
+        </div>
+
+        { /** Mailto Link */}
+        <a
+          href= 'mailto:hello@komed3.de'
+          target= '_blank'
+          rel= 'noreferrer'
+          className= 'inline-flex items-center gap-3 text-2xl font-black uppercase tracking-wider'
+        >
+          <span>Get in touch</span>
+          <ArrowUpRight size= { 28 } strokeWidth= { 1.6 } />
+        </a>
       </div>
     </div>
   );
