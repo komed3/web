@@ -4,6 +4,9 @@ import { Logo } from '../components/Logo';
 
 
 export function Footer () {
+  const build = process.env.VITE_BUILD_ID ?? 'XXXXXXXX-XXXX';
+  const hash = process.env.VITE_COMMIT_SHA ?? 'XXXXXXX';
+
   return (
     <footer className= 'mx-12 p-12 text-(--bg) bg-(--text)'>
       { /** Meta */ }
@@ -22,9 +25,8 @@ export function Footer () {
         <div className= 'flex flex-col justify-end items-end text-xs uppercase tracking-widest'>
           <div>Designed and developed by komed3</div>
 
-          <div className= 'text-[10px] font-mono'>
-            Build { process.env.VITE_BUILD_ID ?? 'XXXXXXXX-XXXX' }{ ' / ' }
-            { process.env.VITE_COMMIT_SHA ?? 'XXXXXXX' }
+          <div className= 'text-[10px] font-mono opacity-75'>
+            Build { build } / { hash }
           </div>
         </div>
       </div>
