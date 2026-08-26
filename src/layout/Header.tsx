@@ -172,7 +172,6 @@ export function Header () {
                   >
                     <Link
                       to= { path }
-                      onClick= { () => setMenuOpen( false ) }
                       className= {
                         'group inline-flex items-center gap-7 h-full min-h-0 font-sans ' +
                         'leading-[0.8] -tracking-widest hover:text-brutal-yellow transition-colors ' +
