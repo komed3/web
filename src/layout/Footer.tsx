@@ -25,14 +25,14 @@ const NAV = [ {
     [ 'Periodic Table', 'https://pse-info.de', true ],
     [ 'Pulsar', '#', true ]
   ]
+}, {
+  label: 'Socials',
+  items: [
+    [ 'GitHub', 'https://github.com/komed3', true ],
+    [ 'Twitter', 'https://x.com/komed3dev', true ],
+    [ 'Ko-Fi', 'https://ko-fi.com/komed3', true ]
+  ]
 } ] as const;
-
-
-const SOCIALS = [
-  [ 'GitHub', 'https://github.com/komed3' ],
-  [ 'Twitter', 'https://x.com/komed3dev' ],
-  [ 'Ko-Fi', 'https://ko-fi.com/komed3' ]
-] as const;
 
 
 export function Footer () {
