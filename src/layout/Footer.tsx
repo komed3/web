@@ -40,9 +40,9 @@ export function Footer () {
   const hash = process.env.VITE_COMMIT_SHA ?? 'XXXXXXX';
 
   return (
-    <footer className= 'mx-12 p-12 text-(--accent) bg-(--main)'>
+    <footer className= 'mx-12 p-20 text-(--contrast) bg-(--main)'>
       { /** Links */ }
-      <div className= 'flex justify-end items-end mt-16 mb-32'>
+      <div className= 'flex justify-end items-end mt-16 mb-36'>
         { NAV.map( ( { label, items } ) => (
           <div
             key= { label }
@@ -70,7 +70,7 @@ export function Footer () {
               ) ) }
             </nav>
 
-            <div className= 'mt-8 text-right text-[10px] uppercase font-extralight tracking-widest'>
+            <div className= 'mt-8 text-right text-[10px] uppercase font-extralight tracking-widest opacity-75'>
               { label }
             </div>
           </div>
@@ -90,10 +90,10 @@ export function Footer () {
         </div>
 
         { /** Copyright + Build Info */ }
-        <div className= 'flex flex-col justify-end items-end text-xs uppercase tracking-widest'>
+        <div className= 'flex flex-col justify-end items-end text-sm uppercase font-extralight tracking-widest'>
           <div>Designed and developed by komed3</div>
 
-          <div className= 'text-[10px] font-mono opacity-75'>
+          <div className= 'text-[10px] opacity-75'>
             Build { build } / { hash }
           </div>
         </div>
