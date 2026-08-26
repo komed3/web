@@ -17,6 +17,17 @@ export function Footer () {
             <Logo className= 'w-48 h-auto' />
           </Link>
         </div>
+
+        { /** Copyright */ }
+        <div className= 'flex flex-col justify-end items-end'>
+          <div className= ''>
+            Designed and developed by komed3
+          </div>
+
+          <div className= ''>
+            Build { process.env.VITE_BUILD_ID ?? 'XXXXXXXX-XXXX' } ({ process.env.VITE_COMMIT_SHA ?? 'XXXXXXX' })
+          </div>
+        </div>
       </div>
     </footer>
   );
