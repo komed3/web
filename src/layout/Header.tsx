@@ -95,7 +95,7 @@ export function Header () {
   return (
     <>
       { /** Header */ }
-      <header className= 'fixed inset-x-0 top-0 z-98 bg-white'>
+      <header className= 'fixed inset-x-0 top-0 z-98 bg-white select-none'>
         <div className= 'flex justify-between items-center h-24 px-7 md:px-12 lg:px-16'>
           { /** Workmark */ }
           <Link
@@ -124,7 +124,7 @@ export function Header () {
         { menuOpen && (
           <motion.div
             key= { menuKey }
-            className= 'fixed inset-0 z-99 h-dvh text-white bg-brutal-blue'
+            className= 'fixed inset-0 z-99 h-dvh text-white bg-brutal-blue select-none'
             initial= { { clipPath: 'circle(0% at 100% 0%)' } }
             transition= { { duration: 0.7, ease: [ 0.76, 0, 0.24, 1 ] } }
             animate= { { clipPath: 'circle(150% at 100% 0%)' } }
