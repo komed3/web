@@ -17,15 +17,15 @@ const NAV = [ {
     [ 'Linux', 'https://deb.komed3.de/', true ],
     [ 'Python', 'https://pypi.org/user/komed3', true ]
   ]
+}, {
+  label: 'Projects',
+  items: [
+    [ 'Airportmap', 'https://airportmap.de', true ],
+    [ 'RTBNext', 'https://rtbnext.de', true ],
+    [ 'Periodic Table', 'https://pse-info.de', true ],
+    [ 'Pulsar', '#', true ]
+  ]
 } ] as const;
-
-
-const PROJECTS = [
-  [ 'Airportmap', 'https://airportmap.de' ],
-  [ 'RTBNext', 'https://rtbnext.de' ],
-  [ 'Periodic Table', 'https://pse-info.de' ],
-  [ 'Pulsar', '#' ]
-] as const;
 
 
 const SOCIALS = [
