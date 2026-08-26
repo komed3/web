@@ -33,7 +33,7 @@
 
 @layer base {
   html, body {
-    @apply font-sans select-none;
+    @apply font-sans;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -41,6 +41,7 @@
   }
 
   *, *::before, *::after {
+    @apply cursor-none select-none;
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
