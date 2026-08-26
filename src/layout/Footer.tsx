@@ -10,6 +10,28 @@ const NAV = [
 ] as const;
 
 
+const PACKAGES = [
+  [ 'Node.js', 'https://npmjs.com/~komed3' ],
+  [ 'Linux', 'https://deb.komed3.de/' ],
+  [ 'Python', 'https://pypi.org/user/komed3' ]
+] as const;
+
+
+const PROJECTS = [
+  [ 'Airportmap', 'https://airportmap.de' ],
+  [ 'RTBNext', 'https://rtbnext.de' ],
+  [ 'Periodic Table', 'https://pse-info.de' ],
+  [ 'Pulsar', '#' ]
+] as const;
+
+
+const SOCIALS = [
+  [ 'GitHub', 'https://github.com/komed3' ],
+  [ 'Twitter', 'https://x.com/komed3dev' ],
+  [ 'Ko-Fi', 'https://ko-fi.com/komed3' ]
+] as const;
+
+
 export function Footer () {
   const build = process.env.VITE_BUILD_ID ?? 'XXXXXXXX-XXXX';
   const hash = process.env.VITE_COMMIT_SHA ?? 'XXXXXXX';
