@@ -7,18 +7,18 @@ const NUMBERS = [
 
 export function Numbers () {
   return (
-    <div className= 'flex p-12 divide-x divide-(--text)'>
+    <div className= 'flex py-12 divide-x divide-(--main)'>
       { /** Label */ }
-      <div className= 'shrink-0 flex flex-col pr-12 text-2xl uppercase font-extralight tracking-widest'>
+      <div className= 'shrink-0 flex flex-col px-12 text-2xl uppercase font-extralight tracking-widest'>
         <span>By the</span>
         <span>numbers</span>
         <span>_</span>
       </div>
 
       { /** Numbers */ }
-      { NUMBERS.map( ( { label, value }, i ) => (
+      { NUMBERS.map( ( { label, value } ) => (
         <div
-          key= { i }
+          key= { label }
           className= 'flex-1 px-12 pt-16 pb-10 text-right'
         >
           <div className= 'text-9xl font-extralight tracking-tighter'>
