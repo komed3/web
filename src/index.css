@@ -59,6 +59,10 @@
 
 /** Utilities */
 
+@utility h-page {
+  height: calc( 100dvh - 96px );
+}
+
 @utility centered {
   @apply absolute top-1/2 left-1/2 -translate-1/2;
 }
