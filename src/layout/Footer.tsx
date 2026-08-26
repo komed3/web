@@ -91,6 +91,40 @@ export function Footer () {
             ) ) }
           </div>
         </nav>
+
+        { /** Projects */ }
+        <nav>
+          <div className= 'mb-6 font-mono text-[11px] uppercase tracking-[0.18em]'>
+            Projects
+          </div>
+
+          <div className= 'flex flex-col gap-2'>
+            { PROJECTS.map( ( [ label, href ] ) => (
+              <a
+                key= { href }
+                href= { href }
+                target= '_blank'
+                rel= 'noreferrer'
+                className= {
+                  'group flex items-baseline gap-5 font-sans text-lg font-700 ' +
+                  'hover:text-brutal-blue transition-colors'
+                }
+              >
+                <span>{ label }</span>
+
+                <ArrowUpRight
+                  size= { 16 }
+                  strokeWidth= { 1.15 }
+                  className= {
+                    'opacity-0 transition-all duration-300 ' +
+                    'group-hover:translate-x-1 group-hover:-translate-y-1 ' +
+                    'group-hover:opacity-100'
+                  }
+                />
+              </a>
+            ) ) }
+          </div>
+        </nav>
       </div>
 
       { /** Meta */ }
