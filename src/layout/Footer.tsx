@@ -3,6 +3,13 @@ import { Link } from 'react-router';
 import { Logo } from '../components/Logo';
 
 
+const NAV = [
+  [ 'Home', '/' ],
+  [ 'Tech Stack', '/stack' ],
+  [ 'Projects', '/index' ]
+] as const;
+
+
 export function Footer () {
   const build = process.env.VITE_BUILD_ID ?? 'XXXXXXXX-XXXX';
   const hash = process.env.VITE_COMMIT_SHA ?? 'XXXXXXX';
@@ -21,7 +28,7 @@ export function Footer () {
           </Link>
         </div>
 
-        { /** Copyright */ }
+        { /** Copyright + Build Info */ }
         <div className= 'flex flex-col justify-end items-end text-xs uppercase tracking-widest'>
           <div>Designed and developed by komed3</div>
 
