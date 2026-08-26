@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router';
 
+import { Cursor } from './effects/Cursor';
 import { Header } from './layout/Header';
 import { Home } from './pages/Home';
 
@@ -31,6 +32,8 @@ export default function App () {
           <Route path= '/' element= { <Home /> } />
         </Routes>
       </main>
+
+      <Cursor />
     </div>
   );
 }
