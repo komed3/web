@@ -12,9 +12,9 @@ const NAV = [
 
 
 const PACKAGES = [
-  [ 'npm Packages', 'https://npmjs.com/~komed3' ],
-  [ 'APT Repository', 'https://deb.komed3.de/' ],
-  [ 'PyPi Projects', 'https://pypi.org/user/komed3' ]
+  [ 'Node.js', 'https://npmjs.com/~komed3' ],
+  [ 'Linux', 'https://deb.komed3.de/' ],
+  [ 'Python', 'https://pypi.org/user/komed3' ]
 ] as const;
 
 
@@ -74,7 +74,7 @@ export function Footer () {
 
       { /** Navigation & Projects */ }
       <div className= 'px-7 md:px-12 lg:px-16 py-12 md:py-16 border-t border-black'>
-        <div className= 'grid gap-16 md:grid-cols-2 max-w-3xl mx-auto'>
+        <div className= 'grid gap-16 lg:grid-cols-3 max-w-4xl mx-auto'>
           { /** Navigation */ }
           <nav>
             <div className= 'mb-6 font-mono text-[11px] uppercase tracking-[0.18em]'>
@@ -90,6 +90,27 @@ export function Footer () {
                 >
                   { label }
                 </Link>
+              ) ) }
+            </div>
+          </nav>
+
+          { /** Packages */ }
+          <nav>
+            <div className= 'mb-6 font-mono text-[11px] uppercase tracking-[0.18em]'>
+              Packages
+            </div>
+
+            <div className= 'flex flex-col gap-3 w-fit font-sans text-2xl font-medium'>
+              { PACKAGES.map( ( [ label, href ] ) => (
+                <a
+                  key= { href }
+                  href= { href }
+                  target= '_blank'
+                  rel= 'noreferrer'
+                  className= 'hover:text-brutal-blue transition-colors'
+                >
+                  { label }
+                </a>
               ) ) }
             </div>
           </nav>
