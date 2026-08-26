@@ -19,8 +19,9 @@ export function Header () {
         <Link
           className= 'inline-flex justify-center items-center w-20 h-20 font-display text-4xl'
           to= '/'
+          aria-label= 'komed3'
         >
-          <span>k</span>
+          <span>kw</span>
         </Link>
       </div>
 
