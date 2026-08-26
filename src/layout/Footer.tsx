@@ -1,3 +1,18 @@
+const NAV = [
+  [ '01', 'Work', '/work' ],
+  [ '02', 'Projects', '/projects' ],
+  [ '03', 'About', '/about' ],
+  [ '04', 'Skillset', '/skills' ]
+] as const;
+
+
+const SOCIALS = [
+  [ 'GITHUB', 'https://github.com/komed3' ],
+  [ 'TWITTER', 'https://x.com/komed3dev' ],
+  [ 'KO-FI', 'https://ko-fi.com/komed3' ]
+] as const;
+
+
 export function Footer () {
   return (
     <footer className= 'bg-white border-t border-black'>
