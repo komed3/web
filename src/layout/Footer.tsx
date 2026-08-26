@@ -19,13 +19,12 @@ export function Footer () {
         </div>
 
         { /** Copyright */ }
-        <div className= 'flex flex-col justify-end items-end'>
-          <div className= ''>
-            Designed and developed by komed3
-          </div>
+        <div className= 'flex flex-col justify-end items-end text-xs uppercase tracking-widest'>
+          <div>Designed and developed by komed3</div>
 
-          <div className= ''>
-            Build { process.env.VITE_BUILD_ID ?? 'XXXXXXXX-XXXX' } ({ process.env.VITE_COMMIT_SHA ?? 'XXXXXXX' })
+          <div className= 'text-[10px] font-mono'>
+            Build { process.env.VITE_BUILD_ID ?? 'XXXXXXXX-XXXX' }{ ' / ' }
+            { process.env.VITE_COMMIT_SHA ?? 'XXXXXXX' }
           </div>
         </div>
       </div>
