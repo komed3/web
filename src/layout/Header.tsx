@@ -4,6 +4,16 @@ import { Link } from 'react-router';
 export function Header () {
   return (
     <header className= 'fixed inset-x-0 top-0 h-24'>
+      { /** Tech Stack */ }
+      <div className= 'centered-y left-10'>
+        <Link
+          className= 'inline-flex justify-center items-center w-fit h-10 px-6 text-lg font-black'
+          to= '/stack'
+        >
+          <span>Tech Stack</span>
+        </Link>
+      </div>
+
       { /** Logo */ }
       <div className= 'centered'>
         <Link
