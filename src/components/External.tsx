@@ -12,6 +12,15 @@ const LINKS = [
 export function External () {
   return (
     <div className= 'flex gap-12 p-12'>
+      { /** Label */ }
+      <div className= 'shrink-0 flex flex-col text-2xl uppercase font-extralight tracking-widest'>
+        <span>Visit</span>
+        <span>my</span>
+        <span>work</span>
+        <span>at_</span>
+      </div>
+
+      { /** Links */ }
       { LINKS.map( ( { url, label, icon: Icon } ) => (
         <a
           key= { url }
