@@ -13,6 +13,16 @@ export function Header () {
           <span>k</span>
         </Link>
       </div>
+
+      { /** Projects */ }
+      <div className= 'centered-y right-10'>
+        <Link
+          className= 'inline-flex justify-center items-center w-fit h-10 px-6 text-lg font-black'
+          to= '/index'
+        >
+          <span>Projects</span>
+        </Link>
+      </div>
     </header>
   );
 }
