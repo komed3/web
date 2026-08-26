@@ -50,7 +50,11 @@ export function Footer () {
           >
             <nav className= 'flex flex-col items-end gap-1 text-right'>
               { items.map( ( [ text, url, external = false ] ) => external ? (
-                <></>
+                <a
+                  className= 'font-bold'
+                >
+                  { text }
+                </a>
               ) : (
                 <Link
                   className= 'font-bold'
