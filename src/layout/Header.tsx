@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 export function Header () {
   return (
-    <header className= 'fixed inset-x-0 top-0 h-24'>
+    <header className= 'fixed inset-x-0 top-0 z-90 h-24'>
       { /** Tech Stack */ }
       <div className= 'centered-y left-10'>
         <Link
