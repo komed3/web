@@ -9,6 +9,14 @@ const NAV = [
 ] as const;
 
 
+const PROJECTS = [
+  [ 'Airportmap', 'https://airportmap.de' ],
+  [ 'RTBNext', 'https://rtbnext.de' ],
+  [ 'Periodic Table', 'https://pse-info.de' ],
+  [ 'npm Packages', 'https://npmjs.com/~komed3' ]
+] as const;
+
+
 const SOCIALS = [
   [ 'GITHUB', 'https://github.com/komed3' ],
   [ 'TWITTER', 'https://x.com/komed3dev' ],
