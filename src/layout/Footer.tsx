@@ -1,6 +1,7 @@
 import { ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router';
 
+
 const NAV = [
   [ 'Home', '/' ],
   [ 'Work', '/work' ],
