@@ -1,6 +1,7 @@
 import { ArrowUpRight } from 'lucide-react';
 
 const NAV = [
+  [ '00', 'Home', '/' ],
   [ '01', 'Work', '/work' ],
   [ '02', 'Projects', '/projects' ],
   [ '03', 'About', '/about' ],
