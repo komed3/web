@@ -47,7 +47,11 @@ export function Footer () {
           <div
             key= { label }
             className= ''
-          ></div>
+          >
+            <div className= 'text-xs uppercase font-extralight tracking-widest'>
+              { label }
+            </div>
+          </div>
         ) ) }
       </div>
 
