@@ -11,11 +11,18 @@ const NAV = [
 ] as const;
 
 
+const PACKAGES = [
+  [ 'npm Packages', 'https://npmjs.com/~komed3' ],
+  [ 'APT Repository', 'https://deb.komed3.de/' ],
+  [ 'PyPi Projects', 'https://pypi.org/user/komed3' ]
+] as const;
+
+
 const PROJECTS = [
   [ 'Airportmap', 'https://airportmap.de' ],
   [ 'RTBNext', 'https://rtbnext.de' ],
   [ 'Periodic Table', 'https://pse-info.de' ],
-  [ 'npm Packages', 'https://npmjs.com/~komed3' ]
+  [ 'Pulsar', '#' ]
 ] as const;
 
 
