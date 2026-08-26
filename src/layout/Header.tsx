@@ -19,7 +19,7 @@ export function Header () {
       { /** Logo */ }
       <div className= 'centered'>
         <Link
-          className= 'inline-flex justify-center items-center w-20 h-20 font-display text-4xl'
+          className= 'inline-flex justify-center items-center w-20 h-20'
           to= '/'
           aria-label= 'komed3'
         >
