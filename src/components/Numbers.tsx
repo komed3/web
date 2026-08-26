@@ -1,5 +1,7 @@
 const NUMBERS = [
-  { label: 'Years experience', value: '15+' }
+  { label: 'Years experience', value: '15+' },
+  { label: 'Projects', value: '100+' },
+  { label: 'Lines of code', value: '2M+' }
 ] as const;
 
 
@@ -17,7 +19,7 @@ export function Numbers () {
       { NUMBERS.map( ( { label, value }, i ) => (
         <div
           key= { i }
-          className= 'px-12'
+          className= 'flex-1 px-12 text-right'
         >
           <div className= ''>
             { value }
