@@ -5,7 +5,7 @@ import { Logo } from '../components/Logo';
 
 export function Header () {
   return (
-    <header className= 'fixed inset-x-0 top-0 z-90 h-24 bg-(--bg) transition-colors duration-300'>
+    <header className= 'fixed inset-x-0 top-0 z-90 h-24 bg-(--accent) transition-colors duration-300'>
       { /** Tech Stack */ }
       <div className= 'centered-y left-6'>
         <Link

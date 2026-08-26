@@ -29,7 +29,7 @@ export function External () {
           rel= 'noreferrer'
           className= 'flex-1'
         >
-          <div className= 'text-(--bg) bg-(--text) p-12'>
+          <div className= 'text-(--accent) bg-(--main) p-12'>
             <div className= 'flex justify-end mb-24'>
               <Icon size= { 64 } />
             </div>

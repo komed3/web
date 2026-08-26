@@ -40,7 +40,7 @@ export function Footer () {
   const hash = process.env.VITE_COMMIT_SHA ?? 'XXXXXXX';
 
   return (
-    <footer className= 'mx-12 p-12 text-(--bg) bg-(--text)'>
+    <footer className= 'mx-12 p-12 text-(--accent) bg-(--main)'>
       { /** Links */ }
       <div className= 'flex justify-end items-end mt-16 mb-32'>
         { NAV.map( ( { label, items } ) => (

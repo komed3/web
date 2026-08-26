@@ -8,9 +8,9 @@ import { Home } from './pages/Home';
 
 
 const COLOR_VARS = {
-  '/': { '--bg': '#fff', '--text': '#000' },
-  '/stack': { '--bg': '#1e40af', '--text': '#fff' },
-  '/index': { '--bg': '#000', '--text': '#fff' }
+  '/': { '--accent': '#fff', '--main': '#000', '--contrast': '#fff' },
+  '/stack': { '--accent': '#1e40af', '--main': '#fff', '--contrast': '#000' },
+  '/index': { '--accent': '#000', '--main': '#fff', '--contrast': '#000' }
 } as const;
 
 
@@ -25,7 +25,7 @@ export default function App () {
   }, [ pathname ] );
 
   return (
-    <div className= 'bg-(--bg) text-(--text) transition-colors duration-300'>
+    <div className= 'bg-(--accent) text-(--main) transition-colors duration-300'>
       <Header />
 
       <main className= 'min-h-screen'>
