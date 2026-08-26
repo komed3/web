@@ -19,13 +19,13 @@ export function Numbers () {
       { NUMBERS.map( ( { label, value }, i ) => (
         <div
           key= { i }
-          className= 'flex-1 px-12 text-right'
+          className= 'flex-1 px-12 pt-16 pb-10 text-right'
         >
-          <div className= ''>
+          <div className= 'text-9xl font-extralight tracking-tighter'>
             { value }
           </div>
 
-          <div className= ''>
+          <div className= 'text-lg font-bold uppercase tracking-widest'>
             { label }
           </div>
         </div>
