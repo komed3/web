@@ -27,7 +27,7 @@ export function External () {
           href= { url }
           target= '_blank'
           rel= 'noreferrer'
-          className= 'group flex-1'
+          className= 'flex-1'
         >
           <div className= 'text-(--bg) bg-(--text) p-12'>
             <div className= 'flex justify-end mb-24'>
