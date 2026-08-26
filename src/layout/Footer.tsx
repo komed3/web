@@ -31,7 +31,7 @@ export function Footer () {
     <footer className= 'bg-white border-t border-black'>
       { /** Wordmark */ }
       <div className= 'p-7 md:p-12 lg:p-16 pt-20 md:pt-28 lg:pt-36'>
-        <div className= 'font-display text-right text-9xl font-800 tracking-wider'>
+        <div className= 'font-display text-right text-9xl tracking-wider'>
           <span className= 'text-brutal-blue'>k</span>
           <span>omed3</span>
         </div>
@@ -46,8 +46,8 @@ export function Footer () {
             target= '_blank'
             rel= 'noreferrer'
             className= {
-              'group flex justify-between items-center gap-6 px-7 md:px-12 lg:px-16 py-6 font-sans ' +
-              'text-3xl md:text-4xl font-800 tracking-tight hover:text-brutal-blue border-b ' +
+              'group flex justify-between items-center gap-6 px-7 md:px-12 lg:px-16 py-6 ' +
+              'font-sans text-3xl md:text-4xl tracking-tight hover:text-brutal-blue border-b ' +
               'md:border-b-0 md:border-r border-black last:border-r-0 transition-colors'
             }
           >
@@ -74,7 +74,7 @@ export function Footer () {
               Navigation
             </div>
 
-            <div className= 'flex flex-col gap-3 w-fit font-sans text-2xl font-700'>
+            <div className= 'flex flex-col gap-3 w-fit font-sans text-2xl font-medium'>
               { NAV.map( ( [ label, path ] ) => (
                 <Link
                   key= { path }
@@ -93,7 +93,7 @@ export function Footer () {
               Projects
             </div>
 
-            <div className= 'flex flex-col gap-3 w-fit font-sans text-2xl font-700'>
+            <div className= 'flex flex-col gap-3 w-fit font-sans text-2xl font-medium'>
               { PROJECTS.map( ( [ label, href ] ) => (
                 <a
                   key= { href }

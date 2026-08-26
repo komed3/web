@@ -60,7 +60,7 @@ function MenuButton ( { label, isOpen, onClick, presence }: MenuButtonProps ) {
       className= 'flex items-center gap-4 h-12'
       aria-label= { label }
     >
-      <span className= 'font-mono text-[11px] font-500 tracking-[0.18em]'>
+      <span className= 'font-mono text-[11px] tracking-[0.18em]'>
         { label }
       </span>
 
@@ -100,7 +100,7 @@ export function Header () {
           { /** Workmark */ }
           <Link
             to= '/'
-            className= 'font-display text-2xl font-800 tracking-wider'
+            className= 'font-display text-2xl tracking-wider'
           >
             <span className= 'text-brutal-blue'>k</span>
             <span>omed3</span>
@@ -137,7 +137,7 @@ export function Header () {
                 <Link
                   to= '/'
                   onClick= { () => setMenuOpen( false ) }
-                  className= 'font-display text-2xl font-800 tracking-wider'
+                  className= 'font-display text-2xl tracking-wider'
                 >
                   <span className= 'text-brutal-yellow'>k</span>
                   <span>omed3</span>
@@ -174,7 +174,7 @@ export function Header () {
                       to= { path }
                       onClick= { () => setMenuOpen( false ) }
                       className= {
-                        'group inline-flex items-center gap-7 h-full min-h-0 font-sans font-800 ' +
+                        'group inline-flex items-center gap-7 h-full min-h-0 font-sans ' +
                         'leading-[0.8] -tracking-widest hover:text-brutal-yellow transition-colors ' +
                         ( i % 2 === 1 && 'ml-[10vw] ' ) + ( i === 3 && 'ml-[5vw]' )
                       }
