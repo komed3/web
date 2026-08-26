@@ -179,7 +179,7 @@ export function Header () {
                         ( i % 2 === 1 && 'ml-[10vw] ' ) + ( i === 3 && 'ml-[5vw]' )
                       }
                     >
-                      <span className= 'shrink-0 font-mono text-[11px] tracking-normal'>
+                      <span className= 'shrink-0 font-mono font-extralight text-[13px] tracking-normal'>
                         { number }
                       </span>
 
