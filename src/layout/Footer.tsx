@@ -65,66 +65,22 @@ export function Footer () {
       </nav>
 
       { /** Navigation & Projects */ }
-      <div className= 'grid gap-12 md:grid-cols-2 px-7 md:px-12 lg:px-16 py-12 md:py-16 border-t border-black'>
-        { /** Navigation */ }
-        <nav>
-          <div className= 'mb-6 font-mono text-[11px] uppercase tracking-[0.18em]'>
-            Navigation
-          </div>
+      <div className= 'px-7 md:px-12 lg:px-16 py-12 md:py-16 border-t border-black'>
+        <div className= 'grid gap-16 md:grid-cols-2 max-w-3xl mx-auto'>
+          { /** Navigation */ }
+          <nav>
+            <div className= 'mb-6 font-mono text-[11px] uppercase tracking-[0.18em]'>
+              Navigation
+            </div>
+          </nav>
 
-          <div className= 'flex flex-col gap-2'>
-            { NAV.map( ( [ number, label, path ] ) => (
-              <Link
-                key= { path }
-                to= { path }
-                className= {
-                  'group flex items-baseline gap-5 font-sans text-lg font-700 ' +
-                  'hover:text-brutal-blue transition-colors'
-                }
-              >
-                <span className= 'shrink-0 w-5 font-mono text-[11px] font-400'>
-                  { number }
-                </span>
-
-                <span>{ label }</span>
-              </Link>
-            ) ) }
-          </div>
-        </nav>
-
-        { /** Projects */ }
-        <nav>
-          <div className= 'mb-6 font-mono text-[11px] uppercase tracking-[0.18em]'>
-            Projects
-          </div>
-
-          <div className= 'flex flex-col gap-2'>
-            { PROJECTS.map( ( [ label, href ] ) => (
-              <a
-                key= { href }
-                href= { href }
-                target= '_blank'
-                rel= 'noreferrer'
-                className= {
-                  'group flex items-baseline gap-5 font-sans text-lg font-700 ' +
-                  'hover:text-brutal-blue transition-colors'
-                }
-              >
-                <span>{ label }</span>
-
-                <ArrowUpRight
-                  size= { 16 }
-                  strokeWidth= { 1.15 }
-                  className= {
-                    'opacity-0 transition-all duration-300 ' +
-                    'group-hover:translate-x-1 group-hover:-translate-y-1 ' +
-                    'group-hover:opacity-100'
-                  }
-                />
-              </a>
-            ) ) }
-          </div>
-        </nav>
+          { /** Projects */ }
+          <nav>
+            <div className= 'mb-6 font-mono text-[11px] uppercase tracking-[0.18em]'>
+              Projects
+            </div>
+          </nav>
+        </div>
       </div>
 
       { /** Meta */ }
