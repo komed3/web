@@ -1,9 +1,14 @@
-export function k3 () {
+import { type SVGProps } from 'react';
+
+
+export function k3 ( props: SVGProps< SVGSVGElement > ) {
   return (
     <svg
-      version= '1.1'
-      xmlns= 'http://www.w3.org/2000/svg'
       viewBox= '0 0 1000 500'
+      fill= 'none'
+      xmlns= 'http://www.w3.org/2000/svg'
+      aria-hidden= 'true'
+      { ...props }
     >
       <path
         fill= 'currentColor'
