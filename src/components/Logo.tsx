@@ -1,7 +1,7 @@
 import { type SVGProps } from 'react';
 
 
-export function k3 ( props: SVGProps< SVGSVGElement > ) {
+export function Logo ( props: SVGProps< SVGSVGElement > ) {
   return (
     <svg
       viewBox= '0 0 1000 500'
