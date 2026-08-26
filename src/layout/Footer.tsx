@@ -2,11 +2,11 @@ import { ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router';
 
 const NAV = [
-  [ '00', 'Home', '/' ],
-  [ '01', 'Work', '/work' ],
-  [ '02', 'Projects', '/projects' ],
-  [ '03', 'About', '/about' ],
-  [ '04', 'Skillset', '/skills' ]
+  [ 'Home', '/' ],
+  [ 'Work', '/work' ],
+  [ 'Projects', '/projects' ],
+  [ 'About', '/about' ],
+  [ 'Skillset', '/skills' ]
 ] as const;
 
 
