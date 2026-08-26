@@ -11,14 +11,14 @@ const LINKS = [
 
 export function External () {
   return (
-    <div className= 'flex'>
+    <div className= 'flex gap-12 p-12'>
       { LINKS.map( ( { url, label, icon: Icon } ) => (
         <a
           key= { url }
           href= { url }
           target= '_blank'
           rel= 'noreferrer'
-          className= 'group flex-1 p-12'
+          className= 'group flex-1'
         >
           <div className= 'text-(--bg) bg-(--text) p-12'>
             <div className= 'flex justify-end mb-24'>
