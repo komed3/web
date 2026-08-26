@@ -1,4 +1,5 @@
 import { ArrowUpRight } from 'lucide-react';
+import { Link } from 'react-router';
 
 const NAV = [
   [ '00', 'Home', '/' ],
@@ -65,7 +66,31 @@ export function Footer () {
 
       { /** Navigation & Projects */ }
       <div className= 'grid gap-12 md:grid-cols-2 px-7 md:px-12 lg:px-16 py-12 md:py-16 border-t border-black'>
-        //
+        { /** Navigation */ }
+        <nav>
+          <div className= 'mb-6 font-mono text-[11px] uppercase tracking-[0.18em]'>
+            Navigation
+          </div>
+
+          <div className= 'flex flex-col gap-2'>
+            { NAV.map( ( [ number, label, path ] ) => (
+              <Link
+                key= { path }
+                to= { path }
+                className= {
+                  'group flex items-baseline gap-5 font-sans text-lg font-700 ' +
+                  'hover:text-brutal-blue transition-colors'
+                }
+              >
+                <span className= 'shrink-0 w-5 font-mono text-[11px] font-400'>
+                  { number }
+                </span>
+
+                <span>{ label }</span>
+              </Link>
+            ) ) }
+          </div>
+        </nav>
       </div>
 
       { /** Meta */ }
