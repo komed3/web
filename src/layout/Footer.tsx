@@ -41,6 +41,16 @@ export function Footer () {
 
   return (
     <footer className= 'mx-12 p-12 text-(--bg) bg-(--text)'>
+      { /** Links */ }
+      <div className= 'flex justify-end items-end gap-12 mb-32'>
+        { NAV.map( ( { label, items } ) => (
+          <div
+            key= { label }
+            className= ''
+          ></div>
+        ) ) }
+      </div>
+
       { /** Meta */ }
       <div className= 'grid grid-cols-2 items-end'>
         { /** Logo */ }
