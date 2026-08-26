@@ -48,6 +48,12 @@ export function Footer () {
             key= { label }
             className= ''
           >
+            <nav className= 'flex flex-col items-end gap-4 text-right'>
+              { items.map( ( [ text, url, external = false ] ) => (
+                <></>
+              ) ) }
+            </nav>
+
             <div className= 'text-xs uppercase font-extralight tracking-widest'>
               { label }
             </div>
