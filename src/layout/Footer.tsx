@@ -46,15 +46,22 @@ export function Footer () {
         { NAV.map( ( { label, items } ) => (
           <div
             key= { label }
-            className= ''
+            className= 'space-y-6'
           >
-            <nav className= 'flex flex-col items-end gap-4 text-right'>
-              { items.map( ( [ text, url, external = false ] ) => (
+            <nav className= 'flex flex-col items-end gap-1 text-right'>
+              { items.map( ( [ text, url, external = false ] ) => external ? (
                 <></>
+              ) : (
+                <Link
+                  className= 'font-bold'
+                  to= { url }
+                >
+                  { text }
+                </Link>
               ) ) }
             </nav>
 
-            <div className= 'text-xs uppercase font-extralight tracking-widest'>
+            <div className= 'text-right text-[10px] uppercase font-extralight tracking-widest'>
               { label }
             </div>
           </div>
