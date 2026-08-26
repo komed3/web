@@ -10,7 +10,7 @@ export function Home () {
           Building free & open-source.
         </h1>
 
-        <p className= 'max-w-3xl uppercase text-3xl'>
+        <p className= 'max-w-3xl text-3xl uppercase'>
           Hi, I'm a freelance software developer focusing on Node.js, data visualization, and
           modern web technology.
         </p>
