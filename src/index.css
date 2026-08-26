@@ -1,1 +1,37 @@
 @import 'tailwindcss';
+
+/** Fonts */
+
+@font-face {
+  src: url( ./assets/Sora.woff2 ) format( 'woff2' );
+  font-family: 'Sora';
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  src: url( ./assets/Vertigo.woff2 ) format( 'woff2' );
+  font-family: 'Vertigo';
+  font-display: swap;
+}
+
+@font-face {
+  src: url( ./assets/Lilex.woff2 ) format( 'woff2' );
+  font-family: 'Lilex';
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+/** Theme */
+
+@theme {
+  --font-sans: 'Sora', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Vertigo', sans-serif;
+  --font-mono: 'Lilex', ui-monospace, monospace;
+
+  --color-brutal-yellow: #fbbf24;
+  --color-brutal-green: #22c55e;
+  --color-brutal-blue: #2563eb;
+  --color-brutal-pink: #db2777;
+  --color-brutal-orange: #ea580c;
+}
