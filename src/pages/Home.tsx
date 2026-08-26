@@ -14,6 +14,14 @@ export function Home () {
           Hi, I'm a freelance software developer focusing on Node.js, data visualization, and
           modern web technology.
         </p>
+
+        <div className= 'absolute right-24 bottom-24'>
+          <Mouse
+            size= { 120 }
+            strokeWidth= { 0.25 }
+            className= 'rotate-180'
+          />
+        </div>
       </div>
     </>
   );
