@@ -1,3 +1,5 @@
+import { ArrowUpRight } from 'lucide-react';
+
 const NAV = [
   [ '01', 'Work', '/work' ],
   [ '02', 'Projects', '/projects' ],
@@ -23,6 +25,34 @@ export function Footer () {
           <span>omed3</span>
         </div>
       </div>
+
+      { /** External Links */ }
+      <nav className= 'grid md:grid-cols-3 border-t border-black'>
+        { SOCIALS.map( ( [ label, href ] ) => (
+          <a
+            key= { href }
+            href= { href }
+            target= '_blank'
+            rel= 'noreferrer'
+            className= {
+              'group flex justify-between items-center gap-6 px-7 md:px-12 lg:px-16 py-6 font-sans ' +
+              'text-3xl md:text-4xl font-800 tracking-tight hover:text-brutal-blue border-b ' +
+              'md:border-b-0 md:border-r border-black last:border-r-0 transition-colors'
+            }
+          >
+            <span>{ label }</span>
+
+            <ArrowUpRight
+              size= { 28 }
+              strokeWidth= { 1.15 }
+              className= {
+                'shrink-0 transition-transform duration-300 ' +
+                'group-hover:translate-x-1 group-hover:-translate-y-1'
+              }
+            />
+          </a>
+        ) ) }
+      </nav>
 
       { /** Meta */ }
       <div
