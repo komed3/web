@@ -1,1 +1,5 @@
-export function Footer () {}
+export function Footer () {
+  return (
+    <footer></footer>
+  );
+}
