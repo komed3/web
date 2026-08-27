@@ -23,7 +23,7 @@ const SKILLS = [
 
 export function Skills () {
   return (
-    <div className= 'py-40'>
+    <div className= 'pt-40'>
       <div className= 'grid grid-cols-4 gap-px bg-(--main)'>
         { SKILLS.map( ( { label, icon: Icon }, i ) => (
           <div
