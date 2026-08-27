@@ -10,7 +10,7 @@ const NUMBERS = [
 
 export function Numbers () {
   return (
-    <div className= 'flex py-12 divide-x divide-(--main)'>
+    <div className= 'flex items-stretch py-12 divide-x divide-(--main)'>
       { /** Label */ }
       <div className= 'shrink-0 flex flex-col px-12 text-2xl uppercase font-extralight tracking-widest'>
         <span>By the</span>
