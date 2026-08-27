@@ -1,5 +1,4 @@
 import { Hardware } from '../components/Hardware';
-import { Intro } from '../components/Intro';
 import { Skills } from '../components/Skills';
 import { Software } from '../components/Software';
 
@@ -7,13 +6,7 @@ import { Software } from '../components/Software';
 export function Stack () {
   return (
     <>
-      <Intro
-        text= { (
-          <>
-            ...
-          </>
-        ) }
-      />
+      <div className= 'pt-20' />
 
       <Skills />
       <Software />
