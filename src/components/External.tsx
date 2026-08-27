@@ -1,3 +1,4 @@
+import { AnimatePresence, motion } from 'motion/react';
 import { SiGithub, SiLinux, SiNpm, SiPython } from 'react-icons/si';
 
 
@@ -21,25 +22,31 @@ export function External () {
       </div>
 
       { /** Links */ }
-      { LINKS.map( ( { url, label, icon: Icon } ) => (
-        <a
-          key= { url }
-          href= { url }
-          target= '_blank'
-          rel= 'noreferrer'
-          className= 'flex-1'
-        >
-          <div className= 'text-(--contrast) bg-(--main) p-12'>
-            <div className= 'flex justify-end mb-24'>
-              <Icon size= { 64 } />
-            </div>
+      <AnimatePresence>
+        { LINKS.map( ( { url, label, icon: Icon }, i ) => (
+          <motion.a
+            key= { url }
+            href= { url }
+            target= '_blank'
+            rel= 'noreferrer'
+            initial= { { y: 200, opacity: 0 } }
+            whileInView= { { y: 0, opacity: 1 } }
+            transition= { { delay: i * 0.15 } }
+            viewport= { { once: true, amount: 0.3 } }
+            className= 'flex-1'
+          >
+            <div className= 'text-(--contrast) bg-(--main) p-12'>
+              <div className= 'flex justify-end mb-24'>
+                <Icon size= { 64 } />
+              </div>
 
-            <div className= 'text-2xl uppercase font-extralight tracking-widest'>
-              { label }
+              <div className= 'text-2xl uppercase font-extralight tracking-widest'>
+                { label }
+              </div>
             </div>
-          </div>
-        </a>
-      ) ) }
+          </motion.a>
+        ) ) }
+      </AnimatePresence>
     </div>
   );
 }
