@@ -81,6 +81,13 @@ export function Featured () {
                   </Link>
                 </div>
               </div>
+
+              { /** Navigation */ }
+              <div className= 'flex justify-between items-end'>
+                <div className= 'text-xs uppercase tracking-[0.3em]'>
+                  { project.link ? project.link : 'Coming soon' }
+                </div>
+              </div>
             </div>
           </motion.div>
         </AnimatePresence>
