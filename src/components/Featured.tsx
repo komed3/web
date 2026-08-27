@@ -54,6 +54,13 @@ export function Featured () {
                 <div>Featured project</div>
                 <div>{ String( current + 1 ).padStart( 2, '0' ) } / { String( PROJECTS.length ).padStart( 2, '0' ) }</div>
               </div>
+
+              { /** Content */ }
+              <div>
+                <div className= 'text-xs uppercase tracking-[0.3em]'>
+                  { project.category }
+                </div>
+              </div>
             </div>
           </motion.div>
         </AnimatePresence>
