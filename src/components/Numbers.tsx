@@ -22,7 +22,7 @@ export function Numbers () {
       { NUMBERS.map( ( { label, value }, i ) => (
         <div
           key= { label }
-          className= 'flex-1 px-12 pt-16 pb-10 text-right'
+          className= 'flex-1 px-12 pt-20 text-right'
         >
           <motion.div
             initial= { { y: 200, opacity: 0 } }
@@ -34,7 +34,7 @@ export function Numbers () {
               { value }
             </div>
 
-            <div className= 'text-lg font-bold uppercase tracking-widest'>
+            <div className= 'text-lg uppercase font-light tracking-wide'>
               { label }
             </div>
           </motion.div>
