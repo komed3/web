@@ -12,7 +12,7 @@ const LINKS = [
 
 export function External () {
   return (
-    <div className= 'flex gap-12 p-12'>
+    <div className= 'flex gap-12 px-12 py-16'>
       { /** Label */ }
       <div className= 'shrink-0 flex flex-col text-2xl uppercase font-extralight tracking-widest'>
         <span>Visit</span>
