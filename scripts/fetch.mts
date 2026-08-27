@@ -288,4 +288,11 @@ async function fetchRepos ( repos: Array< [ string, string ] > ) : Promise< Reco
     if ( github.includes( '/' ) ) repos.push( github.split( '/' ) as [ string, string ] );
     else orgs.push( github );
   }
+
+  const data = { ...await fetchOrgs( orgs ), ...await fetchRepos( repos ) };
+  const projects: Project[] = [];
+
+  for ( const project of config.projects ) projects.push( merger.merge< Project >(
+    {} as any, project.github ? data[ project.github ] : undefined, project
+  ) );
 } )();
