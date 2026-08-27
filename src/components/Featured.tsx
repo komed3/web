@@ -35,6 +35,8 @@ export function Featured () {
   const next = () => setCurrent( ( current + 1 ) % PROJECTS.length );
 
   return (
-    <></>
+    <div className= 'h-screen pt-36 pb-12'>
+      <div className= 'relative h-full overflow-hidden bg-(--main) text-(--contrast)'></div>
+    </div>
   );
 }
