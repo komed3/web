@@ -15,7 +15,13 @@ const PROJECTS = [ {
   name: 'RTBNext',
   category: 'API / Data',
   description: 'Tracking the wealthiest people on the planet',
-  url: 'rtbnext.de'
+  link: 'rtbnext.de'
+}, {
+  uri: 'pulsar',
+  name: 'Pulsar',
+  category: 'Programming',
+  description: 'Programming language focused on maths problems',
+  link: undefined
 } ] as const;
 
 
