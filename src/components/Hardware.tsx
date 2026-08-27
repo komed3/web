@@ -10,6 +10,14 @@ const RESOURCES = [ {
     [ 'Graphics', 'RTX 3080 Strix 10GB OC' ],
     [ 'System', 'Windows 11 Home' ]
   ]
+}, {
+  label: 'Home server',
+  title: '4600G',
+  subtitle: '6C / 12T',
+  items: [
+    [ 'Memory', '16GB DDR4' ],
+    [ 'System', 'Ubuntu Server 24.04 LTS' ]
+  ]
 } ] as const;
 
 
