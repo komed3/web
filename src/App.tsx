@@ -99,8 +99,8 @@ export default function App () {
           <Routes>
             <Route path= '/' element= { <Home /> } />
             <Route path= '/stack' element= { <Stack /> } />
-            <Route path= '/project/:slug' element= { <Index /> } />
-            <Route path= '/index' element= { <></> } />
+            <Route path= '/project/:slug' element= { <></> } />
+            <Route path= '/index' element= { <Index /> } />
           </Routes>
         </main>
 
