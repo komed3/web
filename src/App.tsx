@@ -79,7 +79,7 @@ export default function App () {
     : '#000';
 
   return (
-    <div className= 'bg-(--accent) text-(--main) transition-colors duration-300'>
+    <div className= 'bg-(--accent) text-(--main)'>
       <Header />
 
       <main className= 'min-h-screen'>
