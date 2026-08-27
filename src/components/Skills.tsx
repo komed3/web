@@ -5,7 +5,8 @@ const SKILLS = [
   { label: 'Typescript', icon: SiTypescript },
   { label: 'JavaScript', icon: SiJavascript },
   { label: 'C++', icon: SiCplusplus },
-  { label: 'PHP', icon: SiPhp }
+  { label: 'PHP', icon: SiPhp },
+  { label: 'Node.js', icon: SiNodedotjs }
 ] as const;
 
 
