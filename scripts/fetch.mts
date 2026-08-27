@@ -272,3 +272,9 @@ async function fetchRepos ( repos: Array< [ string, string ] > ) : Promise< Reco
   console.log( `✓ ${ Object.keys( result ).length } repos fetched` );
   return result;
 }
+
+// ---- RUNNER ----
+
+( async () => {
+  
+} )();
