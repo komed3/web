@@ -1,0 +1,9 @@
+{
+  "projects": [ {
+    "id": "cmpstr",
+    "title": "CmpStr",
+    "github": "komed3/cmpstr",
+    "type": "Node.js",
+    "status": "FEATURED"
+  } ]
+}
