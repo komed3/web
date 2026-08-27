@@ -1,3 +1,4 @@
+import { motion } from 'motion/react';
 import { SiGit, SiInkscape, SiKrita } from 'react-icons/si';
 import { VscVscodeInsiders } from 'react-icons/vsc';
 
@@ -23,7 +24,7 @@ const SOFTWARE = [ {
 
 export function Software () {
   return (
-    <div className= 'py-16 text-(--contrast) bg-(--main)'>
+    <div className= 'my-20 py-16 text-(--contrast) bg-(--main)'>
       { /** Header */ }
       <div className= 'px-12'>
         <div className= 'text-xs uppercase tracking-[0.3em]'>
@@ -46,7 +47,13 @@ export function Software () {
               paddingRight: i % 2 == 0 ? 48 : 0
             } }
           >
-            <div className= 'space-y-2'>
+            <motion.div
+              className= 'space-y-2'
+              initial= { { y: 40, opacity: 0 } }
+              whileInView= { { y: 0, opacity: 1 } }
+              transition= { { delay: i * 0.03 } }
+              viewport= { { once: true, amount: 0.3 } }
+            >
               <div className= 'text-xs uppercase tracking-[0.3em]'>
                 { desc }
               </div>
@@ -54,7 +61,7 @@ export function Software () {
               <div className= 'text-3xl font-light tracking-tight'>
                 { label }
               </div>
-            </div>
+            </motion.div>
 
             <Icon size= { 48 } />
           </div>
