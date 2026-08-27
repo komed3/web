@@ -1,3 +1,4 @@
+import { motion } from 'motion/react';
 import { SiGimp, SiGit, SiGithub, SiInkscape, SiKrita } from 'react-icons/si';
 import { VscVscodeInsiders } from 'react-icons/vsc';
 
@@ -38,7 +39,19 @@ export function Software () {
       { /** Content */ }
       <div className= 'px-12'>
         { SOFTWARE.map( ( { label, desc, icons }, i ) => (
-          <></>
+          <motion.div
+            key= { label }
+            initial= { { opacity: 0, y: 30 } }
+            whileInView= { { opacity: 1, y: 0 } }
+            transition= { { delay: i * 0.05 } }
+            viewport= { { once: true, amount: 0.3 } }
+            className= {
+              'relative min-h-72 py-12 ' +
+              ( i > 0 && 'border-t border-(--contrast)' )
+            }
+          >
+            ...
+          </motion.div>
         ) ) }
       </div>
     </div>
