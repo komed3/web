@@ -1,5 +1,7 @@
+import { ArrowUpRight } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import { useState } from 'react';
+import { Link } from 'react-router';
 
 
 const PROJECTS = [ {
@@ -63,6 +65,20 @@ export function Featured () {
 
                 <div className= 'mt-4 text-[clamp(5rem,12vw,12rem)] font-extralight leading-none tracking-tighter'>
                   { project.name }
+                </div>
+
+                <div className= 'mt-8 flex justify-between items-end gap-12'>
+                  <p className= 'max-w-3xl text-xl font-light leading-relaxed'>
+                    { project.description }
+                  </p>
+
+                  <Link
+                    to= { `/project/${ project.uri }` }
+                    className= 'shrink-0 flex items-center gap-3 text-sm uppercase tracking-[0.3em]'
+                  >
+                    View project
+                    <ArrowUpRight size= { 20 } />
+                  </Link>
                 </div>
               </div>
             </div>
