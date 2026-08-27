@@ -1,3 +1,6 @@
+import { motion } from 'motion/react';
+
+
 const NUMBERS = [
   { label: 'Years experience', value: '15+' },
   { label: 'Projects', value: '100+' },
@@ -16,18 +19,25 @@ export function Numbers () {
       </div>
 
       { /** Numbers */ }
-      { NUMBERS.map( ( { label, value } ) => (
+      { NUMBERS.map( ( { label, value }, i ) => (
         <div
           key= { label }
           className= 'flex-1 px-12 pt-16 pb-10 text-right'
         >
-          <div className= 'text-9xl font-extralight tracking-tighter'>
-            { value }
-          </div>
+          <motion.div
+            initial= { { y: 200, opacity: 0 } }
+            whileInView= { { y: 0, opacity: 1 } }
+            transition= { { delay: i * 0.15 } }
+            viewport= { { once: true, amount: 0.3 } }
+          >
+            <div className= 'text-9xl font-extralight tracking-tighter'>
+              { value }
+            </div>
 
-          <div className= 'text-lg font-bold uppercase tracking-widest'>
-            { label }
-          </div>
+            <div className= 'text-lg font-bold uppercase tracking-widest'>
+              { label }
+            </div>
+          </motion.div>
         </div>
       ) ) }
     </div>
