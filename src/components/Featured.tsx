@@ -1,4 +1,6 @@
+import { AnimatePresence, motion } from 'motion/react';
 import { useState } from 'react';
+
 
 const PROJECTS = [ {
   uri: 'airportmap',
@@ -36,7 +38,18 @@ export function Featured () {
 
   return (
     <div className= 'h-screen pt-36 pb-12'>
-      <div className= 'relative h-full overflow-hidden bg-(--main) text-(--contrast)'></div>
+      <div className= 'relative h-full overflow-hidden bg-(--main) text-(--contrast)'>
+        <AnimatePresence mode= 'wait'>
+          <motion.div
+            key= { project.uri }
+            initial= { { opacity: 0, y: 80 } }
+            animate= { { opacity: 1, y: 0 } }
+            exit= { { opacity: 0, y: -80 } }
+            transition= { { duration: 0.6, ease: [ 0.76, 0, 0.24, 1 ] } }
+            className= 'absolute inset-0'
+          ></motion.div>
+        </AnimatePresence>
+      </div>
     </div>
   );
 }
