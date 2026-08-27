@@ -1,24 +1,23 @@
-import { motion } from 'motion/react';
-import { SiGimp, SiGit, SiGithub, SiInkscape, SiKrita } from 'react-icons/si';
+import { SiGit, SiInkscape, SiKrita } from 'react-icons/si';
 import { VscVscodeInsiders } from 'react-icons/vsc';
 
 
 const SOFTWARE = [ {
   label: 'Visual Studio Code',
   desc: 'Development environment',
-  icons: [ VscVscodeInsiders ]
+  icon: VscVscodeInsiders
 }, {
   label: 'Git / GitHub',
   desc: 'Version control',
-  icons: [ SiGit, SiGithub ]
+  icon: SiGit
 }, {
   label: 'Inkscape',
   desc: 'Vector graphics',
-  icons: [ SiInkscape ]
+  icon: SiInkscape
 }, {
   label: 'Krita / Gimp',
   desc: 'Digital graphics',
-  icons: [ SiKrita, SiGimp ]
+  icon: SiKrita
 } ] as const;
 
 
