@@ -2,7 +2,12 @@ import { motion } from 'motion/react';
 import { type ReactNode } from 'react';
 
 
-export function Intro ( { text }: { text: ReactNode } ) {
+interface IntroProps {
+  text: ReactNode;
+}
+
+
+export function Intro ( { text }: IntroProps ) {
   return (
     <div className= 'relative w-full h-screen'>
       <motion.div
