@@ -8,6 +8,11 @@ interface PageTransitionProps {
 }
 
 
+const PATH_START = 'M 0 100 Q 50 100 100 100 L 100 100 L 0 100 Z';
+const PATH_WAVE  = 'M 0 80 Q 50 25 100 80 L 100 100 L 0 100 Z';
+const PATH_END   = 'M 0 0 Q 50 0 100 0 L 100 100 L 0 100 Z';
+
+
 export function PageTransition ( { color, onComplete }: PageTransitionProps ) {
   const [ fading, setFading ] = useState( false );
 
