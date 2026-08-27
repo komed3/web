@@ -5,5 +5,27 @@
     "github": "komed3/cmpstr",
     "type": "Node.js",
     "status": "FEATURED"
+  }, {
+    "id": "devtypes",
+    "title": "DevTypes",
+    "github": "komed3/devtypes",
+    "type": "Node.js"
+  }, {
+    "id": "latex-editor",
+    "title": "LaTeX Formula Editor",
+    "github": "komed3/latex-editor",
+    "type": "Web App",
+    "status": "FEATURED"
+  }, {
+    "id": "chemparse",
+    "title": "ChemParse",
+    "github": "komed3/chemparse",
+    "type": "Node.js"
+  }, {
+    "id": "unitra",
+    "title": "Unitra Framework",
+    "github": "komed3/unitra",
+    "type": "Node.js",
+    "status": "BETA"
   } ]
 }
