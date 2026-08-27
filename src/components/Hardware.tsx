@@ -37,7 +37,17 @@ export function Hardware () {
             transition= { { delay: i * 0.15 } }
             viewport= { { once: true, amount: 0.3 } }
           >
-            ...
+            <div className= 'text-xs uppercase tracking-[0.3em]'>
+              { label }
+            </div>
+
+            <div className= 'mt-10 -ml-1.5 text-7xl font-extralight tracking-tighter'>
+              { title }
+            </div>
+
+            <div className= 'mt-2 text-xs uppercase tracking-[0.3em]'>
+              { subtitle }
+            </div>
           </motion.div>
         </div>
       ) ) }
