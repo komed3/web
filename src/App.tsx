@@ -9,7 +9,7 @@ import { Home } from './pages/Home';
 import { Stack } from './pages/Stack';
 
 
-const COLORS = {
+const THEMES = {
   default: { '--accent': '#fff', '--main': '#000', '--contrast': '#fff' },
   stack: { '--accent': '#1e40af', '--main': '#fff', '--contrast': '#000' },
   project: { '--accent': '#fbbf24', '--main': '#000', '--contrast': '#fff' },
@@ -18,15 +18,15 @@ const COLORS = {
 
 
 const ROUTES = [
-  [ /^\/$/, COLORS.default ],
-  [ /^\/stack$/, COLORS.stack ],
-  [ /^\/project(?:\/|$)/, COLORS.project ],
-  [ /^\/index$/, COLORS.index ]
+  [ /^\/$/, 'default' ],
+  [ /^\/stack$/, 'stack' ],
+  [ /^\/project(?:\/|$)/, 'project' ],
+  [ /^\/index$/, 'index' ]
 ] as const;
 
 
 function getColorVars ( pathname: string ) {
-  return ROUTES.find( ( [ pattern ] ) => pattern.test( pathname ) )?.[ 1 ] ?? COLORS.default;
+  return THEMES[ ROUTES.find( ( [ pattern ] ) => pattern.test( pathname ) )?.[ 1 ] ?? 'default' ];
 }
 
 
