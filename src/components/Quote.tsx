@@ -8,12 +8,12 @@ export function Quote () {
   const { scrollYProgress } = useScroll( { target: ref, offset: [ 'start end', 'end start' ] } );
 
   const xFirst = useSpring(
-    useTransform( scrollYProgress, [ 0, 0.5, 1 ], [ '-45vw', '0vw', '45vw' ] ),
+    useTransform( scrollYProgress, [ 0, 0.5, 1 ], [ '-30vw', '0vw', '30vw' ] ),
     { stiffness: 100, damping: 30, mass: 0.5 }
   );
 
   const xSecond = useSpring(
-    useTransform( scrollYProgress, [ 0, 0.5, 1 ], [ '45vw', '0vw', '-45vw' ] ),
+    useTransform( scrollYProgress, [ 0, 0.5, 1 ], [ '30vw', '0vw', '-30vw' ] ),
     { stiffness: 100, damping: 30, mass: 0.5 }
   );
 
