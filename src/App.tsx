@@ -5,6 +5,7 @@ import { Cursor } from './effects/Cursor';
 import { Footer } from './layout/Footer';
 import { Header } from './layout/Header';
 import { Home } from './pages/Home';
+import { Stack } from './pages/Stack';
 
 
 const COLOR_VARS = {
@@ -31,6 +32,7 @@ export default function App () {
       <main className= 'min-h-screen'>
         <Routes>
           <Route path= '/' element= { <Home /> } />
+          <Route path= '/stack' element= { <Stack /> } />
         </Routes>
       </main>
 
