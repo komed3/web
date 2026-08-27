@@ -37,7 +37,7 @@ if ( ! existsSync( dir ) ) mkdirSync( dir, { recursive: true } );
 
 async function readConfig () : Promise< Config > {
   const file = join( cwd, 'config.json' );
-  if ( ! existsSync( file ) ) throw new Error( `Cannot open config file!` );
+  if ( ! existsSync( file ) ) throw new Error( 'Cannot open config file!' );
 
   try { return JSON.parse( await readFile( file, 'utf-8' ) ) as Config }
   catch ( e: any ) { throw new Error( `Error while reading config: ${ e.message }` ) }
@@ -83,4 +83,27 @@ function fixRelativePaths ( content: string, owner: string, name: string, branch
 
       return `${ attr }="${ baseUrl }/${ cleanPath }"`;
     } );
+}
+
+// ---- GITHUB API ----
+
+async function fetchGraphQL ( query: string, variables?: Record< string, unknown > ) {
+  const token = process.env.TOKEN;
+  if ( ! token ) throw new Error( 'TOKEN missing' );
+
+  const res = await fetch( 'https://api.github.com/graphql', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${ token }`
+    },
+    body: JSON.stringify( { query, variables } )
+  } );
+
+  if ( ! res.ok ) throw new Error( `GitHub API: ${ res.status }` );
+
+  const data = await res.json();
+  if ( data.errors ) throw new Error( data.errors.map( ( e: Error ) => e.message ).join( ', ' ) );
+
+  return data.data;
 }
