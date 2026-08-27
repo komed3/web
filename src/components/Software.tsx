@@ -41,16 +41,21 @@ export function Software () {
         { SOFTWARE.map( ( { label, desc, icons }, i ) => (
           <motion.div
             key= { label }
+            className= 'relative min-h-60 py-12 border-t border-(--contrast)'
             initial= { { opacity: 0, y: 30 } }
             whileInView= { { opacity: 1, y: 0 } }
             transition= { { delay: i * 0.05 } }
             viewport= { { once: true, amount: 0.3 } }
-            className= {
-              'relative min-h-72 py-12 ' +
-              ( i > 0 && 'border-t border-(--contrast)' )
-            }
           >
-            ...
+            <div>
+              <div className= '-ml-1 text-5xl uppercase font-extralight tracking-widest'>
+                { label }
+              </div>
+
+              <div className= 'mt-4 text-sm uppercase tracking-[0.2em]'>
+                { desc }
+              </div>
+            </div>
           </motion.div>
         ) ) }
       </div>
