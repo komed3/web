@@ -6,6 +6,28 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 
+interface Config {
+  projects: Array< {
+    id: string;
+    title?: string;
+    type: string;
+    desc?: string;
+    tags?: string[];
+    link?: string;
+    github?: string;
+    content?: string;
+    status?: string;
+    meta?: {
+      stars?: number;
+      license?: string;
+      langs?: string[];
+      year?: number;
+      version?: string;
+    };
+  } >;
+}
+
+
 const cwd = dirname( fileURLToPath( import.meta.url ) );
 const dir = join( cwd, '..', 'src', 'data' );
 if ( ! existsSync( dir ) ) mkdirSync( dir, { recursive: true } );
