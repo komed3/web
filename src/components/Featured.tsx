@@ -8,25 +8,25 @@ const PROJECTS = [ {
   uri: 'airportmap',
   name: 'Airportmap',
   category: 'Data / Web',
-  description: 'The free and open-source airport database',
+  desc: 'The free and open-source airport database',
   link: 'airportmap.de'
 }, {
   uri: 'pseinfo',
   name: 'Periodic Table',
   category: 'Data / Education',
-  description: 'Interactive open-source periodic table',
+  desc: 'Interactive open-source periodic table and chemical database',
   link: 'pse-info.de',
 }, {
   uri: 'rtbnext',
   name: 'RTBNext',
   category: 'API / Data',
-  description: 'Tracking the wealthiest people on the planet',
+  desc: 'Open infrastructure for real-time billionaire data',
   link: 'rtbnext.de'
 }, {
   uri: 'pulsar',
   name: 'Pulsar',
   category: 'Programming',
-  description: 'Programming language focused on maths problems',
+  desc: 'Programming language focused on mathematical problems',
   link: undefined
 } ] as const;
 
@@ -69,7 +69,7 @@ export function Featured () {
 
                 <div className= 'mt-8 flex justify-between items-end gap-12'>
                   <p className= 'max-w-3xl text-xl font-light leading-relaxed'>
-                    { project.description }
+                    { project.desc }
                   </p>
 
                   <Link
