@@ -1,3 +1,4 @@
+import { motion } from 'motion/react';
 import { SiAmd } from 'react-icons/si';
 
 
@@ -30,7 +31,14 @@ export function Hardware () {
           key= { label }
           className= 'flex-1 px-12'
         >
-          ...
+          <motion.div
+            initial= { { y: 200, opacity: 0 } }
+            whileInView= { { y: 0, opacity: 1 } }
+            transition= { { delay: i * 0.15 } }
+            viewport= { { once: true, amount: 0.3 } }
+          >
+            ...
+          </motion.div>
         </div>
       ) ) }
     </div>
