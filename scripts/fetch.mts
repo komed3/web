@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import { Merger } from '@komed3/deepmerge';
 import { existsSync, mkdirSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
@@ -276,5 +277,15 @@ async function fetchRepos ( repos: Array< [ string, string ] > ) : Promise< Reco
 // ---- RUNNER ----
 
 ( async () => {
-  
+  const config = await readConfig();
+  const merger = new Merger();
+
+  const orgs: string[] = [], repos: Array< [ string, string ] > = [];
+
+  for ( const { github } of config.projects ) {
+    if ( ! github ) continue;
+
+    if ( github.includes( '/' ) ) repos.push( github.split( '/' ) as [ string, string ] );
+    else orgs.push( github );
+  }
 } )();
