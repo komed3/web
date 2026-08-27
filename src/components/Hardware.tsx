@@ -59,7 +59,7 @@ export function Hardware () {
               { label }
             </div>
 
-            <div className= 'mt-10 -ml-1.5 text-7xl font-extralight tracking-tighter'>
+            <div className= 'mt-10 text-7xl font-extralight tracking-tighter'>
               { title }
             </div>
 
