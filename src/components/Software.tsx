@@ -25,7 +25,7 @@ const SOFTWARE = [ {
 export function Software () {
   return (
     <div className= 'py-16 text-(--contrast) bg-(--main)'>
-      { /** Label */ }
+      { /** Header */ }
       <div className= 'px-12 mb-32'>
         <div className= 'text-sm uppercase tracking-[0.3em]'>
           Software
@@ -66,6 +66,11 @@ export function Software () {
             </div>
           </motion.div>
         ) ) }
+      </div>
+
+      { /** Footer */ }
+      <div className= 'px-12 pt-24 text-sm uppercase tracking-[0.3em]'>
+        Open source / free software / independent tools
       </div>
     </div>
   );
