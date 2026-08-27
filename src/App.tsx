@@ -6,6 +6,7 @@ import { PageTransition } from './effects/PageTransition';
 import { Footer } from './layout/Footer';
 import { Header } from './layout/Header';
 import { Home } from './pages/Home';
+import { Index } from './pages/Index';
 import { Stack } from './pages/Stack';
 
 
@@ -98,7 +99,7 @@ export default function App () {
           <Routes>
             <Route path= '/' element= { <Home /> } />
             <Route path= '/stack' element= { <Stack /> } />
-            <Route path= '/project/:slug' element= { <></> } />
+            <Route path= '/project/:slug' element= { <Index /> } />
             <Route path= '/index' element= { <></> } />
           </Routes>
         </main>
