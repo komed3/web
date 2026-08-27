@@ -17,6 +17,26 @@ const COLORS = {
 } as const;
 
 
+const ROUTES = [
+  [ /^\/$/, COLORS.default ],
+  [ /^\/stack$/, COLORS.stack ],
+  [ /^\/project(?:\/|$)/, COLORS.project ],
+  [ /^\/index$/, COLORS.index ]
+] as const;
+
+
+function getColorVars ( pathname: string ) {
+  return ROUTES.find( ( [ pattern ] ) => pattern.test( pathname ) )?.[ 1 ] ?? COLORS.default;
+}
+
+
+function setColorVars ( pathname: string ) {
+  Object.entries( getColorVars( pathname ) ).forEach( ( [ key, value ] ) =>
+    document.documentElement.style.setProperty( key, value )
+  );
+}
+
+
 export default function App () {
   const { pathname } = useLocation();
 
