@@ -1,8 +1,11 @@
-import { SiTypescript } from 'react-icons/si';
+import { SiCplusplus, SiJavascript, SiPhp, SiTypescript } from 'react-icons/si';
 
 
 const SKILLS = [
-  { label: 'Typescript', icon: SiTypescript }
+  { label: 'Typescript', icon: SiTypescript },
+  { label: 'JavaScript', icon: SiJavascript },
+  { label: 'C++', icon: SiCplusplus },
+  { label: 'PHP', icon: SiPhp }
 ] as const;
 
 
