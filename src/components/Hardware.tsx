@@ -1,10 +1,8 @@
 import { motion } from 'motion/react';
-import { SiAmd } from 'react-icons/si';
 
 
 const RESOURCES = [ {
   label: 'Main workstation',
-  icon: SiAmd,
   title: '5900XT',
   subtitle: '16C / 32T',
   items: [
@@ -26,7 +24,7 @@ export function Hardware () {
       </div>
 
       { /** Resources */ }
-      { RESOURCES.map( ( { label, icon: Icon, title, subtitle, items }, i ) => (
+      { RESOURCES.map( ( { label, title, subtitle, items }, i ) => (
         <div
           key= { label }
           className= 'flex-1 px-12'
@@ -47,6 +45,20 @@ export function Hardware () {
 
             <div className= 'mt-2 text-xs uppercase tracking-[0.3em]'>
               { subtitle }
+            </div>
+
+            <div className= 'mt-16 space-y-8'>
+              { items.map( ( [ label, value ] ) => (
+                <div key= { `${ label }-${ value }` }>
+                  <div className= 'text-[11px] uppercase tracking-[0.3em] opacity-70'>
+                    { label }
+                  </div>
+
+                  <div className= 'text-lg font-light'>
+                    { value }
+                  </div>
+                </div>
+              ) ) }
             </div>
           </motion.div>
         </div>
