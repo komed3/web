@@ -1,14 +1,23 @@
 import { Hardware } from '../components/Hardware';
+import { Intro } from '../components/Intro';
 import { Skills } from '../components/Skills';
 import { Software } from '../components/Software';
 
 
 export function Stack () {
   return (
-    <div className= 'pt-40 pb-30 space-y-20'>
+    <>
+      <Intro
+        text= { (
+          <>
+            ...
+          </>
+        ) }
+      />
+
       <Skills />
       <Software />
       <Hardware />
-    </div>
+    </>
   );
 }
