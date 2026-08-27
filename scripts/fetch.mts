@@ -27,6 +27,18 @@ interface Config {
   } >;
 }
 
+interface Org {
+  title: string;
+  description: string;
+  tags: string[];
+  link?: string;
+  meta: {
+    stars: number;
+    langs: string[];
+    repos: number;
+  };
+}
+
 
 const cwd = dirname( fileURLToPath( import.meta.url ) );
 const dir = join( cwd, '..', 'src', 'data' );
