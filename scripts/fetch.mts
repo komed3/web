@@ -2,7 +2,7 @@
 
 import { Merger } from '@komed3/deepmerge';
 import { existsSync, mkdirSync } from 'node:fs';
-import { readFile } from 'node:fs/promises';
+import { readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -295,4 +295,6 @@ async function fetchRepos ( repos: Array< [ string, string ] > ) : Promise< Reco
   for ( const project of config.projects ) projects.push( merger.merge< Project >(
     {} as any, project.github ? data[ project.github ] : undefined, project
   ) );
+
+  await writeFile( join( dir, 'projects.json' ), JSON.stringify( projects, null, 2 ), 'utf-8' );
 } )();
