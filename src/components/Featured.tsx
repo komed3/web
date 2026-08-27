@@ -33,10 +33,12 @@ const PROJECTS = [ {
 
 export function Featured () {
   const [ current, setCurrent ] = useState( 0 );
-  const project = PROJECTS[ current ];
 
   const previous = () => setCurrent( current === 0 ? PROJECTS.length - 1 : current - 1 );
   const next = () => setCurrent( ( current + 1 ) % PROJECTS.length );
+
+  const transition = { duration: 0.6, ease: [ 0.76, 0, 0.24, 1 ] } as const;
+  const project = PROJECTS[ current ];
 
   return (
     <div className= 'h-screen pt-36 pb-12'>
