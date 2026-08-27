@@ -40,13 +40,17 @@ function setColorVars ( pathname: string ) {
 export default function App () {
   const { pathname } = useLocation();
   const navigate = useNavigate();
+
   const [ target, setTarget ] = useState< string | null >( null );
+  const [ contentVisible, setContentVisible ] = useState( true );
 
   useEffect( () => { if ( target ) return; setColorVars( pathname ) }, [ pathname, target ] );
 
   useEffect( () => {
     if ( ! target ) return;
     if ( pathname !== new URL( target, window.location.origin ).pathname ) return;
+
+    setContentVisible( true );
     setTarget( null );
   }, [ pathname, target ] );
 
@@ -67,6 +71,8 @@ export default function App () {
 
       event.preventDefault();
       event.stopPropagation();
+
+      setContentVisible( false );
       setTarget( next );
     };
 
@@ -82,16 +88,24 @@ export default function App () {
     <div className= 'bg-(--accent) text-(--main)'>
       <Header />
 
-      <main className= 'min-h-screen'>
-        <Routes>
-          <Route path= '/' element= { <Home /> } />
-          <Route path= '/stack' element= { <Stack /> } />
-          <Route path= '/project/:slug' element= { <></> } />
-          <Route path= '/index' element= { <></> } />
-        </Routes>
-      </main>
+      <div
+        style= { {
+          opacity: contentVisible ? 1 : 0,
+          transition: 'all 0.35s linear'
+        } }
+      >
+        <main className= 'min-h-screen'>
+          <Routes>
+            <Route path= '/' element= { <Home /> } />
+            <Route path= '/stack' element= { <Stack /> } />
+            <Route path= '/project/:slug' element= { <></> } />
+            <Route path= '/index' element= { <></> } />
+          </Routes>
+        </main>
 
-      <Footer />
+        <Footer />
+      </div>
+
       <Cursor />
 
       { target && (
@@ -101,6 +115,7 @@ export default function App () {
             window.scrollTo( 0, 0 );
             setColorVars( new URL( target, window.location.origin ).pathname );
             navigate( target );
+            setContentVisible( true );
           } }
         />
       ) }
