@@ -16,7 +16,7 @@ const RESOURCES = [ {
 
 export function Hardware () {
   return (
-    <div className= 'flex items-stretch py-16'>
+    <div className= 'flex items-stretch py-16 divide-x divide-(--main)'>
       { /** Label */ }
       <div className= 'shrink-0 flex flex-col px-12 text-2xl uppercase font-extralight tracking-widest'>
         <span>Hardware</span>
@@ -25,6 +25,14 @@ export function Hardware () {
       </div>
 
       { /** Resources */ }
+      { RESOURCES.map( ( { label, icon: Icon, title, subtitle, items }, i ) => (
+        <div
+          key= { label }
+          className= 'flex-1 px-12'
+        >
+          ...
+        </div>
+      ) ) }
     </div>
   );
 }
