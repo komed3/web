@@ -1,5 +1,6 @@
-import { useEffect } from 'react';
-import { Route, Routes, useLocation } from 'react-router';
+import { motion } from 'motion/react';
+import { useEffect, useState } from 'react';
+import { Route, Routes, useLocation, useNavigate } from 'react-router';
 
 import { Cursor } from './effects/Cursor';
 import { Footer } from './layout/Footer';
