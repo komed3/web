@@ -1,20 +1,33 @@
 import { ArrowUpRight } from 'lucide-react';
+import { motion } from 'motion/react';
 
 
 export function About () {
   return (
     <div className= 'px-12 py-40'>
       { /** Statement */ }
-      <div className= 'flex flex-col text-7xl uppercase font-black tracking-tight leading-[0.9]'>
+      <motion.div
+        initial= { { y: 40, opacity: 0 } }
+        whileInView= { { y: 0, opacity: 1 } }
+        transition= { { duration: 1.2, ease: [ 0.22, 1, 0.36, 1 ] } }
+        viewport= { { once: true, amount: 0.3 } }
+        className= 'flex flex-col text-7xl uppercase font-black tracking-tight leading-[0.9]'
+      >
         <span>Building</span>
         <span>free & open</span>
         <span>source</span>
-      </div>
+      </motion.div>
 
       { /** Content */ }
       <div className= 'grid grid-cols-2 gap-24 mt-40'>
         { /** About */ }
-        <div className= 'space-y-8 text-3xl font-extralight leading-relaxed'>
+        <motion.div
+          initial= { { y: 40, opacity: 0 } }
+          whileInView= { { y: 0, opacity: 1 } }
+          transition= { { duration: 1.2, ease: [ 0.22, 1, 0.36, 1 ] } }
+          viewport= { { once: true, amount: 0.3 } }
+          className= 'space-y-8 text-3xl font-extralight leading-relaxed'
+        >
           <p>
             I'm a freelance software developer focusing on Node.js packages,
             data visualization, and contemporary web development.
@@ -26,10 +39,16 @@ export function About () {
             into a fascination with software, systems, and the things that
             can be built with them.
           </p>
-        </div>
+        </motion.div>
 
         { /** Philosophy */ }
-        <div className= 'flex flex-col justify-end gap-8'>
+        <motion.div
+          initial= { { y: 40, opacity: 0 } }
+          whileInView= { { y: 0, opacity: 1 } }
+          transition= { { duration: 1.2, ease: [ 0.22, 1, 0.36, 1 ] } }
+          viewport= { { once: true, amount: 0.3 } }
+          className= 'flex flex-col justify-end gap-8'
+        >
           <div className= 'text-xs uppercase font-extralight tracking-[0.4rem]'>
             Philosophy
           </div>
@@ -43,11 +62,17 @@ export function About () {
           <p className= 'text-2xl font-extralight leading-relaxed'>
             Open source isn't just a choice. It's a standard.
           </p>
-        </div>
+        </motion.div>
       </div>
 
       { /** Contact */ }
-      <div className= 'flex justify-between items-end mt-40 pt-8 border-t border-(--main)'>
+      <motion.div
+        initial= { { y: 40, opacity: 0 } }
+        whileInView= { { y: 0, opacity: 1 } }
+        transition= { { duration: 1.2, ease: [ 0.22, 1, 0.36, 1 ] } }
+        viewport= { { once: true, amount: 0.3 } }
+        className= 'flex justify-between items-end mt-40 pt-8 border-t border-(--main)'
+      >
         <div className= 'space-y-8'>
           <div className= 'text-xs uppercase font-extralight tracking-[0.4rem]'>
             Get in touch
@@ -70,7 +95,7 @@ export function About () {
           <span>Get in touch</span>
           <ArrowUpRight size= { 28 } strokeWidth= { 1.6 } />
         </a>
-      </div>
+      </motion.div>
     </div>
   );
 }
