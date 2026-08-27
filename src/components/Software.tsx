@@ -24,7 +24,7 @@ const SOFTWARE = [ {
 
 export function Software () {
   return (
-    <div className= 'my-20 py-16 text-(--contrast) bg-(--main)'>
+    <div className= 'py-16 text-(--contrast) bg-(--main)'>
       { /** Header */ }
       <div className= 'px-12'>
         <div className= 'text-xs uppercase tracking-[0.3em]'>
