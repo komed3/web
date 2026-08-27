@@ -18,6 +18,18 @@ const RESOURCES = [ {
     [ 'Memory', '16GB DDR4' ],
     [ 'System', 'Ubuntu Server 24.04 LTS' ]
   ]
+}, {
+  label: 'Mobile gear',
+  title: '02',
+  subtitle: 'legacy laptops',
+  items: [
+    [ 'System', 'Ubuntu Linux' ],
+    [ 'Purpose', [
+      'Field testing',
+      'Remote network management',
+      'Sandbox environments'
+    ] ]
+  ]
 } ] as const;
 
 
@@ -63,7 +75,9 @@ export function Hardware () {
                   </div>
 
                   <div className= 'text-lg font-light'>
-                    { value }
+                    { Array.isArray( value ) ? value.map( ( item, j ) => (
+                      <div key= { j }>{ item }</div>
+                    ) ) : value }
                   </div>
                 </div>
               ) ) }
