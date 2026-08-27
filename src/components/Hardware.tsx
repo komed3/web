@@ -47,7 +47,7 @@ export function Hardware () {
       { RESOURCES.map( ( { label, title, subtitle, items }, i ) => (
         <div
           key= { label }
-          className= 'flex-1 px-12'
+          className= 'flex-1 px-12 text-right'
         >
           <motion.div
             initial= { { y: 200, opacity: 0 } }
