@@ -93,6 +93,21 @@ export default function App () {
 
       <Footer />
       <Cursor />
+
+      { target && (
+        <motion.div
+          className= 'fixed inset-0 z-9999 pointer-events-none'
+          style= { { backgroundColor: overlayColor } }
+          initial= { { y: '100%' } }
+          animate= { { y: '0%' } }
+          transition= { { duration: 0.8, ease: [ 0.76, 0, 0.24, 1 ] } }
+          onAnimationComplete= { () => {
+            window.scrollTo( 0, 0 );
+            setColorVars( new URL( target, window.location.origin ).pathname );
+            navigate( target );
+          } }
+        />
+      ) }
     </div>
   );
 }
