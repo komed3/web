@@ -23,30 +23,28 @@ const SKILLS = [
 
 export function Skills () {
   return (
-    <div className= 'pt-40'>
-      <div className= 'grid grid-cols-4 gap-px bg-(--main)'>
-        { SKILLS.map( ( { label, icon: Icon }, i ) => (
-          <div
-            key= { label }
-            className= 'p-12 bg-(--accent)'
+    <div className= 'grid grid-cols-4 gap-px bg-(--main)'>
+      { SKILLS.map( ( { label, icon: Icon }, i ) => (
+        <div
+          key= { label }
+          className= 'p-12 bg-(--accent)'
+        >
+          <motion.div
+            initial= { { y: 40, opacity: 0 } }
+            whileInView= { { y: 0, opacity: 1 } }
+            transition= { { delay: i * 0.03 } }
+            viewport= { { once: true, amount: 0.3 } }
           >
-            <motion.div
-              initial= { { y: 40, opacity: 0 } }
-              whileInView= { { y: 0, opacity: 1 } }
-              transition= { { delay: i * 0.03 } }
-              viewport= { { once: true, amount: 0.3 } }
-            >
-              <div className= 'flex justify-end mb-16'>
-                <Icon size= { 64 } />
-              </div>
+            <div className= 'flex justify-end mb-16'>
+              <Icon size= { 64 } />
+            </div>
 
-              <div className= 'text-2xl uppercase font-extralight tracking-widest'>
-                { label }
-              </div>
-            </motion.div>
-          </div>
-        ) ) }
-      </div>
+            <div className= 'text-2xl uppercase font-extralight tracking-widest'>
+              { label }
+            </div>
+          </motion.div>
+        </div>
+      ) ) }
     </div>
   );
 }
