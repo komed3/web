@@ -39,6 +39,21 @@ interface Org {
   };
 }
 
+interface Repo {
+  title: string;
+  desc: string;
+  tags: string[];
+  link?: string;
+  content?: string;
+  meta: {
+    stars: number;
+    license?: string;
+    langs: string[];
+    year: number;
+    version?: string;
+  };
+}
+
 
 // --- PREPARE ---
 
@@ -187,5 +202,53 @@ async function fetchOrgs ( orgs: string[] ) : Promise< Record< string, Org > > {
   }
 
   console.log( `✓ ${ Object.keys( result ).length } orgs fetched` );
+  return result;
+}
+
+async function fetchRepos ( repos: Array< [ string, string ] > ) : Promise< Record< string, Repo > > {
+  if ( ! repos.length ) return {};
+
+  console.log( `Fetching repos (${ repos.length }) ...` );
+  const result: Record< string, Repo > = {};
+
+  for ( let i = 0; i < repos.length; i += 20 ) {
+    const batch = repos.slice( i, i + 20 );
+
+    const data = await fetchGraphQL( `query {
+      ${ batch.map( ( [ owner, name ], j ) => `
+        repo${ j }: repository( owner: "${ owner }", name: "${ name }" ) {
+          name, description, homepageUrl, stargazerCount, licenseInfo { spdxId },
+          createdAt, primaryLanguage { name }, latestRelease { tagName }, defaultBranchRef { name },
+          repositoryTopics( first: 10 ) { nodes { topic { name } } },
+          object( expression: "HEAD:README.md" ) { ... on Blob { text } },
+          refs( refPrefix: "refs/tags/", first: 1, orderBy: { field: TAG_COMMIT_DATE, direction: DESC } ) { nodes { name } }
+        }
+      ` ).join( '\n' ) }
+    }` );
+
+    batch.forEach( ( [ owner, name ], j ) => {
+      const r = data[ `repo${ j }` ];
+      if ( ! r ) return;
+
+      const langs = r.primaryLanguage?.name ? [ r.primaryLanguage.name ] : [];
+      const branch = r.defaultBranchRef?.name || 'main';
+      const content = r.object?.text || '';
+
+      result[ `${ owner }/${ name }` ] = {
+        title: r.name,
+        desc: r.description || '',
+        tags: r.repositoryTopics?.nodes?.map( ( t: any ) => t.topic.name ) || [],
+        link: r.homepageUrl,
+        content: fixRelativePaths( content, owner, name, branch ),
+        meta: {
+          stars: r.stargazerCount, license: r.licenseInfo?.spdxId, langs,
+          year: new Date( r.createdAt ).getFullYear(),
+          version: normalizeVersion( r.latestRelease?.tagName || r.refs?.nodes?.[ 0 ]?.name )
+        }
+      };
+    } );
+  }
+
+  console.log( `✓ ${ Object.keys( result ).length } repos fetched` );
   return result;
 }
