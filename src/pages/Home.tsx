@@ -8,7 +8,13 @@ import { Quote } from '../components/Quote';
 export function Home () {
   return (
     <>
-      <Intro />
+      <Intro text= { (
+        <>
+          Hi, I'm <b>komed3</b>, a freelance <b>software</b> developer focusing
+          on <b>Node.js</b>, data visualization, and <b>modern web</b> technology.
+        </>
+      ) } />
+
       <External />
       <Quote />
       <About />

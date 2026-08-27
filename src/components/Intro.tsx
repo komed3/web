@@ -1,7 +1,8 @@
 import { motion } from 'motion/react';
+import { type ReactNode } from 'react';
 
 
-export function Intro () {
+export function Intro ( { text }: { text: ReactNode } ) {
   return (
     <div className= 'relative w-full h-screen'>
       <motion.div
@@ -12,8 +13,7 @@ export function Intro () {
         className= 'centered pt-10'
       >
         <p className= 'max-w-6xl text-5xl uppercase font-extralight tracking-widest leading-snug'>
-          Hi, I'm <b>komed3</b>, a freelance <b>software</b> developer focusing
-          on <b>Node.js</b>, data visualization, and <b>modern web</b> technology.
+          { text }
         </p>
       </motion.div>
     </div>
