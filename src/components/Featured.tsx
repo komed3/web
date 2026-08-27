@@ -47,7 +47,15 @@ export function Featured () {
             exit= { { opacity: 0, y: -80 } }
             transition= { { duration: 0.6, ease: [ 0.76, 0, 0.24, 1 ] } }
             className= 'absolute inset-0'
-          ></motion.div>
+          >
+            <div className= 'absolute inset-0 flex flex-col justify-between p-12'>
+              { /** Header */ }
+              <div className= 'flex justify-between items-start text-xs uppercase tracking-[0.3em]'>
+                <div>Featured project</div>
+                <div>{ String( current + 1 ).padStart( 2, '0' ) } / { String( PROJECTS.length ).padStart( 2, '0' ) }</div>
+              </div>
+            </div>
+          </motion.div>
         </AnimatePresence>
       </div>
     </div>
