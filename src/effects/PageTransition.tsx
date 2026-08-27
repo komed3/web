@@ -36,7 +36,7 @@ export function PageTransition ( { color, onComplete }: PageTransitionProps ) {
           transition= {
             fading
               ? { duration: 0.05, ease: 'linear' }
-              : { duration: 0.7, times: [ 0, 0.5, 1 ], ease: 'linear' }
+              : { duration: 0.6, times: [ 0, 0.65, 1 ], ease: 'linear' }
           }
           onAnimationComplete= { () => {
             if ( fading ) return;
