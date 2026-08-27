@@ -5,8 +5,9 @@ export function Intro () {
   return (
     <div className= 'relative w-full h-screen'>
       <motion.div
-        initial= { { y: 200, opacity: 0 } }
+        initial= { { y: 40, opacity: 0 } }
         whileInView= { { y: 0, opacity: 1 } }
+        transition= { { duration: 1.2, ease: [ 0.22, 1, 0.36, 1 ] } }
         viewport= { { once: true, amount: 0.3 } }
         className= 'centered pt-10'
       >
