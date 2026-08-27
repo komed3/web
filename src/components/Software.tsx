@@ -36,7 +36,11 @@ export function Software () {
       </div>
 
       { /** Content */ }
-      <div className= 'px-12'></div>
+      <div className= 'px-12'>
+        { SOFTWARE.map( ( { label, desc, icons }, i ) => (
+          <></>
+        ) ) }
+      </div>
     </div>
   );
 }
