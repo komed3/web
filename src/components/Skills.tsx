@@ -1,4 +1,4 @@
-import { SiCplusplus, SiJavascript, SiNodedotjs, SiPhp, SiTypescript } from 'react-icons/si';
+import { SiCplusplus, SiCss, SiJavascript, SiNodedotjs, SiPhp, SiPython, SiReact, SiTailwindcss, SiTypescript } from 'react-icons/si';
 
 
 const SKILLS = [
@@ -6,7 +6,11 @@ const SKILLS = [
   { label: 'JavaScript', icon: SiJavascript },
   { label: 'C++', icon: SiCplusplus },
   { label: 'PHP', icon: SiPhp },
-  { label: 'Node.js', icon: SiNodedotjs }
+  { label: 'Python', icon: SiPython },
+  { label: 'Node.js', icon: SiNodedotjs },
+  { label: 'React', icon: SiReact },
+  { label: 'Tailwind', icon: SiTailwindcss },
+  { label: 'Web Design', icon: SiCss }
 ] as const;
 
 
