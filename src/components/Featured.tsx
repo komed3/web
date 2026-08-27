@@ -60,6 +60,10 @@ export function Featured () {
                 <div className= 'text-xs uppercase tracking-[0.3em]'>
                   { project.category }
                 </div>
+
+                <div className= 'mt-4 text-[clamp(5rem,12vw,12rem)] font-extralight leading-none tracking-tighter'>
+                  { project.name }
+                </div>
               </div>
             </div>
           </motion.div>
