@@ -40,30 +40,32 @@ export function Software () {
       <div className= 'grid grid-cols-2 gap-px mx-12 my-16 bg-(--contrast)'>
         { SOFTWARE.map( ( { label, desc, icon: Icon }, i ) => (
           <div
-            key= { i }
-            className= 'flex justify-between items-center gap-12 py-12 bg-(--main)'
+            key= { label }
+            className= 'py-12 bg-(--main)'
             style= { {
               paddingLeft: i % 2 == 0 ? 0 : 48,
               paddingRight: i % 2 == 0 ? 48 : 0
             } }
           >
             <motion.div
-              className= 'space-y-2'
+              className= 'flex justify-between items-center gap-12'
               initial= { { y: 40, opacity: 0 } }
               whileInView= { { y: 0, opacity: 1 } }
-              transition= { { delay: i * 0.03 } }
+              transition= { { delay: i * 0.15 } }
               viewport= { { once: true, amount: 0.3 } }
             >
-              <div className= 'text-xs uppercase tracking-[0.3em]'>
-                { desc }
+              <div className= 'space-y-2'>
+                <div className= 'text-xs uppercase tracking-[0.3em]'>
+                  { desc }
+                </div>
+
+                <div className= 'text-3xl font-light tracking-tight'>
+                  { label }
+                </div>
               </div>
 
-              <div className= 'text-3xl font-light tracking-tight'>
-                { label }
-              </div>
+              <Icon size= { 48 } />
             </motion.div>
-
-            <Icon size= { 48 } />
           </div>
         ) ) }
       </div>
