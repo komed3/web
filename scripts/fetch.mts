@@ -29,7 +29,7 @@ interface Config {
 
 interface Org {
   title: string;
-  description: string;
+  desc: string;
   tags: string[];
   link?: string;
   meta: {
@@ -40,10 +40,11 @@ interface Org {
 }
 
 
+// --- PREPARE ---
+
 const cwd = dirname( fileURLToPath( import.meta.url ) );
 const dir = join( cwd, '..', 'src', 'data' );
 if ( ! existsSync( dir ) ) mkdirSync( dir, { recursive: true } );
-
 
 // ---- CONFIG ----
 
@@ -118,4 +119,73 @@ async function fetchGraphQL ( query: string, variables?: Record< string, unknown
   if ( data.errors ) throw new Error( data.errors.map( ( e: Error ) => e.message ).join( ', ' ) );
 
   return data.data;
+}
+
+async function fetchOrgs ( orgs: string[] ) : Promise< Record< string, Org > > {
+  if ( ! orgs.length ) return {};
+
+  console.log( `Fetching orgs (${ orgs.length }) ...` );
+
+  const result: Record< string, Org > = {};
+  const state = orgs.map( org => ( {
+    org, after: null as string | null, done: false, repos: 0, stars: 0,
+    langs: {} as Record< string, number >, meta: null as any
+  } ) );
+
+  while ( state.some( s => ! s.done ) ) {
+    const data = await fetchGraphQL( `query {
+      ${ state.map( ( s, i ) => {
+        if ( s.done ) return '';
+        return `org${ i }: organization( login: "${ s.org }" ) {
+          name, description, websiteUrl,
+          repositories( first: 100, after: ${ s.after ? `"${ s.after }"` : null }, isFork: false ) {
+            nodes { stargazerCount, primaryLanguage { name } },
+            pageInfo { hasNextPage, endCursor }
+          }
+        }`;
+      } ).join( '\n' ) }
+    }` );
+
+    state.forEach( ( s, i ) => {
+      if ( s.done ) return;
+
+      const o = data[ `org${ i }` ];
+      if ( ! o ) { s.done = true; return }
+
+      if ( ! s.meta ) s.meta = {
+        title: o.name || s.org,
+        link: o.websiteUrl,
+        desc: o.description || ''
+      };
+
+      for ( const r of o.repositories.nodes ) {
+        s.repos++;
+        s.stars += r.stargazerCount;
+
+        const lang = r.primaryLanguage?.name;
+        if ( lang ) s.langs[ lang ] = ( s.langs[ lang ] || 0 ) + 1;
+      }
+
+      if ( o.repositories.pageInfo.hasNextPage ) {
+        s.after = o.repositories.pageInfo.endCursor;
+      } else {
+        s.done = true;
+
+        result[ s.org ] = {
+          title: s.meta.title,
+          desc: s.meta.desc,
+          tags: Object.keys( s.langs ),
+          link: s.meta.link,
+          meta: {
+            stars: s.stars,
+            langs: Object.keys( s.langs ),
+            repos: s.repos
+          }
+        };
+      }
+    } );
+  }
+
+  console.log( `✓ ${ Object.keys( result ).length } orgs fetched` );
+  return result;
 }
