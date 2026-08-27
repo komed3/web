@@ -39,13 +39,44 @@ function setColorVars ( pathname: string ) {
 
 export default function App () {
   const { pathname } = useLocation();
+  const navigate = useNavigate();
+  const [ target, setTarget ] = useState< string | null >( null );
+
+  useEffect( () => { if ( target ) return; setColorVars( pathname ) }, [ pathname, target ] );
 
   useEffect( () => {
-    const vars = COLOR_VARS[ pathname as keyof typeof COLOR_VARS ] || COLOR_VARS[ '/' ];
-    Object.entries( vars ).forEach( ( [ key, value ] ) =>
-      document.documentElement.style.setProperty( key, value )
-    );
-  }, [ pathname ] );
+    if ( ! target ) return;
+    if ( pathname !== new URL( target, window.location.origin ).pathname ) return;
+    setTarget( null );
+  }, [ pathname, target ] );
+
+  useEffect( () => {
+    const handleClick = ( event: MouseEvent ) => {
+      if ( event.button !== 0 ) return;
+      if ( event.metaKey || event.ctrlKey || event.shiftKey || event.altKey ) return;
+
+      const link = ( event.target as HTMLElement ).closest< HTMLAnchorElement >( 'a[href]' );
+      if ( ! link || link.target === '_blank' ) return;
+
+      const url = new URL( link.href );
+      if ( url.origin !== window.location.origin ) return;
+
+      const current = window.location.pathname + window.location.search + window.location.hash;
+      const next = url.pathname + url.search + url.hash;
+      if ( current === next || target ) return;
+
+      event.preventDefault();
+      event.stopPropagation();
+      setTarget( next );
+    };
+
+    document.addEventListener( 'click', handleClick, true );
+    return () => { document.removeEventListener( 'click', handleClick, true ) };
+  }, [ target ] );
+
+  const overlayColor = target
+    ? getColorVars( new URL( target, window.location.origin ).pathname )[ '--accent' ]
+    : '#000';
 
   return (
     <div className= 'bg-(--accent) text-(--main) transition-colors duration-300'>
