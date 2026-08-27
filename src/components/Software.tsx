@@ -47,6 +47,7 @@ export function Software () {
             transition= { { delay: i * 0.05 } }
             viewport= { { once: true, amount: 0.3 } }
           >
+            { /** Description */ }
             <div>
               <div className= '-ml-1 text-5xl uppercase font-extralight tracking-widest'>
                 { label }
@@ -55,6 +56,13 @@ export function Software () {
               <div className= 'mt-4 text-sm uppercase tracking-[0.2em]'>
                 { desc }
               </div>
+            </div>
+
+            { /** Icons */ }
+            <div className= 'absolute right-0 bottom-10 flex items-end gap-6'>
+              { icons.map( ( Icon, j ) => (
+                <Icon key= { j } size= { 64 } />
+              ) ) }
             </div>
           </motion.div>
         ) ) }
