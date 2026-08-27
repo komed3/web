@@ -19,24 +19,33 @@ export function PageTransition ( { color, onComplete }: PageTransitionProps ) {
   return (
     <motion.div
       className= 'fixed inset-0 z-9999 pointer-events-none'
-      style= { { backgroundColor: color } }
-      initial= { { y: '100%' } }
-      animate= {
-        fading
-          ? { y: '0%', opacity: 0 }
-          : { y: '0%', opacity: 1 }
-      }
-      transition= {
-        fading
-          ? { duration: 0.05, ease: 'linear' }
-          : { duration: 0.8, ease: [ 0.76, 0, 0.24, 1 ] }
-      }
-      onAnimationComplete= { () => {
-        if ( fading ) return;
+    >
+      <svg
+        className= 'absolute inset-0 w-full h-full'
+        viewBox= '0 0 100 100'
+        preserveAspectRatio= 'none'
+      >
+        <motion.path
+          fill= { color }
+          initial= { { d: PATH_START } }
+          animate= {
+            fading
+              ? { opacity: 0 }
+              : { d: [ PATH_START, PATH_WAVE, PATH_END ] }
+          }
+          transition= {
+            fading
+              ? { duration: 0.05, ease: 'linear' }
+              : { duration: 0.7, times: [ 0, 0.5, 1 ], ease: 'linear' }
+          }
+          onAnimationComplete= { () => {
+            if ( fading ) return;
 
-        onComplete();
-        setFading( true );
-      } }
-    />
+            onComplete();
+            setFading( true );
+          } }
+        />
+      </svg>
+    </motion.div>
   );
 }
