@@ -15,7 +15,7 @@ const PROJECTS = [ {
   name: 'Periodic Table',
   category: 'Data / Education',
   desc: 'Interactive open-source periodic table and chemical database',
-  link: 'pse-info.de',
+  link: 'pse-info.de'
 }, {
   uri: 'rtbnext',
   name: 'RTBNext',
