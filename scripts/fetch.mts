@@ -53,3 +53,34 @@ function normalizeVersion ( input?: string | undefined ) : string | undefined {
 
   return match ? match[ 0 ] : undefined;
 }
+
+// ---- PATH FIXER ----
+
+function fixRelativePaths ( content: string, owner: string, name: string, branch: string ) : string {
+  const rawBase = `https://raw.githubusercontent.com/${ owner }/${ name }/${ branch }`;
+  const githubBase = `https://github.com/${ owner }/${ name }/blob/${ branch }`;
+
+  return content
+    // Fix Markdown links and images
+    .replace( /(!?\[.*?\]\()([^)]+)(\))/g, ( match, prefix, path, suffix ) => {
+      if ( /^(?:[a-z]+:\/\/|#|data:)/i.test( path ) ) return match;
+
+      let cleanPath = path.replace( /^\.\//, '' );
+      if ( cleanPath.startsWith( '/' ) ) cleanPath = cleanPath.substring( 1 );
+
+      const isImage = prefix.startsWith( '!' );
+      const baseUrl = isImage ? rawBase : githubBase;
+
+      return `${ prefix }${ baseUrl }/${ cleanPath }${ suffix }`;
+    } )
+    // Fix HTML tags (minimal support)
+    .replace( /(src|href)=["']((?!\w+:\/\/|#|data:)[^"']+)["']/g, ( _, attr, path ) => {
+      let cleanPath = path.replace( /^\.\//, '' );
+      if ( cleanPath.startsWith( '/' ) ) cleanPath = cleanPath.substring( 1 );
+
+      const isImage = attr === 'src';
+      const baseUrl = isImage ? rawBase : githubBase;
+
+      return `${ attr }="${ baseUrl }/${ cleanPath }"`;
+    } );
+}
