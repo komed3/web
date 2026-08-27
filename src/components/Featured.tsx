@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 const PROJECTS = [ {
   uri: 'airportmap',
   name: 'Airportmap',
@@ -26,6 +28,12 @@ const PROJECTS = [ {
 
 
 export function Featured () {
+  const [ current, setCurrent ] = useState( 0 );
+  const project = PROJECTS[ current ];
+
+  const previous = () => setCurrent( current === 0 ? PROJECTS.length - 1 : current - 1 );
+  const next = () => setCurrent( ( current + 1 ) % PROJECTS.length );
+
   return (
     <></>
   );
