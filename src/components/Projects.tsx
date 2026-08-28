@@ -47,7 +47,7 @@ export function Projects () {
 
       { /** Filters */ }
       <div className= 'flex justify-between gap-24'>
-        <div className= 'text-[11px] uppercase tracking-[0.3em] opacity-70'>
+        <div className= 'text-[11px] uppercase tracking-[0.3em]'>
           Filter
         </div>
 
