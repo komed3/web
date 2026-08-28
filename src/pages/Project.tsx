@@ -80,6 +80,7 @@ export function Project () {
           ) }
         </div>
 
+        { /** Divider */ }
         <div className= 'bg-(--main)' />
 
         { /** Info */ }
