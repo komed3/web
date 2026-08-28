@@ -68,3 +68,37 @@
 @utility centered-y {
   @apply absolute top-1/2 -translate-y-1/2;
 }
+
+/** Markdown Styling */
+
+.markdown-body {
+  @apply text-xl font-sans font-light;
+}
+
+.markdown-body h1, .markdown-body h2, .markdown-body h3 {
+  @apply mt-16 mb-6 uppercase tracking-tighter first:mt-0;
+}
+
+.markdown-body h1 { @apply text-4xl; }
+.markdown-body h2 { @apply text-3xl; }
+.markdown-body h3 { @apply text-2xl; }
+
+.markdown-body p {
+  @apply mb-4 leading-relaxed;
+}
+
+.markdown-body ul, .markdown-body ol {
+  @apply ml-6 mb-6 space-y-2;
+}
+
+.markdown-body ul {
+  @apply list-disc;
+}
+
+.markdown-body ol {
+  @apply list-decimal;
+}
+
+.markdown-body li::marker {
+  @apply text-current font-black;
+}
