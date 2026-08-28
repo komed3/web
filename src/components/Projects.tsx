@@ -144,7 +144,7 @@ export function Projects () {
             className= 'flex flex-col gap-10'
           >
             <AnimatePresence mode= 'popLayout'>
-              { column.map( ( { desc, id, status, title, type }, i ) => {
+              { column.map( ( { desc, id, status, tags, title, type }, i ) => {
                 const featured = status === 'FEATURED';
 
                 return (
@@ -188,6 +188,20 @@ export function Projects () {
                         <p className= 'mt-6 max-w-sm text-base font-light leading-relaxed'>
                           { desc }
                         </p>
+                      ) }
+
+                      { /** Tags */ }
+                      { tags?.length > 0 && (
+                        <div
+                          className= {
+                            'flex justify-end flex-wrap gap-x-4 gap-y-2 max-w-sm ' +
+                            'mt-10 ml-auto text-[10px] uppercase tracking-[0.15em]'
+                          }
+                        >
+                          { tags.map( tag => (
+                            <span key= { tag }>{ tag }</span>
+                          ) ) }
+                        </div>
                       ) }
                     </Link>
                   </motion.div>
