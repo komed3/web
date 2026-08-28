@@ -50,13 +50,15 @@ export function Projects () {
           Filter
         </div>
 
-        <div className= 'flex flex-wrap justify-end items-baseline gap-x-10 gap-y-4 max-w-2xl'>
+        <div className= 'flex flex-wrap justify-end items-baseline gap-x-10 gap-y-4 max-w-5xl'>
           { filters.map( value => (
             <button
               key= { value }
               className= 'relative text-sm uppercase tracking-[0.2em]'
               onClick= { () => setFilter( value ) }
-            >...</button>
+            >
+              <span>{ value }</span>
+            </button>
           ) ) }
         </div>
       </div>
