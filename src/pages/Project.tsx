@@ -1,5 +1,6 @@
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router';
+import { Link, useNavigate, useParams } from 'react-router';
 
 import projects from '../data/projects.json';
 
@@ -28,9 +29,27 @@ export function Project () {
           { /** Navigation */ }
           <div className= 'grid grid-cols-2 gap-12 w-full'>
             <div>
-              {}
+              { prev && (
+                <Link
+                  className= 'inline-flex items-center gap-3 px-4 py-1'
+                  to= { `/project/${ prev.id }` }
+                >
+                  <ArrowLeft size= { 32 } strokeWidth= { 0.8 } />
+                  <span>{ prev.title }</span>
+                </Link>
+              ) }
             </div>
-            <div>...</div>
+            <div>
+              { next && (
+                <Link
+                  className= 'inline-flex items-center gap-3 px-4 py-1'
+                  to= { `/project/${ next.id }` }
+                >
+                  <span>{ next.title }</span>
+                  <ArrowRight size= { 32 } strokeWidth= { 0.8 } />
+                </Link>
+              ) }
+            </div>
           </div>
 
           <div className= 'flex-1' />
