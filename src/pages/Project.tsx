@@ -34,7 +34,12 @@ export function Project () {
                   className= 'flex flex-col items-end gap-3'
                   to= { `/project/${ prev.id }` }
                 >
-                  <ArrowUpLeft size= { 32 } strokeWidth= { 0.8 } />
+                  <ArrowUpLeft
+                    className= '-mr-3.5'
+                    size= { 80 }
+                    strokeWidth= { 0.3 }
+                  />
+
                   <span>{ prev.title }</span>
                 </Link>
               ) }
@@ -45,7 +50,12 @@ export function Project () {
                   className= 'flex flex-col items-end gap-3'
                   to= { `/project/${ next.id }` }
                 >
-                  <ArrowUpRight size= { 32 } strokeWidth= { 0.8 } />
+                  <ArrowUpRight
+                    className= '-mr-3.5'
+                    size= { 80 }
+                    strokeWidth= { 0.3 }
+                  />
+
                   <span>{ next.title }</span>
                 </Link>
               ) }
