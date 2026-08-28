@@ -1,4 +1,5 @@
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { AnimatePresence, motion } from 'motion/react';
 import { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Link, useNavigate, useParams } from 'react-router';
@@ -23,9 +24,15 @@ export function Project () {
   );
 
   return project && (
-    <>
+    <AnimatePresence mode= 'wait'>
       { /** Header */ }
-      <div className= 'flex flex-col w-full h-screen p-12 pt-36'>
+      <motion.div
+        initial= { { y: 40, opacity: 0 } }
+        whileInView= { { y: 0, opacity: 1 } }
+        transition= { { duration: 1.2, ease: [ 0.22, 1, 0.36, 1 ] } }
+        viewport= { { once: true, amount: 0.3 } }
+        className= 'flex flex-col w-full h-screen p-12 pt-36'
+      >
         { /** Navigation */ }
         <div className= 'flex justify-end items-center gap-4 uppercase text-md font-light tracking-widest'>
           { prev && (
@@ -66,20 +73,25 @@ export function Project () {
             { project.desc }
           </p>
         ) }
-      </div>
+      </motion.div>
 
       { /** Content */ }
       <div className= 'flex gap-32 px-12 py-16'>
         { /** Readme */ }
-        <div className= 'flex-1 min-w-0 p-12 bg-(--contrast) markdown-body'>
+        <motion.div
+          initial= { { y: 40, opacity: 0 } }
+          whileInView= { { y: 0, opacity: 1 } }
+          transition= { { duration: 1.2, ease: [ 0.22, 1, 0.36, 1 ] } }
+          className= 'flex-1 min-w-0 p-12 bg-(--contrast) markdown-body'
+        >
           <ReactMarkdown remarkPlugins= { [ remarkGfm ] }>
             { project.content }
           </ReactMarkdown>
-        </div>
+        </motion.div>
 
         { /** Sidebar */ }
         <div className= 'shrink-0 w-120'></div>
       </div>
-    </>
+    </AnimatePresence>
   );
 }
