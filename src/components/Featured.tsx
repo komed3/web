@@ -68,32 +68,34 @@ export function Featured () {
           <AnimatePresence mode= 'wait'>
             <motion.div
               key= { project.uri }
+              className= 'flex justify-between items-end gap-24'
               initial= { { opacity: 0, y: 80 } }
               animate= { { opacity: 1, y: 0 } }
               exit= { { opacity: 0, y: -80 } }
               transition= { transition }
             >
-              <div className= 'text-xs uppercase tracking-[0.3em]'>
-                { project.category }
-              </div>
+              <div>
+                <div className= 'text-xs uppercase tracking-[0.3em]'>
+                  { project.category }
+                </div>
 
-              <div className= 'mt-4 text-[clamp(5rem,12vw,12rem)] font-extralight leading-none tracking-tighter'>
-                { project.name }
-              </div>
+                <div className= 'mt-4 text-[clamp(5rem,12vw,12rem)] font-extralight leading-none tracking-tighter'>
+                  { project.name }
+                </div>
 
-              <div className= 'mt-8 flex justify-between items-end gap-12'>
-                <p className= 'max-w-3xl text-2xl font-light leading-relaxed'>
+                <p className= 'mt-8 text-2xl font-light leading-relaxed'>
                   { project.desc }
                 </p>
-
-                <Link
-                  to= { `/project/${ project.uri }` }
-                  className= 'shrink-0 flex items-center gap-3 text-sm uppercase tracking-[0.3em]'
-                >
-                  <span>View project</span>
-                  <ArrowUpRight size= { 20 } />
-                </Link>
               </div>
+
+              <Link
+                to= { `/project/${ project.uri }` }
+                className= 'shrink-0 flex flex-col gap-2 uppercase font-light tracking-[0.3em]'
+              >
+                <span>View</span>
+                <span>project</span>
+                <ArrowUpRight size= { 48 } strokeWidth= { 1 } />
+              </Link>
             </motion.div>
           </AnimatePresence>
         </div>
