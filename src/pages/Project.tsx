@@ -33,13 +33,6 @@ export function Project () {
 
           <div className= 'flex-1' />
 
-          { /** Status */ }
-          { project.status && (
-            <div className= 'px-6 py-2 text-3xl font-extralight text-(--contrast) bg-(--main)'>
-              { project.status }
-            </div>
-          ) }
-
           { /** Tags */ }
           { project.tags?.length > 0 && (
             <div
@@ -58,13 +51,20 @@ export function Project () {
         <div className= 'bg-(--main)' />
 
         { /** Title */ }
-        <div className= 'flex flex-col justify-end'>
+        <div className= 'flex flex-col justify-end gap-8'>
+          { /** Status */ }
+          { project.status && (
+            <div className= 'w-fit px-6 py-2 text-3xl font-extralight text-(--contrast) bg-(--main)'>
+              { project.status }
+            </div>
+          ) }
+
           <div className= '-ml-2 text-[clamp(4rem,8vw,8rem)] font-extralight leading-none tracking-tighter'>
             { project.title }
           </div>
 
           { project.desc && (
-            <p className= 'mt-8 max-w-5xl text-3xl font-light leading-snug'>
+            <p className= 'max-w-5xl text-3xl font-light leading-snug'>
               { project.desc }
             </p>
           ) }
