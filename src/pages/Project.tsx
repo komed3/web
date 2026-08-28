@@ -17,11 +17,17 @@ export function Project () {
 
   return project && (
     <>
-      <div className= 'flex flex-col justify-end w-full h-screen p-12 pt-36'>
+      { /** Header */ }
+      <div className= 'flex flex-col w-full h-screen p-12 pt-36'>
+        { /** Navigation */ }
+        <div className= 'flex-1'></div>
+
+        { /** Title */ }
         <div className= '-ml-3 text-[clamp(5rem,10vw,10rem)] font-extralight leading-none tracking-tighter'>
           { project.title }
         </div>
 
+        { /** Description */ }
         { project.desc && (
           <p className= 'mt-12 max-w-5xl text-3xl font-light leading-snug'>
             { project.desc }
