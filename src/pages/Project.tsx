@@ -11,9 +11,13 @@ export function Project () {
   const index = projects.findIndex( p => p.id === id );
   const project = projects[ index ];
 
-  useEffect( () => {
-    if ( index < 0 || ! project ) navigate( '/index', { replace: true } );
-  }, [ id, projects, navigate ] );
+  const prev = projects[ index - 1 ];
+  const next = projects[ index + 1 ];
+
+  useEffect(
+    () => { if ( index < 0 || ! project ) navigate( '/index', { replace: true } ) },
+    [ id, projects, navigate ]
+  );
 
   return project && (
     <>
