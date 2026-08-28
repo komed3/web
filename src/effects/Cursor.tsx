@@ -14,6 +14,21 @@ export function Cursor () {
   const circleY = useSpring( y, { stiffness: 900, damping: 45, mass: 0.2 } );
 
   useEffect( () => {
+    const handleContextMenu = ( e: MouseEvent ) => e.preventDefault();
+    const handleMouseDown = ( e: MouseEvent ) => {
+      if ( e.button === 1 || e.button === 2 ) e.preventDefault();
+    };
+
+    document.addEventListener( 'contextmenu', handleContextMenu );
+    document.addEventListener( 'mousedown', handleMouseDown );
+
+    return () => {
+      document.removeEventListener( 'contextmenu', handleContextMenu );
+      document.removeEventListener( 'mousedown', handleMouseDown );
+    };
+  }, [] );
+
+  useEffect( () => {
     const finePointer = matchMedia( '(pointer: fine)' );
     const hoverPointer = matchMedia( '(hover: hover)' );
 
