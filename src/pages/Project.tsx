@@ -1,4 +1,5 @@
 import { ArrowUpLeft, ArrowUpRight } from 'lucide-react';
+import { AnimatePresence, motion } from 'motion/react';
 import { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Link, useNavigate, useParams } from 'react-router';
@@ -23,9 +24,15 @@ export function Project () {
   );
 
   return project && (
-    <>
+    <AnimatePresence key= { id }>
       { /** Header */ }
-      <div className= 'grid grid-cols-[32rem_1px_1fr] gap-12 h-screen p-12 pt-36'>
+      <motion.div
+        initial= { { x: 300, opacity: 0 } }
+        animate= { { x: 0, opacity: 1 } }
+        exit= { { x: -300, opacity: 1 } }
+        transition= { { duration: 1.2, ease: [ 0.22, 1, 0.36, 1 ] } }
+        className= 'grid grid-cols-[32rem_1px_1fr] gap-12 h-screen p-12 pt-36'
+      >
         { /** Aside */ }
         <div className= 'flex flex-col gap-8'>
           { /** Navigation */ }
@@ -88,10 +95,16 @@ export function Project () {
             </p>
           ) }
         </div>
-      </div>
+      </motion.div>
 
       { /** Content */ }
-      <div className= 'grid grid-cols-[32rem_1fr] gap-12 my-12 p-12'>
+      <motion.div
+        initial= { { y: 400, opacity: 0 } }
+        whileInView= { { y: 0, opacity: 1 } }
+        transition= { { duration: 1.2, ease: [ 0.22, 1, 0.36, 1 ] } }
+        viewport= { { once: true } }
+        className= 'grid grid-cols-[32rem_1fr] gap-12 my-12 p-12'
+      >
         { /** Aside */ }
         <div className= 'py-12 space-y-16'>
           { /** Project Info */ }
@@ -130,7 +143,7 @@ export function Project () {
             { project.content }
           </ReactMarkdown>
         </div>
-      </div>
-    </>
+      </motion.div>
+    </AnimatePresence>
   );
 }
