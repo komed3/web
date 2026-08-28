@@ -24,12 +24,27 @@ export function Project () {
       { /** Project Header */ }
       <div className= 'grid grid-cols-[1fr_1px_2fr] gap-12 w-full h-screen p-12 pt-36'>
         { /** Aside */ }
-        <div className= 'flex flex-col items-end'>
+        <div className= 'flex flex-col items-end gap-8'>
           <div className= 'flex-1' />
 
+          { /** Status */ }
           { project.status && (
             <div className= 'px-6 py-2 text-3xl font-extralight text-(--contrast) bg-(--main)'>
               { project.status }
+            </div>
+          ) }
+
+          { /** Tags */ }
+          { project.tags?.length > 0 && (
+            <div
+              className= {
+                'flex justify-end flex-wrap gap-x-5 gap-y-2 max-w-sm ml-auto text-sm ' +
+                'uppercase font-light tracking-[0.15em]'
+              }
+            >
+              { project.tags.map( tag => (
+                <span key= { tag }>{ tag }</span>
+              ) ) }
             </div>
           ) }
         </div>
