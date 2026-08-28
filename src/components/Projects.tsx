@@ -16,6 +16,18 @@ export function Projects () {
   const filters = useMemo( () => [ 'All', ...new Set( projects.map( project => project.type ) ) ], [] );
   const loader = useRef< HTMLDivElement >( null );
 
+  const result = useMemo( () => {
+    const value = search.trim().toLowerCase();
+
+    return projects.filter( project => {
+      if ( filter !== 'All' && project.type !== filter ) return false;
+      if ( ! value ) return true;
+
+      return [ project.title, project.desc, project.type, project.status, ...( project.tags ?? [] ) ]
+        .filter( Boolean ).some( item => item!.toLowerCase().includes( value ) );
+    } );
+  }, [ filter, search ] );
+
   return (
     <div className= 'px-12 py-32 space-y-24'>
       { /** Header */ }
