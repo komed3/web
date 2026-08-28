@@ -1,7 +1,7 @@
+import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router';
 
 import projects from '../data/projects.json';
-import { useEffect } from 'react';
 
 
 export function Project () {
