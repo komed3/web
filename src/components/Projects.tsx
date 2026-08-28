@@ -1,3 +1,4 @@
+import { motion } from 'motion/react';
 import { useMemo, useRef, useState } from 'react';
 
 import projects from '../data/projects.json';
@@ -54,10 +55,23 @@ export function Projects () {
           { filters.map( value => (
             <button
               key= { value }
-              className= 'relative text-sm uppercase tracking-[0.2em]'
               onClick= { () => setFilter( value ) }
+              className= {
+                'relative text-sm uppercase tracking-[0.2em] transition-colors delay-75 ' +
+                ( filter === value && 'text-(--contrast)' )
+              }
             >
-              <span>{ value }</span>
+              <div className= 'relative z-1'>
+                { value }
+              </div>
+
+              { filter === value && (
+                <motion.span
+                  layoutId= 'active-filter'
+                  transition= { { duration: 0.3, ease: [ 0.76, 0, 0.24, 1 ] } }
+                  className= 'absolute -inset-x-2 -inset-y-1 bg-(--main)'
+                />
+              ) }
             </button>
           ) ) }
         </div>
