@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { AnimatePresence, motion } from 'motion/react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 import projects from '../data/projects.json';
@@ -137,8 +137,13 @@ export function Projects () {
 
       { /** Masonry */ }
       <div className= 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-16'>
-        { masonry.map( ( column, c ) => (
-          <></>
+        { masonry.map( ( column, columnIndex ) => (
+          <div
+            key= { columnIndex }
+            className= 'flex flex-col gap-10'
+          >
+            <AnimatePresence mode= 'popLayout'></AnimatePresence>
+          </div>
         ) ) }
       </div>
     </div>
