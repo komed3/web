@@ -1,4 +1,15 @@
+import { useState } from 'react';
+
+
+const PAGE_SIZE = 8;
+
+
 export function Projects () {
+  const [ filter, setFilter ] = useState( 'All' );
+  const [ search, setSearch ] = useState( '' );
+  const [ visible, setVisible ] = useState( PAGE_SIZE );
+  const [ columns, setColumns ] = useState( 3 );
+
   return (
     <div className= 'px-12 py-32'>
       { /** Header */ }
