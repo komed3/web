@@ -21,13 +21,15 @@ export function Project () {
 
   return project && (
     <>
-      { /** Project Header */ }
+      { /** Header */ }
       <div className= 'grid grid-cols-[1fr_1px_2fr] gap-12 w-full h-screen p-12 pt-36'>
         { /** Aside */ }
         <div className= 'flex flex-col items-end gap-8'>
           { /** Navigation */ }
-          <div className= 'grid grid-cols-2 gap-12'>
-            <div>...</div>
+          <div className= 'grid grid-cols-2 gap-12 w-full'>
+            <div>
+              {}
+            </div>
             <div>...</div>
           </div>
 
@@ -50,7 +52,7 @@ export function Project () {
 
         <div className= 'bg-(--main)' />
 
-        { /** Title */ }
+        { /** Info */ }
         <div className= 'flex flex-col justify-end gap-8'>
           { /** Status */ }
           { project.status && (
@@ -59,10 +61,12 @@ export function Project () {
             </div>
           ) }
 
+          { /** Title */ }
           <div className= '-ml-2 text-[clamp(4rem,8vw,8rem)] font-extralight leading-none tracking-tighter'>
             { project.title }
           </div>
 
+          { /** Description */ }
           { project.desc && (
             <p className= 'max-w-5xl text-3xl font-light leading-snug'>
               { project.desc }
