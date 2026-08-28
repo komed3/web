@@ -90,15 +90,15 @@ export function Featured () {
 
               <Link
                 to= { `/project/${ project.uri }` }
-                className= 'shrink-0 flex flex-col gap-2 uppercase font-light tracking-[0.3em]'
+                className= 'shrink-0 flex flex-col gap-2 text-2xl uppercase font-extralight tracking-[0.3em]'
               >
                 <span>View</span>
                 <span>project</span>
 
                 <ArrowUpRight
-                  className= '-ml-4'
-                  size= { 64 }
-                  strokeWidth= { 0.5 }
+                  className= '-ml-5'
+                  size= { 80 }
+                  strokeWidth= { 0.3 }
                 />
               </Link>
             </motion.div>
