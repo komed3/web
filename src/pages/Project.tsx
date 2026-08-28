@@ -37,8 +37,8 @@ export function Project () {
           { project.tags?.length > 0 && (
             <div
               className= {
-                'flex justify-end flex-wrap gap-x-5 gap-y-2 max-w-sm ml-auto text-sm ' +
-                'uppercase font-light tracking-[0.15em]'
+                'flex justify-end flex-wrap gap-x-5 gap-y-2 max-w-sm ml-auto ' +
+                'uppercase font-extralight tracking-[0.15em]'
               }
             >
               { project.tags.map( tag => (
