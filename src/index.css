@@ -21,12 +21,6 @@
 @theme {
   --font-sans: 'Sora', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'Lilex', ui-monospace, monospace;
-
-  --color-brutal-yellow: #fbbf24;
-  --color-brutal-green: #22c55e;
-  --color-brutal-blue: #2563eb;
-  --color-brutal-pink: #db2777;
-  --color-brutal-orange: #ea580c;
 }
 
 /** Base */
