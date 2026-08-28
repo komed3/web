@@ -25,9 +25,9 @@ export function Project () {
   return project && (
     <>
       { /** Header */ }
-      <div className= 'grid grid-cols-[36rem_1px_2fr] gap-12 h-screen p-12 pt-36'>
+      <div className= 'grid grid-cols-[32rem_1px_1fr] gap-12 h-screen p-12 pt-36'>
         { /** Aside */ }
-        <div className= 'flex flex-col items-end gap-8'>
+        <div className= 'flex flex-col gap-8'>
           { /** Navigation */ }
           <div className= 'grid grid-cols-2 gap-12 w-full text-2xl uppercase font-extralight tracking-[0.3em]'>
             <div>
@@ -64,22 +64,6 @@ export function Project () {
               ) }
             </div>
           </div>
-
-          <div className= 'flex-1' />
-
-          { /** Tags */ }
-          { project.tags?.length > 0 && (
-            <div
-              className= {
-                'flex justify-end flex-wrap gap-x-5 gap-y-2 max-w-sm ml-auto ' +
-                'uppercase font-extralight tracking-[0.15em]'
-              }
-            >
-              { project.tags.map( tag => (
-                <span key= { tag }>{ tag }</span>
-              ) ) }
-            </div>
-          ) }
         </div>
 
         { /** Divider */ }
@@ -109,9 +93,38 @@ export function Project () {
       </div>
 
       { /** Content */ }
-      <div className= 'grid grid-cols-[36rem_2fr] gap-12 my-12 p-12'>
+      <div className= 'grid grid-cols-[32rem_1fr] gap-12 my-12 p-12'>
         { /** Aside */ }
-        <div className= 'space-y-16'></div>
+        <div className= 'py-12 space-y-16'>
+          { /** Project Info */ }
+          <div className= 'space-y-6 text-right'>
+            <div className= 'mb-6 text-4xl uppercase font-light tracking-tighter'>
+              Project Info
+            </div>
+
+            { [
+              [ 'Version', project.meta?.version ],
+              [ 'Status', project.status ],
+              [ 'License', project.meta?.license ],
+              [ 'Repos', project.meta?.repos ],
+              [ 'Languages', project.meta?.langs ],
+              [ 'Year', project.meta?.year ],
+              [ 'Tags', project.tags ]
+            ].map( ( [ label, value ], i ) => value && ( ! Array.isArray( value ) || value.length > 0 ) && (
+              <div key= { i }>
+                <div className= 'text-[11px] uppercase tracking-[0.3em]'>
+                  { label }
+                </div>
+
+                <div className= 'text-xl capitalize font-light'>
+                  { Array.isArray( value ) ? value.map( ( item, j ) => (
+                    <div key= { j }>{ item }</div>
+                  ) ) : value }
+                </div>
+              </div>
+            ) ) }
+            </div>
+        </div>
 
         { /** Content */ }
         <div className= 'min-w-0 p-12 bg-(--contrast) markdown-body'>
