@@ -99,7 +99,7 @@ export function Project () {
 
       { /** Content */ }
       <motion.div
-        initial= { { y: 400, opacity: 0 } }
+        initial= { { y: 80, opacity: 0 } }
         whileInView= { { y: 0, opacity: 1 } }
         transition= { { duration: 1.2, ease: [ 0.22, 1, 0.36, 1 ] } }
         viewport= { { once: true } }
