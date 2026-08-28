@@ -12,13 +12,13 @@ export function Projects () {
   const [ visible, setVisible ] = useState( PAGE_SIZE );
   const [ columns, setColumns ] = useState( 3 );
 
-  const loader = useRef< HTMLDivElement >( null );
   const filters = useMemo( () => [ 'All', ...new Set( projects.map( project => project.type ) ) ], [] );
+  const loader = useRef< HTMLDivElement >( null );
 
   return (
-    <div className= 'px-12 py-32'>
+    <div className= 'px-12 py-32 space-y-24'>
       { /** Header */ }
-      <div className= 'flex justify-between items-end pb-20'>
+      <div className= 'flex justify-between items-end'>
         { /** Title */ }
         <div className= 'space-y-6'>
           <div className= 'text-xs uppercase tracking-[0.3em]'>
@@ -41,6 +41,13 @@ export function Projects () {
               'bg-transparent border-b border-(--main) outline-none'
             }
           />
+        </div>
+      </div>
+
+      { /** Filters */ }
+      <div className= 'flex justify-between gap-24'>
+        <div className= 'text-[11px] uppercase tracking-[0.3em] opacity-70'>
+          Filter
         </div>
       </div>
     </div>
