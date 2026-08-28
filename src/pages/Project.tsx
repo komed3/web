@@ -105,6 +105,9 @@ export function Project () {
           ) }
         </div>
       </div>
+
+      { /** Content */ }
+      <div className= 'grid grid-cols-[1fr_1px_2fr] gap-12 w-full h-screen p-12'></div>
     </>
   );
 }
