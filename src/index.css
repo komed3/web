@@ -112,7 +112,7 @@
 }
 
 .markdown-body table {
-  @apply w-full table-auto border-collapse border border-current;
+  @apply my-6 w-full table-auto border-collapse border border-current;
 }
 
 .markdown-table-wrapper {
