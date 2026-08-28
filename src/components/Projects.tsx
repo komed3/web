@@ -19,7 +19,13 @@ export function Projects () {
   return (
     <div className= 'px-12 py-32 space-y-24'>
       { /** Header */ }
-      <div className= 'flex justify-between items-end'>
+      <motion.div
+        initial= { { y: 40, opacity: 0 } }
+        whileInView= { { y: 0, opacity: 1 } }
+        transition= { { duration: 1.2, ease: [ 0.22, 1, 0.36, 1 ] } }
+        viewport= { { once: true, amount: 0.3 } }
+        className= 'flex justify-between items-end'
+      >
         { /** Title */ }
         <div className= 'space-y-6'>
           <div className= 'text-xs uppercase tracking-[0.3em]'>
@@ -43,10 +49,16 @@ export function Projects () {
             }
           />
         </div>
-      </div>
+      </motion.div>
 
       { /** Filters */ }
-      <div className= 'flex justify-between gap-24'>
+      <motion.div
+        initial= { { y: 40, opacity: 0 } }
+        whileInView= { { y: 0, opacity: 1 } }
+        transition= { { duration: 1.2, ease: [ 0.22, 1, 0.36, 1 ] } }
+        viewport= { { once: true, amount: 0.3 } }
+        className= 'flex justify-between gap-24'
+      >
         <div className= 'text-[11px] uppercase tracking-[0.3em]'>
           Filter
         </div>
@@ -57,7 +69,7 @@ export function Projects () {
               key= { value }
               onClick= { () => setFilter( value ) }
               className= {
-                'relative text-sm uppercase tracking-[0.2em] transition-colors delay-75 ' +
+                'relative text-sm uppercase tracking-[0.2em] transition-colors ' +
                 ( filter === value && 'text-(--contrast)' )
               }
             >
@@ -75,7 +87,7 @@ export function Projects () {
             </button>
           ) ) }
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
