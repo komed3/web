@@ -11,12 +11,6 @@
     "github": "komed3/devtypes",
     "type": "Node.js"
   }, {
-    "id": "latex-editor",
-    "title": "LaTeX Formula Editor",
-    "github": "komed3/latex-editor",
-    "type": "Web App",
-    "status": "FEATURED"
-  }, {
     "id": "chemparse",
     "title": "ChemParse",
     "github": "komed3/chemparse",
@@ -25,6 +19,45 @@
     "id": "unitra",
     "title": "Unitra Framework",
     "github": "komed3/unitra",
+    "type": "Node.js",
+    "status": "DEV"
+  }, {
+    "id": "latex-editor",
+    "title": "LaTeX Formula Editor",
+    "github": "komed3/latex-editor",
+    "type": "Web App"
+  }, {
+    "id": "airportmap",
+    "title": "Airportmap",
+    "github": "airportmap",
+    "type": "Web App",
+    "status": "FEATURED"
+  }, {
+    "id": "deepmerge",
+    "title": "DeepMerge",
+    "github": "komed3/deepmerge",
+    "type": "Node.js"
+  }, {
+    "id": "8-bit-alu",
+    "title": "8-Bit ALU",
+    "github": "komed3/8-bit-alu",
+    "type": "Electronics"
+  }, {
+    "id": "translatehub",
+    "title": "TranslateHub",
+    "github": "komed3/TranslateHub",
+    "type": "Tool",
+    "status": "BETA"
+  }, {
+    "id": "rtbnext",
+    "title": "Billionaires Index",
+    "github": "rtbnext",
+    "type": "API",
+    "status": "FEATURED"
+  }, {
+    "id": "math-formula-parser",
+    "title": "Math Formula Parser",
+    "github": "komed3/math-formula-parser",
     "type": "Node.js",
     "status": "BETA"
   } ]
