@@ -94,7 +94,12 @@ export function Featured () {
               >
                 <span>View</span>
                 <span>project</span>
-                <ArrowUpRight size= { 48 } strokeWidth= { 1 } />
+
+                <ArrowUpRight
+                  className= '-ml-4'
+                  size= { 64 }
+                  strokeWidth= { 0.5 }
+                />
               </Link>
             </motion.div>
           </AnimatePresence>
