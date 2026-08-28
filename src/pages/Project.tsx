@@ -1,5 +1,6 @@
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router';
+import { Link, useNavigate, useParams } from 'react-router';
 
 import projects from '../data/projects.json';
 
@@ -24,7 +25,33 @@ export function Project () {
       { /** Header */ }
       <div className= 'flex flex-col w-full h-screen p-12 pt-36'>
         { /** Navigation */ }
-        <div className= 'flex-1'></div>
+        <div className= 'flex justify-end items-center gap-4 uppercase text-md font-light tracking-widest'>
+          { prev && (
+            <Link
+              className= 'inline-flex items-center gap-3 px-4 py-1'
+              to= { `/project/${ prev.id }` }
+            >
+              <ArrowLeft size= { 32 } strokeWidth= { 0.8 } />
+              <span>{ prev.title }</span>
+            </Link>
+          ) }
+
+          { prev && next && (
+            <div className= 'w-14 h-px bg-(--main)' />
+          ) }
+
+          { next && (
+            <Link
+              className= 'inline-flex items-center gap-3 px-4 py-1'
+              to= { `/project/${ next.id }` }
+            >
+              <span>{ next.title }</span>
+              <ArrowRight size= { 32 } strokeWidth= { 0.8 } />
+            </Link>
+          ) }
+        </div>
+
+        <div className= 'flex-1' />
 
         { /** Title */ }
         <div className= '-ml-3 text-[clamp(5rem,10vw,10rem)] font-extralight leading-none tracking-tighter'>
