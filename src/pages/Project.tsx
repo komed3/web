@@ -71,7 +71,7 @@ export function Project () {
       { /** Content */ }
       <div className= 'flex gap-32 px-12 py-16'>
         { /** Readme */ }
-        <div className= 'flex-1 bg-(--contrast) p-12 markdown-body'>
+        <div className= 'flex-1 min-w-0 p-12 bg-(--contrast) markdown-body'>
           <ReactMarkdown remarkPlugins= { [ remarkGfm ] }>
             { project.content }
           </ReactMarkdown>

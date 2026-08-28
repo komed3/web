@@ -103,8 +103,12 @@
   @apply text-current font-black;
 }
 
+.markdown-body code {
+  @apply font-mono font-medium;
+}
+
 .markdown-body pre {
-  @apply my-6 p-6 overflow-x-auto bg-current/5;
+  @apply my-6 w-full p-6 font-mono *:font-light overflow-x-auto bg-current/5;
 }
 
 .markdown-body table {
@@ -121,4 +125,16 @@
 
 .markdown-body td {
   @apply p-3 border border-current;
+}
+
+.markdown-body blockquote {
+  @apply px-6 pt-4 pb-px text-2xl font-extralight border-l-8 border-current;
+}
+
+.markdown-body hr {
+  @apply my-12 border-t-2 border-current;
+}
+
+.markdown-body a {
+  @apply font-bold underline underline-offset-1;
 }
