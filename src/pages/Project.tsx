@@ -23,7 +23,7 @@ export function Project () {
   return project && (
     <>
       { /** Header */ }
-      <div className= 'grid grid-cols-[1fr_1px_2fr] gap-12 w-full h-screen p-12 pt-36'>
+      <div className= 'grid grid-cols-[1fr_1px_2fr] gap-12 h-screen p-12 pt-36'>
         { /** Aside */ }
         <div className= 'flex flex-col items-end gap-8'>
           { /** Navigation */ }
@@ -107,7 +107,7 @@ export function Project () {
       </div>
 
       { /** Content */ }
-      <div className= 'grid grid-cols-[1fr_1px_2fr] gap-12 w-full h-screen p-12'></div>
+      <div className= 'grid grid-cols-[1fr_1px_2fr] gap-12 p-12'></div>
     </>
   );
 }
