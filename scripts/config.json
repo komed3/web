@@ -175,5 +175,41 @@
     "title": "FastDict",
     "github": "komed3/fastdict",
     "type": "Node.js"
+  }, {
+    "id": "keycodes",
+    "title": "Keycodes Tester",
+    "github": "komed3/keycodes",
+    "type": "Web App"
+  }, {
+    "id": "chartjs-plugin-area",
+    "title": "Chart.js Area Controller",
+    "github": "komed3/chartjs-plugin-area",
+    "type": "Node.js"
+  }, {
+    "id": "image-x-ray",
+    "title": "Image X-Ray",
+    "github": "komed3/image-x-ray",
+    "type": "PHP Library"
+  }, {
+    "id": "airportmap-database",
+    "title": "AirportMap Database",
+    "github": "komed3/airportmap-database",
+    "type": "Database",
+    "status": "ARCHIVED"
+  }, {
+    "id": "frame",
+    "title": "Private Video Platfrom",
+    "github": "komed3/frame",
+    "type": "Web App"
+  }, {
+    "id": "color",
+    "title": "PHP Color Library",
+    "github": "komed3/color",
+    "type": "PHP Library"
+  }, {
+    "id": "mw-wordcounter",
+    "title": "MediaWiki WordCounter",
+    "github": "komed3/mw-WordCounter",
+    "type": "MediaWiki"
   } ]
 }
