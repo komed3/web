@@ -97,5 +97,36 @@
     "title": "jsDelivr GitHub Stats",
     "github": "komed3/jsdelivr-gh-stats",
     "type": "Web App"
+  }, {
+    "id": "pkg-verify",
+    "title": "PKG Verify",
+    "github": "komed3/package-verify",
+    "type": "Node.js"
+  }, {
+    "id": "filecomp",
+    "title": "File Compare",
+    "github": "komed3/filecomp",
+    "type": "Linux"
+  }, {
+    "id": "coincollect",
+    "title": "CoinCollect",
+    "github": "komed3/coincollect",
+    "type": "Web App",
+    "status": "BETA"
+  }, {
+    "id": "dimension-calculator",
+    "title": "Dimension Calculator",
+    "github": "komed3/dimension-calculator",
+    "type": "Web App"
+  }, {
+    "id": "showcase",
+    "title": "Responsive Website Showcase",
+    "github": "komed3/showcase",
+    "type": "Web App"
+  }, {
+    "id": "esm",
+    "title": "eBay Sales Manager",
+    "github": "komed3/ebay-sales-manager",
+    "type": "Management"
   } ]
 }
