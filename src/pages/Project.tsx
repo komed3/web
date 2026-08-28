@@ -27,15 +27,15 @@ export function Project () {
         { /** Aside */ }
         <div className= 'flex flex-col items-end gap-8'>
           { /** Navigation */ }
-          <div className= 'grid grid-cols-2 gap-12 w-full text-right text-2xl uppercase font-extralight tracking-[0.3em]'>
+          <div className= 'grid grid-cols-2 gap-12 w-full text-2xl uppercase font-extralight tracking-[0.3em]'>
             <div>
               { prev && (
                 <Link
-                  className= 'flex flex-col items-end gap-3'
+                  className= 'flex flex-col gap-3'
                   to= { `/project/${ prev.id }` }
                 >
                   <ArrowUpLeft
-                    className= '-mr-3.5'
+                    className= '-ml-5'
                     size= { 80 }
                     strokeWidth= { 0.3 }
                   />
@@ -44,10 +44,11 @@ export function Project () {
                 </Link>
               ) }
             </div>
+
             <div>
               { next && (
                 <Link
-                  className= 'flex flex-col items-end gap-3'
+                  className= 'flex flex-col items-end gap-3 text-right'
                   to= { `/project/${ next.id }` }
                 >
                   <ArrowUpRight
