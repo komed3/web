@@ -90,8 +90,8 @@ export function Projects () {
             onChange= { event => setSearch( event.target.value ) }
             placeholder= 'Type to search_'
             className= {
-              'w-72 py-3 text-right text-md font-light tracking-wide placeholder:text-(--main) ' +
-              'bg-transparent border-b border-(--main) outline-none'
+              'w-72 py-3 text-right text-md font-mono font-light tracking-wide outline-none ' +
+              'placeholder:text-(--main) bg-transparent border-b border-(--main)'
             }
           />
         </div>
@@ -142,7 +142,13 @@ export function Projects () {
             key= { columnIndex }
             className= 'flex flex-col gap-10'
           >
-            <AnimatePresence mode= 'popLayout'></AnimatePresence>
+            <AnimatePresence mode= 'popLayout'>
+              { column.map( ( project, i ) => {
+                const featured = project.status === 'FEATURED';
+
+                return ( <></> );
+              } ) }
+            </AnimatePresence>
           </div>
         ) ) }
       </div>
