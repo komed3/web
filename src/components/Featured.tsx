@@ -90,13 +90,16 @@ export function Featured () {
 
               <Link
                 to= { `/project/${ project.uri }` }
-                className= 'shrink-0 flex flex-col gap-2 text-2xl uppercase font-extralight tracking-[0.3em]'
+                className= {
+                  'shrink-0 flex flex-col items-end gap-2 text-2xl uppercase ' +
+                  'font-extralight tracking-[0.3em]'
+                }
               >
                 <span>View</span>
                 <span>project</span>
 
                 <ArrowUpRight
-                  className= '-ml-5'
+                  className= '-mr-3.5'
                   size= { 80 }
                   strokeWidth= { 0.3 }
                 />
