@@ -8,10 +8,11 @@ export function Project () {
   const navigate = useNavigate();
 
   const { id } = useParams();
-  const project = projects.find( p => p.id === id );
+  const index = projects.findIndex( p => p.id === id );
+  const project = projects[ index ];
 
   useEffect( () => {
-    if ( ! project ) navigate( '/index', { replace: true } );
+    if ( index < 0 || ! project ) navigate( '/index', { replace: true } );
   }, [ id, projects, navigate ] );
 
   return (
