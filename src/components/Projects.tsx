@@ -180,6 +180,14 @@ export function Projects () {
           </div>
         ) ) }
       </div>
+
+      { /** Trigger */ }
+      { visible < result.length && (
+        <div
+          ref= { loader }
+          className= 'h-32'
+        />
+      ) }
     </div>
   );
 }
