@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
+
+import projects from '../data/projects.json';
 
 
 const PAGE_SIZE = 8;
@@ -9,6 +11,9 @@ export function Projects () {
   const [ search, setSearch ] = useState( '' );
   const [ visible, setVisible ] = useState( PAGE_SIZE );
   const [ columns, setColumns ] = useState( 3 );
+
+  const loader = useRef< HTMLDivElement >( null );
+  const filters = useMemo( () => [ 'All', ...new Set( projects.map( project => project.type ) ) ], [] );
 
   return (
     <div className= 'px-12 py-32'>
