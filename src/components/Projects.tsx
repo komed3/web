@@ -1,8 +1,9 @@
+import { ArrowUpRight } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { Link } from 'react-router';
 
 import projects from '../data/projects.json';
-import { Link } from 'react-router';
 
 
 const PAGE_SIZE = 8;
@@ -144,7 +145,7 @@ export function Projects () {
             className= 'flex flex-col gap-10'
           >
             <AnimatePresence mode= 'popLayout'>
-              { column.map( ( { desc, id, status, tags, title, type }, i ) => {
+              { column.map( ( { desc, id, meta, status, tags, title, type }, i ) => {
                 const featured = status === 'FEATURED';
 
                 return (
@@ -194,8 +195,8 @@ export function Projects () {
                       { tags?.length > 0 && (
                         <div
                           className= {
-                            'flex justify-end flex-wrap gap-x-4 gap-y-2 max-w-sm ' +
-                            'mt-10 ml-auto text-[10px] uppercase tracking-[0.15em]'
+                            'flex justify-end flex-wrap gap-x-4 gap-y-2 max-w-sm ml-auto text-[10px] ' +
+                            'uppercase tracking-[0.15em] ' + ( featured ? 'mt-48' : 'mt-12' )
                           }
                         >
                           { tags.map( tag => (
@@ -203,6 +204,22 @@ export function Projects () {
                           ) ) }
                         </div>
                       ) }
+
+                      { /** Item Footer */ }
+                      <div className= 'flex justify-between items-center mt-12 pt-4 border-t border-current/20'>
+                        <span className= 'text-xs uppercase tracking-[0.2em]'>
+                          { meta?.stars !== undefined
+                            ? `${ meta.stars.toLocaleString() } stars`
+                            : 'Project'
+                          }
+                        </span>
+
+                        <ArrowUpRight
+                          className= '-mr-1.5'
+                          size= { 24 }
+                          strokeWidth= { 0.8 }
+                        />
+                      </div>
                     </Link>
                   </motion.div>
                 );
