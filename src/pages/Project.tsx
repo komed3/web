@@ -69,7 +69,7 @@ export function Project () {
 
         { /** Description */ }
         { project.desc && (
-          <p className= 'mt-12 max-w-5xl text-3xl font-light leading-snug'>
+          <p className= 'mt-8 max-w-5xl text-3xl font-light leading-snug'>
             { project.desc }
           </p>
         ) }
@@ -91,8 +91,37 @@ export function Project () {
         </motion.div>
 
         { /** Sidebar */ }
-        <div className= 'shrink-0 w-120'></div>
-      </div>
+        <div className= 'shrink-0 w-120 space-y-24'>
+          { /** Project Info */ }
+          <div className= 'space-y-6 text-right'>
+            <div className= 'mb-12 text-2xl uppercase font-extralight tracking-tighter underline underline-offset-3 decoration-1'>
+              Project Info
+            </div>
+
+            { [
+              [ 'Version', project.meta?.version ],
+              [ 'Status', project.status ],
+              [ 'License', project.meta?.license ],
+              [ 'Repos', project.meta?.repos ],
+              [ 'Languages', project.meta?.langs ],
+              [ 'Year', project.meta?.year ],
+              [ 'Tags', project.tags ]
+            ].map( ( [ label, value ], i ) => value && (
+              <div key= { i }>
+                <div className= 'text-[11px] uppercase tracking-[0.3em]'>
+                  { label }
+                </div>
+
+                <div className= 'text-xl capitalize font-light'>
+                  { Array.isArray( value ) ? value.map( ( item, j ) => (
+                    <div key= { j }>{ item }</div>
+                  ) ) : value }
+                </div>
+              </div>
+            ) ) }
+            </div>
+          </div>
+        </div>
     </AnimatePresence>
   );
 }
