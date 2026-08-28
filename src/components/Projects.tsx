@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 import projects from '../data/projects.json';
 
@@ -12,6 +12,8 @@ export function Projects () {
   const [ search, setSearch ] = useState( '' );
   const [ visible, setVisible ] = useState( PAGE_SIZE );
   const [ columns, setColumns ] = useState( 3 );
+
+  // --- filter ---
 
   const filters = useMemo( () => [ 'All', ...new Set( projects.map( project => project.type ) ) ], [] );
   const loader = useRef< HTMLDivElement >( null );
@@ -27,6 +29,18 @@ export function Projects () {
         .filter( Boolean ).some( item => item!.toLowerCase().includes( value ) );
     } );
   }, [ filter, search ] );
+
+  // --- masonry ---
+
+  useEffect( () => setVisible( PAGE_SIZE ), [ filter, search ] );
+
+  useEffect( () => {
+    const updateColumns = () => setColumns( window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1 );
+    updateColumns();
+
+    window.addEventListener( 'resize', updateColumns );
+    return () => window.removeEventListener( 'resize', updateColumns );
+  }, [] );
 
   return (
     <div className= 'px-12 py-32 space-y-24'>
