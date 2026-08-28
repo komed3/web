@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from 'motion/react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 import projects from '../data/projects.json';
+import { Link } from 'react-router';
 
 
 const PAGE_SIZE = 8;
@@ -158,7 +159,15 @@ export function Projects () {
                       scale: { duration: 0.35 }
                     } }
                     viewport= { { once: true, amount: 0.3 } }
-                  ></motion.div>
+                  >
+                    <Link
+                      to= { `/project/${ id }` }
+                      className= {
+                        'group block p-10 ' +
+                        ( featured ? 'bg-(--main) text-(--contrast)' : 'bg-(--main)/10' )
+                      }
+                    ></Link>
+                  </motion.div>
                 );
               } ) }
             </AnimatePresence>
