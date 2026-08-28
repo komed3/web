@@ -24,6 +24,19 @@ export function Projects () {
             Projects
           </div>
         </div>
+
+        { /** Search */ }
+        <div className= 'shrink-0 pb-1'>
+          <input
+            value= { search }
+            onChange= { event => setSearch( event.target.value ) }
+            placeholder= 'Type to search_'
+            className= {
+              'w-72 py-3 text-right text-md font-light tracking-wide placeholder:text-(--main) ' +
+              'bg-transparent border-b border-(--main) outline-none'
+            }
+          />
+        </div>
       </div>
     </div>
   );
