@@ -15,7 +15,19 @@ export function Project () {
     if ( index < 0 || ! project ) navigate( '/index', { replace: true } );
   }, [ id, projects, navigate ] );
 
-  return (
-    <></>
+  return project && (
+    <>
+      <div className= 'flex flex-col justify-end w-full h-screen p-12 pt-36'>
+        <div className= '-ml-3 text-[clamp(5rem,10vw,10rem)] font-extralight leading-none tracking-tighter'>
+          { project.title }
+        </div>
+
+        { project.desc && (
+          <p className= 'mt-12 max-w-5xl text-3xl font-light leading-snug'>
+            { project.desc }
+          </p>
+        ) }
+      </div>
+    </>
   );
 }
