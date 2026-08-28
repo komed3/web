@@ -138,3 +138,19 @@
 .markdown-body a {
   @apply font-bold underline underline-offset-1;
 }
+
+.markdown-body img {
+  @apply grayscale-100 contrast-125;
+}
+
+.markdown-body img[src*="badge"],
+.markdown-body img[src*="shields.io"],
+.markdown-body img[alt*="badge"] {
+  @apply inline-block mr-1 mb-3 align-middle;
+}
+
+.markdown-body a:has( img[src*="badge"] ),
+.markdown-body a:has( img[src*="shields.io"] ),
+.markdown-body a:has( img[alt*="badge"] ) {
+  @apply hover:bg-transparent;
+}
