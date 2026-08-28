@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { ArrowUpLeft, ArrowUpRight } from 'lucide-react';
 import { useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router';
 
@@ -27,14 +27,14 @@ export function Project () {
         { /** Aside */ }
         <div className= 'flex flex-col items-end gap-8'>
           { /** Navigation */ }
-          <div className= 'grid grid-cols-2 gap-12 w-full'>
+          <div className= 'grid grid-cols-2 gap-12 w-full text-right text-2xl uppercase font-extralight tracking-[0.3em]'>
             <div>
               { prev && (
                 <Link
-                  className= 'inline-flex items-center gap-3 px-4 py-1'
+                  className= 'flex flex-col items-end gap-3'
                   to= { `/project/${ prev.id }` }
                 >
-                  <ArrowLeft size= { 32 } strokeWidth= { 0.8 } />
+                  <ArrowUpLeft size= { 32 } strokeWidth= { 0.8 } />
                   <span>{ prev.title }</span>
                 </Link>
               ) }
@@ -42,11 +42,11 @@ export function Project () {
             <div>
               { next && (
                 <Link
-                  className= 'inline-flex items-center gap-3 px-4 py-1'
+                  className= 'flex flex-col items-end gap-3'
                   to= { `/project/${ next.id }` }
                 >
+                  <ArrowUpRight size= { 32 } strokeWidth= { 0.8 } />
                   <span>{ next.title }</span>
-                  <ArrowRight size= { 32 } strokeWidth= { 0.8 } />
                 </Link>
               ) }
             </div>
