@@ -102,3 +102,7 @@
 .markdown-body li::marker {
   @apply text-current font-black;
 }
+
+.markdown-body pre {
+  @apply my-6 p-6 overflow-x-auto bg-current/5;
+}
