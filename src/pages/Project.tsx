@@ -1,6 +1,8 @@
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
 import { Link, useNavigate, useParams } from 'react-router';
+import remarkGfm from 'remark-gfm';
 
 import projects from '../data/projects.json';
 
@@ -64,6 +66,19 @@ export function Project () {
             { project.desc }
           </p>
         ) }
+      </div>
+
+      { /** Content */ }
+      <div className= 'flex gap-32 px-12 py-16'>
+        { /** Readme */ }
+        <div className= 'flex-1 markdown-body'>
+          <ReactMarkdown remarkPlugins= { [ remarkGfm ] }>
+            { project.content }
+          </ReactMarkdown>
+        </div>
+
+        { /** Sidebar */ }
+        <div className= 'shrink-0 w-120'></div>
       </div>
     </>
   );
