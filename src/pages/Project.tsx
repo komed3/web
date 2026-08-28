@@ -91,7 +91,7 @@ export function Project () {
         </motion.div>
 
         { /** Sidebar */ }
-        <div className= 'shrink-0 w-120 space-y-24'>
+        <div className= 'shrink-0 w-120'>
           { /** Project Info */ }
           <div className= 'space-y-6 text-right'>
             <div className= 'mb-12 text-2xl uppercase font-extralight tracking-tighter underline underline-offset-3 decoration-1'>
@@ -106,7 +106,7 @@ export function Project () {
               [ 'Languages', project.meta?.langs ],
               [ 'Year', project.meta?.year ],
               [ 'Tags', project.tags ]
-            ].map( ( [ label, value ], i ) => value && (
+            ].map( ( [ label, value ], i ) => value && ( ! Array.isArray( value ) || value.length > 0 ) && (
               <div key= { i }>
                 <div className= 'text-[11px] uppercase tracking-[0.3em]'>
                   { label }
