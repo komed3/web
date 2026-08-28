@@ -208,7 +208,7 @@ export function Projects () {
                       { /** Item Footer */ }
                       <div className= 'flex justify-between items-center mt-12 pt-4 border-t border-current/20'>
                         <span className= 'text-xs uppercase tracking-[0.2em]'>
-                          { meta?.stars !== undefined
+                          { meta?.stars && meta.stars > 0
                             ? `${ meta.stars.toLocaleString() } stars`
                             : 'Project'
                           }
