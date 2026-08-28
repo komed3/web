@@ -115,9 +115,11 @@ export default function App () {
           color= { overlayColor }
           onComplete= { () => {
             window.scrollTo( 0, 0 );
+
             setColorVars( new URL( target, window.location.origin ).pathname );
             navigate( target );
-            setContentVisible( true );
+
+            setTimeout( () => setContentVisible( true ), 50 );
           } }
         />
       ) }
