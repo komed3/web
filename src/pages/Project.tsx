@@ -25,6 +25,12 @@ export function Project () {
       <div className= 'grid grid-cols-[1fr_1px_2fr] gap-12 w-full h-screen p-12 pt-36'>
         { /** Aside */ }
         <div className= 'flex flex-col items-end gap-8'>
+          { /** Navigation */ }
+          <div className= 'grid grid-cols-2 gap-12'>
+            <div>...</div>
+            <div>...</div>
+          </div>
+
           <div className= 'flex-1' />
 
           { /** Status */ }
