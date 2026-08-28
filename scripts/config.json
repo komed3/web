@@ -211,5 +211,55 @@
     "title": "MediaWiki WordCounter",
     "github": "komed3/mw-WordCounter",
     "type": "MediaWiki"
+  }, {
+    "id": "truck-financial-tracker",
+    "title": "SCS Financial Tracker",
+    "github": "komed3/truck-financial-tracker",
+    "type": "Web App"
+  }, {
+    "id": "gh-stats",
+    "title": "GitHub Dashboard",
+    "github": "komed3/gh-stats",
+    "type": "Web App"
+  }, {
+    "id": "linscale",
+    "title": "Linear Scale",
+    "github": "komed3/linscale",
+    "type": "Node.js",
+    "status": "ARCHIVED"
+  }, {
+    "id": "relative-time",
+    "title": "Relative Time",
+    "github": "komed3/relative-time",
+    "type": "JavaScript Library"
+  }, {
+    "id": "svgworld",
+    "title": "SVG World",
+    "github": "komed3/svgworld",
+    "type": "Node.js",
+    "status": "BETA"
+  }, {
+    "id": "chess-game-embed",
+    "title": "Chess Game Embedder",
+    "github": "komed3/chess-game-embed",
+    "type": "Chess"
+  }, {
+    "id": "wordpress-word-counter",
+    "title": "WordPress WordCounter",
+    "github": "komed3/wordpress-word-counter",
+    "type": "WordPress",
+    "status": "ARCHIVED"
+  }, {
+    "id": "loc-counter",
+    "title": "LOC Counter",
+    "github": "komed3/loc-counter",
+    "type": "Tool",
+    "status": "ARCHIVED"
+  }, {
+    "id": "logarscale",
+    "title": "Logarithmic Scale",
+    "github": "komed3/logarscale",
+    "type": "Node.js",
+    "status": "ARCHIVED"
   } ]
 }
