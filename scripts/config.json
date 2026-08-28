@@ -80,7 +80,8 @@
     "id": "apt-repo",
     "title": "Debian Repository",
     "github": "komed3/deb",
-    "type": "Infrastructure"
+    "type": "Infrastructure",
+    "status": "FEATURED"
   }, {
     "id": "top-737-800",
     "title": "Take-off Performance",
