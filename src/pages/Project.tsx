@@ -27,9 +27,9 @@ export function Project () {
     <AnimatePresence key= { id }>
       { /** Header */ }
       <motion.div
-        initial= { { x: 300, opacity: 0 } }
+        initial= { { x: 100, opacity: 0 } }
         animate= { { x: 0, opacity: 1 } }
-        exit= { { x: -300, opacity: 1 } }
+        exit= { { x: -100, opacity: 0 } }
         transition= { { duration: 1.2, ease: [ 0.22, 1, 0.36, 1 ] } }
         className= 'grid grid-cols-[32rem_1px_1fr] gap-12 h-screen p-12 pt-36'
       >
