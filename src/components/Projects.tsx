@@ -144,7 +144,7 @@ export function Projects () {
             className= 'flex flex-col gap-10'
           >
             <AnimatePresence mode= 'popLayout'>
-              { column.map( ( { id, status }, i ) => {
+              { column.map( ( { id, status, type }, i ) => {
                 const featured = status === 'FEATURED';
 
                 return (
@@ -166,7 +166,13 @@ export function Projects () {
                         'group block p-10 ' +
                         ( featured ? 'bg-(--main) text-(--contrast)' : 'bg-(--main)/10' )
                       }
-                    ></Link>
+                    >
+                      { /** Item Header */ }
+                      <div className= 'flex justify-between text-xs uppercase tracking-[0.25em]'>
+                        <span>{ type }</span>
+                        { status && ( <span>{ status }</span> ) }
+                      </div>
+                    </Link>
                   </motion.div>
                 );
               } ) }
