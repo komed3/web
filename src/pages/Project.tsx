@@ -82,6 +82,7 @@ export function Project () {
           initial= { { y: 40, opacity: 0 } }
           whileInView= { { y: 0, opacity: 1 } }
           transition= { { duration: 1.2, ease: [ 0.22, 1, 0.36, 1 ] } }
+          viewport= { { once: true } }
           className= 'flex-1 min-w-0 p-12 bg-(--contrast) markdown-body'
         >
           <ReactMarkdown remarkPlugins= { [ remarkGfm ] }>
