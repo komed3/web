@@ -28,7 +28,7 @@ export function Project () {
           <div className= 'flex-1' />
 
           { project.status && (
-            <div className= 'text-(--contrast) bg-(--main)'>
+            <div className= 'px-6 py-2 text-3xl font-extralight text-(--contrast) bg-(--main)'>
               { project.status }
             </div>
           ) }
