@@ -71,12 +71,10 @@ export function Project () {
 
         { /** Info */ }
         <div className= 'flex flex-col justify-end gap-8'>
-          { /** Status */ }
-          { project.status && (
-            <div className= 'w-fit px-6 py-2 text-3xl font-extralight text-(--contrast) bg-(--main)'>
-              { project.status }
-            </div>
-          ) }
+          { /** Type */ }
+          <div className= 'uppercase text-3xl font-extralight tracking-[0.2em]'>
+            { project.type }
+          </div>
 
           { /** Title */ }
           <div className= '-ml-2 text-[clamp(4rem,8vw,8rem)] font-extralight leading-none tracking-tighter'>
@@ -107,7 +105,7 @@ export function Project () {
               [ 'Status', project.status ],
               [ 'License', project.meta?.license ],
               [ 'Repos', project.meta?.repos ],
-              [ 'Languages', project.meta?.langs ],
+              [ 'Language', project.meta?.langs ],
               [ 'Year', project.meta?.year ],
               [ 'Tags', project.tags ]
             ].map( ( [ label, value ], i ) => value && ( ! Array.isArray( value ) || value.length > 0 ) && (
