@@ -49,6 +49,16 @@ export function Projects () {
         <div className= 'text-[11px] uppercase tracking-[0.3em] opacity-70'>
           Filter
         </div>
+
+        <div className= 'flex flex-wrap justify-end items-baseline gap-x-10 gap-y-4 max-w-2xl'>
+          { filters.map( value => (
+            <button
+              key= { value }
+              className= 'relative text-sm uppercase tracking-[0.2em]'
+              onClick= { () => setFilter( value ) }
+            >...</button>
+          ) ) }
+        </div>
       </div>
     </div>
   );
