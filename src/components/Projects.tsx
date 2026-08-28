@@ -144,7 +144,7 @@ export function Projects () {
             className= 'flex flex-col gap-10'
           >
             <AnimatePresence mode= 'popLayout'>
-              { column.map( ( { id, status, type }, i ) => {
+              { column.map( ( { desc, id, status, title, type }, i ) => {
                 const featured = status === 'FEATURED';
 
                 return (
@@ -172,6 +172,23 @@ export function Projects () {
                         <span>{ type }</span>
                         { status && ( <span>{ status }</span> ) }
                       </div>
+
+                      { /** Title */ }
+                      <div
+                        className= {
+                          'mt-12 font-extralight tracking-tighter ' +
+                          ( featured ? 'text-6xl' : 'text-5xl' )
+                        }
+                      >
+                        { title }
+                      </div>
+
+                      { /** Description */ }
+                      { desc && (
+                        <p className= 'mt-6 max-w-sm text-base font-light leading-relaxed'>
+                          { desc }
+                        </p>
+                      ) }
                     </Link>
                   </motion.div>
                 );
