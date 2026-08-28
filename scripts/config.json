@@ -16,6 +16,12 @@
     "github": "komed3/chemparse",
     "type": "Node.js"
   }, {
+    "id": "tauron",
+    "title": "Tauron",
+    "github": "komed3/tauron",
+    "type": "Cryptography",
+    "status": "DEV"
+  }, {
     "id": "pseinfo",
     "title": "Periodic Table",
     "github": "pseinfo",
@@ -43,6 +49,19 @@
     "title": "DeepMerge",
     "github": "komed3/deepmerge",
     "type": "Node.js"
+  }, {
+    "id": "isodb",
+    "title": "isoDB",
+    "github": "isodb",
+    "type": "Node.js"
+  }, {
+    "id": "pulsar",
+    "title": "Pulsar",
+    "type": "Science",
+    "status": "DEV",
+    "description": "Programming Language focused on mathematical problems.",
+    "tags": [ "science", "programming", "language" ],
+    "content": "Coming soon"
   }, {
     "id": "8-bit-alu",
     "title": "8-Bit ALU",
@@ -72,6 +91,12 @@
     "github": "komed3/serverdesk",
     "type": "Linux"
   }, {
+    "id": "pyxe",
+    "title": "Pyxe Framework",
+    "github": "komed3/pyxe",
+    "type": "Node.js",
+    "status": "DEV"
+  }, {
     "id": "img2txt",
     "title": "Image2Text",
     "github": "komed3/img2txt",
@@ -94,6 +119,11 @@
     "github": "komed3/nxtcron",
     "type": "Node.js"
   }, {
+    "id": "periodic-table",
+    "title": "Periodic Table",
+    "github": "komed3/periodic-table",
+    "type": "Science"
+  }, {
     "id": "jsdelivr-gh-stats",
     "title": "jsDelivr GitHub Stats",
     "github": "komed3/jsdelivr-gh-stats",
@@ -112,7 +142,7 @@
     "id": "coincollect",
     "title": "CoinCollect",
     "github": "komed3/coincollect",
-    "type": "Web App",
+    "type": "Tool",
     "status": "BETA"
   }, {
     "id": "dimension-calculator",
@@ -139,6 +169,12 @@
     "title": "Scalax",
     "github": "komed3/scalax",
     "type": "Node.js"
+  }, {
+    "id": "rtb-api",
+    "title": "Billionaires API",
+    "github": "komed3/rtb-api",
+    "type": "API",
+    "status": "ARCHIVED"
   }, {
     "id": "stl-viewer",
     "title": "STL Viewer",
@@ -197,10 +233,15 @@
     "type": "Database",
     "status": "ARCHIVED"
   }, {
+    "id": "wealthtracker",
+    "title": "WealthTracker",
+    "github": "komed3/WealthTracker",
+    "type": "Tool"
+  }, {
     "id": "frame",
     "title": "Private Video Platfrom",
     "github": "komed3/frame",
-    "type": "Web App"
+    "type": "Tool"
   }, {
     "id": "color",
     "title": "PHP Color Library",
@@ -220,7 +261,7 @@
     "id": "gh-stats",
     "title": "GitHub Dashboard",
     "github": "komed3/gh-stats",
-    "type": "Web App"
+    "type": "Tool"
   }, {
     "id": "linscale",
     "title": "Linear Scale",
@@ -238,6 +279,12 @@
     "github": "komed3/svgworld",
     "type": "Node.js",
     "status": "BETA"
+  }, {
+    "id": "icon-archive",
+    "title": "Icon Archive",
+    "github": "komed3/icon-archive",
+    "type": "Database",
+    "status": "ARCHIVED"
   }, {
     "id": "chess-game-embed",
     "title": "Chess Game Embedder",
@@ -261,5 +308,22 @@
     "github": "komed3/logarscale",
     "type": "Node.js",
     "status": "ARCHIVED"
+  }, {
+    "id": "moneylens",
+    "title": "MoneyLens",
+    "github": "komed3/moneylens",
+    "type": "Web App"
+  }, {
+    "id": "cli-almanac-builder",
+    "title": "CLI Almanac Builder",
+    "github": "komed3/cli-almanac-builder",
+    "type": "Tool",
+    "status": "ARCHIVED"
+  }, {
+    "id": "mw-simple-bot",
+    "title": "MediaWiki Bot",
+    "github": "komed3/mw-simple-bot",
+    "type": "MediaWiki",
+    "status": "BETA"
   } ]
 }
