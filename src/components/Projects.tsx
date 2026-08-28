@@ -143,10 +143,23 @@ export function Projects () {
             className= 'flex flex-col gap-10'
           >
             <AnimatePresence mode= 'popLayout'>
-              { column.map( ( project, i ) => {
-                const featured = project.status === 'FEATURED';
+              { column.map( ( { id, status }, i ) => {
+                const featured = status === 'FEATURED';
 
-                return ( <></> );
+                return (
+                  <motion.div
+                    key= { id }
+                    initial= { { opacity: 0, y: 60 } }
+                    whileInView= { { opacity: 1, y: 0 } }
+                    exit= { { opacity: 0, y: -20, scale: 0.95 } }
+                    transition= { {
+                      opacity: { duration: 0.35, delay: i * 0.025 },
+                      y: { duration: 0.55, delay: i * 0.025, ease: [ 0.76, 0, 0.24, 1 ] },
+                      scale: { duration: 0.35 }
+                    } }
+                    viewport= { { once: true, amount: 0.3 } }
+                  ></motion.div>
+                );
               } ) }
             </AnimatePresence>
           </div>
