@@ -16,6 +16,12 @@
     "github": "komed3/chemparse",
     "type": "Node.js"
   }, {
+    "id": "pseinfo",
+    "title": "Periodic Table",
+    "github": "pseinfo",
+    "type": "Science",
+    "status": "FEATURED"
+  }, {
     "id": "unitra",
     "title": "Unitra Framework",
     "github": "komed3/unitra",
@@ -60,5 +66,36 @@
     "github": "komed3/math-formula-parser",
     "type": "Node.js",
     "status": "BETA"
+  }, {
+    "id": "serverdesk",
+    "title": "ServerDesk",
+    "github": "komed3/serverdesk",
+    "type": "Linux"
+  }, {
+    "id": "img2txt",
+    "title": "Image2Text",
+    "github": "komed3/img2txt",
+    "type": "Web App"
+  }, {
+    "id": "apt-repo",
+    "title": "Debian Repository",
+    "github": "komed3/deb",
+    "type": "Infrastructure"
+  }, {
+    "id": "top-737-800",
+    "title": "Take-off Performance",
+    "github": "komed3/top-737-800",
+    "type": "Tool",
+    "status": "ARCHIVED"
+  }, {
+    "id": "nxtcron",
+    "title": "nxtcron",
+    "github": "komed3/nxtcron",
+    "type": "Node.js"
+  }, {
+    "id": "jsdelivr-gh-stats",
+    "title": "jsDelivr GitHub Stats",
+    "github": "komed3/jsdelivr-gh-stats",
+    "type": "Web App"
   } ]
 }
