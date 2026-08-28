@@ -42,6 +42,26 @@ export function Projects () {
     return () => window.removeEventListener( 'resize', updateColumns );
   }, [] );
 
+  useEffect( () => {
+    if ( ! loader.current ) return;
+
+    const observer = new IntersectionObserver( entries => {
+      if ( ! entries[ 0 ].isIntersecting ) return;
+      setVisible( value => Math.min( value + PAGE_SIZE, result.length ) );
+    }, { rootMargin: '600px' } );
+
+    observer.observe( loader.current );
+    return () => observer.disconnect();
+  }, [ result.length ] );
+
+  const visibleProjects = result.slice( 0, visible );
+  const masonry = Array.from( { length: columns }, () => [] as typeof visibleProjects );
+
+  visibleProjects.forEach( project => {
+    const shortest = masonry.reduce( ( idx, col, i ) => col.length < masonry[ idx ].length ? i : idx, 0 );
+    masonry[ shortest ].push( project );
+  } );
+
   return (
     <div className= 'px-12 py-32 space-y-24'>
       { /** Header */ }
