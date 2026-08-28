@@ -106,3 +106,19 @@
 .markdown-body pre {
   @apply my-6 p-6 overflow-x-auto bg-current/5;
 }
+
+.markdown-body table {
+  @apply w-full table-auto border-collapse border border-current;
+}
+
+.markdown-table-wrapper {
+  @apply mb-8 w-full overflow-x-auto;
+}
+
+.markdown-body th {
+  @apply p-3 text-left uppercase font-bold border border-current;
+}
+
+.markdown-body td {
+  @apply p-3 border border-current;
+}
