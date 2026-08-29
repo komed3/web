@@ -71,6 +71,8 @@ export default function App () {
       const next = url.pathname + url.search + url.hash;
       if ( current === next || target ) return;
 
+      if ( link.hasAttribute( 'data-navigation' ) ) return;
+
       event.preventDefault();
       event.stopPropagation();
 
