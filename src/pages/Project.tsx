@@ -25,7 +25,12 @@ export function Project () {
       <div className= 'grid grid-cols-[5fr_3fr] h-screen pt-24'>
 
         { /** Hero */ }
-        <div className= 'p-12 '></div>
+        <div className= 'flex flex-col justify-end p-12'>
+          { /** Title */ }
+          <div className= '-ml-3 text-[clamp(4rem,8vw,8rem)] font-extralight leading-[0.8] -tracking-widest'>
+            { project.title }
+          </div>
+        </div>
 
         { /** Aside */ }
         <div className= 'p-12 bg-(--main)'></div>
