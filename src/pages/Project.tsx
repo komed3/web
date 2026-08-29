@@ -1,4 +1,4 @@
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Star } from 'lucide-react';
 import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router';
 
@@ -65,7 +65,27 @@ export function Project () {
         </div>
 
         { /** Aside */ }
-        <div className= 'p-12 text-(--contrast) bg-(--main)'></div>
+        <div className= 'flex flex-col justify-between p-12 text-(--contrast) bg-(--main)'>
+          <div>
+            { /** Meta */ }
+            <div className= 'space-y-6 text-lg uppercase tracking-widest'>
+              { [
+                [ 'Year', project.meta?.year ],
+                [ 'Version', project.meta?.version ],
+                [ 'Status', project.status ],
+                [ 'License', project.meta?.license ]
+              ].map( ( [ label, value ] ) => value && (
+                <div
+                  key= { label }
+                  className= 'flex justify-between gap-8'
+                >
+                  <span className= 'font-extralight'>{ label }</span>
+                  <b className= 'font-medium'>{ value }</b>
+                </div>
+              ) ) }
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className= 'my-16'></div>
