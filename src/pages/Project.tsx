@@ -55,9 +55,12 @@ export function Project () {
                   href= { project.link }
                   target= '_blank'
                   rel= 'noreferrer'
-                  className= 'inline-block -m-4 p-4'
+                  className= {
+                    'inline-block px-8 text-lg font-light uppercase leading-16 ' +
+                    'tracking-[0.2em] text-(--contrast) bg-(--main)'
+                  }
                 >
-                  <ArrowUpRight size= { 64 } strokeWidth= { 0.7 } />
+                  Visit
                 </a>
               ) }
             </div>
@@ -108,8 +111,8 @@ export function Project () {
                 target= '_blank'
                 rel= 'noreferrer'
                 className= {
-                  'px-8 text-lg font-light uppercase leading-16 tracking-[0.2em] ' +
-                  'text-(--main) bg-(--contrast)'
+                  'inline-block px-8 text-lg font-light uppercase leading-16 ' +
+                  'tracking-[0.2em] text-(--main) bg-(--contrast)'
                 }
               >
                 GitHub
