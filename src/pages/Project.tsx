@@ -1,3 +1,4 @@
+import { ArrowUpRight } from 'lucide-react';
 import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router';
 
@@ -36,20 +37,35 @@ export function Project () {
             { project.title }
           </div>
 
-          { /** Description */ }
+          { /** Info */ }
           <div className= 'flex justify-between items-end gap-24 mt-24'>
             <div>
+              { /** Description */ }
               { project.desc && (
                 <p className= 'max-w-xl text-2xl font-light leading-relaxed'>
                   { project.desc }
                 </p>
               ) }
             </div>
+
+            <div>
+              { /** Project Link */ }
+              { project.link && (
+                <a
+                  href= { project.link }
+                  target= '_blank'
+                  rel= 'noreferrer'
+                  className= 'inline-block -m-4 p-4'
+                >
+                  <ArrowUpRight size= { 64 } strokeWidth= { 0.7 } />
+                </a>
+              ) }
+            </div>
           </div>
         </div>
 
         { /** Aside */ }
-        <div className= 'p-12 bg-(--main)'></div>
+        <div className= 'p-12 text-(--contrast) bg-(--main)'></div>
       </div>
 
       <div className= 'my-16'></div>
