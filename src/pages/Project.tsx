@@ -103,7 +103,7 @@ export function Project () {
           { project.github && (
             <div className= 'flex items-center justify-between gap-8'>
               <a
-                href= { project.github }
+                href= { `https://github.com/${ project.github }` }
                 target= '_blank'
                 rel= 'noreferrer'
                 className= {
