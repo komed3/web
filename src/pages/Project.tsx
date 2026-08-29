@@ -35,6 +35,17 @@ export function Project () {
           <div className= '-ml-3 text-[clamp(4rem,8vw,8rem)] font-extralight leading-[0.8] -tracking-widest'>
             { project.title }
           </div>
+
+          { /** Description */ }
+          <div className= 'flex justify-between items-end gap-24 mt-24'>
+            <div>
+              { project.desc && (
+                <p className= 'max-w-xl text-2xl font-light leading-relaxed'>
+                  { project.desc }
+                </p>
+              ) }
+            </div>
+          </div>
         </div>
 
         { /** Aside */ }
