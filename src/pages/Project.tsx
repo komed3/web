@@ -1,6 +1,6 @@
-import { ArrowUpRight, Star } from 'lucide-react';
+import { ArrowUpLeft, ArrowUpRight, Star } from 'lucide-react';
 import { useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router';
+import { Link, useNavigate, useParams } from 'react-router';
 
 import projects from '../data/projects.json';
 
@@ -126,6 +126,30 @@ export function Project () {
           ) }
         </div>
       </div>
+
+      { /** Project Navigation */ }
+      { ( prev || next ) && (
+        <div className= 'flex justify-between my-16 px-12 uppercase font-extralight tracking-[0.3em]'>
+          <div>
+            { /** Previous */ }
+            { prev && (
+              <Link
+                className= 'flex flex-col gap-3 w-fit max-w-80 text-2xl'
+                to= { `/project/${ prev.id }` }
+                data-navigation= 'prev'
+              >
+                <ArrowUpLeft
+                  className= '-ml-5'
+                  size= { 80 }
+                  strokeWidth= { 0.3 }
+                />
+
+                <span>{ prev.title }</span>
+              </Link>
+            ) }
+          </div>
+        </div>
+      ) }
 
       <div className= 'my-16'></div>
     </>
