@@ -88,7 +88,7 @@ export function Project () {
             { /** Tags */ }
             { project.tags?.length > 0 && (
               <div className= 'mt-24 ml-auto max-w-xl text-right uppercase'>
-                <div className= 'mb-6 text-xs font-medium tracking-[0.3em]'>
+                <div className= 'mb-6 text-[11px] font-medium tracking-[0.3em]'>
                   Tags
                 </div>
 
@@ -113,6 +113,14 @@ export function Project () {
               >
                 GitHub
               </a>
+
+              { /** Stars */ }
+              { project.meta?.stars > 0 && (
+                <div className= 'flex items-center gap-4 text-lg font-light'>
+                  <Star size= { 20 } />
+                  <span>{ project.meta.stars.toLocaleString() }</span>
+                </div>
+              ) }
             </div>
           ) }
         </div>
