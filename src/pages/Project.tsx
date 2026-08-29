@@ -98,6 +98,23 @@ export function Project () {
               </div>
             ) }
           </div>
+
+          { /** GitHub */ }
+          { project.github && (
+            <div className= 'flex items-center justify-between gap-8'>
+              <a
+                href= { project.github }
+                target= '_blank'
+                rel= 'noreferrer'
+                className= {
+                  'px-8 text-lg font-light uppercase leading-16 tracking-[0.2em] ' +
+                  'text-(--main) bg-(--contrast)'
+                }
+              >
+                GitHub
+              </a>
+            </div>
+          ) }
         </div>
       </div>
 
