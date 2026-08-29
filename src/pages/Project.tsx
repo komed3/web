@@ -20,6 +20,18 @@ export function Project () {
   );
 
   return project && (
-    <></>
+    <>
+      { /** Header */ }
+      <div className= 'grid grid-cols-[5fr_3fr] h-screen pt-24'>
+
+        { /** Hero */ }
+        <div className= 'p-12 '></div>
+
+        { /** Aside */ }
+        <div className= 'p-12 bg-(--main)'></div>
+      </div>
+
+      <div className= 'my-16'></div>
+    </>
   );
 }
