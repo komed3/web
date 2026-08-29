@@ -176,16 +176,12 @@ export function Project () {
 
       { /** Content */ }
       { project.content && (
-        <div className= 'grid grid-cols-[1fr_4fr_1fr] gap-12 my-24'>
-          <div className= 'bg-(--main)' />
-
-          <div className= 'markdown-body -mb-4'>
+        <div className= 'mt-16 -mb-32 pt-16 pb-52 bg-white'>
+          <div className= 'min-w-0 max-w-6xl mx-auto markdown-body'>
             <ReactMarkdown remarkPlugins= { [ remarkGfm ] }>
               { project.content }
             </ReactMarkdown>
           </div>
-
-          <div className= 'bg-(--main)' />
         </div>
       ) }
     </>
