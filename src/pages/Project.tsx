@@ -134,9 +134,9 @@ export function Project () {
             { /** Previous */ }
             { prev && (
               <Link
-                className= 'flex flex-col gap-3 w-fit max-w-80 text-2xl'
                 to= { `/project/${ prev.id }` }
                 data-navigation= 'prev'
+                className= 'flex flex-col gap-3 w-fit max-w-80 text-2xl'
               >
                 <ArrowUpLeft
                   className= '-ml-5'
@@ -145,6 +145,25 @@ export function Project () {
                 />
 
                 <span>{ prev.title }</span>
+              </Link>
+            ) }
+          </div>
+
+          <div>
+            { /** Next */ }
+            { next && (
+              <Link
+                to= { `/project/${ next.id }` }
+                data-navigation= 'next'
+                className= 'flex flex-col items-end gap-3 w-fit max-w-80 text-right text-2xl'
+              >
+                <ArrowUpRight
+                  className= '-mr-3.5'
+                  size= { 80 }
+                  strokeWidth= { 0.3 }
+                />
+
+                <span>{ next.title }</span>
               </Link>
             ) }
           </div>
