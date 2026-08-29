@@ -1,6 +1,8 @@
 import { ArrowUpLeft, ArrowUpRight, Star } from 'lucide-react';
 import { useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
 import { Link, useNavigate, useParams } from 'react-router';
+import remarkGfm from 'remark-gfm';
 
 import projects from '../data/projects.json';
 
@@ -174,7 +176,17 @@ export function Project () {
 
       { /** Content */ }
       { project.content && (
-        <div className= 'my-16'></div>
+        <div className= 'grid grid-cols-[1fr_4fr_1fr] gap-12 my-32'>
+          <div className= 'bg-(--main)' />
+
+          <div className= 'markdown-body -mb-4'>
+            <ReactMarkdown remarkPlugins= { [ remarkGfm ] }>
+              { project.content }
+            </ReactMarkdown>
+          </div>
+
+          <div className= 'bg-(--main)' />
+        </div>
       ) }
     </>
   );
