@@ -133,7 +133,7 @@ export function Project () {
 
       { /** Project Navigation */ }
       { ( prev || next ) && (
-        <div className= 'flex justify-between my-16 px-12 uppercase font-extralight tracking-[0.3em]'>
+        <div className= 'flex justify-between my-24 px-12 uppercase font-extralight tracking-[0.3em]'>
           <div>
             { /** Previous */ }
             { prev && (
@@ -176,7 +176,7 @@ export function Project () {
 
       { /** Content */ }
       { project.content && (
-        <div className= 'grid grid-cols-[1fr_4fr_1fr] gap-12 my-32'>
+        <div className= 'grid grid-cols-[1fr_4fr_1fr] gap-12 my-24'>
           <div className= 'bg-(--main)' />
 
           <div className= 'markdown-body -mb-4'>
