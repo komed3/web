@@ -70,10 +70,11 @@ export function Project () {
             { /** Meta */ }
             <div className= 'space-y-6 text-lg uppercase tracking-widest'>
               { [
-                [ 'Year', project.meta?.year ],
                 [ 'Version', project.meta?.version ],
+                [ 'License', project.meta?.license ],
                 [ 'Status', project.status ],
-                [ 'License', project.meta?.license ]
+                [ 'Language', project.meta?.langs?.join( ', ' ) ],
+                [ 'Year', project.meta?.year ]
               ].map( ( [ label, value ] ) => value && (
                 <div
                   key= { label }
