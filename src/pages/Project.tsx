@@ -84,6 +84,19 @@ export function Project () {
                 </div>
               ) ) }
             </div>
+
+            { /** Tags */ }
+            { project.tags?.length > 0 && (
+              <div className= 'mt-24 ml-auto max-w-xl text-right uppercase'>
+                <div className= 'mb-6 text-xs font-medium tracking-[0.3em]'>
+                  Tags
+                </div>
+
+                <div className= 'flex flex-wrap justify-end gap-x-6 gap-y-3 text-lg font-extralight tracking-widest'>
+                  { project.tags.map( tag => ( <span key= { tag }>{ tag }</span> ) ) }
+                </div>
+              </div>
+            ) }
           </div>
         </div>
       </div>
