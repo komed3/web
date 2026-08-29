@@ -81,15 +81,15 @@ export function Project () {
                   className= 'flex justify-between gap-8'
                 >
                   <span className= 'font-extralight'>{ label }</span>
-                  <b className= 'font-medium'>{ value }</b>
+                  <b className= 'text-right font-medium'>{ value }</b>
                 </div>
               ) ) }
             </div>
 
             { /** Tags */ }
             { project.tags?.length > 0 && (
-              <div className= 'mt-24 ml-auto max-w-xl text-right uppercase'>
-                <div className= 'mb-6 text-[11px] font-medium tracking-[0.3em]'>
+              <div className= 'mt-20 ml-auto max-w-xl text-right uppercase'>
+                <div className= 'mb-4 text-[11px] font-medium tracking-[0.3em]'>
                   Tags
                 </div>
 
