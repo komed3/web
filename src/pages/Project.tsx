@@ -1,5 +1,5 @@
 import { ArrowUpLeft, ArrowUpRight, Star } from 'lucide-react';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Link, useNavigate, useParams } from 'react-router';
 import remarkGfm from 'remark-gfm';
@@ -9,6 +9,8 @@ import projects from '../data/projects.json';
 
 export function Project () {
   const navigate = useNavigate();
+  const navigationRef = useRef< 'prev' | 'next' | null >( null );
+  const contentRef = useRef< HTMLDivElement >( null );
 
   const { id } = useParams();
   const index = projects.findIndex( p => p.id === id );
@@ -22,8 +24,56 @@ export function Project () {
     [ project, navigate ]
   );
 
+  useEffect( () => {
+    const element = contentRef.current;
+    if ( ! element ) return;
+
+    const handleClick = ( event: MouseEvent ) => {
+      if ( event.button !== 0 ) return;
+      if ( event.metaKey || event.ctrlKey || event.shiftKey || event.altKey ) return;
+
+      const link = ( event.target as HTMLElement ).closest< HTMLAnchorElement >( 'a[data-navigation]' );
+      if ( ! link ) return;
+
+      event.preventDefault();
+      event.stopPropagation();
+
+      const direction = link.dataset.navigation as 'prev' | 'next', target = link.href;
+      navigationRef.current = direction;
+
+      element.style.transition = 'all 0.3s cubic-bezier(0.76, 0, 0.24, 1)';
+      element.style.transform = `translate3d(${ direction === 'next' ? '-' : '' }200px, 0, 0)`;
+      element.style.opacity = '0';
+
+      window.setTimeout( () => {
+        window.scrollTo( 0, 0 );
+        navigate( new URL( target ).pathname );
+      }, 500 );
+    };
+
+    element.addEventListener( 'click', handleClick );
+    return () => { element.removeEventListener( 'click', handleClick ) };
+  }, [ navigate ] );
+
+  useEffect( () => {
+    const element = contentRef.current, direction = navigationRef.current;
+    if ( ! element || ! direction ) return;
+
+    navigationRef.current = null;
+
+    element.style.transition = 'none';
+    element.style.transform = `translate3d(${ direction === 'next' ? '' : '-' }200px, 0, 0)`;
+    element.style.opacity = '0';
+
+    requestAnimationFrame( () => {
+      element.style.transition = 'all 0.3s cubic-bezier(0.76, 0, 0.24, 1)';
+      element.style.transform = 'translate3d(0, 0, 0)';
+      element.style.opacity = '1';
+    } );
+  }, [ id ] );
+
   return project && (
-    <>
+    <div ref= { contentRef }>
       { /** Header */ }
       <div className= 'grid grid-cols-[5fr_3fr] h-screen pt-24'>
         { /** Hero */ }
@@ -184,6 +234,6 @@ export function Project () {
           </div>
         </div>
       ) }
-    </>
+    </div>
   );
 }
