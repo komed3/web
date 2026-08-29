@@ -226,7 +226,7 @@ export function Project () {
 
       { /** Content */ }
       { project.content && (
-        <div className= 'mt-16 -mb-32 pt-16 pb-52 bg-white'>
+        <div className= 'my-16 py-16 bg-white shadow-[0_100vmax_0_100vmax_white]'>
           <div className= 'min-w-0 max-w-6xl mx-auto markdown-body'>
             <ReactMarkdown remarkPlugins= { [ remarkGfm ] }>
               { project.content }
