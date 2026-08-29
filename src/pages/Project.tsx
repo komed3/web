@@ -24,7 +24,6 @@ export function Project () {
     <>
       { /** Header */ }
       <div className= 'grid grid-cols-[5fr_3fr] h-screen pt-24'>
-
         { /** Hero */ }
         <div className= 'flex flex-col justify-end p-12'>
           { /** Type */ }
@@ -173,7 +172,10 @@ export function Project () {
         </div>
       ) }
 
-      <div className= 'my-16'></div>
+      { /** Content */ }
+      { project.content && (
+        <div className= 'my-16'></div>
+      ) }
     </>
   );
 }
