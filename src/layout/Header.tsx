@@ -6,6 +6,16 @@ import { Logo } from '../components/Logo';
 export function Header () {
   return (
     <header className= 'fixed inset-x-0 top-0 z-90 h-24 bg-(--accent)'>
+      { /** Tech Stack */ }
+      <div className= 'centered-y left-6'>
+        <Link
+          className= 'inline-flex justify-center items-center w-fit h-10 px-6 text-lg font-black'
+          to= '/stack'
+        >
+          <span>Tech Stack</span>
+        </Link>
+      </div>
+
       { /** Logo */ }
       <div className= 'centered'>
         <Link
@@ -14,6 +24,16 @@ export function Header () {
           aria-label= 'komed3'
         >
           <Logo className= 'w-18 h-auto' />
+        </Link>
+      </div>
+
+      { /** Projects */ }
+      <div className= 'centered-y right-6'>
+        <Link
+          className= 'inline-flex justify-center items-center w-fit h-10 px-6 text-lg font-black'
+          to= '/index'
+        >
+          <span>Projects</span>
         </Link>
       </div>
     </header>
