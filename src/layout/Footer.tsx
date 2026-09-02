@@ -21,9 +21,9 @@ const NAV = [ {
   label: 'Projects',
   items: [
     [ 'Airportmap', 'https://airportmap.de', true ],
-    [ 'RTBNext', 'https://rtbnext.de', true ],
     [ 'Periodic Table', 'https://pse-info.de', true ],
-    [ 'Pulsar', 'https://github.com/plsrc', true ]
+    [ 'Pulsar', 'https://github.com/plsrc', true ],
+    [ 'RTBNext', 'https://rtbnext.de', true ]
   ]
 }, {
   label: 'Socials',
