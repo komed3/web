@@ -1,3 +1,8 @@
+import { Link } from 'react-router';
+
+import { Logo } from '../components/Logo';
+
+
 const NAV = [ {
   label: 'Navigation',
   items: [
