@@ -14,6 +14,18 @@ const ROUTES = [
 ] as const;
 
 
+function getColorVars ( pathname: string ) {
+  return THEMES[ ROUTES.find( ( [ pattern ] ) => pattern.test( pathname ) )?.[ 1 ] ?? 'default' ];
+}
+
+
+function setColorVars ( pathname: string ) {
+  Object.entries( getColorVars( pathname ) ).forEach( ( [ key, value ] ) =>
+    document.documentElement.style.setProperty( key, value )
+  );
+}
+
+
 export default function App () {
   return (
     <></>
