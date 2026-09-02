@@ -6,7 +6,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import type { Config, Org, Project, Repo } from '@/shared/types';
+import type { Config, Org, Project, Repo } from '../shared/types';
 
 
 // --- prepare ---
