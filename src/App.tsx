@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router';
+import { Routes, useLocation } from 'react-router';
 
 import { Cursor } from './effects/Cursor';
 import { Header } from './layout/Header';
@@ -37,11 +37,25 @@ export default function App () {
   const { pathname } = useLocation();
 
   const [ target, setTarget ] = useState< string | null >( null );
+  const [ contentVisible, setContentVisible ] = useState( true );
+
   useEffect( () => { if ( target ) return; setColorVars( pathname ) }, [ pathname, target ] );
 
   return (
     <div className= 'bg-(--accent) text-(--main)'>
       <Header />
+
+      <div
+        style= { {
+          opacity: contentVisible ? 1 : 0,
+          transition: 'all 0.35s linear'
+        } }
+      >
+        <main className= 'min-h-screen'>
+          <Routes></Routes>
+        </main>
+      </div>
+
       <Cursor />
     </div>
   );
