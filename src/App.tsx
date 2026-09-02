@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
 
+import { Cursor } from './effects/Cursor';
 import { Header } from './layout/Header';
 
 
@@ -41,6 +42,7 @@ export default function App () {
   return (
     <div className= 'bg-(--accent) text-(--main)'>
       <Header />
+      <Cursor />
     </div>
   );
 }
