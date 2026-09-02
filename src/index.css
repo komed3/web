@@ -22,3 +22,30 @@
   --font-sans: 'Sora', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'Lilex', ui-monospace, monospace;
 }
+
+/** Base */
+
+@layer base {
+  html, body {
+    @apply font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  *, *::before, *::after {
+    @apply cursor-none select-none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  ::-webkit-scrollbar, *::-webkit-scrollbar {
+    @apply hidden;
+  }
+
+  img, svg {
+    @apply pointer-events-none;
+  }
+
+  svg {
+    shape-rendering: geometricPrecision;
+  }
+}
