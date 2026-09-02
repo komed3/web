@@ -86,6 +86,22 @@ export function Cursor () {
             }
             style= { { x, y } }
           />
+
+          { /** Circle */ }
+          <motion.div
+            initial= { { opacity: 0 } }
+            animate= { { opacity: 1, scale: isInteractive ? 2 : 1 } }
+            exit= { { opacity: 0 } }
+            className= {
+              'fixed left-0 top-0 z-998 -translate-1/2 w-12 h-12 border border-white rounded-full ' +
+              'mix-blend-difference pointer-events-none ' + ( isInteractive && 'bg-white' )
+            }
+            style= { { x: circleX, y: circleY } }
+            transition= { {
+              opacity: { duration: 0.15 },
+              scale: { type: 'spring', stiffness: 500, damping: 30 }
+            } }
+          />
         </>
       ) }
     </AnimatePresence>
