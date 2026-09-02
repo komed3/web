@@ -36,6 +36,9 @@ const NAV = [ {
 
 
 export function Footer () {
+  const build = process.env.VITE_BUILD_ID ?? 'XXXXXXXX-XXXX';
+  const hash = process.env.VITE_COMMIT_SHA ?? 'XXXXXXX';
+
   return (
     <></>
   );
