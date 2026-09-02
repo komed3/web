@@ -6,6 +6,14 @@ const THEMES = {
 } as const;
 
 
+const ROUTES = [
+  [ /^\/$/,               'default' ],
+  [ /^\/stack$/,          'stack'   ],
+  [ /^\/project(?:\/|$)/, 'project' ],
+  [ /^\/index$/,          'index'   ]
+] as const;
+
+
 export default function App () {
   return (
     <></>
