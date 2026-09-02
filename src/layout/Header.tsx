@@ -1,5 +1,7 @@
 import { Link } from 'react-router';
 
+import { Logo } from '../components/Logo';
+
 
 export function Header () {
   return (
@@ -11,7 +13,7 @@ export function Header () {
           to= '/'
           aria-label= 'komed3'
         >
-          k
+          <Logo className= 'w-18 h-auto' />
         </Link>
       </div>
     </header>
