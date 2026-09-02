@@ -11,6 +11,7 @@
     "experimentalDecorators": true,
     "useDefineForClassFields": false,
     "skipLibCheck": true,
+    "isolatedModules": true,
     "allowImportingTsExtensions": true,
     "noEmit": true,
     "paths": {

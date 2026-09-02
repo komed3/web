@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { ArrayMode, Merger } from '@komed3/deepmerge';
+import { type ArrayMode, Merger } from '@komed3/deepmerge';
 import { existsSync, mkdirSync } from 'node:fs';
 import { readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
@@ -206,7 +206,7 @@ async function fetchRepos ( repos: Array< [ string, string ] > ) : Promise< Reco
 // ---- runner ----
 
 ( async () => {
-  const config = await readConfig(), merger = new Merger( { arrayMode: ArrayMode.ReplaceRight } );
+  const config = await readConfig(), merger = new Merger( { arrayMode: 'replace-right' as ArrayMode } );
   const orgs: string[] = [], repos: Array< [ string, string ] > = [];
 
   for ( const { github } of config.projects ) {
