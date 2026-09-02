@@ -1,4 +1,3 @@
 dist/
 node_modules/
-public/sitemap.xml
-src/data/
+data/
