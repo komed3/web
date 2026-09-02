@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Routes, useLocation } from 'react-router';
 
 import { Cursor } from './effects/Cursor';
+import { Footer } from './layout/Footer';
 import { Header } from './layout/Header';
 
 
@@ -54,6 +55,8 @@ export default function App () {
         <main className= 'min-h-screen'>
           <Routes></Routes>
         </main>
+
+        <Footer />
       </div>
 
       <Cursor />
