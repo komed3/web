@@ -40,6 +40,6 @@ export function Footer () {
   const hash = process.env.VITE_COMMIT_SHA ?? 'XXXXXXX';
 
   return (
-    <></>
+    <footer className= 'relative z-1 mx-12 p-20 text-(--contrast) bg-(--main)'></footer>
   );
 }
