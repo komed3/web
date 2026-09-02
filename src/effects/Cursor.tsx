@@ -1,4 +1,4 @@
-import { useMotionValue, useSpring } from 'motion/react';
+import { AnimatePresence, useMotionValue, useSpring } from 'motion/react';
 import { useEffect, useState } from 'react';
 
 
@@ -72,6 +72,11 @@ export function Cursor () {
   }, [ canUseCustomCursor, x, y ] );
 
   return (
-    <></>
+    <AnimatePresence>
+      { canUseCustomCursor && isVisible && (
+        <>
+        </>
+      ) }
+    </AnimatePresence>
   );
 }
