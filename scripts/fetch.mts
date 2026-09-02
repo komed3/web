@@ -12,7 +12,7 @@ import type { Config, Org, Project, Repo } from '@/shared/types';
 // --- prepare ---
 
 const cwd = dirname( fileURLToPath( import.meta.url ) );
-const dir = join( cwd, '..', 'src', 'data' );
+const dir = join( cwd, '..', 'data' );
 if ( ! existsSync( dir ) ) mkdirSync( dir, { recursive: true } );
 
 // ---- config loader ----
