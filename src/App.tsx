@@ -1,3 +1,9 @@
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router';
+
+import { Header } from './layout/Header';
+
+
 const THEMES = {
   default: { '--accent': '#fff',    '--main': '#000', '--contrast': '#fff' },
   stack:   { '--accent': '#1e40af', '--main': '#fff', '--contrast': '#000' },
@@ -27,7 +33,14 @@ function setColorVars ( pathname: string ) {
 
 
 export default function App () {
+  const { pathname } = useLocation();
+
+  const [ target, setTarget ] = useState< string | null >( null );
+  useEffect( () => { if ( target ) return; setColorVars( pathname ) }, [ pathname, target ] );
+
   return (
-    <></>
+    <div className= 'bg-(--accent) text-(--main)'>
+      <Header />
+    </div>
   );
 }
