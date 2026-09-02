@@ -40,6 +40,42 @@ export function Footer () {
   const hash = process.env.VITE_COMMIT_SHA ?? 'XXXXXXX';
 
   return (
-    <footer className= 'relative z-1 mx-12 p-20 text-(--contrast) bg-(--main)'></footer>
+    <footer className= 'relative z-1 mx-12 p-20 text-(--contrast) bg-(--main)'>
+      { /** Links */ }
+      <div className= 'flex justify-end items-end mt-16 mb-36'>
+        { NAV.map( ( { label, items } ) => (
+          <div
+            key= { label }
+            className= 'flex-1'
+          >
+            <nav className= 'flex flex-col items-end gap-4 text-right'>
+              { items.map( ( [ text, url, external = false ] ) => external ? (
+                <a
+                  key= { url }
+                  href= { url }
+                  target= '_blank'
+                  rel= 'noreferrer'
+                  className= 'font-bold'
+                >
+                  { text }
+                </a>
+              ) : (
+                <Link
+                  key= { url }
+                  className= 'font-bold'
+                  to= { url }
+                >
+                  { text }
+                </Link>
+              ) ) }
+            </nav>
+      
+            <div className= 'mt-8 text-right text-[10px] uppercase font-extralight tracking-widest opacity-75'>
+              { label }
+            </div>
+          </div>
+        ) ) }
+      </div>
+    </footer>
   );
 }
