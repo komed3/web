@@ -1,79 +1,11 @@
 #!/usr/bin/env node
 
+import type { Config, Org, Project, Repo } from '@/shared/types';
 import { Merger } from '@komed3/deepmerge';
 import { existsSync, mkdirSync } from 'node:fs';
 import { readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-
-
-interface Config {
-  projects: Array< {
-    id: string;
-    title?: string;
-    type: string;
-    desc?: string;
-    tags?: string[];
-    link?: string;
-    github?: string;
-    content?: string;
-    status?: string;
-    meta?: {
-      stars?: number;
-      license?: string;
-      langs?: string[];
-      year?: number;
-      version?: string;
-    };
-  } >;
-}
-
-interface Org {
-  title: string;
-  desc: string;
-  tags: string[];
-  link?: string;
-  meta: {
-    stars: number;
-    langs: string[];
-    repos: number;
-  };
-}
-
-interface Repo {
-  title: string;
-  desc: string;
-  tags: string[];
-  link?: string;
-  content?: string;
-  meta: {
-    stars: number;
-    license?: string;
-    langs: string[];
-    year: number;
-    version?: string;
-  };
-}
-
-interface Project {
-  id: string;
-  title: string;
-  type: string;
-  desc?: string;
-  tags?: string[];
-  link?: string;
-  github?: string;
-  content?: string;
-  status?: string;
-  meta: {
-    stars?: number;
-    license?: string;
-    langs?: string[];
-    year?: number;
-    version?: string;
-    repos?: number;
-  };
-}
 
 
 // --- PREPARE ---
