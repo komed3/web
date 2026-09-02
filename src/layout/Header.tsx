@@ -7,12 +7,15 @@ export function Header () {
   return (
     <header className= 'fixed inset-x-0 top-0 z-90 h-24 bg-(--accent)'>
       { /** Tech Stack */ }
-      <div className= 'centered-y left-6'>
+      <div className= 'centered-y left-2 md:left-6'>
         <Link
-          className= 'inline-flex justify-center items-center w-fit h-10 px-6 text-lg font-black'
           to= '/stack'
+          className= {
+            'hidden sm:inline-flex justify-center items-center w-fit ' +
+            'h-10 px-6 text-lg font-black'
+          }
         >
-          <span>Tech Stack</span>
+          <span><span className='hidden md:inline'>Tech </span>Stack</span>
         </Link>
       </div>
 
@@ -28,10 +31,13 @@ export function Header () {
       </div>
 
       { /** Projects */ }
-      <div className= 'centered-y right-6'>
+      <div className= 'centered-y right-2 md:right-6'>
         <Link
-          className= 'inline-flex justify-center items-center w-fit h-10 px-6 text-lg font-black'
           to= '/index'
+          className= {
+            'hidden sm:inline-flex justify-center items-center w-fit ' +
+            'h-10 px-6 text-lg font-black'
+          }
         >
           <span>Projects</span>
         </Link>
