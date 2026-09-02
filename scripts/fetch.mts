@@ -1,30 +1,31 @@
 #!/usr/bin/env node
 
-import type { Config, Org, Project, Repo } from '@/shared/types';
-import { Merger } from '@komed3/deepmerge';
+import { ArrayMode, Merger } from '@komed3/deepmerge';
 import { existsSync, mkdirSync } from 'node:fs';
 import { readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import type { Config, Org, Project, Repo } from '@/shared/types';
 
-// --- PREPARE ---
+
+// --- prepare ---
 
 const cwd = dirname( fileURLToPath( import.meta.url ) );
 const dir = join( cwd, '..', 'src', 'data' );
 if ( ! existsSync( dir ) ) mkdirSync( dir, { recursive: true } );
 
-// ---- CONFIG ----
+// ---- config loader ----
 
 async function readConfig () : Promise< Config > {
   const file = join( cwd, 'config.json' );
   if ( ! existsSync( file ) ) throw new Error( 'Cannot open config file!' );
 
   try { return JSON.parse( await readFile( file, 'utf-8' ) ) as Config }
-  catch ( e: any ) { throw new Error( `Error while reading config: ${ e.message }` ) }
+  catch ( e: unknown ) { throw new Error( `Error while reading config: ${ ( e as Error ).message }` ) }
 }
 
-// ---- NORMALIZE ----
+// ---- normalize version ----
 
 function normalizeVersion ( input?: string | undefined ) : string | undefined {
   if ( ! input ) return undefined;
@@ -35,14 +36,14 @@ function normalizeVersion ( input?: string | undefined ) : string | undefined {
   return match ? match[ 0 ] : undefined;
 }
 
-// ---- PATH FIXER ----
+// ---- pathfix ----
 
 function fixRelativePaths ( content: string, owner: string, name: string, branch: string ) : string {
   const rawBase = `https://raw.githubusercontent.com/${ owner }/${ name }/${ branch }`;
   const githubBase = `https://github.com/${ owner }/${ name }/blob/${ branch }`;
 
   return content
-    // Fix Markdown links and images
+    // fix Markdown links and images
     .replace( /(!?\[.*?\]\()([^)]+)(\))/g, ( match, prefix, path, suffix ) => {
       if ( /^(?:[a-z]+:\/\/|#|data:)/i.test( path ) ) return match;
 
@@ -54,7 +55,7 @@ function fixRelativePaths ( content: string, owner: string, name: string, branch
 
       return `${ prefix }${ baseUrl }/${ cleanPath }${ suffix }`;
     } )
-    // Fix HTML tags (minimal support)
+    // fix HTML tags (minimal support)
     .replace( /(src|href)=["']((?!\w+:\/\/|#|data:)[^"']+)["']/g, ( _, attr, path ) => {
       let cleanPath = path.replace( /^\.\//, '' );
       if ( cleanPath.startsWith( '/' ) ) cleanPath = cleanPath.substring( 1 );
@@ -66,19 +67,16 @@ function fixRelativePaths ( content: string, owner: string, name: string, branch
     } );
 }
 
-// ---- GITHUB API ----
+// ---- GitHub API ----
 
 async function fetchGraphQL ( query: string, variables?: Record< string, unknown > ) {
   const token = process.env.TOKEN;
   if ( ! token ) throw new Error( 'TOKEN missing' );
 
   const res = await fetch( 'https://api.github.com/graphql', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${ token }`
-    },
-    body: JSON.stringify( { query, variables } )
+    method: 'POST', body: JSON.stringify( { query, variables } ), headers: {
+      'Content-Type': 'application/json', 'Authorization': `Bearer ${ token }`
+    }
   } );
 
   if ( ! res.ok ) throw new Error( `GitHub API: ${ res.status }` );
@@ -134,9 +132,8 @@ async function fetchOrgs ( orgs: string[] ) : Promise< Record< string, Org > > {
         if ( lang ) s.langs[ lang ] = ( s.langs[ lang ] || 0 ) + 1;
       }
 
-      if ( o.repositories.pageInfo.hasNextPage ) {
-        s.after = o.repositories.pageInfo.endCursor;
-      } else {
+      if ( o.repositories.pageInfo.hasNextPage ) s.after = o.repositories.pageInfo.endCursor;
+      else {
         s.done = true;
 
         result[ s.org ] = {
@@ -206,12 +203,10 @@ async function fetchRepos ( repos: Array< [ string, string ] > ) : Promise< Reco
   return result;
 }
 
-// ---- RUNNER ----
+// ---- runner ----
 
 ( async () => {
-  const config = await readConfig();
-  const merger = new Merger();
-
+  const config = await readConfig(), merger = new Merger( { arrayMode: ArrayMode.ReplaceRight } );
   const orgs: string[] = [], repos: Array< [ string, string ] > = [];
 
   for ( const { github } of config.projects ) {
@@ -225,7 +220,7 @@ async function fetchRepos ( repos: Array< [ string, string ] > ) : Promise< Reco
   const projects: Project[] = [];
 
   for ( const project of config.projects ) projects.push( merger.merge< Project >(
-    {} as any, project.github ? data[ project.github ] : undefined, project
+    {} as Project, project.github ? data[ project.github ] : undefined, project
   ) );
 
   await writeFile( join( dir, 'projects.json' ), JSON.stringify( projects, null, 2 ), 'utf-8' );
