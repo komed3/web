@@ -27,8 +27,9 @@ export function Quote () {
     <div
       ref= { ref }
       className= {
-        'flex flex-col items-center px-20 py-32 text-[clamp(2rem,5vw,4rem)] uppercase font-extralight ' +
-        'tracking-[1.4rem] md:tracking-[2rem] overflow-hidden'
+        'flex flex-col items-center px-10 sm:px-14 lg:px-20 py-32 ' +
+        'text-[clamp(2rem,5vw,4rem)] uppercase font-extralight tracking-[0.7rem] ' +
+        'sm:tracking-[1.4rem] md:tracking-[2rem] overflow-hidden'
       }
     >
       <motion.span style= { { x: xFirst, opacity } }>
