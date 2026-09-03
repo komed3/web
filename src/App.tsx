@@ -22,7 +22,7 @@ export default function App () {
       <div
         style= { {
           opacity: contentVisible ? 1 : 0,
-          transition: 'all 0.35s linear'
+          transition: 'opacity 0.35s linear'
         } }
       >
         { /** Content */ }
