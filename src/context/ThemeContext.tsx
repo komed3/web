@@ -1,4 +1,4 @@
-import { createContext, type ReactNode } from 'react';
+import { createContext, useMemo, type ReactNode } from 'react';
 
 
 interface ThemeContextType {}
@@ -35,4 +35,12 @@ function setColorVars ( pathname: string ) {
 const ThemeContext = createContext< ThemeContextType | undefined >( undefined );
 
 
-export function ThemeProvider ( { children }: { children: ReactNode } ) {}
+export function ThemeProvider ( { children }: { children: ReactNode } ) {
+  const value = useMemo( () => ( {} ), [] );
+
+  return (
+    <ThemeContext.Provider value= { value }>
+      { children }
+    </ThemeContext.Provider>
+  );
+}
