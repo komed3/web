@@ -35,6 +35,11 @@ export function Software () {
           Built with open tools_
         </div>
       </div>
+
+      { /** Footer */ }
+      <div className= 'px-6 sm:px-12 text-xs uppercase tracking-[0.3em]'>
+        Open source / free software / independent tools
+      </div>
     </div>
   );
 }
