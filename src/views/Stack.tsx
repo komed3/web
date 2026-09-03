@@ -1,4 +1,5 @@
 import { Skills } from '../components/Skills';
+import { Software } from '../components/Software';
 
 
 export function Stack () {
@@ -7,6 +8,7 @@ export function Stack () {
       <div className= 'pt-12' />
 
       <Skills />
+      <Software />
     </>
   );
 }
