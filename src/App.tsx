@@ -1,13 +1,15 @@
-import { Route, Routes } from 'react-router';
+import { Route, Routes, useNavigate } from 'react-router';
 
 import { useTheme } from './context/ThemeContext';
 import { Cursor } from './effects/Cursor';
+import { PageTransition } from './effects/PageTransition';
 import { Footer } from './layout/Footer';
 import { Header } from './layout/Header';
 
 
 export default function App () {
-  const { contentVisible } = useTheme();
+  const { target, contentVisible, setContentVisible, overlayColor, setColorVars } = useTheme();
+  const navigate = useNavigate();
 
   return (
     <div className= 'bg-(--accent) text-(--main)'>
@@ -32,6 +34,20 @@ export default function App () {
       </div>
 
       <Cursor />
+
+      { target && (
+        <PageTransition
+          color= { overlayColor }
+          onComplete= { () => {
+            window.scrollTo( 0, 0 );
+
+            setColorVars( new URL( target, window.location.origin ).pathname );
+            navigate( target );
+
+            setTimeout( () => setContentVisible( true ), 50 );
+          } }
+        />
+      ) }
     </div>
   );
 }
