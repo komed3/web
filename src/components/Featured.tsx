@@ -1,3 +1,4 @@
+import { AnimatePresence, motion } from 'motion/react';
 import { useState } from 'react';
 
 
@@ -44,7 +45,25 @@ export function Featured () {
   return (
     <div className= 'h-screen py-24'>
       <div className= 'flex flex-col justify-between h-full p-12 overflow-hidden bg-(--main) text-(--contrast)'>
-        //
+        { /** Header */ }
+        <div className= 'flex justify-between items-start text-xs uppercase tracking-[0.3em]'>
+          <div>Featured project</div>
+
+          <AnimatePresence mode= 'wait'>
+            <motion.div
+              key= { current }
+              className= 'flex gap-2'
+              initial= { { opacity: 0, y: 10 } }
+              animate= { { opacity: 1, y: 0 } }
+              exit= { { opacity: 0, y: -10 } }
+              transition= { transition }
+            >
+              <span>{ String( current + 1 ).padStart( 2, '0' ) }</span>
+              <span>/</span>
+              <span>{ String( PROJECTS.length ).padStart( 2, '0' ) }</span>
+            </motion.div>
+          </AnimatePresence>
+        </div>
       </div>
     </div>
   );
