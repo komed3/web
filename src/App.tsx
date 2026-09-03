@@ -7,6 +7,7 @@ import { Footer } from './layout/Footer';
 import { Header } from './layout/Header';
 
 import { Home } from './views/Home';
+import { Stack } from './views/Stack';
 
 
 export default function App () {
@@ -29,7 +30,7 @@ export default function App () {
         <main className= 'min-h-screen'>
           <Routes>
             <Route path= '/' element= { <Home /> } />
-            <Route path= '/stack' element= { <></> } />
+            <Route path= '/stack' element= { <Stack /> } />
             <Route path= '/project/:id' element= { <></> } />
             <Route path= '/index' element= { <></> } />
           </Routes>
