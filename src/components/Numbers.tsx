@@ -10,9 +10,19 @@ const NUMBERS = [
 
 export function Numbers () {
   return (
-    <div className= 'grid md:grid-cols-2 2xl:flex gap-6 sm:gap-12 py-16 whitespace-nowrap divide-x divide-(--main)'>
+    <div
+      className= {
+        'grid md:grid-cols-2 2xl:flex gap-6 sm:gap-12 px-6 sm:px-12 py-16 ' +
+        'whitespace-nowrap md:divide-x divide-(--main)'
+      }
+    >
       { /** Label */ }
-      <div className= 'shrink-0 flex flex-col px-12 text-2xl uppercase font-extralight tracking-widest'>
+      <div
+        className= {
+          'shrink-0 flex md:flex-col flex-wrap gap-x-2 sm:px-12 py-6 md:py-0 ' +
+          'text-2xl uppercase font-extralight tracking-widest'
+        }
+      >
         <span>By the</span>
         <span>numbers</span>
         <span>_</span>
