@@ -1,3 +1,4 @@
+import { motion } from 'motion/react';
 import {
   SiCplusplus, SiCss, SiJavascript, SiLinux, SiNodedotjs, SiOnlyoffice, SiPhp,
   SiPython, SiReact, SiTailwindcss, SiTypescript, SiWordpress
@@ -27,7 +28,14 @@ export function Skills () {
         <div
           key= { label }
           className= 'p-12 bg-(--accent)'
-        ></div>
+        >
+          <motion.div
+            initial= { { y: 40, opacity: 0 } }
+            whileInView= { { y: 0, opacity: 1 } }
+            transition= { { delay: i * 0.03 } }
+            viewport= { { once: true, amount: 0.3 } }
+          ></motion.div>
+        </div>
       ) ) }
     </div>
   );
