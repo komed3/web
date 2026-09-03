@@ -35,9 +35,14 @@ const RESOURCES = [ {
 
 export function Hardware () {
   return (
-    <div className= 'flex items-stretch py-16 divide-x divide-(--main)'>
+    <div className= 'grid md:grid-cols-2 xl:flex gap-px my-16 whitespace-nowrap bg-(--main)'>
       { /** Label */ }
-      <div className= 'shrink-0 flex flex-col px-12 text-2xl uppercase font-extralight tracking-widest'>
+      <div
+        className= {
+          'shrink-0 flex md:flex-col flex-wrap gap-x-2 px-6 sm:px-12 py-6 xl:py-0 ' +
+          'text-2xl uppercase font-extralight tracking-widest bg-(--accent)'
+        }
+      >
         <span>Hardware</span>
         <span>resources</span>
         <span>_</span>
