@@ -36,6 +36,16 @@ export function Software () {
         </div>
       </div>
 
+      { /** Content */ }
+      <div className= 'grid lg:grid-cols-2 gap-px mx-6 sm:mx-12 my-16 bg-(--contrast)'>
+        { SOFTWARE.map( ( { label, desc, icon: Icon }, i ) => (
+          <div
+            key= { label }
+            className= { 'py-12 bg-(--main) ' + ( i % 2 == 0 ? 'lg:pr-12' : 'lg:pl-12' ) }
+          ></div>
+        ) ) }
+      </div>
+
       { /** Footer */ }
       <div className= 'px-6 sm:px-12 text-xs uppercase tracking-[0.3em]'>
         Open source / free software / independent tools
