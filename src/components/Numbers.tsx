@@ -10,7 +10,7 @@ const NUMBERS = [
 
 export function Numbers () {
   return (
-    <div className= 'flex items-stretch py-16 divide-x divide-(--main)'>
+    <div className= 'grid md:grid-cols-2 2xl:flex gap-6 sm:gap-12 py-16 whitespace-nowrap divide-x divide-(--main)'>
       { /** Label */ }
       <div className= 'shrink-0 flex flex-col px-12 text-2xl uppercase font-extralight tracking-widest'>
         <span>By the</span>
@@ -22,7 +22,7 @@ export function Numbers () {
       { NUMBERS.map( ( { label, value }, i ) => (
         <div
           key= { label }
-          className= 'flex-1 px-12 pt-20 text-right'
+          className= 'flex-1 px-6 sm:px-12 pt-20 text-right'
         >
           <motion.div
             initial= { { y: 200, opacity: 0 } }
