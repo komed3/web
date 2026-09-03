@@ -8,7 +8,7 @@ export function Home () {
         text= { (
           <>
             Hi, I'm <b>komed3</b>, a freelance <b>software</b> developer focusing
-            on <b>Node.js</b>, data visualization, and <b>modern web</b> technology.
+            on <b>Node.js</b>, data visuali&shy;zation, and <b>modern web</b> techno&shy;logy.
           </>
         ) }
       />
