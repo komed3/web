@@ -27,7 +27,7 @@ export function Skills () {
       { SKILLS.map( ( { label, icon: Icon }, i ) => (
         <div
           key= { label }
-          className= 'p-12 bg-(--accent)'
+          className= 'p-6 sm:p-12 bg-(--accent)'
         >
           <motion.div
             initial= { { y: 40, opacity: 0 } }
