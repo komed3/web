@@ -1,4 +1,4 @@
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import { useState } from 'react';
 import { Link } from 'react-router';
@@ -110,6 +110,40 @@ export function Featured () {
               </Link>
             </motion.div>
           </AnimatePresence>
+        </div>
+
+        { /** Navigation */ }
+        <div className= 'flex justify-between items-end'>
+          <AnimatePresence mode= 'wait'>
+            <motion.div
+              key= { project.uri }
+              className= 'text-xs uppercase tracking-[0.3em]'
+              initial= { { opacity: 0 } }
+              animate= { { opacity: 1 } }
+              exit= { { opacity: 0 } }
+              transition= { transition }
+            >
+              { project.link }
+            </motion.div>
+          </AnimatePresence>
+
+          <div className= 'flex border border-(--contrast) divide-x divide-(--contrast)'>
+            <button
+              onClick= { previous }
+              className= 'flex size-14 justify-center items-center'
+              aria-label= 'Previous project'
+            >
+              <ChevronLeft size= { 20 } />
+            </button>
+
+            <button
+              onClick= { next }
+              className= 'flex size-14 justify-center items-center'
+              aria-label= 'Next project'
+            >
+              <ChevronRight size= { 20 } />
+            </button>
+          </div>
         </div>
       </div>
     </div>
