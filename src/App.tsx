@@ -6,6 +6,8 @@ import { PageTransition } from './effects/PageTransition';
 import { Footer } from './layout/Footer';
 import { Header } from './layout/Header';
 
+import { Home } from './views/Home';
+
 
 export default function App () {
   const { target, contentVisible, setContentVisible, overlayColor, setColorVars } = useTheme();
@@ -26,7 +28,7 @@ export default function App () {
         { /** Content */ }
         <main className= 'min-h-screen'>
           <Routes>
-            <Route path= '/' element= { <></> } />
+            <Route path= '/' element= { <Home /> } />
             <Route path= '/stack' element= { <></> } />
             <Route path= '/project/:id' element= { <></> } />
             <Route path= '/index' element= { <></> } />
