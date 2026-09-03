@@ -1,3 +1,6 @@
+import { useState } from 'react';
+
+
 const PROJECTS = [ {
   uri: 'airportmap',
   name: 'Airportmap',
@@ -24,8 +27,20 @@ const PROJECTS = [ {
   link: 'github.com/plsrc'
 } ] as const;
 
+const transition = {
+  duration: 0.6,
+  ease: [ 0.76, 0, 0.24, 1 ]
+} as const;
+
 
 export function Featured () {
+  const [ current, setCurrent ] = useState( 0 );
+
+  const previous = () => setCurrent( current === 0 ? PROJECTS.length - 1 : current - 1 );
+  const next = () => setCurrent( ( current + 1 ) % PROJECTS.length );
+
+  const project = PROJECTS[ current ];
+
   return (
     <></>
   );
