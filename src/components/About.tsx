@@ -2,8 +2,12 @@ import { ArrowUpRight } from 'lucide-react';
 import { motion } from 'motion/react';
 
 
-const transition = { duration: 1.2, ease: [ 0.22, 1, 0.36, 1 ] } as const;
-const viewport = { once: true, amount: 0.3 } as const;
+const motionProps = {
+  initial: { y: 40, opacity: 0 },
+  whileInView: { y: 0, opacity: 1 },
+  transition: { duration: 1.2, ease: [ 0.22, 1, 0.36, 1 ] },
+  viewport: { once: true, amount: 0.3 }
+} as const;
 
 
 export function About () {
@@ -11,10 +15,7 @@ export function About () {
     <div className= 'px-6 sm:px-12 py-24 sm:py-40'>
       { /** Statement */ }
       <motion.div
-        initial= { { y: 40, opacity: 0 } }
-        whileInView= { { y: 0, opacity: 1 } }
-        transition= { transition }
-        viewport= { viewport }
+        { ...motionProps }
         className= {
           'flex flex-col text-[clamp(3.5rem,8vw,5rem)] uppercase font-black ' +
           'tracking-tight leading-[0.9]'
@@ -29,10 +30,7 @@ export function About () {
       <div className= 'grid lg:grid-cols-2 gap-16 lg:gap-24 mt-16 sm:mt-40'>
         { /** About */ }
         <motion.div
-          initial= { { y: 40, opacity: 0 } }
-          whileInView= { { y: 0, opacity: 1 } }
-          transition= { transition }
-          viewport= { viewport }
+          { ...motionProps }
           className= 'space-y-8 text-[clamp(1.5rem,3vw,1.875rem)] font-extralight leading-relaxed'
         >
           <p>
@@ -50,10 +48,7 @@ export function About () {
 
         { /** Philosophy */ }
         <motion.div
-          initial= { { y: 40, opacity: 0 } }
-          whileInView= { { y: 0, opacity: 1 } }
-          transition= { transition }
-          viewport= { viewport }
+          { ...motionProps }
           className= {
             'flex flex-col justify-end gap-8 text-[clamp(1.25rem,2.5vw,1.5rem)] ' +
             'font-extralight leading-relaxed'
@@ -77,10 +72,7 @@ export function About () {
 
       { /** Contact */ }
       <motion.div
-        initial= { { y: 40, opacity: 0 } }
-        whileInView= { { y: 0, opacity: 1 } }
-        transition= { transition }
-        viewport= { viewport }
+        { ...motionProps }
         className= {
           'flex flex-col lg:flex-row lg:justify-between lg:items-end gap-12 mt-16 ' +
           'sm:mt-40 pt-8 font-extralight border-t border-(--main)'
