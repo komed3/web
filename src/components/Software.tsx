@@ -42,7 +42,15 @@ export function Software () {
           <div
             key= { label }
             className= { 'py-12 bg-(--main) ' + ( i % 2 == 0 ? 'lg:pr-12' : 'lg:pl-12' ) }
-          ></div>
+          >
+            <motion.div
+              className= 'flex justify-between items-center gap-12'
+              initial= { { y: 40, opacity: 0 } }
+              whileInView= { { y: 0, opacity: 1 } }
+              transition= { { delay: i * 0.15 } }
+              viewport= { { once: true, amount: 0.3 } }
+            ></motion.div>
+          </div>
         ) ) }
       </div>
 
