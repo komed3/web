@@ -1,5 +1,6 @@
 import { External } from '../components/External';
 import { Intro } from '../components/Intro';
+import { Quote } from '../components/Quote';
 
 
 export function Home () {
@@ -15,6 +16,7 @@ export function Home () {
       />
 
       <External />
+      <Quote />
     </>
   );
 }
