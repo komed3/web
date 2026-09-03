@@ -3,7 +3,16 @@ import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { useLocation } from 'react-router';
 
 
-interface ThemeContextType {}
+interface ThemeContextType {
+  pathname: string;
+  target: string | null;
+  setTarget: ( value: string | null ) => void;
+  contentVisible: boolean;
+  setContentVisible: ( value: boolean ) => void;
+  overlayColor: '#fff' | '#000' | '#ea580c' | '#fbbf24';
+  getColorVars: typeof getColorVars,
+  setColorVars: ( pathname: string ) => void
+}
 
 
 const THEMES = {
@@ -12,7 +21,6 @@ const THEMES = {
   project: { accent: '#fbbf24', main: '#000', contrast: '#fff' },
   index:   { accent: '#000',    main: '#fff', contrast: '#000' }
 } as const;
-
 
 const ROUTES = [
   [ /^\/$/,               'default' ],
@@ -25,7 +33,6 @@ const ROUTES = [
 function getColorVars ( pathname: string ) {
   return THEMES[ ROUTES.find( ( [ pattern ] ) => pattern.test( pathname ) )?.[ 1 ] ?? 'default' ];
 }
-
 
 function setColorVars ( pathname: string ) {
   Object.entries( getColorVars( pathname ) ).forEach( ( [ key, value ] ) =>
@@ -80,10 +87,10 @@ export function ThemeProvider ( { children }: { children: ReactNode } ) {
     ? getColorVars( new URL( target, window.location.origin ).pathname ).accent
     : '#000';
 
-  const value = useMemo(
-    () => ( { pathname, target, setTarget, contentVisible, setContentVisible, overlayColor } ),
-    [ pathname ]
-  );
+  const value = useMemo( () => ( {
+    pathname, target, setTarget, contentVisible, setContentVisible, overlayColor,
+    getColorVars, setColorVars
+  } ), [ pathname ] );
 
   return (
     <ThemeContext.Provider value= { value }>
