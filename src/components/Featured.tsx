@@ -30,10 +30,8 @@ const PROJECTS = [ {
   link: 'github.com/plsrc'
 } ] as const;
 
-const transition = {
-  duration: 0.6,
-  ease: [ 0.76, 0, 0.24, 1 ]
-} as const;
+const transition = { duration: 0.6, ease: [ 0.76, 0, 0.24, 1 ] } as const;
+const viewport = { once: true, amount: 0.3 } as const;
 
 
 export function Featured () {
@@ -46,7 +44,16 @@ export function Featured () {
 
   return (
     <div className= 'h-screen py-24'>
-      <div className= 'flex flex-col justify-between h-full p-12 overflow-hidden bg-(--main) text-(--contrast)'>
+      <motion.div
+        initial= { { y: 200, opacity: 0 } }
+        whileInView= { { y: 0, opacity: 1 } }
+        transition= { { duration: 1.2, ease: [ 0.22, 1, 0.36, 1 ] } }
+        viewport= { viewport }
+        className= {
+          'flex flex-col justify-between h-full p-12 overflow-hidden ' +
+          'bg-(--main) text-(--contrast)'
+        }
+      >
         { /** Header */ }
         <div className= 'flex justify-between items-start text-xs uppercase tracking-[0.3em]'>
           <div>Featured project</div>
@@ -56,9 +63,10 @@ export function Featured () {
               key= { current }
               className= 'flex gap-2'
               initial= { { opacity: 0, y: 10 } }
-              animate= { { opacity: 1, y: 0 } }
+              whileInView= { { opacity: 1, y: 0 } }
               exit= { { opacity: 0, y: -10 } }
               transition= { transition }
+              viewport= { viewport }
             >
               <span>{ String( current + 1 ).padStart( 2, '0' ) }</span>
               <span>/</span>
@@ -74,9 +82,10 @@ export function Featured () {
               key= { project.uri }
               className= 'flex justify-between items-end gap-24'
               initial= { { opacity: 0, y: 80 } }
-              animate= { { opacity: 1, y: 0 } }
+              whileInView= { { opacity: 1, y: 0 } }
               exit= { { opacity: 0, y: -80 } }
               transition= { transition }
+              viewport= { viewport }
             >
               <div>
                 <div className= 'text-xs uppercase tracking-[0.3em]'>
@@ -122,9 +131,10 @@ export function Featured () {
               rel= 'noreferrer'
               className= 'text-xs uppercase tracking-[0.3em]'
               initial= { { opacity: 0, y: 10 } }
-              animate= { { opacity: 1, y: 0 } }
+              whileInView= { { opacity: 1, y: 0 } }
               exit= { { opacity: 0, y: -10 } }
               transition= { transition }
+              viewport= { viewport }
             >
               { project.link }
             </motion.a>
@@ -148,7 +158,7 @@ export function Featured () {
             </button>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
