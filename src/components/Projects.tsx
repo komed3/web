@@ -1,3 +1,9 @@
+import projects from '../../data/projects.json';
+
+
+const PAGE_SIZE = 8;
+
+
 export function Projects () {
   return (
     <>
