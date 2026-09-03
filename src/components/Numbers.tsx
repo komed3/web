@@ -10,17 +10,12 @@ const NUMBERS = [
 
 export function Numbers () {
   return (
-    <div
-      className= {
-        'grid md:grid-cols-2 2xl:flex gap-6 sm:gap-12 px-6 sm:px-12 py-16 ' +
-        'whitespace-nowrap md:divide-x divide-(--main)'
-      }
-    >
+    <div className= 'grid md:grid-cols-2 xl:flex gap-px my-16 whitespace-nowrap bg-(--main)'>
       { /** Label */ }
       <div
         className= {
-          'shrink-0 flex md:flex-col flex-wrap gap-x-2 sm:px-12 py-6 md:py-0 ' +
-          'text-2xl uppercase font-extralight tracking-widest'
+          'shrink-0 flex md:flex-col flex-wrap gap-x-2 px-6 sm:px-12 py-6 xl:py-0 ' +
+          'text-2xl uppercase font-extralight tracking-widest bg-(--accent)'
         }
       >
         <span>By the</span>
@@ -32,7 +27,7 @@ export function Numbers () {
       { NUMBERS.map( ( { label, value }, i ) => (
         <div
           key= { label }
-          className= 'flex-1 px-6 sm:px-12 pt-20 text-right'
+          className= 'flex-1 px-6 sm:px-12 pt-20 pb-6 xl:pb-0 text-right bg-(--accent)'
         >
           <motion.div
             initial= { { y: 200, opacity: 0 } }
@@ -40,7 +35,7 @@ export function Numbers () {
             transition= { { delay: i * 0.15 } }
             viewport= { { once: true, amount: 0.3 } }
           >
-            <div className= 'text-9xl font-extralight tracking-tighter'>
+            <div className= 'text-8xl 2xl:text-9xl font-extralight tracking-tighter'>
               { value }
             </div>
 
