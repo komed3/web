@@ -76,6 +76,30 @@ export function Footer () {
           </div>
         ) ) }
       </div>
+
+      { /** Meta */ }
+      <div className= 'grid grid-cols-2 items-end'>
+        { /** Logo */ }
+        <div>
+          <Link
+            to= '/'
+            aria-label= 'komed3'
+          >
+            <Logo className= 'w-48 h-auto' />
+          </Link>
+        </div>
+
+        { /** Copyright + Build Info */ }
+        <div className= 'flex flex-col justify-end items-end text-sm uppercase font-extralight'>
+          <div className= 'tracking-[0.4rem]'>
+            Designed and developed by komed3
+          </div>
+
+          <div className= 'font-mono text-[11px] tracking-widest'>
+            Build { build } / { hash }
+          </div>
+        </div>
+      </div>
     </footer>
   );
 }
