@@ -95,7 +95,7 @@ export function ThemeProvider ( { children }: { children: ReactNode } ) {
   const value = useMemo( () => ( {
     pathname, target, setTarget, contentVisible, setContentVisible, overlayColor,
     getColorVars, setColorVars, THEMES, ROUTES
-  } ), [ pathname ] );
+  } ), [] );
 
   return (
     <ThemeContext.Provider value= { value }>
