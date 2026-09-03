@@ -18,3 +18,10 @@ const SKILLS = [
   { label: 'SQL / NoSQL', icon: SiOnlyoffice },
   { label: 'Wordpress', icon: SiWordpress }
 ] as const;
+
+
+export function Skills () {
+  return (
+    <div className= 'grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-px my-16 bg-(--main)'></div>
+  );
+}
