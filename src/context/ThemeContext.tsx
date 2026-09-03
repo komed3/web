@@ -1,3 +1,9 @@
+import { createContext, type ReactNode } from 'react';
+
+
+interface ThemeContextType {}
+
+
 const THEMES = {
   default: { accent: '#fff',    main: '#000', contrast: '#fff' },
   stack:   { accent: '#ea580c', main: '#fff', contrast: '#000' },
@@ -24,3 +30,9 @@ function setColorVars ( pathname: string ) {
     document.documentElement.style.setProperty( `--${ key }`, value )
   );
 }
+
+
+const ThemeContext = createContext< ThemeContextType | undefined >( undefined );
+
+
+export function ThemeProvider ( { children }: { children: ReactNode } ) {}
