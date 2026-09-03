@@ -5,13 +5,18 @@ import { useLocation } from 'react-router';
 
 interface ThemeContextType {
   pathname: string;
+
   target: string | null;
   setTarget: ( value: string | null ) => void;
   contentVisible: boolean;
   setContentVisible: ( value: boolean ) => void;
   overlayColor: '#fff' | '#000' | '#ea580c' | '#fbbf24';
+
   getColorVars: typeof getColorVars,
-  setColorVars: ( pathname: string ) => void
+  setColorVars: ( pathname: string ) => void,
+
+  readonly THEMES: typeof THEMES,
+  readonly ROUTES: typeof ROUTES
 }
 
 
@@ -89,7 +94,7 @@ export function ThemeProvider ( { children }: { children: ReactNode } ) {
 
   const value = useMemo( () => ( {
     pathname, target, setTarget, contentVisible, setContentVisible, overlayColor,
-    getColorVars, setColorVars
+    getColorVars, setColorVars, THEMES, ROUTES
   } ), [ pathname ] );
 
   return (
