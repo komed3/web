@@ -49,7 +49,17 @@ export function Software () {
               whileInView= { { y: 0, opacity: 1 } }
               transition= { { delay: i * 0.15 } }
               viewport= { { once: true, amount: 0.3 } }
-            ></motion.div>
+            >
+              <div className= 'space-y-2'>
+                <div className= 'text-xs uppercase tracking-[0.3em]'>
+                  { desc }
+                </div>
+
+                <div className= 'text-3xl font-light tracking-tight'>
+                  { label }
+                </div>
+              </div>
+            </motion.div>
           </div>
         ) ) }
       </div>
