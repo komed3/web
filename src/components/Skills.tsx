@@ -34,7 +34,11 @@ export function Skills () {
             whileInView= { { y: 0, opacity: 1 } }
             transition= { { delay: i * 0.03 } }
             viewport= { { once: true, amount: 0.3 } }
-          ></motion.div>
+          >
+            <div className= 'flex justify-end mb-16'>
+              <Icon size= { 64 } />
+            </div>
+          </motion.div>
         </div>
       ) ) }
     </div>
