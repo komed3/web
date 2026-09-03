@@ -115,8 +115,11 @@ export function Featured () {
         { /** Navigation */ }
         <div className= 'flex justify-between items-end'>
           <AnimatePresence mode= 'wait'>
-            <motion.div
+            <motion.a
               key= { project.uri }
+              href= { `https://${ project.link }` }
+              target= '_blank'
+              rel= 'noreferrer'
               className= 'text-xs uppercase tracking-[0.3em]'
               initial= { { opacity: 0, y: 10 } }
               animate= { { opacity: 1, y: 0 } }
@@ -124,7 +127,7 @@ export function Featured () {
               transition= { transition }
             >
               { project.link }
-            </motion.div>
+            </motion.a>
           </AnimatePresence>
 
           <div className= 'flex border border-(--contrast) divide-x divide-(--contrast)'>
