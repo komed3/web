@@ -62,8 +62,8 @@ export function Footer () {
               ) : (
                 <Link
                   key= { url }
-                  className= 'font-bold'
                   to= { url }
+                  className= 'font-bold'
                 >
                   { text }
                 </Link>
@@ -80,26 +80,27 @@ export function Footer () {
       </div>
 
       { /** Meta */ }
-      <div className= 'grid grid-cols-2 items-end'>
+      <div className= 'grid sm:grid-cols-2 items-end'>
         { /** Logo */ }
         <div>
           <Link
             to= '/'
+            className= 'hidden sm:inline'
             aria-label= 'komed3'
           >
-            <Logo className= 'w-48 h-auto' />
+            <Logo className= 'w-40 md:w-48 h-auto' />
           </Link>
         </div>
 
         { /** Copyright + Build Info */ }
-        <div className= 'flex flex-col justify-end items-end text-sm uppercase font-extralight'>
-          <div className= 'tracking-[0.4rem]'>
+        <div className= 'flex flex-col justify-end items-end text-right text-sm uppercase'>
+          <p className= '-mr-1 font-extralight tracking-[0.4rem]'>
             Designed and developed by komed3
-          </div>
+          </p>
 
-          <div className= 'font-mono text-[11px] tracking-widest'>
+          <p className= 'font-mono font-light text-[11px] tracking-widest opacity-70'>
             Build { build } / { hash }
-          </div>
+          </p>
         </div>
       </div>
     </footer>
