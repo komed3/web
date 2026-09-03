@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router';
+import { useLocation } from 'react-router';
 
 
 interface ThemeContextType {}
@@ -39,8 +39,6 @@ const ThemeContext = createContext< ThemeContextType | undefined >( undefined );
 
 export function ThemeProvider ( { children }: { children: ReactNode } ) {
   const { pathname } = useLocation();
-  const navigate = useNavigate();
-
   const [ target, setTarget ] = useState< string | null >( null );
   const [ contentVisible, setContentVisible ] = useState( true );
 
@@ -82,7 +80,10 @@ export function ThemeProvider ( { children }: { children: ReactNode } ) {
     ? getColorVars( new URL( target, window.location.origin ).pathname ).accent
     : '#000';
 
-  const value = useMemo( () => ( {} ), [] );
+  const value = useMemo(
+    () => ( { pathname, target, setTarget, contentVisible, setContentVisible, overlayColor } ),
+    [ pathname ]
+  );
 
   return (
     <ThemeContext.Provider value= { value }>
