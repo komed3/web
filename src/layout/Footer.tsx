@@ -70,8 +70,10 @@ export function Footer () {
               ) ) }
             </nav>
       
-            <div className= 'mt-8 text-right text-[10px] uppercase font-extralight tracking-widest opacity-75'>
-              { label }
+            <div className= 'mt-10 text-right text-[10px] uppercase font-light tracking-widest'>
+              <span className= 'pt-1 border-t'>
+                { label }
+              </span>
             </div>
           </div>
         ) ) }
