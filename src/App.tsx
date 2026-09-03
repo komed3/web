@@ -13,14 +13,17 @@ export default function App () {
 
   return (
     <div className= 'bg-(--accent) text-(--main)'>
+      { /** Header */ }
       <Header />
 
+      { /** Page */ }
       <div
         style= { {
           opacity: contentVisible ? 1 : 0,
           transition: 'all 0.35s linear'
         } }
       >
+        { /** Content */ }
         <main className= 'min-h-screen'>
           <Routes>
             <Route path= '/' element= { <></> } />
@@ -30,11 +33,14 @@ export default function App () {
           </Routes>
         </main>
 
+        { /** Footer */ }
         <Footer />
       </div>
 
+      { /** Effect: Cursor */ }
       <Cursor />
 
+      { /** Effect: Page Transition */ }
       { target && (
         <PageTransition
           color= { overlayColor }
