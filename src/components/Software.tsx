@@ -16,7 +16,7 @@ const SOFTWARE = [ {
   desc: 'Vector graphics',
   icon: SiInkscape
 }, {
-  label: 'Krita / Gimp',
+  label: 'Krita / GIMP',
   desc: 'Digital graphics',
   icon: SiKrita
 } ] as const;
