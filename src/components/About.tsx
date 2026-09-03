@@ -64,6 +64,38 @@ export function About () {
           </p>
         </motion.div>
       </div>
+
+      { /** Contact */ }
+      <motion.div
+        initial= { { y: 40, opacity: 0 } }
+        whileInView= { { y: 0, opacity: 1 } }
+        transition= { { duration: 1.2, ease: [ 0.22, 1, 0.36, 1 ] } }
+        viewport= { { once: true, amount: 0.3 } }
+        className= 'flex justify-between items-end mt-40 pt-8 border-t border-(--main)'
+      >
+        <div className= 'space-y-8'>
+          <div className= 'text-xs uppercase font-extralight tracking-[0.4rem]'>
+            Get in touch
+          </div>
+
+          <p className= 'max-w-xl text-2xl font-extralight leading-relaxed'>
+            Open for collaborations, freelance projects, and technical
+            consulting. If you have something worth building, feel free to
+            reach out.
+          </p>
+        </div>
+
+        { /** Mailto Link */ }
+        <a
+          href= 'mailto:hello@komed3.de'
+          target= '_blank'
+          rel= 'noreferrer'
+          className= 'inline-flex items-center gap-3 text-2xl font-black uppercase tracking-wider'
+        >
+          <span>Get in touch</span>
+          <ArrowUpRight size= { 28 } strokeWidth= { 1.6 } />
+        </a>
+      </motion.div>
     </div>
   );
 }
