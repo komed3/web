@@ -10,7 +10,7 @@ interface ThemeContextType {
   setTarget: ( value: string | null ) => void;
   contentVisible: boolean;
   setContentVisible: ( value: boolean ) => void;
-  overlayColor: '#fff' | '#000' | '#ea580c' | '#fbbf24';
+  overlayColor: '#fff' | '#000' | '#2563eb' | '#fbbf24';
 
   getColorVars: typeof getColorVars,
   setColorVars: ( pathname: string ) => void,
@@ -22,7 +22,7 @@ interface ThemeContextType {
 
 const THEMES = {
   default: { accent: '#fff',    main: '#000', contrast: '#fff' },
-  stack:   { accent: '#ea580c', main: '#fff', contrast: '#000' },
+  stack:   { accent: '#2563eb', main: '#fff', contrast: '#000' },
   project: { accent: '#fbbf24', main: '#000', contrast: '#fff' },
   index:   { accent: '#000',    main: '#fff', contrast: '#000' }
 } as const;
