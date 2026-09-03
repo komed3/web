@@ -7,6 +7,7 @@ import { Footer } from './layout/Footer';
 import { Header } from './layout/Header';
 
 import { Home } from './views/Home';
+import { Index } from './views/Index';
 import { Stack } from './views/Stack';
 
 
@@ -32,7 +33,7 @@ export default function App () {
             <Route path= '/' element= { <Home /> } />
             <Route path= '/stack' element= { <Stack /> } />
             <Route path= '/project/:id' element= { <></> } />
-            <Route path= '/index' element= { <></> } />
+            <Route path= '/index' element= { <Index /> } />
           </Routes>
         </main>
 
