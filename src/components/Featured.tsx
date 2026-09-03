@@ -118,9 +118,9 @@ export function Featured () {
             <motion.div
               key= { project.uri }
               className= 'text-xs uppercase tracking-[0.3em]'
-              initial= { { opacity: 0 } }
-              animate= { { opacity: 1 } }
-              exit= { { opacity: 0 } }
+              initial= { { opacity: 0, y: 10 } }
+              animate= { { opacity: 1, y: 0 } }
+              exit= { { opacity: 0, y: -10 } }
               transition= { transition }
             >
               { project.link }
