@@ -38,6 +38,10 @@ export function Skills () {
             <div className= 'flex justify-end mb-16'>
               <Icon size= { 64 } />
             </div>
+
+            <div className= 'text-2xl uppercase font-extralight tracking-widest'>
+              { label }
+            </div>
           </motion.div>
         </div>
       ) ) }
