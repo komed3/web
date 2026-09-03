@@ -1,3 +1,4 @@
+import { Featured } from '../components/Featured';
 import { Intro } from '../components/Intro';
 
 
@@ -12,6 +13,8 @@ export function Home () {
           </>
         ) }
       />
+
+      <Featured />
     </>
   );
 }
