@@ -22,6 +22,13 @@ const SKILLS = [
 
 export function Skills () {
   return (
-    <div className= 'grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-px my-16 bg-(--main)'></div>
+    <div className= 'grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-px my-16 bg-(--main)'>
+      { SKILLS.map( ( { label, icon: Icon }, i ) => (
+        <div
+          key= { label }
+          className= 'p-12 bg-(--accent)'
+        ></div>
+      ) ) }
+    </div>
   );
 }
