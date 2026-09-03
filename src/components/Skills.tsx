@@ -6,7 +6,7 @@ import {
 
 
 const SKILLS = [
-  { label: 'Typescript', icon: SiTypescript },
+  { label: 'TypeScript', icon: SiTypescript },
   { label: 'JavaScript', icon: SiJavascript },
   { label: 'C++', icon: SiCplusplus },
   { label: 'PHP', icon: SiPhp },
@@ -17,7 +17,7 @@ const SKILLS = [
   { label: 'Tailwind', icon: SiTailwindcss },
   { label: 'Web Design', icon: SiCss },
   { label: 'SQL / NoSQL', icon: SiOnlyoffice },
-  { label: 'Wordpress', icon: SiWordpress }
+  { label: 'WordPress', icon: SiWordpress }
 ] as const;
 
 
