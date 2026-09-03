@@ -35,7 +35,7 @@ const RESOURCES = [ {
 
 export function Hardware () {
   return (
-    <div className= 'grid md:grid-cols-2 2xl:flex gap-px my-16 whitespace-nowrap bg-(--main)'>
+    <div className= 'grid md:grid-cols-2 2xl:flex gap-px my-16 bg-(--main)'>
       { /** Label */ }
       <div
         className= {
@@ -64,7 +64,7 @@ export function Hardware () {
               { label }
             </div>
 
-            <div className= 'mt-10 text-7xl font-extralight tracking-tighter'>
+            <div className= 'mt-10 text-5xl sm:text-7xl font-extralight tracking-tighter'>
               { title }
             </div>
 
