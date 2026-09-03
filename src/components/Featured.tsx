@@ -1,5 +1,7 @@
+import { ArrowUpRight } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import { useState } from 'react';
+import { Link } from 'react-router';
 
 
 const PROJECTS = [ {
@@ -61,6 +63,51 @@ export function Featured () {
               <span>{ String( current + 1 ).padStart( 2, '0' ) }</span>
               <span>/</span>
               <span>{ String( PROJECTS.length ).padStart( 2, '0' ) }</span>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        { /** Content */ }
+        <div className= 'relative'>
+          <AnimatePresence mode= 'wait'>
+            <motion.div
+              key= { project.uri }
+              className= 'flex justify-between items-end gap-24'
+              initial= { { opacity: 0, y: 80 } }
+              animate= { { opacity: 1, y: 0 } }
+              exit= { { opacity: 0, y: -80 } }
+              transition= { transition }
+            >
+              <div>
+                <div className= 'text-xs uppercase tracking-[0.3em]'>
+                  { project.category }
+                </div>
+
+                <div className= 'mt-4 text-[clamp(5rem,12vw,12rem)] font-extralight leading-none tracking-tighter'>
+                  { project.name }
+                </div>
+
+                <p className= 'mt-8 text-2xl font-light leading-relaxed'>
+                  { project.desc }
+                </p>
+              </div>
+
+              <Link
+                to= { `/project/${ project.uri }` }
+                className= {
+                  'shrink-0 flex flex-col items-end gap-2 text-2xl uppercase ' +
+                  'font-extralight tracking-[0.3em]'
+                }
+              >
+                <span>View</span>
+                <span>project</span>
+
+                <ArrowUpRight
+                  className= '-mr-3.5'
+                  size= { 80 }
+                  strokeWidth= { 0.3 }
+                />
+              </Link>
             </motion.div>
           </AnimatePresence>
         </div>
