@@ -1,4 +1,4 @@
-import { Routes } from 'react-router';
+import { Route, Routes } from 'react-router';
 
 import { useTheme } from './context/ThemeContext';
 import { Cursor } from './effects/Cursor';
@@ -20,7 +20,12 @@ export default function App () {
         } }
       >
         <main className= 'min-h-screen'>
-          <Routes></Routes>
+          <Routes>
+            <Route path= '/' element= { <></> } />
+            <Route path= '/stack' element= { <></> } />
+            <Route path= '/project/:id' element= { <></> } />
+            <Route path= '/index' element= { <></> } />
+          </Routes>
         </main>
 
         <Footer />
