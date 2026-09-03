@@ -59,6 +59,8 @@ export function Software () {
                   { label }
                 </div>
               </div>
+
+              <Icon size= { 48 } className= 'hidden sm:block' />
             </motion.div>
           </div>
         ) ) }
