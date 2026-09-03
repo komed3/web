@@ -42,6 +42,10 @@ export function Featured () {
   const project = PROJECTS[ current ];
 
   return (
-    <></>
+    <div className= 'my-20 h-screen'>
+      <div className= 'flex flex-col justify-between h-full p-12 overflow-hidden bg-(--main) text-(--contrast)'>
+        //
+      </div>
+    </div>
   );
 }
