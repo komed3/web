@@ -50,14 +50,18 @@ export function Project () {
             [ 'Status', project.status ],
             [ 'Language', project.meta?.langs?.join( ', ' ) ],
             [ 'Year', project.meta?.year ]
-          ].map( ( [ label, value ] ) => value && (
-            <div
+          ].map( ( [ label, value ], i ) => value && (
+            <motion.div
               key= { label }
+              initial= { { y: 50, opacity: 0 } }
+              whileInView= { { y: 0, opacity: 1 } }
+              transition= { { delay: i * 0.05 } }
+              viewport= { { once: true, amount: 0.3 } }
               className= 'flex flex-col'
             >
               <span className= 'text-sm font-extralight tracking-widest'>{ label }</span>
               <b className= 'text-lg font-medium'>{ value }</b>
-            </div>
+            </motion.div>
           ) ) }
         </div>
       </div>
