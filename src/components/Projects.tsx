@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 
 import projects from '../../data/projects.json';
 import type { Project } from '../../shared/types';
+import { Link } from 'react-router';
 
 
 interface ProjectFiltersProps {
@@ -128,7 +129,9 @@ function ProjectGrid ( { projects }: ProjectGridProps ) {
               'min-h-80 p-6 sm:p-10 bg-(--main) text-(--contrast) ' +
               ( status === 'FEATURED' ? 'xl:col-span-2' : '' )
             }
-          ></motion.div>
+          >
+            <Link to= { `/project/${ id }` }></Link>
+          </motion.div>
         ) ) }
       </div>
     </div>
