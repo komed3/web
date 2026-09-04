@@ -1,4 +1,4 @@
-import { ArrowUpLeft } from 'lucide-react';
+import { ArrowUpLeft, Star } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
@@ -84,6 +84,34 @@ export function Project () {
           viewport= { { once: true, amount: 0.3 } }
           className= 'flex flex-col justify-end gap-8 h-screen pt-40 pb-16'
         >
+          { /** GitHub */ }
+          { project.github && (
+            <div className= 'flex-1'>
+              <div className= 'flex justify-end items-center gap-8'>
+                { /** Stars */ }
+                { project.meta?.stars > 0 && (
+                  <div className= 'flex items-center gap-4 text-lg font-light'>
+                    <Star size= { 20 } />
+                    <span>{ project.meta.stars.toLocaleString() }</span>
+                  </div>
+                ) }
+
+                { /** Link */ }
+                <a
+                  href= { `https://github.com/${ project.github }` }
+                  target= '_blank'
+                  rel= 'noreferrer'
+                  className= {
+                    'inline-block px-8 text-lg font-light uppercase leading-16 ' +
+                    'tracking-[0.2em] text-(--contrast) bg-(--main)'
+                  }
+                >
+                  GitHub
+                </a>
+              </div>
+            </div>
+          ) }
+
           { /** Type */ }
           <div className= 'mb-2 text-2xl font-light uppercase tracking-[0.3em]'>
             { project.type }
