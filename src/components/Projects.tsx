@@ -117,8 +117,18 @@ function ProjectGrid ( { projects }: ProjectGridProps ) {
   return (
     <div className= 'my-24 px-6 sm:px-12'>
       <div className= 'grid grid-flow-dense md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-12'>
-        { shown.map( ( {} ) => (
-          <></>
+        { shown.map( ( { id, status } ) => (
+          <motion.div
+            key= { id }
+            initial= { { y: 60, opacity: 0 } }
+            whileInView= { { y: 0, opacity: 1 } }
+            transition= { { duration: 0.8, ease: [ 0.22, 1, 0.36, 1 ] } }
+            viewport= { { once: true, amount: 0.2 } }
+            className= {
+              'min-h-80 p-6 sm:p-10 bg-(--main) text-(--contrast) ' +
+              ( status === 'FEATURED' ? 'xl:col-span-2' : '' )
+            }
+          ></motion.div>
         ) ) }
       </div>
     </div>
