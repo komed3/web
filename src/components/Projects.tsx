@@ -15,7 +15,7 @@ interface ProjectFiltersProps {
 function ProjectFilters ( { filters, value, onChange }: ProjectFiltersProps ) {
   const [ open, setOpen ] = useState( false );
 
-  return filters && (
+  return filters.length > 0 && (
     <div className= 'px-6 sm:px-12'>
       { /** Trigger */ }
       <button
@@ -56,7 +56,7 @@ function ProjectFilters ( { filters, value, onChange }: ProjectFiltersProps ) {
         initial= { false }
         animate= { open ? { height: 'auto', marginTop: 40 } : { height: 0, marginTop: 0 } }
         transition= { { duration: 0.5, ease: [ 0.22, 1, 0.36, 1 ] } }
-        className= 'overflow-hidden'
+        className= { open ? '' : 'overflow-hidden' }
       >
         <div className= 'grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-x-12 gap-y-6'>
           { filters.map( filter => (
@@ -70,7 +70,7 @@ function ProjectFilters ( { filters, value, onChange }: ProjectFiltersProps ) {
                   <motion.span
                     layoutId= 'active-filter'
                     layout= 'position'
-                    transition= { { type: 'spring', stiffness: 500, damping: 40, mass: 0.7 } }
+                    transition= { { type: 'spring', stiffness: 500, damping: 30, mass: 0.7 } }
                     className= 'absolute top-0 left-0 w-1 h-full bg-(--main) rounded'
                   />
                 ) }
