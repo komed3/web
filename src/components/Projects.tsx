@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
+
+import projects from '../../data/projects.json';
 
 
 interface ProjectFiltersProps {
@@ -22,6 +24,9 @@ function ProjectFilters ( { filters, value, onChange }: ProjectFiltersProps ) {
 
 
 export function Projects () {
+  const [ filter, setFilter ] = useState( 'All' );
+  const filters = useMemo( () => [ 'All', ...new Set( projects.map( p => p.type ) ) ], [] );
+
   return (
     <></>
   );
