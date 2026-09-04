@@ -80,7 +80,7 @@ export function Project () {
           className= 'flex flex-col justify-end gap-8 h-screen pt-40 pb-16'
         >
           { /** Type */ }
-          <div className= 'mb-4 text-2xl font-light uppercase tracking-[0.3em]'>
+          <div className= 'mb-2 text-2xl font-light uppercase tracking-[0.3em]'>
             { project.type }
           </div>
 
@@ -89,12 +89,34 @@ export function Project () {
             { project.title }
           </h1>
 
-          { /** Description */ }
-          { project.desc && (
-            <p className= 'max-w-3xl text-2xl font-light leading-relaxed'>
-              { project.desc }
-            </p>
-          ) }
+          { /** Info */ }
+          <div className= 'flex justify-between items-end gap-24 mt-16'>
+            <div>
+              { /** Description */ }
+              { project.desc && (
+                <p className= 'max-w-2xl text-2xl font-light leading-relaxed'>
+                  { project.desc }
+                </p>
+              ) }
+            </div>
+
+            <div>
+              { /** Project Link */ }
+              { project.link && (
+                <a
+                  href= { project.link }
+                  target= '_blank'
+                  rel= 'noreferrer'
+                  className= {
+                    'inline-block px-8 text-lg font-light uppercase leading-16 ' +
+                    'tracking-[0.2em] text-(--contrast) bg-(--main)'
+                  }
+                >
+                  Visit
+                </a>
+              ) }
+            </div>
+          </div>
         </motion.div>
 
         { /** Content */ }
