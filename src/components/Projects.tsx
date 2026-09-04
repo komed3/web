@@ -1,3 +1,6 @@
+import { useState } from 'react';
+
+
 interface ProjectFiltersProps {
   filters: string[];
   value: string;
@@ -5,7 +8,9 @@ interface ProjectFiltersProps {
 }
 
 
-function ProjectFilters ( { filters, value, onChange }: ProjectFiltersProps ) {}
+function ProjectFilters ( { filters, value, onChange }: ProjectFiltersProps ) {
+  const [ open, setOpen ] = useState( false );
+}
 
 
 export function Projects () {
