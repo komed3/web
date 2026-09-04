@@ -52,6 +52,12 @@ function ProjectFilters ( { filters, value, onChange }: ProjectFiltersProps ) {
       </button>
 
       { /** Filters */ }
+      <motion.div
+        initial= { false }
+        animate= { open ? { height: 'auto', marginTop: 40 } : { height: 0, marginTop: 0 } }
+        transition= { { duration: 0.5, ease: [ 0.22, 1, 0.36, 1 ] } }
+        className= 'overflow-hidden'
+      ></motion.div>
     </div>
   );
 }
