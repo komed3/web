@@ -13,9 +13,15 @@ interface ProjectFiltersProps {
 function ProjectFilters ( { filters, value, onChange }: ProjectFiltersProps ) {
   const [ open, setOpen ] = useState( false );
 
-  return (
+  return filters && (
     <div>
       { /** Trigger */ }
+      <button
+        onClick= { () => setOpen( current => ! current ) }
+        className= 'flex items-center gap-3 text-sm uppercase font-light tracking-[0.2em]'
+      >
+        <span>Filter</span>
+      </button>
 
       { /** Filters */ }
     </div>
