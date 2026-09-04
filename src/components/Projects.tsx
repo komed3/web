@@ -114,7 +114,15 @@ function ProjectGrid ( { projects }: ProjectGridProps ) {
     return () => observer.disconnect();
   }, [ visible, projects.length ] );
 
-  return ( <></> );
+  return (
+    <div className= 'my-24 px-6 sm:px-12'>
+      <div className= 'grid grid-flow-dense md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-12'>
+        { shown.map( ( {} ) => (
+          <></>
+        ) ) }
+      </div>
+    </div>
+  );
 }
 
 
