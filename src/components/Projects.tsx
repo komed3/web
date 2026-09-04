@@ -96,9 +96,13 @@ function ProjectFilters ( { filters, value, onChange }: ProjectFiltersProps ) {
 
 
 function ProjectGrid ( { projects }: ProjectGridProps ) {
-  return (
-    <></>
-  );
+  const [ visible, setVisible ] = useState( 8 );
+  const loaderRef = useRef< HTMLDivElement >( null );
+  const shown = projects.slice( 0, visible );
+
+  useEffect( () => setVisible( 8 ), [ projects ] );
+
+  return ( <></> );
 }
 
 
