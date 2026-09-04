@@ -54,9 +54,8 @@ function ProjectFilters ( { filters, value, onChange }: ProjectFiltersProps ) {
       { /** Filters */ }
       <motion.div
         initial= { false }
-        animate= { open ? { height: 'auto', marginTop: 40 } : { height: 0, marginTop: 0 } }
+        animate= { open ? { marginTop: 40, opacity: 1 } : { marginTop: 0, opacity: 0 } }
         transition= { { duration: 0.5, ease: [ 0.22, 1, 0.36, 1 ] } }
-        className= { open ? '' : 'overflow-hidden' }
       >
         <div className= 'grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-x-12 gap-y-6'>
           { filters.map( filter => (
