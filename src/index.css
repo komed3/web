@@ -63,3 +63,89 @@
 @utility centered-y {
   @apply absolute top-1/2 -translate-y-1/2;
 }
+
+/** Markdown Styling */
+
+.markdown-body {
+  @apply text-xl font-sans font-light;
+}
+
+.markdown-body h1, .markdown-body h2, .markdown-body h3 {
+  @apply mt-16 mb-6 uppercase tracking-tighter first:mt-0;
+}
+
+.markdown-body h1 { @apply text-4xl; }
+.markdown-body h2 { @apply text-3xl; }
+.markdown-body h3 { @apply text-2xl; }
+
+.markdown-body p {
+  @apply mb-4 leading-relaxed;
+}
+
+.markdown-body ul, .markdown-body ol {
+  @apply ml-6 mb-6 space-y-2;
+}
+
+.markdown-body ul {
+  @apply list-disc;
+}
+
+.markdown-body ol {
+  @apply list-decimal;
+}
+
+.markdown-body li::marker {
+  @apply text-current font-black;
+}
+
+.markdown-body code {
+  @apply font-mono font-medium;
+}
+
+.markdown-body pre {
+  @apply my-6 w-full p-6 font-mono *:font-light overflow-x-auto text-(--contrast) bg-(--main);
+}
+
+.markdown-body table {
+  @apply my-6 w-full table-auto border-collapse border border-current;
+}
+
+.markdown-table-wrapper {
+  @apply mb-8 w-full overflow-x-auto;
+}
+
+.markdown-body th {
+  @apply p-3 text-left uppercase font-bold border border-current;
+}
+
+.markdown-body td {
+  @apply p-3 border border-current;
+}
+
+.markdown-body blockquote {
+  @apply px-6 pt-4 pb-px text-2xl font-extralight border-l-8 border-current;
+}
+
+.markdown-body hr {
+  @apply my-12 border-t-2 border-current;
+}
+
+.markdown-body a {
+  @apply font-bold underline underline-offset-1;
+}
+
+.markdown-body img {
+  @apply grayscale-100 contrast-125;
+}
+
+.markdown-body img[src*="badge"],
+.markdown-body img[src*="shields.io"],
+.markdown-body img[alt*="badge"] {
+  @apply inline-block mr-1 mb-3 align-middle;
+}
+
+.markdown-body a:has( img[src*="badge"] ),
+.markdown-body a:has( img[src*="shields.io"] ),
+.markdown-body a:has( img[alt*="badge"] ) {
+  @apply hover:bg-transparent;
+}
