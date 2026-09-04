@@ -1,6 +1,6 @@
 import { ChevronDown } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 import projects from '../../data/projects.json';
 import type { Project } from '../../shared/types';
