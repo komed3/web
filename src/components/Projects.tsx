@@ -59,9 +59,13 @@ function ProjectFilters ( { filters, value, onChange }: ProjectFiltersProps ) {
         className= 'overflow-hidden'
       >
         <div className= 'grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-12 gap-y-6'>
-          { filters.map( filter => {
-            return ( <></> );
-          } ) }
+          { filters.map( filter => (
+            <button
+              key= { filter }
+              onClick= { () => onChange( filter ) }
+              className= 'flex items-center gap-3 text-sm uppercase font-light tracking-[0.15em]'
+            ></button>
+          ) ) }
         </div>
       </motion.div>
     </div>
