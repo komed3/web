@@ -62,7 +62,7 @@ export function Project () {
                 className= 'flex flex-col'
               >
                 <span className= 'text-sm font-extralight tracking-widest'>{ label }</span>
-                <div className= 'flex flex-wrap justify-end gap-x-6 gap-y-2 font-medium'>
+                <div className= 'flex flex-wrap justify-end gap-x-4 font-medium'>
                   { ( Array.isArray( value ) ? value : [ value ] ).map( item => (
                     <span key= { item }>{ item }</span>
                   ) ) }
