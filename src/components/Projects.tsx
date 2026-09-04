@@ -64,7 +64,9 @@ function ProjectFilters ( { filters, value, onChange }: ProjectFiltersProps ) {
               key= { filter }
               onClick= { () => onChange( filter ) }
               className= 'flex items-center gap-3 text-sm uppercase font-light tracking-[0.15em]'
-            ></button>
+            >
+              <span>{ filter }</span>
+            </button>
           ) ) }
         </div>
       </motion.div>
