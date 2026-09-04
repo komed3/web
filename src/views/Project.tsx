@@ -23,51 +23,53 @@ export function Project () {
   return project && (
     <div className= 'grid grid-cols-[1fr_1px_3fr] gap-16 px-6 sm:px-12 pb-24'>
       { /** Aside */ }
-      <div className= 'flex flex-col items-end gap-16 pt-36'>
-        { /** Back to Projects */ }
-        <Link
-          to= '/index'
-          className= {
-            'inline-flex flex-col items-end text-2xl uppercase ' +
-            'font-extralight tracking-wider'
-          }
-        >
-          <ArrowUpLeft
-            size= { 64 }
-            strokeWidth= { 0.5 }
-            className= '-mr-4'
-          />
+      <div>
+        <div className= 'flex flex-col justify-between items-end gap-24 min-h-screen pt-36 pb-16'>
+          { /** Back to Projects */ }
+          <Link
+            to= '/index'
+            className= {
+              'inline-flex flex-col items-end text-2xl uppercase ' +
+              'font-extralight tracking-wider'
+            }
+          >
+            <ArrowUpLeft
+              size= { 64 }
+              strokeWidth= { 0.5 }
+              className= '-mr-4'
+            />
 
-          <span>Go back to</span>
-          <span>Projects</span>
-        </Link>
+            <span>Go back to</span>
+            <span>Projects</span>
+          </Link>
 
-        { /** Meta */ }
-        <div className= 'space-y-4 text-right uppercase'>
-          { [
-            [ 'Version', project.meta?.version ],
-            [ 'License', project.meta?.license ],
-            [ 'Status', project.status ],
-            [ 'Language', project.meta?.langs?.join( ', ' ) ],
-            [ 'Year', project.meta?.year ],
-            [ 'Tags', project.tags ]
-          ].map( ( [ label, value ], i ) => value && (
-            <motion.div
-              key= { i }
-              initial= { { y: 50, opacity: 0 } }
-              whileInView= { { y: 0, opacity: 1 } }
-              transition= { { delay: i * 0.05 } }
-              viewport= { { once: true, amount: 0.3 } }
-              className= 'flex flex-col'
-            >
-              <span className= 'text-sm font-extralight tracking-widest'>{ label }</span>
-              <div className= 'flex flex-wrap justify-end gap-x-6 gap-y-2 font-medium'>
-                { ( Array.isArray( value ) ? value : [ value ] ).map( item => (
-                  <span key= { item }>{ item }</span>
-                ) ) }
-              </div>
-            </motion.div>
-          ) ) }
+          { /** Meta */ }
+          <div className= 'space-y-4 text-right uppercase'>
+            { [
+              [ 'Version', project.meta?.version ],
+              [ 'License', project.meta?.license ],
+              [ 'Status', project.status ],
+              [ 'Language', project.meta?.langs?.join( ', ' ) ],
+              [ 'Year', project.meta?.year ],
+              [ 'Tags', project.tags ]
+            ].map( ( [ label, value ], i ) => value && (
+              <motion.div
+                key= { i }
+                initial= { { y: 50, opacity: 0 } }
+                whileInView= { { y: 0, opacity: 1 } }
+                transition= { { delay: i * 0.05 } }
+                viewport= { { once: true, amount: 0.3 } }
+                className= 'flex flex-col'
+              >
+                <span className= 'text-sm font-extralight tracking-widest'>{ label }</span>
+                <div className= 'flex flex-wrap justify-end gap-x-6 gap-y-2 font-medium'>
+                  { ( Array.isArray( value ) ? value : [ value ] ).map( item => (
+                    <span key= { item }>{ item }</span>
+                  ) ) }
+                </div>
+              </motion.div>
+            ) ) }
+          </div>
         </div>
       </div>
 
