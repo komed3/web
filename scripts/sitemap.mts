@@ -1,4 +1,5 @@
 import { writeFile } from 'node:fs/promises';
+import { join } from 'node:path';
 
 import projects from '../data/projects.json';
 
@@ -12,4 +13,4 @@ ${ urls.map( url => `  <url><loc>${ base }${ url }</loc></url>` ).join( '\n' ) }
 </urlset>
 `;
 
-await writeFile( '../public/sitemap.xml', sitemap, 'utf8' );
+await writeFile( join( process.cwd(), 'public/sitemap.xml' ), sitemap, 'utf8' );
