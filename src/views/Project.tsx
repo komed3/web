@@ -47,8 +47,13 @@ export function Project () {
 
       { /** Main */ }
       <div className= 'space-y-36'>
-        { /** Header */ }
+        { /** Hero */ }
         <div className= 'flex flex-col justify-end gap-8 h-screen pt-40 pb-16'>
+          { /** Type */ }
+          <div className= 'mb-4 text-2xl font-light uppercase tracking-[0.3em]'>
+            { project.type }
+          </div>
+
           { /** Title */ }
           <h1 className= '-ml-3 max-w-4xl text-[clamp(4rem,8vw,8rem)] font-extralight leading-none tracking-tighter'>
             { project.title }
