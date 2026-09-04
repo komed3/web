@@ -42,7 +42,7 @@ function ProjectFilters ( { filters, value, onChange }: ProjectFiltersProps ) {
               animate= { { y: 0, opacity: 1 } }
               exit= { { y: -8, opacity: 0 } }
               transition= { { duration: 0.2 } }
-              className= 'flex items-center gap-8 ml-6'
+              className= 'hidden sm:flex items-center gap-8 ml-6'
             >
               <span className= 'w-8 h-px bg-(--main)' />
               <span>{ value }</span>
@@ -58,7 +58,7 @@ function ProjectFilters ( { filters, value, onChange }: ProjectFiltersProps ) {
         transition= { { duration: 0.5, ease: [ 0.22, 1, 0.36, 1 ] } }
         className= 'overflow-hidden'
       >
-        <div className= 'grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-12 gap-y-6'>
+        <div className= 'grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-x-12 gap-y-6'>
           { filters.map( filter => (
             <button
               key= { filter }
