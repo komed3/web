@@ -10,7 +10,7 @@ interface ThemeContextType {
   setTarget: ( value: string | null ) => void;
   contentVisible: boolean;
   setContentVisible: ( value: boolean ) => void;
-  overlayColor: '#fff' | '#000' | '#b24309' | '#1249c3' | '#fcd05e';
+  overlayColor: '#fff' | '#000' | '#1249c3' | '#fcd05e';
 
   getColorVars: typeof getColorVars,
   setColorVars: ( pathname: string ) => void,
@@ -21,11 +21,11 @@ interface ThemeContextType {
 
 
 const THEMES = {
-  main:    { accent: '#fff',    main: '#000', contrast: '#fff' },
-  default: { accent: '#b24309', main: '#fff', contrast: '#000' },
-  stack:   { accent: '#1249c3', main: '#fff', contrast: '#000' },
-  project: { accent: '#fcd05e', main: '#000', contrast: '#fff' },
-  index:   { accent: '#000',    main: '#fff', contrast: '#000' }
+  main:     { accent: '#fff',    main: '#000', contrast: '#fff' },
+  notfound: { accent: '#fcd05e', main: '#000', contrast: '#fff' },
+  stack:    { accent: '#1249c3', main: '#fff', contrast: '#000' },
+  project:  { accent: '#fcd05e', main: '#000', contrast: '#fff' },
+  index:    { accent: '#000',    main: '#fff', contrast: '#000' }
 } as const;
 
 const ROUTES = [
@@ -37,7 +37,7 @@ const ROUTES = [
 
 
 function getColorVars ( pathname: string ) {
-  return THEMES[ ROUTES.find( ( [ pattern ] ) => pattern.test( pathname ) )?.[ 1 ] ?? 'default' ];
+  return THEMES[ ROUTES.find( ( [ pattern ] ) => pattern.test( pathname ) )?.[ 1 ] ?? 'notfound' ];
 }
 
 function setColorVars ( pathname: string ) {
