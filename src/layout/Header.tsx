@@ -7,7 +7,7 @@ export function Header () {
   return (
     <header className= 'fixed inset-x-0 top-0 z-90 h-24 bg-(--accent)'>
       { /** Tech Stack */ }
-      <div className= 'centered-y left-2 md:left-6'>
+      <div className= 'centered-y left-2 sm:left-6'>
         <Link
           to= '/stack'
           className= {
@@ -31,7 +31,7 @@ export function Header () {
       </div>
 
       { /** Projects */ }
-      <div className= 'centered-y right-2 md:right-6'>
+      <div className= 'centered-y right-2 sm:right-6'>
         <Link
           to= '/index'
           className= {
