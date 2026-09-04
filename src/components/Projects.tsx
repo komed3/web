@@ -19,7 +19,7 @@ interface ProjectGridProps {
 }
 
 
-function ProjectFilters ( { filters, value, onChange }: ProjectFiltersProps ) {
+function ProjectFilters ( { filters, value, onChange, count }: ProjectFiltersProps ) {
   const [ open, setOpen ] = useState( false );
 
   return filters.length > 0 && (
@@ -38,7 +38,7 @@ function ProjectFilters ( { filters, value, onChange }: ProjectFiltersProps ) {
         <span>Filter</span>
 
         <span className= 'text-xs'>
-          { filters.length }
+          { count }
         </span>
 
         <AnimatePresence mode= 'wait'>
