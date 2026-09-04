@@ -20,8 +20,10 @@ export function Project () {
   );
 
   return project && (
-    <div className= 'grid grid-cols-[1fr_1px_3fr] gap-16 px-6 sm:px-12 pt-36 pb-24'>
-      <div className= 'flex flex-col items-end'>
+    <div className= 'grid grid-cols-[1fr_1px_3fr] gap-16 px-6 sm:px-12 pb-24'>
+      { /** Aside */ }
+      <div className= 'flex flex-col items-end pt-36'>
+        { /** Back to Projects */ }
         <Link
           to= '/index'
           className= {
@@ -42,11 +44,21 @@ export function Project () {
 
       <div className= 'bg-(--main)' />
 
-      <div>
+      { /** Main */ }
+      <div className= 'space-y-36'>
         { /** Header */ }
-        <div>
-          <h1>{ project.title }</h1>
-          <p>{ project.desc }</p>
+        <div className= 'flex flex-col justify-end gap-8 h-screen pt-40 pb-16'>
+          { /** Title */ }
+          <h1 className= '-ml-3 max-w-4xl text-[clamp(4rem,8vw,8rem)] font-extralight leading-none tracking-tighter'>
+            { project.title }
+          </h1>
+
+          { /** Description */ }
+          { project.desc && (
+            <p className= 'max-w-3xl text-2xl font-light leading-relaxed'>
+              { project.desc }
+            </p>
+          ) }
         </div>
 
         { /** Content */ }
