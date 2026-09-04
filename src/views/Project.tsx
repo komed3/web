@@ -95,7 +95,7 @@ export function Project () {
           whileInView= { { y: 0, opacity: 1 } }
           transition= { { duration: 1.2, ease: [ 0.22, 1, 0.36, 1 ] } }
           viewport= { { once: true, amount: 0.3 } }
-          className= 'flex flex-col justify-end gap-8 min-h-screen pt-32 xl:pt-40 pb-6 sm:pb-16'
+          className= 'flex flex-col justify-end gap-8 min-h-screen pt-28 xl:pt-40 pb-6 sm:pb-16'
         >
           { /** GitHub */ }
           { project.github && (
@@ -177,7 +177,7 @@ export function Project () {
 
         { /** Content */ }
         { project.content && (
-          <div className= 'markdown-body'>
+          <div className= 'markdown-body hyphens-auto md:hyphens-none' lang= 'en'>
             <ReactMarkdown remarkPlugins= { [ remarkGfm ] }>
               { project.content }
             </ReactMarkdown>
