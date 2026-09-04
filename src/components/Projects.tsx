@@ -1,10 +1,10 @@
 import { ChevronDown } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { Link } from 'react-router';
 
 import projects from '../../data/projects.json';
 import type { Project } from '../../shared/types';
-import { Link } from 'react-router';
 
 
 interface ProjectFiltersProps {
@@ -118,7 +118,7 @@ function ProjectGrid ( { projects }: ProjectGridProps ) {
   return (
     <div className= 'my-24 px-6 sm:px-12'>
       <div className= 'grid grid-flow-dense md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-12'>
-        { shown.map( ( { id, type, status } ) => (
+        { shown.map( ( { id, title, type, desc, status } ) => (
           <motion.div
             key= { id }
             initial= { { y: 60, opacity: 0 } }
@@ -126,16 +126,28 @@ function ProjectGrid ( { projects }: ProjectGridProps ) {
             transition= { { duration: 0.8, ease: [ 0.22, 1, 0.36, 1 ] } }
             viewport= { { once: true, amount: 0.2 } }
             className= {
-              'min-h-80 bg-(--main) text-(--contrast) ' +
+              'min-h-100 bg-(--main) text-(--contrast) ' +
               ( status === 'FEATURED' ? 'xl:col-span-2' : '' )
             }
           >
             <Link
               to= { `/project/${ id }` }
-              className= 'block w-full h-full p-6 sm:p-10'
+              className= 'flex flex-col justify-between w-full h-full p-6 sm:p-10'
             >
               <div className= 'text-xs uppercase font-light tracking-[0.3em]'>
                 { type }
+              </div>
+
+              <div>
+                <h2 className= 'text-4xl sm:text-5xl font-extralight tracking-tight'>
+                  { title }
+                </h2>
+
+                { desc && (
+                  <p className= 'mt-6 max-w-xl text-lg font-light leading-relaxed'>
+                    { desc }
+                  </p>
+                ) }
               </div>
             </Link>
           </motion.div>
