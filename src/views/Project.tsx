@@ -23,7 +23,7 @@ export function Project () {
   return project && (
     <div className= 'grid grid-cols-[1fr_1px_3fr] gap-16 px-6 sm:px-12 pb-24'>
       { /** Aside */ }
-      <div className= 'flex flex-col items-end gap-12 pt-36'>
+      <div className= 'flex flex-col items-end gap-16 pt-36'>
         { /** Back to Projects */ }
         <Link
           to= '/index'
@@ -49,10 +49,11 @@ export function Project () {
             [ 'License', project.meta?.license ],
             [ 'Status', project.status ],
             [ 'Language', project.meta?.langs?.join( ', ' ) ],
-            [ 'Year', project.meta?.year ]
+            [ 'Year', project.meta?.year ],
+            [ 'Tags', project.tags ]
           ].map( ( [ label, value ], i ) => value && (
             <motion.div
-              key= { label }
+              key= { i }
               initial= { { y: 50, opacity: 0 } }
               whileInView= { { y: 0, opacity: 1 } }
               transition= { { delay: i * 0.05 } }
@@ -60,7 +61,11 @@ export function Project () {
               className= 'flex flex-col'
             >
               <span className= 'text-sm font-extralight tracking-widest'>{ label }</span>
-              <b className= 'text-lg font-medium'>{ value }</b>
+              <div className= 'flex flex-wrap justify-end gap-x-6 gap-y-2 font-medium'>
+                { ( Array.isArray( value ) ? value : [ value ] ).map( item => (
+                  <span key= { item }>{ item }</span>
+                ) ) }
+              </div>
             </motion.div>
           ) ) }
         </div>
