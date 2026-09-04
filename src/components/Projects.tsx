@@ -193,6 +193,7 @@ export function Projects () {
         filters= { filters }
         value= { filter }
         onChange= { f => setFilter( f ) }
+        count= { result.length }
       />
 
       { /** Grid */ }
