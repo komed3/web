@@ -1,4 +1,5 @@
 import { ArrowUpLeft } from 'lucide-react';
+import { motion } from 'motion/react';
 import { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Link, useNavigate, useParams } from 'react-router';
@@ -48,7 +49,13 @@ export function Project () {
       { /** Main */ }
       <div className= 'space-y-36'>
         { /** Hero */ }
-        <div className= 'flex flex-col justify-end gap-8 h-screen pt-40 pb-16'>
+        <motion.div
+          initial= { { y: 100, opacity: 0 } }
+          whileInView= { { y: 0, opacity: 1 } }
+          transition= { { duration: 1.2, ease: [ 0.22, 1, 0.36, 1 ] } }
+          viewport= { { once: true, amount: 0.3 } }
+          className= 'flex flex-col justify-end gap-8 h-screen pt-40 pb-16'
+        >
           { /** Type */ }
           <div className= 'mb-4 text-2xl font-light uppercase tracking-[0.3em]'>
             { project.type }
@@ -65,7 +72,7 @@ export function Project () {
               { project.desc }
             </p>
           ) }
-        </div>
+        </motion.div>
 
         { /** Content */ }
         { project.content && (
