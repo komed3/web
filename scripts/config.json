@@ -37,11 +37,6 @@
     "id": "latex-editor",
     "title": "LaTeX Formula Editor",
     "github": "komed3/latex-editor",
-    "type": "Web App"
-  }, {
-    "id": "airportmap",
-    "title": "Airportmap",
-    "github": "airportmap",
     "type": "Web App",
     "status": "FEATURED"
   }, {
@@ -49,6 +44,12 @@
     "title": "DeepMerge",
     "github": "komed3/deepmerge",
     "type": "Node.js"
+  }, {
+    "id": "airportmap",
+    "title": "Airportmap",
+    "github": "airportmap",
+    "type": "Web App",
+    "status": "FEATURED"
   }, {
     "id": "isodb",
     "title": "isoDB",
@@ -59,9 +60,8 @@
     "title": "Pulsar",
     "type": "Science",
     "status": "DEV",
-    "description": "Programming Language focused on mathematical problems.",
-    "tags": [ "science", "programming", "language" ],
-    "content": "Coming soon"
+    "desc": "Programming Language focused on mathematical problems.",
+    "tags": [ "science", "programming", "language" ]
   }, {
     "id": "8-bit-alu",
     "title": "8-Bit ALU",
@@ -185,7 +185,7 @@
     "id": "milkyway",
     "title": "Milkyway@home",
     "type": "Science",
-    "description": "Some computing power for space exploration. It runs on an old laptop running Ubuntu Server with an Intel Pentium N3700 @ 1.60GHz and 4GB of RAM.",
+    "desc": "Some computing power for space exploration. It runs on an old laptop running Ubuntu Server with an Intel Pentium N3700 @ 1.60GHz and 4GB of RAM.",
     "tags": [ "science", "boinc", "ubuntu" ],
     "link": "https://milkyway.cs.rpi.edu/milkyway/show_user.php?userid=8028098",
     "content": "Some computing power for space exploration. It runs on an old laptop running Ubuntu Server with an Intel Pentium N3700 @ 1.60GHz and 4GB of RAM."
@@ -203,7 +203,7 @@
     "id": "tyrannix",
     "title": "Tyrannix Chess Bot",
     "type": "Chess",
-    "description": "Tyrannix is a Lichess bot running Stockfish under Ubuntu Server on an home server. CPU: AMD 5 4600G up to 4.2 GHz. Memory: 16 GB. Engine: Stockfish 17 BMI2.",
+    "desc": "Tyrannix is a Lichess bot running Stockfish under Ubuntu Server on an home server. CPU: AMD 5 4600G up to 4.2 GHz. Memory: 16 GB. Engine: Stockfish 17 BMI2.",
     "tags": [ "chess", "bot", "lichess", "stockfish", "ubuntu" ],
     "link": "https://lichess.org/@/Tyrannix",
     "content": "Tyrannix is a Lichess bot running Stockfish under Ubuntu Server on an home server. CPU: AMD 5 4600G up to 4.2 GHz. Memory: 16 GB. Engine: Stockfish 17 BMI2."
