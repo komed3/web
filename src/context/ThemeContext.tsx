@@ -10,7 +10,7 @@ interface ThemeContextType {
   setTarget: ( value: string | null ) => void;
   contentVisible: boolean;
   setContentVisible: ( value: boolean ) => void;
-  overlayColor: '#fff' | '#000' | '#1249c3' | '#fcd05e';
+  overlayColor: '#fff' | '#000' | '#b24309' | '#1249c3' | '#fcd05e';
 
   getColorVars: typeof getColorVars,
   setColorVars: ( pathname: string ) => void,
@@ -21,14 +21,15 @@ interface ThemeContextType {
 
 
 const THEMES = {
-  default: { accent: '#fff',    main: '#000', contrast: '#fff' },
+  main:    { accent: '#fff',    main: '#000', contrast: '#fff' },
+  default: { accent: '#b24309', main: '#fff', contrast: '#000' },
   stack:   { accent: '#1249c3', main: '#fff', contrast: '#000' },
   project: { accent: '#fcd05e', main: '#000', contrast: '#fff' },
   index:   { accent: '#000',    main: '#fff', contrast: '#000' }
 } as const;
 
 const ROUTES = [
-  [ /^\/$/,               'default' ],
+  [ /^\/$/,               'main'    ],
   [ /^\/stack$/,          'stack'   ],
   [ /^\/project(?:\/|$)/, 'project' ],
   [ /^\/index$/,          'index'   ]
