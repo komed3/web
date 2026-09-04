@@ -21,10 +21,20 @@ export function Project () {
   );
 
   return project && (
-    <div className= 'grid grid-cols-[1fr_1px_3fr] gap-16 px-6 sm:px-12 pb-24'>
+    <div
+      className= {
+        'flex flex-col-reverse xl:grid grid-cols-[1fr_1px_3fr] gap-12 xl:gap-16 ' +
+        'px-6 sm:px-12 sm:pb-24'
+        }
+      >
       { /** Aside */ }
       <div>
-        <div className= 'flex flex-col justify-between items-end gap-24 min-h-screen pt-36 pb-16'>
+        <div
+          className= {
+            'flex flex-col justify-between items-end gap-24 min-h-0 xl:min-h-screen ' +
+            'pt-0 xl:pt-36 pb-16'
+          }
+        >
           { /** Back to Projects */ }
           <Link
             to= '/index'
@@ -44,7 +54,7 @@ export function Project () {
           </Link>
 
           { /** Meta */ }
-          <div className= 'space-y-4 text-right uppercase'>
+          <div className= 'w-full space-y-4 text-left xl:text-right uppercase'>
             { [
               [ 'Version', project.meta?.version ],
               [ 'License', project.meta?.license ],
@@ -62,7 +72,8 @@ export function Project () {
                 className= 'flex flex-col'
               >
                 <span className= 'text-sm font-extralight tracking-widest'>{ label }</span>
-                <div className= 'flex flex-wrap justify-end gap-x-4 font-medium'>
+
+                <div className= 'flex flex-wrap justify-start xl:justify-end gap-x-4 font-medium'>
                   { ( Array.isArray( value ) ? value : [ value ] ).map( item => (
                     <span key= { item }>{ item }</span>
                   ) ) }
@@ -74,25 +85,25 @@ export function Project () {
       </div>
 
       { /** Divider */ }
-      <div className= 'bg-(--main)' />
+      <div className= 'w-full h-px xl:h-auto bg-(--main)' />
 
       { /** Main */ }
-      <div className= 'min-w-0 space-y-36'>
+      <div className= 'min-w-0 space-y-24 sm:space-y-36'>
         { /** Hero */ }
         <motion.div
           initial= { { y: 100, opacity: 0 } }
           whileInView= { { y: 0, opacity: 1 } }
           transition= { { duration: 1.2, ease: [ 0.22, 1, 0.36, 1 ] } }
           viewport= { { once: true, amount: 0.3 } }
-          className= 'flex flex-col justify-end gap-8 h-screen pt-40 pb-16'
+          className= 'flex flex-col justify-end gap-8 min-h-screen pt-32 xl:pt-40 pb-6 sm:pb-16'
         >
           { /** GitHub */ }
           { project.github && (
             <div className= 'flex-1'>
-              <div className= 'flex justify-end items-center gap-8'>
+              <div className= 'flex justify-end items-center gap-6 sm:gap-8'>
                 { /** Stars */ }
-                { project.meta?.stars > 0 && (
-                  <div className= 'flex items-center gap-4 text-lg font-light'>
+                { ( project.meta?.stars ?? 0 ) > 0 && (
+                  <div className= 'hidden sm:flex items-center gap-4 text-lg font-light'>
                     <Star size= { 20 } />
                     <span>{ project.meta.stars.toLocaleString() }</span>
                   </div>
@@ -104,8 +115,8 @@ export function Project () {
                   target= '_blank'
                   rel= 'noreferrer'
                   className= {
-                    'inline-block px-8 text-lg font-light uppercase leading-16 ' +
-                    'tracking-[0.2em] text-(--contrast) bg-(--main)'
+                    'inline-block px-6 sm:px-8 text-base sm:text-lg font-light uppercase ' +
+                    'leading-14 sm:leading-16 tracking-[0.2em] text-(--contrast) bg-(--main)'
                   }
                 >
                   GitHub
@@ -115,27 +126,37 @@ export function Project () {
           ) }
 
           { /** Type */ }
-          <div className= 'text-xl font-light uppercase tracking-[0.3em]'>
+          <div className= 'text-base sm:text-xl font-light uppercase tracking-[0.3em]'>
             { project.type }
           </div>
 
           { /** Title */ }
-          <h1 className= '-ml-3 max-w-4xl text-[clamp(3.6rem,8vw,7rem)] font-extralight leading-none tracking-tighter'>
+          <h1
+            className= {
+              '-ml-1 sm:-ml-3 max-w-4xl text-5xl sm:text-[clamp(4rem,10vw,7rem)] ' +
+              'font-extralight leading-none tracking-tighter'
+              }
+            >
             { project.title }
           </h1>
 
           { /** Info */ }
-          <div className= 'flex justify-between items-end gap-24 mt-10'>
+          <div
+            className= {
+              'flex flex-col sm:flex-row justify-between items-start sm:items-end gap-10 ' +
+              'sm:gap-24 mt-6 sm:mt-10'
+              }
+            >
             <div>
               { /** Description */ }
               { project.desc && (
-                <p className= 'max-w-3xl text-2xl font-light leading-relaxed'>
+                <p className= 'max-w-3xl text-xl sm:text-2xl font-light leading-relaxed'>
                   { project.desc }
                 </p>
               ) }
             </div>
 
-            <div>
+            <div className= 'shrink-0'>
               { /** Project Link */ }
               { project.link && (
                 <a
@@ -143,8 +164,8 @@ export function Project () {
                   target= '_blank'
                   rel= 'noreferrer'
                   className= {
-                    'inline-block px-8 text-lg font-light uppercase leading-16 ' +
-                    'tracking-[0.2em] text-(--contrast) bg-(--main)'
+                    'inline-block px-6 sm:px-8 text-base sm:text-lg font-light uppercase ' +
+                    'leading-14 sm:leading-16 tracking-[0.2em] text-(--contrast) bg-(--main)'
                   }
                 >
                   Visit
@@ -157,7 +178,7 @@ export function Project () {
         { /** Content */ }
         { project.content && (
           <div className= 'markdown-body'>
-             <ReactMarkdown remarkPlugins= { [ remarkGfm ] }>
+            <ReactMarkdown remarkPlugins= { [ remarkGfm ] }>
               { project.content }
             </ReactMarkdown>
           </div>
