@@ -1,26 +1,20 @@
 import { ArrowUpLeft, Star } from 'lucide-react';
 import { motion } from 'motion/react';
-import { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { Link, useNavigate, useParams } from 'react-router';
+import { Link, useParams } from 'react-router';
 import remarkGfm from 'remark-gfm';
 
 import projects from '../../data/projects.json';
+import { NotFound } from './NotFound';
 
 
 export function Project () {
-  const navigate = useNavigate();
-
   const { id } = useParams();
-  const index = projects.findIndex( p => p.id === id );
-  const project = projects[ index ];
 
-  useEffect(
-    () => { if ( ! project ) navigate( '/404', { replace: true } ) },
-    [ project, navigate ]
-  );
+  const project = projects.find( p => p.id === id );
+  if ( ! project ) return <NotFound />;
 
-  return project && (
+  return (
     <div
       className= {
         'flex flex-col-reverse xl:grid grid-cols-[1fr_1px_3fr] gap-12 xl:gap-16 ' +
