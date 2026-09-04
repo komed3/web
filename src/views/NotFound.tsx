@@ -10,7 +10,22 @@ export function NotFound () {
         transition= { { duration: 1.2, ease: [ 0.22, 1, 0.36, 1 ] } }
         viewport= { { once: true, amount: 0.3 } }
         className= 'centered w-full px-6 sm:px-12 lg:px-20'
-      ></motion.div>
+      >
+        <div
+          className= {
+            'max-w-5xl mx-auto text-right text-balance uppercase ' +
+            'font-extralight tracking-widest leading-snug'
+          }
+        >
+          <div className= 'text-[clamp(4rem,10vw,8rem)]'>
+            404
+          </div>
+
+          <div className= 'text-[clamp(1.6rem,4vw,2rem)]'>
+            Some bytes get lost
+          </div>
+        </div>
+      </motion.div>
     </div>
   );
 }
