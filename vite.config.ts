@@ -13,10 +13,12 @@ export default defineConfig ( () => {
     plugins: [ react(), tailwindcss() ],
     resolve: { alias: { '@': resolve( import.meta.dirname, '.' ) } },
     build: {
-      chunkSizeWarningLimit: 2000,
       cssCodeSplit: true,
       rollupOptions: { output: { manualChunks ( id ) {
         if ( id.includes( 'node_modules' ) ) {
+          if ( id.includes( 'lucide' ) || id.includes( 'icons' ) ) return 'icons';
+          if ( id.includes( 'motion' ) ) return 'motion';
+          if ( id.includes( 'markdown' ) || id.includes( 'gfm' ) ) return 'markdown';
           if ( id.includes( 'react' ) ) return 'react';
           return 'vendor';
         }
