@@ -23,8 +23,8 @@ interface ThemeContextType {
 const THEMES = {
   main:     { accent: '#fff',    main: '#000', contrast: '#fff' },
   notfound: { accent: '#fcd05e', main: '#000', contrast: '#fff' },
-  stack:    { accent: '#1249c3', main: '#fff', contrast: '#000' },
   project:  { accent: '#fcd05e', main: '#000', contrast: '#fff' },
+  stack:    { accent: '#1249c3', main: '#fff', contrast: '#000' },
   index:    { accent: '#000',    main: '#fff', contrast: '#000' }
 } as const;
 
