@@ -11,6 +11,7 @@ interface ProjectFiltersProps {
   filters: string[];
   value: string;
   onChange: ( value: string ) => void;
+  count: number;
 }
 
 interface ProjectGridProps {
