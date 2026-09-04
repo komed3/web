@@ -10,6 +10,14 @@ interface ProjectFiltersProps {
 
 function ProjectFilters ( { filters, value, onChange }: ProjectFiltersProps ) {
   const [ open, setOpen ] = useState( false );
+
+  return (
+    <div>
+      { /** Trigger */ }
+
+      { /** Filters */ }
+    </div>
+  );
 }
 
 
