@@ -21,6 +21,10 @@ function ProjectFilters ( { filters, value, onChange }: ProjectFiltersProps ) {
         className= 'flex items-center gap-3 text-sm uppercase font-light tracking-[0.2em]'
       >
         <span>Filter</span>
+
+        <span className= 'text-xs'>
+          { filters.length }
+        </span>
       </button>
 
       { /** Filters */ }
