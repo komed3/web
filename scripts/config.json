@@ -37,12 +37,16 @@
     "id": "latex-editor",
     "title": "LaTeX Formula Editor",
     "github": "komed3/latex-editor",
-    "type": "Web App",
-    "status": "FEATURED"
+    "type": "Web App"
   }, {
     "id": "deepmerge",
     "title": "DeepMerge",
     "github": "komed3/deepmerge",
+    "type": "Node.js"
+  }, {
+    "id": "isodb",
+    "title": "isoDB",
+    "github": "isodb",
     "type": "Node.js"
   }, {
     "id": "airportmap",
@@ -50,11 +54,6 @@
     "github": "airportmap",
     "type": "Web App",
     "status": "FEATURED"
-  }, {
-    "id": "isodb",
-    "title": "isoDB",
-    "github": "isodb",
-    "type": "Node.js"
   }, {
     "id": "pulsar",
     "title": "Pulsar",
