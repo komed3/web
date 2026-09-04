@@ -115,21 +115,21 @@ export function Project () {
           ) }
 
           { /** Type */ }
-          <div className= 'mb-2 text-2xl font-light uppercase tracking-[0.3em]'>
+          <div className= 'text-xl font-light uppercase tracking-[0.3em]'>
             { project.type }
           </div>
 
           { /** Title */ }
-          <h1 className= '-ml-3 max-w-4xl text-[clamp(4rem,8vw,8rem)] font-extralight leading-none tracking-tighter'>
+          <h1 className= '-ml-3 max-w-4xl text-[clamp(3.6rem,8vw,7rem)] font-extralight leading-none tracking-tighter'>
             { project.title }
           </h1>
 
           { /** Info */ }
-          <div className= 'flex justify-between items-end gap-24 mt-16'>
+          <div className= 'flex justify-between items-end gap-24 mt-10'>
             <div>
               { /** Description */ }
               { project.desc && (
-                <p className= 'max-w-2xl text-2xl font-light leading-relaxed'>
+                <p className= 'max-w-3xl text-2xl font-light leading-relaxed'>
                   { project.desc }
                 </p>
               ) }
