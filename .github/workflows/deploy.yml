@@ -34,9 +34,6 @@ jobs:
         env:
           TOKEN: ${{ secrets.TOKEN }}
 
-      - name: Generate Sitemap
-        run: npm run sitemap
-
       - name: Lint
         run: npm run lint
 
