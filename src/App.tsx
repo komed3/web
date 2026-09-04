@@ -8,6 +8,7 @@ import { Header } from './layout/Header';
 
 import { Home } from './views/Home';
 import { Index } from './views/Index';
+import { NotFound } from './views/NotFound';
 import { Project } from './views/Project';
 import { Stack } from './views/Stack';
 
@@ -35,6 +36,7 @@ export default function App () {
             <Route path= '/stack' element= { <Stack /> } />
             <Route path= '/project/:id' element= { <Project /> } />
             <Route path= '/index' element= { <Index /> } />
+            <Route path= '*' element= { <NotFound /> } />
           </Routes>
         </main>
 
