@@ -101,7 +101,11 @@ function ProjectGrid ( { projects }: ProjectGridProps ) {
 export function Projects () {
   const [ filter, setFilter ] = useState( 'All' );
   const filters = useMemo( () => [ 'All', ...new Set( projects.map( p => p.type ) ) ], [] );
-  const result = useMemo( () => projects.filter( p => filter === 'All' || p.type === filter ), [ filter ] );
+
+  const result = useMemo< Project[] >(
+    () => projects.filter( p => filter === 'All' || p.type === filter ) as any,
+    [ filter ]
+  );
 
   return (
     <>
@@ -110,6 +114,11 @@ export function Projects () {
         filters= { filters }
         value= { filter }
         onChange= { f => setFilter( f ) }
+      />
+
+      { /** Grid */ }
+      <ProjectGrid
+        projects= { result }
       />
     </>
   );
