@@ -77,7 +77,7 @@ export function Project () {
       <div className= 'bg-(--main)' />
 
       { /** Main */ }
-      <div className= 'space-y-36'>
+      <div className= 'min-w-0 space-y-36'>
         { /** Hero */ }
         <motion.div
           initial= { { y: 100, opacity: 0 } }
