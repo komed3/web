@@ -14,7 +14,7 @@ function ProjectFilters ( { filters, value, onChange }: ProjectFiltersProps ) {
   const [ open, setOpen ] = useState( false );
 
   return filters && (
-    <div>
+    <div className= 'px-6 sm:px-12'>
       { /** Trigger */ }
       <button
         onClick= { () => setOpen( current => ! current ) }
