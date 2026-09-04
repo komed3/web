@@ -99,9 +99,9 @@ export function About () {
           <span>touch</span>
 
           <ArrowUpRight
-            className= '-mr-4'
             size= { 64 }
             strokeWidth= { 0.5 }
+            className= '-mr-4'
           />
         </a>
       </motion.div>
