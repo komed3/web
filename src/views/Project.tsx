@@ -23,7 +23,7 @@ export function Project () {
   return project && (
     <div className= 'grid grid-cols-[1fr_1px_3fr] gap-16 px-6 sm:px-12 pb-24'>
       { /** Aside */ }
-      <div className= 'flex flex-col items-end pt-36'>
+      <div className= 'flex flex-col items-end gap-12 pt-36'>
         { /** Back to Projects */ }
         <Link
           to= '/index'
@@ -41,6 +41,25 @@ export function Project () {
           <span>Go back to</span>
           <span>Projects</span>
         </Link>
+
+        { /** Meta */ }
+        <div className= 'space-y-4 text-right uppercase'>
+          { [
+            [ 'Version', project.meta?.version ],
+            [ 'License', project.meta?.license ],
+            [ 'Status', project.status ],
+            [ 'Language', project.meta?.langs?.join( ', ' ) ],
+            [ 'Year', project.meta?.year ]
+          ].map( ( [ label, value ] ) => value && (
+            <div
+              key= { label }
+              className= 'flex flex-col'
+            >
+              <span className= 'text-sm font-extralight tracking-widest'>{ label }</span>
+              <b className= 'text-lg font-medium'>{ value }</b>
+            </div>
+          ) ) }
+        </div>
       </div>
 
       { /** Divider */ }
