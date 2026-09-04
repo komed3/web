@@ -8,6 +8,7 @@ import { Header } from './layout/Header';
 
 import { Home } from './views/Home';
 import { Index } from './views/Index';
+import { Project } from './views/Project';
 import { Stack } from './views/Stack';
 
 
@@ -32,7 +33,7 @@ export default function App () {
           <Routes>
             <Route path= '/' element= { <Home /> } />
             <Route path= '/stack' element= { <Stack /> } />
-            <Route path= '/project/:id' element= { <></> } />
+            <Route path= '/project/:id' element= { <Project /> } />
             <Route path= '/index' element= { <Index /> } />
           </Routes>
         </main>
