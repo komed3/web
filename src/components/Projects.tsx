@@ -3,12 +3,17 @@ import { AnimatePresence, motion } from 'motion/react';
 import { useMemo, useState } from 'react';
 
 import projects from '../../data/projects.json';
+import type { Project } from '../../shared/types';
 
 
 interface ProjectFiltersProps {
   filters: string[];
   value: string;
   onChange: ( value: string ) => void;
+}
+
+interface ProjectGridProps {
+  projects: Project[];
 }
 
 
@@ -86,7 +91,7 @@ function ProjectFilters ( { filters, value, onChange }: ProjectFiltersProps ) {
 }
 
 
-function ProjectGrid () {
+function ProjectGrid ( { projects }: ProjectGridProps ) {
   return (
     <></>
   );
