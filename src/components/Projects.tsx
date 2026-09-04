@@ -5,6 +5,9 @@ interface ProjectFiltersProps {
 }
 
 
+function ProjectFilters ( { filters, value, onChange }: ProjectFiltersProps ) {}
+
+
 export function Projects () {
   return (
     <></>
