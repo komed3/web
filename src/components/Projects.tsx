@@ -117,6 +117,7 @@ function ProjectGrid ( { projects }: ProjectGridProps ) {
 
   return (
     <div className= 'my-24 px-6 sm:px-12'>
+      { /** Grid */ }
       <div className= 'grid grid-flow-dense md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-12'>
         { shown.map( ( { id, title, type, desc, status } ) => (
           <motion.div
@@ -153,6 +154,14 @@ function ProjectGrid ( { projects }: ProjectGridProps ) {
           </motion.div>
         ) ) }
       </div>
+
+      { /** Trigger */ }
+      { visible < projects.length && (
+        <div
+          ref= { loaderRef }
+          className= 'h-px'
+        />
+      ) }
     </div>
   );
 }
