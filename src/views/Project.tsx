@@ -1,5 +1,6 @@
+import { ArrowUpLeft } from 'lucide-react';
 import { useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router';
+import { Link, useNavigate, useParams } from 'react-router';
 
 import projects from '../../data/projects.json';
 
@@ -18,7 +19,21 @@ export function Project () {
 
   return project && (
     <div className= 'grid grid-cols-[1fr_1px_2fr] gap-20 px-6 sm:px-12 pt-36 pb-24'>
-      <div className= ''>...</div>
+      <div className= ''>
+        <Link
+          className= 'inline-flex flex-col text-2xl uppercase font-extralight tracking-wider'
+          to= '/index'
+        >
+          <ArrowUpLeft
+            size= { 64 }
+            strokeWidth= { 0.5 }
+            className= '-ml-4'
+          />
+
+          <span>Go back to</span>
+          <span>Projects</span>
+        </Link>
+      </div>
 
       <div className= 'bg-(--main)' />
 
