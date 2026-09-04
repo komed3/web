@@ -20,16 +20,19 @@ export function Project () {
   );
 
   return project && (
-    <div className= 'grid grid-cols-[1fr_1px_3fr] gap-20 px-6 sm:px-12 pt-36 pb-24'>
-      <div>
+    <div className= 'grid grid-cols-[1fr_1px_3fr] gap-16 px-6 sm:px-12 pt-36 pb-24'>
+      <div className= 'flex flex-col items-end'>
         <Link
-          className= 'inline-flex flex-col text-2xl uppercase font-extralight tracking-wider'
           to= '/index'
+          className= {
+            'inline-flex flex-col items-end text-2xl uppercase ' +
+            'font-extralight tracking-wider'
+          }
         >
           <ArrowUpLeft
             size= { 64 }
             strokeWidth= { 0.5 }
-            className= '-ml-4'
+            className= '-mr-4'
           />
 
           <span>Go back to</span>
