@@ -42,6 +42,7 @@ export function Project () {
         </Link>
       </div>
 
+      { /** Divider */ }
       <div className= 'bg-(--main)' />
 
       { /** Main */ }
