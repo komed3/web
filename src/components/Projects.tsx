@@ -59,7 +59,11 @@ function ProjectFilters ( { filters, value, onChange }: ProjectFiltersProps ) {
       { /** Filters */ }
       <motion.div
         initial= { false }
-        animate= { open ? { marginTop: 40, opacity: 1 } : { marginTop: 0, opacity: 0 } }
+        animate= {
+          open
+            ? { marginTop: 40, height: 'auto', opacity: 1 }
+            : { marginTop: 0, height: 0, opacity: 0 }
+        }
         transition= { { duration: 0.5, ease: [ 0.22, 1, 0.36, 1 ] } }
         className= { open ? '' : 'pointer-events-none' }
       >
