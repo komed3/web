@@ -28,6 +28,13 @@ export function Projects () {
   const filters = useMemo( () => [ 'All', ...new Set( projects.map( p => p.type ) ) ], [] );
 
   return (
-    <></>
+    <>
+      { /** Filters */ }
+      <ProjectFilters
+        filters= { filters }
+        value= { filter }
+        onChange= { f => setFilter( f ) }
+      />
+    </>
   );
 }
