@@ -16,7 +16,7 @@ export function Project () {
   const project = projects[ index ];
 
   useEffect(
-    () => { if ( ! project ) navigate( '/index', { replace: true } ) },
+    () => { if ( ! project ) navigate( '/404', { replace: true } ) },
     [ project, navigate ]
   );
 
