@@ -102,6 +102,18 @@ function ProjectGrid ( { projects }: ProjectGridProps ) {
 
   useEffect( () => setVisible( 8 ), [ projects ] );
 
+  useEffect( () => {
+    if ( visible >= projects.length || ! loaderRef.current ) return;
+
+    const observer = new IntersectionObserver( ( [ entry ] ) => {
+      if ( ! entry.isIntersecting ) return;
+      setVisible( current => Math.min( current + 8, projects.length ) );
+    }, { rootMargin: '400px' } );
+
+    observer.observe( loaderRef.current );
+    return () => observer.disconnect();
+  }, [ visible, projects.length ] );
+
   return ( <></> );
 }
 
