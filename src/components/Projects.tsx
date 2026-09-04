@@ -56,6 +56,7 @@ function ProjectFilters ( { filters, value, onChange }: ProjectFiltersProps ) {
         initial= { false }
         animate= { open ? { marginTop: 40, opacity: 1 } : { marginTop: 0, opacity: 0 } }
         transition= { { duration: 0.5, ease: [ 0.22, 1, 0.36, 1 ] } }
+        className= { open ? 'visible' : 'pointer-events-none invisible' }
       >
         <div className= 'grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-x-12 gap-y-6'>
           { filters.map( filter => (
