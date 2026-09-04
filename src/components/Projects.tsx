@@ -142,7 +142,7 @@ function ProjectGrid ( { projects }: ProjectGridProps ) {
                   { ( meta?.stars ?? 0 ) > 0 && (
                     <div className= 'flex items-center gap-3'>
                       <Star size= { 18 } />
-                      <span>{ meta.stars }</span>
+                      <span>{ meta.stars!.toLocaleString() }</span>
                     </div>
                   ) }
                 </div>
