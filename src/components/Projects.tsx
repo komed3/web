@@ -65,6 +65,17 @@ function ProjectFilters ( { filters, value, onChange }: ProjectFiltersProps ) {
               onClick= { () => onChange( filter ) }
               className= 'flex items-center gap-3 text-sm uppercase font-light tracking-[0.15em]'
             >
+              <span className= 'relative w-3 h-4 shrink-0'>
+                { value === filter && (
+                  <motion.span
+                    layoutId= 'active-filter'
+                    layout= 'position'
+                    transition= { { type: 'spring', stiffness: 500, damping: 40, mass: 0.7 } }
+                    className= 'absolute top-0 left-0 w-1 h-full bg-(--main) rounded'
+                  />
+                ) }
+              </span>
+
               <span>{ filter }</span>
             </button>
           ) ) }
