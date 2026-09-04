@@ -1,4 +1,5 @@
 import { ChevronDown } from 'lucide-react';
+import { AnimatePresence, motion } from 'motion/react';
 import { useMemo, useState } from 'react';
 
 import projects from '../../data/projects.json';
@@ -32,6 +33,22 @@ function ProjectFilters ( { filters, value, onChange }: ProjectFiltersProps ) {
         <span className= 'text-xs'>
           { filters.length }
         </span>
+
+        <AnimatePresence mode= 'wait'>
+          { ! open && (
+            <motion.span
+              key= { value }
+              initial= { { y: 8, opacity: 0 } }
+              animate= { { y: 0, opacity: 1 } }
+              exit= { { y: -8, opacity: 0 } }
+              transition= { { duration: 0.2 } }
+              className= 'flex items-center gap-8 ml-6'
+            >
+              <span className= 'w-8 h-px bg-(--main)' />
+              <span>{ value }</span>
+            </motion.span>
+          ) }
+        </AnimatePresence>
       </button>
 
       { /** Filters */ }
