@@ -16,5 +16,13 @@ export function Project () {
     [ project, navigate ]
   );
 
-  return project && ( <></> );
+  return project && (
+    <div className= 'grid grid-cols-[1fr_1px_2fr] gap-20 px-6 sm:px-12 pt-36 pb-24'>
+      <div className= ''>...</div>
+
+      <div className= 'bg-(--main)' />
+
+      <div className= ''>...</div>
+    </div>
+  );
 }
