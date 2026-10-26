@@ -2,8 +2,8 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router';
 
-import App from './App.tsx';
-import { ThemeProvider } from './context/ThemeContext.tsx';
+import App from './App';
+import { ThemeProvider } from './context/ThemeContext';
 import './index.css';
 
 
